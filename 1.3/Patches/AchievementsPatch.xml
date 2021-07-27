@@ -327,35 +327,15 @@
 							<tracker Class="AchievementsExpanded.KindDefTracker">
 								<kindDefs>
 									<li>
-										<key>MorrowRim_ElementalSpiderAsh</key>
+										<key>MorrowRim_GolemRoot</key>
 										<value>1</value>
 									</li>
 									<li>
-										<key>MorrowRim_ElementalSpiderFire</key>
+										<key>MorrowRim_GolemStone</key>
 										<value>1</value>
 									</li>
 									<li>
-										<key>MorrowRim_ElementalSpiderFrost</key>
-										<value>1</value>
-									</li>
-									<li>
-										<key>MorrowRim_ElementalSpiderGrave</key>
-										<value>1</value>
-									</li>
-									<li>
-										<key>MorrowRim_ElementalSpiderParalysis</key>
-										<value>1</value>
-									</li>
-									<li>
-										<key>MorrowRim_ElementalSpiderStorm</key>
-										<value>1</value>
-									</li>
-									<li>
-										<key>MorrowRim_ElementalSpiderToxin</key>
-										<value>1</value>
-									</li>
-									<li>
-										<key>MorrowRim_ElementalSpiderVampiric</key>
+										<key>MorrowRim_GolemMetal</key>
 										<value>1</value>
 									</li>
 								</kindDefs>
