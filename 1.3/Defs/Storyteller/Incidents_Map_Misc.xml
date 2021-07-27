@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<IncidentDef>
+		<defName>MorrowRim_TelvanniFlowerSprout</defName>
+		<label>Telvanni salt flower sprout</label>
+		<category>Misc</category>
+		<targetTags>
+		  <li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>MorrowRim_Telvanni.IncidentWorker_TelvanniFlowerSprout</workerClass>
+		<baseChance>0.9</baseChance>
+		<minRefireDays>8</minRefireDays>
+		<letterLabel>Telvanni flower sprout</letterLabel>
+		<letterText>It appears that a Telvanni botanist lost some seeds nearby, and now the flowers have sprouted! If you wait for the plants to grow, you'll be able to harvest elemental salts, a useful resource for anyone interested in Telvanni technology.</letterText>
+		<letterDef>PositiveEvent</letterDef>
+	</IncidentDef>
+	
+	<IncidentDef>
+		<defName>MorrowRim_TelvanniExtractSprout</defName>
+		<label>Telvanni extract plant sprout</label>
+		<category>Misc</category>
+		<targetTags>
+		  <li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>MorrowRim_Telvanni.IncidentWorker_TelvanniExtractSprout</workerClass>
+		<baseChance>0.8</baseChance>
+		<minRefireDays>10</minRefireDays>
+		<letterLabel>Telvanni extract plant sprout</letterLabel>
+		<letterText>It appears that a Telvanni botanist lost some seeds nearby, and now several plants have sprouted! If you wait for the plants to grow, you'll be able to harvest their extract, a useful resource for anyone interested in Telvanni technology.</letterText>
+		<letterDef>PositiveEvent</letterDef>
+	</IncidentDef>
+
+	<!--
+	<IncidentDef>
+		<defName>MorrowRim_RewardHeartStoneMeteor</defName>
+		<label>heart stone impact</label>
+		<category>Misc</category>
+		<targetTags>
+		  <li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>MorrowRim_Telvanni.IncidentWorker_HeartStoneMeteor</workerClass>
+		<letterLabel>Heart Stones</letterLabel>
+		<letterText>A large heart stone cluster has struck ground in the area.</letterText>
+		<tale>MeteoriteImpact</tale>
+		<baseChance>0.0</baseChance>
+	</IncidentDef>
+	-->
+
+</Defs>

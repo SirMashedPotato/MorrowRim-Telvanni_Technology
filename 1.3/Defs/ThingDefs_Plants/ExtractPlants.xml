@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- base -->
+	
+	<ThingDef Name="Telvanni_ExtractFlowerBase" ParentName="PlantBase" Abstract="True">
+  		<statBases>
+		  <MaxHitPoints>15</MaxHitPoints>
+		  <Nutrition>0.1</Nutrition>
+		</statBases>
+		<selectable>true</selectable>
+		<pathCost>10</pathCost>
+		<ingestible />
+		<plant>
+		  <fertilityMin>0.8</fertilityMin>
+		  <sowMinSkill>6</sowMinSkill>
+		  <growDays>15</growDays>
+		  <dieIfLeafless>true</dieIfLeafless>
+		  <harvestTag>Standard</harvestTag>
+		  <harvestYield>5</harvestYield>
+		  <sowTags>
+			<li>Ground</li>
+			<li>Hydroponic</li>
+		  </sowTags>
+		  <topWindExposure>0.1</topWindExposure>
+		  <visualSizeRange>0.3~1.05</visualSizeRange>
+		  <wildOrder>2</wildOrder>
+		  <sowResearchPrerequisites>
+			<li>MorrowRim_TelvanniSowingExtracts</li>
+		  </sowResearchPrerequisites>
+		  <harvestAfterGrowth>0.30</harvestAfterGrowth>
+		  <harvestMinGrowth>0.60</harvestMinGrowth>
+		</plant>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_ExtractFlowerBase">
+		<defName>Telvanni_GraveNut</defName>
+		<label>grave nut</label>
+		<description>A genetically engineered plant, created by Great House Telvanni. The grave nut is said to grow best surrounded by corpses. This, of course is pure myth, but it doesn't stop certain Telvanni alchemists. The nut can be crushed, releasing a corrosive liquid commonly referred to as 'grave extract'.</description>
+		<graphicData>
+		  <texPath>Things/Plant/MorrowRim_GraveNut</texPath>
+		  <graphicClass>Graphic_Random</graphicClass>
+		</graphicData>
+		<ingestible />
+		<plant>
+		  <harvestedThingDef>MorrowRim_GraveExtract</harvestedThingDef>
+		  <immatureGraphicPath>Things/Plant_Immature/MorrowRim_GraveNut</immatureGraphicPath>
+		</plant>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_ExtractFlowerBase">
+		<defName>Telvanni_VampireGrass</defName>
+		<label>vampire grass</label>
+		<description>A genetically engineered plant, created by Great House Telvanni. The leaves of the vampire grass are covered in thousands of minuscule thorns, which cause unnoticeable cuts to anything that walks through it. The thorns can be drained for a heamolysing liquid commonly referred to as 'vampiric extract'.</description>
+		<graphicData>
+		  <texPath>Things/Plant/MorrowRim_VampiricThorn</texPath>
+		  <graphicClass>Graphic_Random</graphicClass>
+		</graphicData>
+		<ingestible />
+		<plant>
+		  <harvestedThingDef>MorrowRim_VampiricExtract</harvestedThingDef>
+		  <immatureGraphicPath>Things/Plant_Immature/MorrowRim_VampiricThorn</immatureGraphicPath>
+		</plant>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_ExtractFlowerBase">
+		<defName>Telvanni_SpectralBell</defName>
+		<label>spectre bell</label>
+		<description>A genetically engineered plant, created by Great House Telvanni. Some believe that the spectre bell rings in the wind, calling lost souls to it. Massaging the anthers releases an ethereal liquid commonly referred to as 'spectral extract'.</description>
+		<graphicData>
+		  <texPath>Things/Plant/MorrowRim_SpectreBell</texPath>
+		  <graphicClass>Graphic_Random</graphicClass>
+		</graphicData>
+		<ingestible />
+		<plant>
+		  <harvestedThingDef>MorrowRim_SpectralExtract</harvestedThingDef>
+		  <immatureGraphicPath>Things/Plant_Immature/MorrowRim_SpectreBell</immatureGraphicPath>
+		</plant>
+	</ThingDef>
+	
+	<!-- -->
+	
+	<ThingDef ParentName="Telvanni_ExtractFlowerBase">
+		<defName>Telvanni_NightPitcher</defName>
+		<label>night pitcher</label>
+		<description>A genetically engineered plant, created by Great House Telvanni. The night pitcher slowly fills with a mixture of its victims and digestive enzymes, this mixture grows increasingly toxic as the plant matures. The pitcher can be drained for a toxic liquid commonly referred to as 'night extract'.</description>
+		<graphicData>
+		  <texPath>Things/Plant/MorrowRim_NightPitcher</texPath>
+		  <graphicClass>Graphic_Random</graphicClass>
+		</graphicData>
+		<ingestible />
+		<plant>
+		  <harvestedThingDef>MorrowRim_NightCapExtract</harvestedThingDef>
+		  <immatureGraphicPath>Things/Plant_Immature/MorrowRim_NightPitcher</immatureGraphicPath>
+		</plant>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_ExtractFlowerBase">
+		<defName>Telvanni_BoltVine</defName>
+		<label>bolt vine</label>
+		<description>A genetically engineered plant, created by Great House Telvanni. Paralytic pustules grow across the bolt vine as it matures, deterring animals from consuming it. The pustules can be removed and harvested for a paralytic liquid commonly referred to as 'bolt extract'.</description>
+		<graphicData>
+		  <texPath>Things/Plant/MorrowRim_BoltVine</texPath>
+		  <graphicClass>Graphic_Random</graphicClass>
+		</graphicData>
+		<ingestible />
+		<plant>
+		  <harvestedThingDef>MorrowRim_PoisonBoltExtract</harvestedThingDef>
+		  <immatureGraphicPath>Things/Plant_Immature/MorrowRim_BoltVine</immatureGraphicPath>
+		</plant>
+	</ThingDef>
+	
+	
+
+</Defs>

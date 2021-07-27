@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>MorrowRim - Volcanic Ashlands</li>
+    </mods>
+
+    <match Class="PatchOperationSequence">
+	
+		<operations>
+
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+
+					<ThingDef ParentName="MorrowRim_PulserBase">
+						<defName>MorrowRim_PulserAcidic</defName>
+						<label>weather pulser - acidic</label>
+						<description>A one-use weather pulser. It will instantly change the weather upon activation, resulting in the acid falling from the sky.</description>
+						<graphicData>
+							<color>(57,192,119)</color>
+						</graphicData>
+
+						<comps>
+						  <li Class="MorrowRim_Telvanni.CompProperties_UseEffect_WeatherPulser">
+							<weatherDef>MorrowRim_AcidRain</weatherDef>
+							<addHediff>MorrowRim_HiddenWeatherChanged</addHediff>
+						  </li>
+						</comps>
+					</ThingDef>
+					
+					
+					<RecipeDef ParentName="MorrowRim_Recipe_WeatherPulserBase">
+						<defName>MorrowRim_Recipe_WeatherPulser_Acidic</defName>
+						<label>create acidic pulser</label>
+						<description>Create a acidic pulser from a heart stone and 15 acid crystals.</description>
+						<jobString>Creating acidic pulser.</jobString>
+						<ingredients>
+						  <li>
+							<filter>
+							  <thingDefs>
+									<li>MorrowRim_AcidicCrystal</li>
+							  </thingDefs>
+							</filter>
+							<count>15</count>
+						  </li>
+						</ingredients>
+						<fixedIngredientFilter>
+						  <thingDefs>
+								<li>MorrowRim_AcidicCrystal</li>
+						  </thingDefs>
+						</fixedIngredientFilter>
+						<products>
+						  <MorrowRim_PulserAcidic>1</MorrowRim_PulserAcidic>
+						</products>
+					</RecipeDef>
+					
+		
+				</value>
+			</li>
+			
+		</operations>
+    </match>
+  </Operation>
+
+</Patch>

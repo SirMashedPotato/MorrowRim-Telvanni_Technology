@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>MorrowRim - Orsimer Race</li>
+    </mods>
+
+    <match Class="PatchOperationSequence">
+
+		<operations>
+
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					
+					<RecipeDef ParentName = "MorrowRim_TransmutationBase">
+						<defName>MorrowRim_TransmutationOrichalcum</defName>
+						<label>transmutate orichalcum</label>
+						<description>Transmutate 30 orichalcum bars using 15 frost salts, 15 ferrous salts and 30 steel.</description>
+						<jobString>Transmutating orichalcum.</jobString>
+						<ingredients>
+						  <li>
+							<filter>
+							  <thingDefs>
+								<li>MorrowRim_FrostSalts</li>
+							  </thingDefs>
+							</filter>
+							<count>15</count>
+						  </li>
+						  <li>
+							<filter>
+							  <thingDefs>
+								<li>MorrowRim_FerrousSalts</li>
+							  </thingDefs>
+							</filter>
+							<count>15</count>
+						  </li>
+						  <li>
+							<filter>
+							  <thingDefs>
+								<li>Steel</li>
+							  </thingDefs>
+							</filter>
+							<count>30</count>
+						  </li>
+						</ingredients>
+						<fixedIngredientFilter>
+						  <thingDefs>
+							<li>MorrowRim_FrostSalts</li>
+							<li>MorrowRim_FerrousSalts</li>
+							<li>Steel</li>
+						  </thingDefs>
+						</fixedIngredientFilter>
+						<products>
+						  <MorrowRim_Orichalcum>30</MorrowRim_Orichalcum>
+						</products>
+					</RecipeDef>
+				
+				</value>
+			</li>
+			
+		</operations>
+    </match>
+  </Operation>
+
+</Patch>

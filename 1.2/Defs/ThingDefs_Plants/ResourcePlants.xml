@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- base -->
+	
+	<ThingDef Name="Telvanni_ResourcePlantBase" ParentName="PlantBase" Abstract="True">
+  		<statBases>
+		  <MaxHitPoints>150</MaxHitPoints>
+		  <Nutrition>0.1</Nutrition>
+		</statBases>
+		<selectable>true</selectable>
+		<passability>PassThroughOnly</passability>
+		<pathCost>130</pathCost>
+		<blockWind>true</blockWind>
+		<ingestible>
+			<foodType>Tree</foodType>
+			<preferability>RawBad</preferability>
+		</ingestible>
+		<plant>
+		  <sowWork>4000</sowWork>
+		  <fertilityMin>1.0</fertilityMin>
+		  <sowMinSkill>10</sowMinSkill>
+		  <growDays>20</growDays>
+		  <dieIfLeafless>true</dieIfLeafless>
+		  <harvestTag>Standard</harvestTag>
+		  <sowTags>
+			<li>Ground</li>
+		  </sowTags>
+		  <topWindExposure>0.1</topWindExposure>
+		  <wildOrder>2</wildOrder>
+		  <blockAdjacentSow>true</blockAdjacentSow>
+		  <sowResearchPrerequisites>
+			<li>MorrowRim_TelvanniSowingResource</li>
+		  </sowResearchPrerequisites>
+		  <harvestMinGrowth>0.70</harvestMinGrowth>
+		  <interferesWithRoof>true</interferesWithRoof>
+		</plant>
+	</ThingDef>
+	
+	<ThingDef Name="Telvanni_ResourceTreeBase" ParentName="Telvanni_ResourcePlantBase" Abstract="True">
+  		<statBases>
+		  <MaxHitPoints>200</MaxHitPoints>
+		</statBases>
+		<plant>
+		  <soundHarvesting>Harvest_Tree</soundHarvesting>
+		  <soundHarvestFinish>Harvest_Tree_Finish</soundHarvestFinish>
+		  <harvestTag>Wood</harvestTag>
+		  <harvestWork>800</harvestWork>
+		  <harvestFailable>false</harvestFailable>
+		</plant>
+	</ThingDef>
+	
+	<!-- Specifics -->
+
+	<ThingDef ParentName="Telvanni_ResourceTreeBase">
+		<defName>Telvanni_ScuttleFleshParasol</defName>
+		<label>scuttle-flesh parasol mushroom</label>
+		<description>A genetically engineered mushroom, created by Master Neloth, a member of Great House Telvanni. The flesh of this mushroom is highly nourishing, and lasts an extraordinarily long time after harvesting.</description>
+		<altitudeLayer>Building</altitudeLayer>
+		<graphicData>
+		  <texPath>Things/Plant/MorrowRim_ScuttleFleshParasol</texPath>
+		  <graphicClass>Graphic_Random</graphicClass>
+		</graphicData>
+		<ingestible />
+		<plant>
+		  <harvestedThingDef>MorrowRim_RawScuttleFleshFungus</harvestedThingDef>
+		  <visualSizeRange>1.6~2.4</visualSizeRange>
+		  <harvestYield>24</harvestYield>
+		  <purpose>Food</purpose>
+		</plant>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_ResourceTreeBase">
+		<defName>Telvanni_OgrimWoodParasol</defName>
+		<label>ogrim-wood parasol mushroom</label>
+		<description>A genetically engineered mushroom, created by Master Neloth, a member of Great House Telvanni. The stalk of the mushroom hardens as it matures, eventually growing to be as tough and durable as an ogrims hide.</description>
+		<altitudeLayer>Building</altitudeLayer>
+		<graphicData>
+		  <texPath>Things/Plant/MorrowRim_OgrimWoodParasol</texPath>
+		  <graphicClass>Graphic_Random</graphicClass>
+		</graphicData>
+		<ingestible />
+		<plant>
+		  <harvestedThingDef>MorrowRim_OgrimWoodLog</harvestedThingDef>
+		  <visualSizeRange>1.6~2.4</visualSizeRange>
+		  <harvestYield>36</harvestYield>
+		</plant>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_ResourceTreeBase">
+		<defName>Telvanni_MendingMossParasol</defName>
+		<label>mending-moss parasol mushroom</label>
+		<description>A genetically engineered mushroom, created by Master Neloth, a member of Great House Telvanni. While the stalk is far too porous to be used in building, and the flesh incredibly foul tasting, the moss that grows on this mushroom has rather potent medicinal qualities.</description>
+		<altitudeLayer>Building</altitudeLayer>
+		<graphicData>
+		  <texPath>Things/Plant/MorrowRim_MendingMossParasol</texPath>
+		  <graphicClass>Graphic_Random</graphicClass>
+		</graphicData>
+		<ingestible />
+		<plant>
+		  <harvestedThingDef>MorrowRim_MedicineMending</harvestedThingDef>
+		  <visualSizeRange>1.6~2.4</visualSizeRange>
+		  <harvestYield>8</harvestYield>
+		  <purpose>Health</purpose>
+		</plant>
+	</ThingDef>
+	
+</Defs>

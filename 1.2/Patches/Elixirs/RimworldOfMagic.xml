@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>A RimWorld of Magic</li>
+    </mods>
+
+    <match Class="PatchOperationSequence">
+
+		<operations>
+
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					
+
+	<!-- Capacity magic manipulation -->
+
+	<ThingDef ParentName="MorrowRim_ElixirBase_Quality">
+		<defName>MorrowRim_ElixirCapacityMagicManipulation</defName>
+		<label>elixir of fortify magic manipulation</label>
+		<description>An elixir prepared by a alchemist, fortifies ones magic manipulation by 25%.\n\nThe duration of the effect depends on the quality of the elixir, with the elixir lasting 10% of the maximum duration per quality level, or 100% of the maximum duration for legendary. The effect can be stacked for up to 48 hours.\n\nIngesting this elixir will also increase alchemical toxicity by 2.5%, regardless of quality level.</description>
+		<descriptionHyperlinks>
+			<HediffDef>MorrowRim_ElixirCapacityMagicManipulation_High</HediffDef>
+		</descriptionHyperlinks>
+		<ingestible>
+		  <drugCategory>Medical</drugCategory>
+		  <outcomeDoers>
+			<li Class="MorrowRim_Telvanni.IngestionOutcomeDoer_GiveHediff">
+				<Hediff>MorrowRim_ElixirCapacityMagicManipulation_High</Hediff>
+			</li>
+		  </outcomeDoers>
+		</ingestible>
+		<comps>
+		</comps>
+		<recipeMaker>
+			<researchPrerequisite>MorrowRim_ElixirGrave</researchPrerequisite>
+		</recipeMaker>
+		<costList>
+			<MorrowRim_GraveExtract>1</MorrowRim_GraveExtract>
+			<MorrowRim_VoidSalts>2</MorrowRim_VoidSalts>
+			<MorrowRim_AetherialSalts>2</MorrowRim_AetherialSalts>
+		</costList>
+	</ThingDef>
+  
+	<HediffDef ParentName="MorrowRim_ElixirHighBase">
+		<defName>MorrowRim_ElixirCapacityMagicManipulation_High</defName>
+		<label>elixir of fortify magic manipulation</label>
+		<description>Fortifies ones magic manipulation by 25% for up to 48 hours.</description>
+		<stages>
+			<li>
+				<capMods>
+				  <li>
+					<capacity>MagicManipulation</capacity>
+					<offset>0.25</offset>
+				  </li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<!-- stat energy cap -->
+	
+	<!-- stat mana cap -->
+	
+	<!-- rate energy regen -->
+	
+	<!-- rate mana regen -->
+
+					
+				</value>
+			</li>
+		</operations>
+
+    </match>
+  </Operation>
+
+</Patch>

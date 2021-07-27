@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ResearchProjectDef ParentName="BaseTelvanniResearch">
+		<defName>MorrowRim_AtronachForge</defName>
+		<label>atronach creation Vol. I</label>
+		<description>Allows the construction of the Atronach Forge, a forge capable of creating atronach, as well as creation of the balanced fire and frost atronach.</description>
+		<researchViewX>0.00</researchViewX>
+		<researchViewY>2.0</researchViewY>
+	</ResearchProjectDef>
+  
+	<ResearchProjectDef ParentName="BaseTelvanniResearch">
+		<defName>MorrowRim_BasicAtronach</defName>
+		<label>atronach creation Vol. II</label>
+		<description>Allows the creation of the melee air and ferrous atronach, at the atronach forge.</description>
+		<researchViewX>1.00</researchViewX>
+		<researchViewY>2.0</researchViewY>
+		<prerequisites>
+			<li>MorrowRim_AtronachForge</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch">
+		<defName>MorrowRim_IntermediateAtronach</defName>
+		<label>atronach creation Vol. III</label>
+		<description>Allows the creation of the ranged ash, storm atronach, at the atronach forge.</description>
+		<researchViewX>2.00</researchViewX>
+		<researchViewY>2.0</researchViewY>
+		<prerequisites>
+			<li>MorrowRim_AtronachForge</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch">
+		<defName>MorrowRim_MonarchCore</defName>
+		<label>monarch ascension core creation</label>
+		<description>Allows the creation of monarch ascension cores, which can be used to permanently imbue an atronach with aetherial energy.</description>
+		<researchViewX>3.00</researchViewX>
+		<researchViewY>2.0</researchViewY>
+		<prerequisites>
+			<li>MorrowRim_BasicAtronach</li>
+			<li>MorrowRim_IntermediateAtronach</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch">
+		<defName>MorrowRim_AtronachPulser</defName>
+		<label>atronach pulser creation</label>
+		<description>Allows the creation of atronach pulsers, multi use items that can temporarily empower atronachs.</description>
+		<researchViewX>5.00</researchViewX>
+		<researchViewY>2.0</researchViewY>
+		<prerequisites>
+			<li>MorrowRim_AtronachForge</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+</Defs>

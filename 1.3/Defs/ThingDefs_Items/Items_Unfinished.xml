@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="UnfinishedBase">
+		<defName>MorrowRim_UnfinishedTelvanniRoots</defName>
+		<label>unfinished root mass</label>
+		<description>An unfinished mass of roots.</description>
+		<statBases>
+		  <Flammability>0.5</Flammability>
+		</statBases>
+		<graphicData>
+		  <texPath>Things/Item/Unfinished/MorrowRim_UnfinishedRoots</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<stuffCategories Inherit="false" />
+	</ThingDef>
+	
+	<ThingDef ParentName="UnfinishedBase">
+		<defName>MorrowRim_UnfinishedTelvanniGolem</defName>
+		<label>unfinished golem</label>
+		<description>An unfinished Telvanni golem.</description>
+		<statBases>
+		  <Flammability>0.5</Flammability>
+		</statBases>
+		<graphicData>
+		  <texPath>Things/Item/Unfinished/MorrowRim_UnfinishedGolem</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<stuffCategories Inherit="false" />
+	</ThingDef>
+
+</Defs>

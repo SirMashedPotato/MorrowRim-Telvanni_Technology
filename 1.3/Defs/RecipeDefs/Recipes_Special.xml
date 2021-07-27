@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RecipeDef>
+    <defName>MorrowRim_RecipeDuplicateElixir</defName>
+    <label>duplicate elixir</label>
+    <description>Duplicate 10 elixirs using 5 doppler spores.</description>
+    <workerClass>MorrowRim_Telvanni.Recipe_DuplicateElixir</workerClass>
+    <jobString>Duplicating elixirs.</jobString>
+    <workAmount>500</workAmount>
+    <workSkill>Intellectual</workSkill>
+	<workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <effectWorking>Cremate</effectWorking>
+    <soundWorking>Recipe_Cremate</soundWorking>
+	<allowMixingIngredients>false</allowMixingIngredients>
+	<uiIconThing>MorrowRim_ElixirCleansing</uiIconThing>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>MorrowRim_Elixir</li>
+          </categories>
+        </filter>
+        <count>10</count>
+      </li>
+	  <li>
+		<filter>
+			<thingDefs>
+				<li>MorrowRim_DopplerSpores</li>
+			</thingDefs>
+		</filter>
+		<count>5</count>
+		</li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>MorrowRim_Elixir</li>
+      </categories>
+      <thingDefs>
+		<li>MorrowRim_DopplerSpores</li>
+	  </thingDefs>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+      <categories>
+        <li>MorrowRim_Elixir</li>
+      </categories>
+	  <thingDefs>
+		<li>MorrowRim_DopplerSpores</li>
+	  </thingDefs>
+    </defaultIngredientFilter>
+	<recipeUsers>
+		<li>MorrowRim_ElixirTable</li>
+	</recipeUsers>
+	<skillRequirements>
+		<Intellectual>12</Intellectual>
+	</skillRequirements>
+	<researchPrerequisite>MorrowRim_ElixirDuplication</researchPrerequisite>
+  </RecipeDef>
+
+</Defs>

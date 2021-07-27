@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RecordDef>
+    <defName>MorrowRim_TelvanniGolemCores</defName>
+    <label>golem cores installed</label>
+    <description>The number of times I have installed a golem core.</description>
+    <type>Int</type>
+  </RecordDef>
+ 
+</Defs>

@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Base -->
+	
+	<ThingDef ParentName="ResourceBase" Name="MorrowRim_GolemCoreBase" Abstract="True">
+		<thingClass>ThingWithComps</thingClass>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+		  <MaxHitPoints>80</MaxHitPoints>
+		  <WorkToMake>800</WorkToMake>
+		  <Mass>0.2</Mass>
+		  <DeteriorationRate>2.0</DeteriorationRate>
+		  <Flammability>0.2</Flammability>
+		</statBases>
+		<stackLimit>25</stackLimit>
+		<thingCategories>
+			<li>TelvanniGolemCore</li>
+		</thingCategories>
+		<tradeability>Sellable</tradeability>
+		<techLevel>Medieval</techLevel>
+		<tradeTags>
+		  <li>TelvanniGolemCore</li>
+		</tradeTags>
+		<comps>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase" Name="MorrowRim_GolemCoreBase_Advanced" Abstract="True">
+		<!-- Crafting -->
+		<recipeMaker>
+		  <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		  <workSkill>Crafting</workSkill>
+		  <effectWorking>Smith</effectWorking>
+		  <soundWorking>Recipe_Smith</soundWorking>
+		  <recipeUsers>
+			<li>MorrowRim_GolemForge</li>
+		  </recipeUsers>
+		  <unfinishedThingDef>MorrowRim_UnfinishedTelvanniRoots</unfinishedThingDef>
+		  <skillRequirements>
+			<Crafting>8</Crafting>
+			<Intellectual>10</Intellectual>
+		  </skillRequirements>
+		  <researchPrerequisite>MorrowRim_GolemAdvanced</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	
+	<!-- Upgrade core -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Advanced">
+		<defName>MorrowRim_GolemUpgradeCore</defName>
+		<label>golem upgrade core</label>
+		<description>A single-use golem core, which instantly increases the quality level of the golem by one. Cannot be used if the golem is already of legendary quality level.</description>
+		<graphicData>
+		  <texPath>Things/Item/Special/MorrowRim_TelvanniGolemUpgradeCore</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<comps>
+		  <li Class="CompProperties_Usable">
+			<useJob>UseItem</useJob>
+			<useLabel>Apply golem upgrade core</useLabel>
+			<useDuration>0</useDuration>
+		  </li>
+		  <li Class="CompProperties_Targetable">
+			<compClass>MorrowRim_Telvanni.CompTargetable_GolemWithUpgradeLevel</compClass>
+		  </li>
+		  <li>
+			<compClass>MorrowRim_Telvanni.CompTargetEffect_GolemUpgradeLevel</compClass>
+		  </li>
+		</comps>
+		<!-- Crafting -->
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_AetherialSalts>15</MorrowRim_AetherialSalts>
+		  <Gold>2.5</Gold>
+		</costList>
+	</ThingDef>
+	
+	<!-- Aetherial heart -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Advanced">
+		<defName>MorrowRim_GolemAetherialHeart</defName>
+		<label>golem aetherial heart</label>
+		<description>A heart stone absolutely filled with aetherial energy, made to be installed into a golem. Causes the golem to constantly heal wounds and restore body parts, once installed.</description>
+		<graphicData>
+		  <texPath>Things/Item/Special/MorrowRim_TelvanniGolemAetherialHeart</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<comps>
+		  <li Class="CompProperties_Usable">
+			<useJob>UseItem</useJob>
+			<useLabel>Apply golem aetherial heart</useLabel>
+			<useDuration>0</useDuration>
+		  </li>
+		  <li Class="CompProperties_Targetable">
+			<compClass>MorrowRim_Telvanni.CompTargetable_Golem</compClass>
+		  </li>
+		  <li>
+			<compClass>MorrowRim_Telvanni.CompTargetEffect_GolemAddCore</compClass>
+		  </li>
+		</comps>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemAetherialHeart</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemHeartCore</partToAddTo>
+            </li>
+		</modExtensions>
+		<!-- Crafting -->
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_AetherialSalts>50</MorrowRim_AetherialSalts>
+		</costList>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemAetherialHeart</defName>
+		<label>aetherial heart</label>
+		<labelNoun>an aetherial heart</labelNoun>
+		<description>An installed aetherial heart. Causes the golem to constantly heal wounds and restore body parts.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemAetherialHeart</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<comps>
+			<li Class="MorrowRim_Telvanni.HediffCompProperties_AetherialRegeneration">
+			</li>
+		</comps>
+		<spawnThingOnRemoved>MorrowRim_GolemAetherialHeart</spawnThingOnRemoved>
+	</HediffDef>
+	
+	<!-- shifter core -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Advanced">
+		<defName>MorrowRim_GolemShifterCore</defName>
+		<label>golem shifter core</label>
+		<description>A golem core, allows a golem to be targeted by the shifter crystal once installed.</description>
+		<graphicData>
+		  <texPath>Things/Item/Special/MorrowRim_TelvanniGolemShifterCore</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<comps>
+		  <li Class="CompProperties_Usable">
+			<useJob>UseItem</useJob>
+			<useLabel>Apply golem shifter core</useLabel>
+			<useDuration>0</useDuration>
+		  </li>
+		  <li Class="CompProperties_Targetable">
+			<compClass>MorrowRim_Telvanni.CompTargetable_Golem</compClass>
+		  </li>
+		  <li>
+			<compClass>MorrowRim_Telvanni.CompTargetEffect_GolemAddCore</compClass>
+		  </li>
+		</comps>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemShifterCore</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemBodyCore</partToAddTo>
+            </li>
+		</modExtensions>
+		<!-- Crafting -->
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_VoidSalts>15</MorrowRim_VoidSalts>
+		  <MorrowRim_AirSalts>15</MorrowRim_AirSalts>
+		</costList>
+		<recipeMaker>
+		  <researchPrerequisite>MorrowRim_GolemTeleporter</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemShifterCore</defName>
+		<label>shifter core</label>
+		<labelNoun>an shifter core</labelNoun>
+		<description>An installed shifter core. Allows the golem to be targeted by the shifter crystal, causing it to teleport to the caster.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemShifterCore</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<comps>
+		</comps>
+		<spawnThingOnRemoved>MorrowRim_GolemShifterCore</spawnThingOnRemoved>
+	</HediffDef>
+	
+	<!-- repair crystal -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Advanced">
+		<defName>MorrowRim_GolemRepairCrystal</defName>
+		<label>golem repair crystal</label>
+		<description>A golem repair crystal, can be used to repair up to five wounds on the targeted golem.</description>
+		<graphicData>
+		  <texPath>Things/Item/Resource/MorrowRim_TelvanniGolemRepairCrystal</texPath>
+		  <graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<comps>
+		  <li Class="CompProperties_Usable">
+			<useJob>UseItem</useJob>
+			<useLabel>Use golem repair crystal</useLabel>
+			<useDuration>0</useDuration>
+		  </li>
+		  <li Class="CompProperties_Targetable">
+			<compClass>MorrowRim_Telvanni.CompTargetable_GolemRepair</compClass>
+		  </li>
+		  <li>
+			<compClass>MorrowRim_Telvanni.CompTargetEffect_GolemRepair</compClass>
+		  </li>
+		</comps>
+		<modExtensions>
+		</modExtensions>
+		<!-- Crafting -->
+		<costList>
+		  <MorrowRim_WaterSalts>5</MorrowRim_WaterSalts>
+		  <MorrowRim_VoidSalts>5</MorrowRim_VoidSalts>
+		</costList>
+		<recipeMaker>
+		  <researchPrerequisite>MorrowRim_GolemForge</researchPrerequisite>
+		  <bulkRecipeCount>5</bulkRecipeCount>
+		  <skillRequirements>
+			<Crafting>4</Crafting>
+			<Intellectual>6</Intellectual>
+		  </skillRequirements>
+		</recipeMaker>
+	</ThingDef>
+
+</Defs>

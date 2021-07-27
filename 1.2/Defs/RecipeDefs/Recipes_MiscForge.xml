@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<RecipeDef>
+		<defName>MorrowRim_ReigniteHeartStone</defName>
+		<label>reignite heart stone</label>
+		<description>Reignite the inner fire of a heart stone using 10 fire salts, 10 ferrous salts and 10 ash salts.</description>
+		<jobString>Reigniting heart stone.</jobString>
+		<effectWorking>Cremate</effectWorking>
+		<soundWorking>Recipe_Cremate</soundWorking>
+		<workAmount>500</workAmount>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<recipeUsers>
+			<li>MorrowRim_TelvanniForge</li>
+		</recipeUsers>
+		<workSkill>Intellectual</workSkill>
+		<researchPrerequisite>MorrowRim_HeartStoneStudiesI</researchPrerequisite>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>MorrowRim_FireSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>10</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>MorrowRim_FerrousSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>10</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Dagoth_AshSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>10</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>MorrowRim_HeartStoneDepleted</li>
+			  </thingDefs>
+			</filter>
+			<count>1</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>MorrowRim_FireSalts</li>
+			<li>MorrowRim_FerrousSalts</li>
+			<li>Dagoth_AshSalts</li>
+			<li>MorrowRim_HeartStoneDepleted</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		</products>
+		<skillRequirements>
+		  <Intellectual>6</Intellectual>
+		</skillRequirements>
+	</RecipeDef>
+	
+	<RecipeDef>
+		<jobString>Crushing heart stone.</jobString>
+		<workAmount>1600</workAmount>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>CutStone</effectWorking>
+		<soundWorking>Recipe_MakeStoneBlocks</soundWorking>
+		<targetCountAdjustment>20</targetCountAdjustment>
+		<recipeUsers>
+		  <li>TableStonecutter</li>
+		  <li>MorrowRim_TelvanniForge</li>
+		</recipeUsers>
+		<researchPrerequisite>MorrowRim_TelvanniForge</researchPrerequisite>
+		
+		<defName>MorrowRim_CrushHeartStone</defName>
+		<label>crush heart stone</label>
+		<description>Crush a heart stone, obtaining 5 ash salts, 5 fire salts and 5 ferrous salts.</description>
+		<!--<workerCounterClass>RecipeWorkerCounter_MakeStoneBlocks</workerCounterClass>-->
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>MorrowRim_HeartStone</li>
+			  </thingDefs>
+			</filter>
+			<count>1</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>MorrowRim_HeartStone</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<specialProducts>
+		  <li>Butchery</li>
+		</specialProducts>
+	</RecipeDef>
+	
+	<RecipeDef>
+		<jobString>Crushing depleted heart stone.</jobString>
+		<workAmount>1600</workAmount>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>CutStone</effectWorking>
+		<soundWorking>Recipe_MakeStoneBlocks</soundWorking>
+		<targetCountAdjustment>20</targetCountAdjustment>
+		<recipeUsers>
+		  <li>TableStonecutter</li>
+		  <li>MorrowRim_TelvanniForge</li>
+		</recipeUsers>
+		<researchPrerequisite>MorrowRim_TelvanniForge</researchPrerequisite>
+		
+		<defName>MorrowRim_CrushDepletedHeartStone</defName>
+		<label>crush depleted heart stone</label>
+		<description>Crush a heart depleted stone, obtaining 5 ash salts and 5 ferrous salts.</description>
+		<!--<workerCounterClass>RecipeWorkerCounter_MakeStoneBlocks</workerCounterClass>-->
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>MorrowRim_HeartStoneDepleted</li>
+			  </thingDefs>
+			</filter>
+			<count>1</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>MorrowRim_HeartStoneDepleted</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<specialProducts>
+		  <li>Butchery</li>
+		</specialProducts>
+	</RecipeDef>
+	
+</Defs>

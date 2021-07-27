@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="MorrowRim_ElixirBase_Necromantic">
+		<defName>MorrowRim_NecromanticPurifying</defName>
+		<label>elixir of purify resurrection</label>
+		<description>An elixir prepared by a alchemist, purifies the ingestor, removing any lingering effects of necromantic resurrection and allowing them to be resurrected again.\n\nIngesting this elixir will also increase alchemical toxicity by 2.5%, regardless of quality level.</description>
+		<descriptionHyperlinks>
+		</descriptionHyperlinks>
+		<graphicData>
+		  <texPath>Things/Item/Drug/MorrowRim_PotionNightBolt</texPath>
+		</graphicData>
+		<ingestible>
+		  <drugCategory>Medical</drugCategory>
+		  <outcomeDoers>
+			<li Class="MorrowRim_Telvanni.IngestionOutcomeDoer_RemoveHediff">
+				<Hediff>MorrowRim_TelvanniResurrects</Hediff>
+			</li>
+		  </outcomeDoers>
+		</ingestible>
+		<comps>
+		</comps>
+		<costList>
+			<MorrowRim_PoisonBoltExtract>15</MorrowRim_PoisonBoltExtract>
+			<MorrowRim_NightCapExtract>15</MorrowRim_NightCapExtract>
+			<MorrowRim_AetherialSalts>10</MorrowRim_AetherialSalts>
+		</costList>
+	</ThingDef>
+
+</Defs>

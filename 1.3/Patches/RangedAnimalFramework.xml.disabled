@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Range Animal Framework</li>
+    </mods>
+
+    <match Class="PatchOperationSequence">
+
+		<operations>
+		
+			<!-- Fire -->
+
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "MorrowRim_AtronachFire"]</xpath>
+				<value>
+					<verbs>
+						<li>
+							<verbClass>Verb_Shoot</verbClass>
+							<hasStandardCommand>true</hasStandardCommand>
+							<defaultProjectile>Telvanni_ProjectileFirePulse</defaultProjectile>
+							<forcedMissRadius>1.9</forcedMissRadius>
+							<warmupTime>1.8</warmupTime>
+							<range>15.9</range>
+							<soundCast>Shot_ChargeBlaster</soundCast>
+							<soundCastTail>GunTail_Medium</soundCastTail>
+							<muzzleFlashScale>9</muzzleFlashScale>
+							<targetParams>
+							  <canTargetLocations>true</canTargetLocations>
+							</targetParams>
+							<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+							<noiseRadius>4</noiseRadius>
+							<!-- -->
+							<defaultCooldownTime>2.6</defaultCooldownTime>
+						</li>
+						<li>
+							<verbClass>Verb_Shoot</verbClass>
+							<hasStandardCommand>true</hasStandardCommand>
+							<defaultProjectile>Telvanni_ProjectileFireBasic</defaultProjectile>
+							<warmupTime>1.7</warmupTime>
+							<range>36.9</range>
+							<soundCast>Shot_ChargeBlaster</soundCast>
+							<soundCastTail>GunTail_Medium</soundCastTail>
+							<muzzleFlashScale>9</muzzleFlashScale>
+							<!-- -->
+							<accuracyTouch>0.65</accuracyTouch>
+							<accuracyShort>0.80</accuracyShort>
+							<accuracyMedium>0.90</accuracyMedium>
+							<accuracyLong>0.80</accuracyLong>
+							<defaultCooldownTime>1.6</defaultCooldownTime>
+						</li>
+					</verbs>
+				</value>
+			</li>
+			
+			<!-- Frost -->
+
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "MorrowRim_AtronachFrost"]</xpath>
+				<value>
+					<verbs>
+						<li>
+							<verbClass>Verb_Shoot</verbClass>
+							<hasStandardCommand>true</hasStandardCommand>
+							<defaultProjectile>Telvanni_ProjectileFrostBlast</defaultProjectile>
+							<warmupTime>0.9</warmupTime>
+							<range>15.9</range>
+							<soundCast>Shot_ChargeBlaster</soundCast>
+							<soundCastTail>GunTail_Medium</soundCastTail>
+							<muzzleFlashScale>9</muzzleFlashScale>
+							<burstShotCount>5</burstShotCount>
+							<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+							<!-- -->
+							<defaultCooldownTime>1.25</defaultCooldownTime>
+							<accuracyTouch>0.80</accuracyTouch>
+							<accuracyShort>0.87</accuracyShort>
+							<accuracyMedium>0.70</accuracyMedium>
+							<accuracyLong>0.57</accuracyLong>
+						</li>
+						<li>
+							<verbClass>Verb_Shoot</verbClass>
+							<hasStandardCommand>true</hasStandardCommand>
+							<defaultProjectile>Telvanni_ProjectileFrostBasic</defaultProjectile>
+							<warmupTime>1.7</warmupTime>
+							<range>36.9</range>
+							<soundCast>Shot_ChargeBlaster</soundCast>
+							<soundCastTail>GunTail_Medium</soundCastTail>
+							<muzzleFlashScale>9</muzzleFlashScale>
+							<!-- -->
+							<accuracyTouch>0.65</accuracyTouch>
+							<accuracyShort>0.80</accuracyShort>
+							<accuracyMedium>0.90</accuracyMedium>
+							<accuracyLong>0.80</accuracyLong>
+							<defaultCooldownTime>1.6</defaultCooldownTime>
+						</li>
+					</verbs>
+				</value>
+			</li>
+			
+			<!-- Storm -->
+
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "MorrowRim_AtronachStorm"]</xpath>
+				<value>
+					<verbs>
+						<li>
+							<verbClass>Verb_Shoot</verbClass>
+							<hasStandardCommand>true</hasStandardCommand>
+							<defaultProjectile>Telvanni_ProjectileStormPrismatic</defaultProjectile>
+							<warmupTime>2.5</warmupTime>
+							<range>15.9</range>
+							<burstShotCount>25</burstShotCount>
+							<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+							<soundCast>Shot_ChargeBlaster</soundCast>
+							<soundCastTail>GunTail_Medium</soundCastTail>
+							<muzzleFlashScale>9</muzzleFlashScale>
+							<!-- -->
+							<accuracyTouch>0.15</accuracyTouch>
+						    <accuracyShort>0.25</accuracyShort>
+						    <accuracyMedium>0.25</accuracyMedium>
+						    <accuracyLong>0.18</accuracyLong>
+							<defaultCooldownTime>2.3</defaultCooldownTime>
+						</li>
+						<li>
+							<verbClass>Verb_Shoot</verbClass>
+							<hasStandardCommand>true</hasStandardCommand>
+							<defaultProjectile>Telvanni_ProjectileStormCharged</defaultProjectile>
+							<warmupTime>4.1</warmupTime>
+							<range>29.9</range>
+							<soundCast>Shot_ChargeBlaster</soundCast>
+							<soundCastTail>GunTail_Medium</soundCastTail>
+							<muzzleFlashScale>9</muzzleFlashScale>
+							<!-- -->
+							<accuracyTouch>0.65</accuracyTouch>
+							<accuracyShort>0.85</accuracyShort>
+							<accuracyMedium>0.85</accuracyMedium>
+							<accuracyLong>0.75</accuracyLong>
+							<defaultCooldownTime>2.7</defaultCooldownTime>
+						</li>
+					</verbs>
+				</value>
+			</li>
+			
+			<!-- Ash -->
+
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "MorrowRim_AtronachAsh"]</xpath>
+				<value>
+					<verbs>
+						<li>
+							<verbClass>Verb_Shoot</verbClass>
+							<hasStandardCommand>true</hasStandardCommand>
+							<defaultProjectile>Telvanni_ProjectileAshCloud</defaultProjectile>
+							<forcedMissRadius>1.9</forcedMissRadius>
+							<warmupTime>1.8</warmupTime>
+							<range>15.9</range>
+							<soundCast>Shot_ChargeBlaster</soundCast>
+							<soundCastTail>GunTail_Medium</soundCastTail>
+							<muzzleFlashScale>9</muzzleFlashScale>
+							<targetParams>
+							  <canTargetLocations>true</canTargetLocations>
+							</targetParams>
+							<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+							<noiseRadius>4</noiseRadius>
+							<!-- -->
+							<defaultCooldownTime>2.6</defaultCooldownTime>
+						</li>
+						<li>
+							<verbClass>Verb_Shoot</verbClass>
+							<hasStandardCommand>true</hasStandardCommand>
+							<defaultProjectile>Telvanni_ProjectileAshRapid</defaultProjectile>
+							<warmupTime>0.5</warmupTime>
+							<range>22.9</range>
+							<burstShotCount>3</burstShotCount>
+							<ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+							<soundCast>Shot_ChargeBlaster</soundCast>
+							<soundCastTail>GunTail_Medium</soundCastTail>
+							<muzzleFlashScale>9</muzzleFlashScale>
+							<!-- -->
+							<accuracyTouch>0.55</accuracyTouch>
+							<accuracyShort>0.64</accuracyShort>
+							<accuracyMedium>0.55</accuracyMedium>
+							<accuracyLong>0.45</accuracyLong>
+							<defaultCooldownTime>1.1</defaultCooldownTime>
+						</li>
+					</verbs>
+				</value>
+			</li>
+			
+		</operations>
+
+    </match>
+  </Operation>
+
+</Patch>

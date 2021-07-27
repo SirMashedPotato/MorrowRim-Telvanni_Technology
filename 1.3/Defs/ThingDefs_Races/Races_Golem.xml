@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef Name="MorrowRim_BaseGolem" Abstract="True">
+	<!-- From BasePawn -->
+	
+	<thingClass>Pawn</thingClass>
+    <category>Pawn</category>
+    <selectable>true</selectable>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Pawn</altitudeLayer>
+    <useHitPoints>false</useHitPoints>
+    <hasTooltip>true</hasTooltip>
+    <inspectorTabs>
+      <li>ITab_Pawn_Health</li>
+      <li>ITab_Pawn_Needs</li>
+      <li>ITab_Pawn_Character</li>
+      <li>ITab_Pawn_Social</li>
+      <li>ITab_Pawn_Guest</li>
+      <li>ITab_Pawn_Prisoner</li>
+      <li>ITab_Pawn_FormingCaravan</li>
+      <li>ITab_Pawn_Gear</li>
+      <li>ITab_Pawn_Log</li>
+    </inspectorTabs>
+    <comps>
+      <li>
+        <compClass>CompAttachBase</compClass>
+      </li>
+    </comps>
+    <drawGUIOverlay>true</drawGUIOverlay>
+	
+	<!-- -->
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <statBases>
+      <PsychicSensitivity>0.0</PsychicSensitivity>
+      <ToxicSensitivity>0</ToxicSensitivity>
+      <Flammability>0</Flammability>
+      <ComfyTemperatureMin>-100</ComfyTemperatureMin>
+      <ComfyTemperatureMax>250</ComfyTemperatureMax>
+      <MeatAmount>0</MeatAmount>
+      <ArmorRating_Heat>1</ArmorRating_Heat>
+	  <Mass>60</Mass>
+    </statBases>
+    <race>
+      <fleshType>MorrowRim_FleshGolem</fleshType>
+      <needsRest>false</needsRest>
+      <hasGenders>false</hasGenders>
+      <foodType>None</foodType>
+      <lifeExpectancy>2500</lifeExpectancy>
+      <bloodDef>Filth_MachineBits</bloodDef> <!-- Change -->
+	  <thinkTreeMain>MorrowRim_GolemThinkTree</thinkTreeMain>
+	  <thinkTreeConstant>MorrowRim_GolemThinkTreeConstant</thinkTreeConstant>
+	  <intelligence>ToolUser</intelligence>
+	  <lifeStageAges>
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+          <soundCall>Pawn_Mech_Centipede_Call</soundCall>
+        </li>
+      </lifeStageAges>
+      <soundCallIntervalRange>1000~2000</soundCallIntervalRange>
+      <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
+    </race>
+	<recipes>
+	</recipes>
+  </ThingDef>
+
+  <PawnKindDef Name="MorrowRim_BaseGolemKind" Abstract="True">
+    <aiAvoidCover>true</aiAvoidCover>
+    <destroyGearOnDrop>true</destroyGearOnDrop>
+  </PawnKindDef>
+
+  <!-- Root -->
+  
+  <ThingDef ParentName="MorrowRim_BaseGolem">
+    <defName>MorrowRim_GolemRoot</defName>
+    <label>root golem</label>
+    <description>A large cluster of animated roots that have formed around a core. The root golem is the most basic and commonly encountered kind of Telvanni golem. It is relatively simple to craft, though somewhat flammable.\n\nLike all Telvanni golems, the root golem can be upgraded with various cores, improving its capabilities and allowing it to perform jobs. Specially designed blades can also be attached to its right arm, greatly increasing its capabilities in combat.</description>
+    <statBases>
+      <MoveSpeed>3</MoveSpeed>
+      <ArmorRating_Blunt>0.22</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.22</ArmorRating_Sharp>
+	  <ArmorRating_Heat>0.3</ArmorRating_Heat>
+	  <Flammability>1.4</Flammability>
+      <PsychicSensitivity>0.75</PsychicSensitivity>
+    </statBases>
+    <tools> <!-- edit -->
+      <li>
+        <label>left fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>14.2</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>right fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>14.2</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+    </tools>
+    <race>
+      <body>MorrowRim_TelvanniRootGolemBody</body>
+      <baseBodySize>1.4</baseBodySize>
+      <baseHealthScale>2.0</baseHealthScale>
+    </race>
+    <butcherProducts>
+    </butcherProducts>
+  </ThingDef>
+
+  <PawnKindDef ParentName="MorrowRim_BaseGolemKind">
+    <defName>MorrowRim_GolemRoot</defName>
+    <label>root golem</label>
+    <race>MorrowRim_GolemRoot</race>
+    <combatPower>100</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Golem/Telvanni_RootGolem/MorrowRim_RootGolem</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2</drawSize>
+          <shadowData>
+            <volume>(0.6, 0.8, 0.6)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+  
+  <!-- Stone -->
+  
+  <ThingDef ParentName="MorrowRim_BaseGolem">
+    <defName>MorrowRim_GolemStone</defName>
+    <label>metal golem</label>
+    <description>A large mass of metal, sculpted around a core. The metal golem is highly resistant to sharp damage, and can easily crush foes with its fists.\n\nLike all Telvanni golems, the metal golem can be upgraded with various cores, improving its capabilities and allowing it to perform jobs.</description>
+    <statBases>
+      <MoveSpeed>3</MoveSpeed>
+      <ArmorRating_Blunt>0.22</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.22</ArmorRating_Sharp>
+	  <ArmorRating_Heat>0.3</ArmorRating_Heat>
+	  <Flammability>1.4</Flammability>
+      <PsychicSensitivity>0.75</PsychicSensitivity>
+    </statBases>
+    <tools> <!-- edit -->
+      <li>
+        <label>left fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>14.2</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>right fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>14.2</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+    </tools>
+    <race>
+      <body>MorrowRim_TelvanniRootGolemBody</body>
+      <baseBodySize>1.4</baseBodySize>
+      <baseHealthScale>2.0</baseHealthScale>
+    </race>
+    <butcherProducts>
+    </butcherProducts>
+  </ThingDef>
+
+  <PawnKindDef ParentName="MorrowRim_BaseGolemKind">
+    <defName>MorrowRim_GolemStone</defName>
+    <label>metal golem</label>
+    <race>MorrowRim_GolemStone</race>
+    <combatPower>100</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Golem/Telvanni_StoneGolem/MorrowRim_StoneGolem</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2</drawSize>
+          <shadowData>
+            <volume>(0.6, 0.8, 0.6)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+  
+  <!-- Metal -->
+  
+  <ThingDef ParentName="MorrowRim_BaseGolem">
+    <defName>MorrowRim_GolemMetal</defName>
+    <label>metal golem</label>
+    <description>A large mass of metal, sculpted around a core. The metal golem is highly resistant to blunt damage, and can easily slice through foes with its claws.\n\nLike all Telvanni golems, the metal golem can be upgraded with various cores, improving its capabilities and allowing it to perform jobs.</description>
+    <statBases>
+      <MoveSpeed>3</MoveSpeed>
+      <ArmorRating_Blunt>0.22</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.22</ArmorRating_Sharp>
+	  <ArmorRating_Heat>0.3</ArmorRating_Heat>
+	  <Flammability>1.4</Flammability>
+      <PsychicSensitivity>0.75</PsychicSensitivity>
+    </statBases>
+    <tools> <!-- edit -->
+      <li>
+        <label>left fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>14.2</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>right fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>14.2</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+    </tools>
+    <race>
+      <body>MorrowRim_TelvanniRootGolemBody</body>
+      <baseBodySize>1.4</baseBodySize>
+      <baseHealthScale>2.0</baseHealthScale>
+    </race>
+    <butcherProducts>
+    </butcherProducts>
+  </ThingDef>
+
+  <PawnKindDef ParentName="MorrowRim_BaseGolemKind">
+    <defName>MorrowRim_GolemMetal</defName>
+    <label>metal golem</label>
+    <race>MorrowRim_GolemMetal</race>
+    <combatPower>100</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Golem/Telvanni_MetalGolem/MorrowRim_MetalGolem</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2</drawSize>
+          <shadowData>
+            <volume>(0.6, 0.8, 0.6)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+</Defs>

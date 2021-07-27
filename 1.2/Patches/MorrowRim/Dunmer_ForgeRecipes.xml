@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>MorrowRim - Dunmer Race</li>
+    </mods>
+
+    <match Class="PatchOperationSequence">
+
+		<operations>
+
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "MorrowRim_MeleeWeapon_DunmerDagger"]/recipeMaker/recipeUsers</xpath>
+				<value>
+					<li>MorrowRim_TelvanniForge</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "MorrowRim_MeleeWeapon_DunmerMace"]/recipeMaker/recipeUsers</xpath>
+				<value>
+					<li>MorrowRim_TelvanniForge</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "MorrowRim_MeleeWeapon_DunmerAxe"]/recipeMaker/recipeUsers</xpath>
+				<value>
+					<li>MorrowRim_TelvanniForge</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "MorrowRim_MeleeWeapon_DunmerSword"]/recipeMaker/recipeUsers</xpath>
+				<value>
+					<li>MorrowRim_TelvanniForge</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "MorrowRim_MeleeWeapon_DunmerScimitar"]/recipeMaker/recipeUsers</xpath>
+				<value>
+					<li>MorrowRim_TelvanniForge</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "MorrowRim_MeleeWeapon_DunmerWakizashi"]/recipeMaker/recipeUsers</xpath>
+				<value>
+					<li>MorrowRim_TelvanniForge</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "MorrowRim_MeleeWeapon_DunmerSpikedMace"]/recipeMaker/recipeUsers</xpath>
+				<value>
+					<li>MorrowRim_TelvanniForge</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "MorrowRim_MeleeWeapon_DunmerWarhammer"]/recipeMaker/recipeUsers</xpath>
+				<value>
+					<li>MorrowRim_TelvanniForge</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "MorrowRim_MeleeWeapon_DunmerBattleaxe"]/recipeMaker/recipeUsers</xpath>
+				<value>
+					<li>MorrowRim_TelvanniForge</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "MorrowRim_MeleeWeapon_DunmerGreatSword"]/recipeMaker/recipeUsers</xpath>
+				<value>
+					<li>MorrowRim_TelvanniForge</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "MorrowRim_MeleeWeapon_DunmerKatana"]/recipeMaker/recipeUsers</xpath>
+				<value>
+					<li>MorrowRim_TelvanniForge</li>
+				</value>
+			</li>
+			
+			<!-- Throwing -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[@Name = "MorrowRim_BaseWeaponThrowing"]/recipeMaker/recipeUsers</xpath>
+				<value>
+					<li>MorrowRim_TelvanniForge</li>
+				</value>
+			</li>
+
+		</operations>
+    </match>
+  </Operation>
+
+</Patch>

@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Golem">
+		<defName>MorrowRim_GolemForge</defName>
+		<label>golem creation Vol. I</label>
+		<description>Allows the construction of the Golem Forge, a forge capable of creating inactive golem. As well as the creation of root and ogrim root golems.</description>
+		<researchViewX>0.00</researchViewX>
+		<researchViewY>2.0</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Golem">
+		<defName>MorrowRim_GolemFlesh</defName>
+		<label>golem creation Vol. II</label>
+		<description>Allows the creation of flesh golems.</description>
+		<researchViewX>1.00</researchViewX>
+		<researchViewY>2.0</researchViewY>
+		<prerequisites>
+			<li>MorrowRim_GolemForge</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Golem">
+		<defName>MorrowRim_GolemMetal</defName>
+		<label>golem creation Vol. III</label>
+		<description>Allows the creation of stone and metal golems.</description>
+		<researchViewX>2.00</researchViewX>
+		<researchViewY>2.0</researchViewY>
+		<prerequisites>
+			<li>MorrowRim_GolemForge</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	
+	<!-- extra row -->
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Golem">
+		<defName>MorrowRim_GolemBasicCore</defName>
+		<label>golem core creation Vol. I</label>
+		<description>Allows the construction of basic golem cores at the golem forge. These can be installed into golems, providing passive bonuses.\n\nUnlike most cores, these can be installed multiple times, increasing the level of the installed core four additional times.</description>
+		<researchViewX>0.00</researchViewX>
+		<researchViewY>3.0</researchViewY>
+		<prerequisites>
+			<li>MorrowRim_GolemForge</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Golem">
+		<defName>MorrowRim_GolemWorkCore</defName>
+		<label>golem core creation Vol. II</label>
+		<description>Allows the construction of golem work cores at the golem forge. These can be installed into golems, allowing them to perform various jobs.</description>
+		<researchViewX>1.00</researchViewX>
+		<researchViewY>3.0</researchViewY>
+		<prerequisites>
+			<li>MorrowRim_GolemBasicCore</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Golem">
+		<defName>MorrowRim_GolemFocusCore</defName>
+		<label>golem core creation Vol. III</label>
+		<description>Allows the construction of golem focus cores at the golem forge. These can be installed into golems, allowing them to perform various ranged attacks while drafted.</description>
+		<researchViewX>2.00</researchViewX>
+		<researchViewY>3.0</researchViewY>
+		<prerequisites>
+			<li>MorrowRim_GolemBasicCore</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<!-- original row -->
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Advanced">
+		<defName>MorrowRim_GolemAdvanced</defName>
+		<label>advanced golem core creation</label>
+		<description>Allows the creation of golem upgrade cores, as well as the creation of aetherial golem hearts, at the golem forge.\n\nAdditionally, the quality of all newly activated golems is increased by 1 level.</description>
+		<researchViewX>3.00</researchViewX>
+		<researchViewY>2.0</researchViewY>
+		<prerequisites>
+			<li>MorrowRim_GolemFlesh</li>
+			<li>MorrowRim_GolemMetal</li>
+			<li>MorrowRim_GolemWorkCore</li>
+			<li>MorrowRim_GolemFocusCore</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Advanced">
+		<defName>MorrowRim_GolemTeleporter</defName>
+		<label>golem shifter crystal creation</label>
+		<description>Allows the creation of golem shifters and golem shifter cores at the golem forge. These are small crystals that attach to a belt, and allow the user to teleport golems to their location.\n\nGolems must have the golem shifter core installed in order to make them targetable with the shifter crystal.</description>
+		<researchViewX>4.00</researchViewX>
+		<researchViewY>2.0</researchViewY>
+		<prerequisites>
+			<li>MorrowRim_GolemForge</li>
+			<li>MorrowRim_GolemBasicCore</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+</Defs>

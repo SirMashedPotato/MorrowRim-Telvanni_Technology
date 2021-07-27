@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Storm -->
+	
+	<ThingDef ParentName="Telvanni_BaseBeltSentinal">
+		<defName>MorrowRim_SentinalCrystalStorm</defName>
+		<label>storm sentinal crystal</label>
+		<description>A small crystal that attaches to the belt, and can be used to create a sentinal at the target location. Doing so will deplete the crystals energy, which can be recharged using storm salts.</description>
+		<techLevel>Medieval</techLevel>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.CreateAtProperties">
+                <thingToSpawn>MorrowRim_SentinalStorm</thingToSpawn>
+            </li>
+		</modExtensions>
+		<comps>
+		  <li Class="CompProperties_Reloadable">
+			<maxCharges>3</maxCharges>
+			<ammoDef>MorrowRim_VoidSalts</ammoDef>
+			<ammoCountPerCharge>10</ammoCountPerCharge>
+			<baseReloadTicks>60</baseReloadTicks>
+			<soundReload>Standard_Reload</soundReload>
+			<hotKey>Misc4</hotKey>
+			<chargeNoun>sentinal</chargeNoun>
+			<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		  </li>
+		</comps>
+
+		<verbs>
+		  <li>
+		    <verbClass>MorrowRim_Telvanni.Verb_CreateAt</verbClass>
+			<label>create sentinal</label>
+			<violent>false</violent>
+			<hasStandardCommand>true</hasStandardCommand>
+			<targetable>true</targetable>
+			<onlyManualCast>True</onlyManualCast>
+			<range>5.9</range>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+			  <canTargetLocations>true</canTargetLocations>
+			  <canTargetBuildings>false</canTargetBuildings>
+			  <onlyTargetPsychicSensitive>false</onlyTargetPsychicSensitive>
+			  <neverTargetIncapacitated>false</neverTargetIncapacitated>
+			  <canTargetAnimals>false</canTargetAnimals>
+			  <canTargetHumans>false</canTargetHumans>
+			  <canTargetMechs>false</canTargetMechs>
+			</targetParams>
+			<soundCast>PsychicInsanityLanceCast</soundCast>
+		  </li>
+		</verbs>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>MorrowRim_StaffStorm</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_VoidSalts>25</MorrowRim_VoidSalts>
+		</costList>
+		<graphicData>
+		  <color>(146,151,164)</color>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_BaseSentinal">
+		<defName>MorrowRim_SentinalStorm</defName>
+		<label>storm sentinal</label>
+		<description>A small sentinal made of storm energy. It will automatically release its energy at hostile targets, and will disappear once its energy is depleted.</description>
+		<graphicData>
+		  <color>(146,151,164)</color>
+		</graphicData>
+		<statBases>
+		  <ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+		</statBases>
+		<building>
+		  <combatPower>45</combatPower>
+		  <turretGunDef>MorrowRim_SentinalStormFocus</turretGunDef>
+		</building>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_BaseSentinalGun">
+		<defName>MorrowRim_SentinalStormFocus</defName>
+		<graphicData>
+		  <color>(146,151,164)</color>
+		</graphicData>
+		<verbs>
+		  <li>
+			<verbClass>Verb_Shoot</verbClass>
+			<defaultProjectile>Telvanni_ProjectileStormBasic</defaultProjectile>
+			<warmupTime>1</warmupTime>
+			<range>15.9</range>
+			<ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+			<burstShotCount>2</burstShotCount>
+			<soundCast>MorrowRim_Fire_TelvanniStave</soundCast>
+			<soundCastTail>GunTail_Light</soundCastTail>
+			<muzzleFlashScale>9</muzzleFlashScale>
+			<consumeFuelPerShot>1</consumeFuelPerShot>
+		  </li>
+		</verbs>
+	</ThingDef>
+
+</Defs>

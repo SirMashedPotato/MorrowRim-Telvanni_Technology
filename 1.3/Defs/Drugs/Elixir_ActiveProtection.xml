@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="MorrowRim_ElixirBase_Active">
+		<defName>MorrowRim_ElixirActiveProtection</defName>
+		<label>elixir of aetherial protection</label>
+		<description>An elixir prepared by a alchemist, completely nullifies damage taken, though each time this occurs the active elixir is weakened and alchemical toxicity increases.\n\nThe strength of the effect depends on the quality of the elixir, with the elixir being 10% of the maximum duration per quality level, or 100% of the maximum duration for legendary. The effect can be stacked for up to 48 hours.\n\nThe stength of the effect depends on the quality of the elixir, with the strength increasing by 10% per quality level, or 100% for legendary.\nThe strength will decrease by 5%, and alchemical toxicity will increase by 2.5%, every time the ingestor recieves damage.\n\nIngesting this elixir will also increase alchemical toxicity by 2.5%, regardless of quality level.</description>
+		<descriptionHyperlinks>
+			<HediffDef>MorrowRim_ElixirActiveProtection_High</HediffDef>
+		</descriptionHyperlinks>
+		<graphicData>
+		  <color>(156,225,232)</color>
+		</graphicData>
+		<ingestible>
+		  <drugCategory>Medical</drugCategory>
+		  <outcomeDoers>
+			<li Class="MorrowRim_Telvanni.IngestionOutcomeDoer_GiveHediff">
+				<Hediff>MorrowRim_ElixirActiveProtection_High</Hediff>
+			</li>
+		  </outcomeDoers>
+		</ingestible>
+		<comps>
+		</comps>
+		<recipeMaker>
+			<researchPrerequisite>MorrowRim_ElixirAdvanced</researchPrerequisite>
+		</recipeMaker>
+		<costList>
+			<MorrowRim_GraveExtract>3</MorrowRim_GraveExtract>
+			<MorrowRim_PoisonBoltExtract>3</MorrowRim_PoisonBoltExtract>
+			<MorrowRim_AetherialSalts>15</MorrowRim_AetherialSalts>
+		</costList>
+	</ThingDef>
+  
+	<HediffDef ParentName="MorrowRim_ElixirHighActiveBase">
+		<defName>MorrowRim_ElixirActiveProtection_High</defName>
+		<label>elixir of aetherial protection</label>
+		<description>An elixir prepared by a alchemist, completely nullifies damage taken, though each time this occurs the active elixir is weakened and alchemical toxicity increases.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<IncomingDamageFactor>-1</IncomingDamageFactor>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="MorrowRim_Telvanni.HediffCompProperties_ActiveElixir_NegateDamage"/>
+		</comps>
+	</HediffDef>
+
+</Defs>

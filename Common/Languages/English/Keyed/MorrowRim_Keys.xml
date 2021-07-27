@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="XSD_FILE_PATH">
+	
+	<MorrowRim_shedGrowth>Progress until next {0} harvest</MorrowRim_shedGrowth>
+	<MorrowRim_TargetNotAtronach>target must be an atronach</MorrowRim_TargetNotAtronach>
+	<MorrowRim_ObrtainedDepletedHeartStone>{0} didn't destroy the heart stone, though it is now depleted of energy.</MorrowRim_ObrtainedDepletedHeartStone>
+	<MorrowRim_NecromanticResurrection>{0} has been resurrected by {1}.</MorrowRim_NecromanticResurrection>
+	<MorrowRim_GolemCoreApplied>A {0} has been applied to {1}.</MorrowRim_GolemCoreApplied>
+	<MorrowRim_GolemRepaired>{0} has had {1} injuries repaired.</MorrowRim_GolemRepaired>
+	<MorrowRim_GolemNotRepaired>Could not repair injuries for {0}.</MorrowRim_GolemNotRepaired>
+
+	<!-- Designators -->
+	<MorrowRim_DesignatorDestroyGolem>destroy golem</MorrowRim_DesignatorDestroyGolem>
+	<MorrowRim_DesignatorDestroyGolemDesc>destroy a golem by smashing its core</MorrowRim_DesignatorDestroyGolemDesc>
+	<MorrowRim_MessageMustDesignateGolemDestroy>can only destroy owned golems</MorrowRim_MessageMustDesignateGolemDestroy>
+
+	<MorrowRim_DesignatorRepairGolem>repair golem</MorrowRim_DesignatorRepairGolem>
+	<MorrowRim_DesignatorRepairGolemDesc>repair a golem with golem repair crystals</MorrowRim_DesignatorRepairGolemDesc>
+	<MorrowRim_MessageMustDesignateGolemRepair>can only repair owned golems that have at least one repairable wound</MorrowRim_MessageMustDesignateGolemRepair>
+
+</LanguageData>

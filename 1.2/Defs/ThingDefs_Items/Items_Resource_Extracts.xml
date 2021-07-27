@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>MorrowRim_PoisonBoltExtract</defName>
+		<label>bolt extract</label>
+		<description>A paralytic extract, harvested from a bolt vine. Often used as an elixir base, though it may have other uses.</description>
+		<graphicData>
+		  <texPath>Things/Item/Resource/MorrowRim_BoltExtract</texPath>
+		  <graphicClass>Graphic_StackCount</graphicClass>
+		  <drawSize>0.85</drawSize>
+		</graphicData>
+		<stackLimit>75</stackLimit>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<statBases>
+		  <MaxHitPoints>50</MaxHitPoints>
+		  <MarketValue>10</MarketValue>
+		  <Mass>0.02</Mass>
+		  <Flammability>0.0</Flammability>
+		  <DeteriorationRate>1.0</DeteriorationRate>
+		</statBases>
+		<thingCategories>
+		  <li>Manufactured</li>
+		</thingCategories>
+		<tradeTags>
+		  <li>TelvanniCommon</li>
+		</tradeTags>
+	</ThingDef>
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>MorrowRim_NightCapExtract</defName>
+		<label>night extract</label>
+		<description>A potent toxin, harvested from a night pitcher. Often used as an elixir base, though it may have other uses.</description>
+		<graphicData>
+		  <texPath>Things/Item/Resource/MorrowRim_NightExtract</texPath>
+		  <graphicClass>Graphic_StackCount</graphicClass>
+		  <drawSize>0.85</drawSize>
+		</graphicData>
+		<stackLimit>75</stackLimit>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<statBases>
+		  <MaxHitPoints>50</MaxHitPoints>
+		  <MarketValue>14</MarketValue>
+		  <Mass>0.02</Mass>
+		  <Flammability>0.0</Flammability>
+		  <DeteriorationRate>1.0</DeteriorationRate>
+		</statBases>
+		<thingCategories>
+		  <li>Manufactured</li>
+		</thingCategories>
+		<tradeTags>
+		  <li>TelvanniCommon</li>
+		</tradeTags>
+	</ThingDef>
+	
+	<ThingDef ParentName="ResourceBase">
+		<defName>MorrowRim_GraveExtract</defName>
+		<label>grave extract</label>
+		<description>A corrosive extract, harvested from a grave nut. Often used as an elixir base, though it may have other uses.</description>
+		<graphicData>
+		  <texPath>Things/Item/Resource/MorrowRim_GraveExtract</texPath>
+		  <graphicClass>Graphic_StackCount</graphicClass>
+		  <drawSize>0.85</drawSize>
+		</graphicData>
+		<stackLimit>75</stackLimit>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<statBases>
+		  <MaxHitPoints>50</MaxHitPoints>
+		  <MarketValue>10</MarketValue>
+		  <Mass>0.02</Mass>
+		  <Flammability>0.0</Flammability>
+		  <DeteriorationRate>1.0</DeteriorationRate>
+		</statBases>
+		<thingCategories>
+		  <li>Manufactured</li>
+		</thingCategories>
+		<tradeTags>
+		  <li>TelvanniCommon</li>
+		</tradeTags>
+	</ThingDef>
+	
+	<ThingDef ParentName="ResourceBase">
+		<defName>MorrowRim_VampiricExtract</defName>
+		<label>vampiric extract</label>
+		<description>A hemolysing extract, harvested from vampire grass. Often used as an elixir base, though it may have other uses.</description>
+		<graphicData>
+		  <texPath>Things/Item/Resource/MorrowRim_VampiricExtract</texPath>
+		  <graphicClass>Graphic_StackCount</graphicClass>
+		  <drawSize>0.85</drawSize>
+		</graphicData>
+		<stackLimit>75</stackLimit>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<statBases>
+		  <MaxHitPoints>50</MaxHitPoints>
+		  <MarketValue>14</MarketValue>
+		  <Mass>0.02</Mass>
+		  <Flammability>0.0</Flammability>
+		  <DeteriorationRate>1.0</DeteriorationRate>
+		</statBases>
+		<thingCategories>
+		  <li>Manufactured</li>
+		</thingCategories>
+		<tradeTags>
+		  <li>TelvanniCommon</li>
+		</tradeTags>
+	</ThingDef>
+	
+	<ThingDef ParentName="ResourceBase">
+		<defName>MorrowRim_SpectralExtract</defName>
+		<label>spectral extract</label>
+		<description>An ethereal extract, harvested from a spectral anther. Often used as an elixir base, though it may have other uses.</description>
+		<graphicData>
+		  <texPath>Things/Item/Resource/MorrowRim_SpectralExtract</texPath>
+		  <graphicClass>Graphic_StackCount</graphicClass>
+		  <drawSize>0.85</drawSize>
+		</graphicData>
+		<stackLimit>75</stackLimit>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<statBases>
+		  <MaxHitPoints>50</MaxHitPoints>
+		  <MarketValue>10</MarketValue>
+		  <Mass>0.02</Mass>
+		  <Flammability>0.0</Flammability>
+		  <DeteriorationRate>1.0</DeteriorationRate>
+		</statBases>
+		<thingCategories>
+		  <li>Manufactured</li>
+		</thingCategories>
+		<tradeTags>
+		  <li>TelvanniCommon</li>
+		</tradeTags>
+	</ThingDef>
+
+</Defs>

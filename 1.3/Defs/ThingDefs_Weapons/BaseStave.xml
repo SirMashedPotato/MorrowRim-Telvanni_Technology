@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Ranged -->
+	
+	<ThingDef Name="Telvanni_BaseStave_NonCraftable" ParentName="BaseWeapon" Abstract="True">
+		<techLevel>Medieval</techLevel>
+		<soundInteract>MorrowRim_Interact_TelvanniStave</soundInteract>
+		<equippedAngleOffset>-45</equippedAngleOffset>
+		<graphicData>
+		  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<smeltable>true</smeltable>
+		<thingCategories>
+		  <li>WeaponsStaveRanged</li>
+		</thingCategories>
+		<inspectorTabs>
+		  <li>ITab_Art</li>
+		</inspectorTabs>
+		<statBases>
+		  <Mass>1.0</Mass>
+		  <Flammability>0.5</Flammability>
+		</statBases>
+		<tools>
+		  <li>
+			<label>head</label>
+			<capacities>
+			  <li>Blunt</li>
+			</capacities>
+			<power>4</power>
+			<cooldownTime>2</cooldownTime>
+		  </li>
+		  <li>
+			<label>butt</label>
+			<capacities>
+			  <li>Poke</li>
+			</capacities>
+			<power>4</power>
+			<cooldownTime>2</cooldownTime>
+		  </li>
+		</tools>
+		<weaponTags>
+		  <li>TelvanniStave</li>
+		</weaponTags>
+		<comps>
+		  <li Class="CompProperties_BiocodableWeapon"/>
+		  <li>
+			<compClass>CompQuality</compClass>
+		  </li>
+		  <li Class="CompProperties_Art">
+			<nameMaker>NamerArtWeaponMelee</nameMaker>
+			<descriptionMaker>ArtDescription_WeaponMelee</descriptionMaker>
+			<minQualityForArtistic>Excellent</minQualityForArtistic>
+		  </li>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef Name="Telvanni_BaseStave" ParentName="Telvanni_BaseStave_NonCraftable" Abstract="True">
+		<recipeMaker>
+		  <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		  <workSkill>Crafting</workSkill>
+		  <effectWorking>Smith</effectWorking>
+		  <soundWorking>Recipe_Smith</soundWorking>
+		  <recipeUsers>
+			<li>MorrowRim_StaveTable</li>
+		  </recipeUsers>
+		  <unfinishedThingDef>MorrowRim_UnfinishedTelvanniRoots</unfinishedThingDef>
+		  <skillRequirements>
+			<Crafting>4</Crafting>
+			<Intellectual>8</Intellectual>
+		  </skillRequirements>
+		</recipeMaker>
+		<statBases>
+		  <WorkToMake>20000</WorkToMake>
+		</statBases>
+	</ThingDef>
+	  
+	<ThingDef Name="Telvanni_BaseProjectile" Abstract="True">
+		<category>Projectile</category>
+		<tickerType>Normal</tickerType>
+		<altitudeLayer>Projectile</altitudeLayer>
+		<thingClass>Bullet</thingClass>
+		<label>energy stave blast</label>
+		<useHitPoints>False</useHitPoints>
+		<neverMultiSelect>True</neverMultiSelect>
+		<graphicData>
+		  <shaderType>Transparent</shaderType>
+		  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingDef>
+	
+	<!-- Melee -->
+	
+	<ThingDef Name="Telvanni_BaseStaveMelee_NonCraftable" Abstract="True" ParentName="BaseWeapon">
+		<techLevel>Medieval</techLevel>
+		<soundInteract>MorrowRim_Interact_TelvanniStave</soundInteract>
+		<equippedAngleOffset>0</equippedAngleOffset>
+		<graphicData>
+		  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<thingCategories>
+		  <li>WeaponsStaveMelee</li>
+		</thingCategories>
+		<statBases>
+		  <Mass>1.4</Mass>
+		</statBases>
+		<inspectorTabs>
+		  <li>ITab_Art</li>
+		</inspectorTabs>
+		<weaponTags>
+		  <li>TelvanniStave_Melee</li>
+		</weaponTags>
+		<comps>
+		  <li Class="CompProperties_BiocodableWeapon"/>
+		  <li>
+			<compClass>CompQuality</compClass>
+		  </li>
+		  <li Class="CompProperties_Art">
+			<nameMaker>NamerArtWeaponMelee</nameMaker>
+			<descriptionMaker>ArtDescription_WeaponMelee</descriptionMaker>
+			<minQualityForArtistic>Excellent</minQualityForArtistic>
+		  </li>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef Name="Telvanni_BaseStaveMelee" Abstract="True" ParentName="Telvanni_BaseStaveMelee_NonCraftable">
+
+		<recipeMaker>
+		  <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		  <workSkill>Crafting</workSkill>
+		  <effectWorking>Smith</effectWorking>
+		  <soundWorking>Recipe_Smith</soundWorking>
+		  <recipeUsers>
+			<li>MorrowRim_StaveTable</li>
+		  </recipeUsers>
+		  <unfinishedThingDef>MorrowRim_UnfinishedTelvanniRoots</unfinishedThingDef>
+		  <skillRequirements>
+			<Crafting>8</Crafting>
+			<Intellectual>12</Intellectual>
+		  </skillRequirements>
+		</recipeMaker>
+		<statBases>
+		  <WorkToMake>20000</WorkToMake>
+		</statBases>
+	</ThingDef>
+	
+</Defs>

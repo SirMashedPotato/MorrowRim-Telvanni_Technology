@@ -1,0 +1,1072 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>SeedsPlease</li>
+    </mods>
+
+    <match Class="PatchOperationSequence">
+
+		<operations>
+		
+			<!-- Bases and such -->
+			
+			<li Class="PatchOperationAdd">
+					<xpath>Defs</xpath>
+					<value>
+				
+						<SeedsPlease.SeedDef ParentName="SeedBase" Name="Seed_TelvanniBase" Abstract="True">
+							<tradeTags>
+							  <li>TelvanniSeed</li>
+							</tradeTags>
+						</SeedsPlease.SeedDef>
+						
+						<ResearchProjectDef ParentName="BaseTelvanniResearch_Plant">
+							<defName>MorrowRim_TelvanniSeedsCreation</defName>
+							<label>Telvanni seed creation</label>
+							<description>Allows the creation of Telvanni seeds from salts at the Telvanni forge, a process that requires an intellectual mind.</description>
+							<researchViewX>4.00</researchViewX>
+							<researchViewY>0.0</researchViewY>
+							<prerequisites>
+								<li>MorrowRim_TelvanniForge</li>
+							</prerequisites>
+						</ResearchProjectDef>
+						
+						<ResearchProjectDef ParentName="BaseTelvanniResearch_Plant">
+							<defName>MorrowRim_TelvanniSeedsConversion</defName>
+							<label>Telvanni seed conversion</label>
+							<description>Allows breaking down Telvanni seeds into their respective salt or extract, at the Telvanni forge.</description>
+							<researchViewX>5.00</researchViewX>
+							<researchViewY>0.0</researchViewY>
+							<prerequisites>
+								<li>MorrowRim_TelvanniSeedsCreation</li>
+							</prerequisites>
+						</ResearchProjectDef>
+
+						<RecipeDef ParentName="ExtractSeed" Name="MorrowRim_CreateSeedBase" Abstract="True">
+							<workSkill>Intellectual</workSkill>
+							<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+							<researchPrerequisite>MorrowRim_TelvanniSeedsCreation</researchPrerequisite>
+							<skillRequirements>
+								<Intellectual>6</Intellectual>
+							</skillRequirements>
+							<recipeUsers Inherit="False">
+							  <li>MorrowRim_TelvanniForge</li>
+							</recipeUsers>
+						</RecipeDef>
+						
+						<RecipeDef Name="MorrowRim_ConvertSeedBase" Abstract="True">
+							<jobString>Converting seeds.</jobString>
+							<effectWorking>Cremate</effectWorking>
+							<soundWorking>Recipe_Cremate</soundWorking>
+							<workAmount>500</workAmount>
+							<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+							<recipeUsers>
+								<li>MorrowRim_TelvanniForge</li>
+							</recipeUsers>
+							<workSkill>Crafting</workSkill>
+							<researchPrerequisite>MorrowRim_TelvanniSeedsConversion</researchPrerequisite>
+							<skillRequirements>
+							  <Intellectual>6</Intellectual>
+							</skillRequirements>
+						</RecipeDef>
+					
+					</value>
+			</li>
+		
+			<!-- seed defs -->
+			
+			<li Class="PatchOperationAdd">
+					<xpath>Defs</xpath>
+					<value>
+					
+						<!-- Salts -->
+					
+						<SeedsPlease.SeedDef ParentName="SeedBase">
+							<defName>Seed_Telvanni_AshCap</defName>
+							<label>ash cap spores</label>
+							<sources>
+								<li>Telvanni_AshCap</li>
+							</sources>
+							<graphicData><texPath>Things/Item/Seeds/Telvanni_AshCap</texPath></graphicData>
+						</SeedsPlease.SeedDef>
+						
+						<SeedsPlease.SeedDef ParentName="SeedBase">
+							<defName>Seed_Telvanni_FirePetal</defName>
+							<label>fire petal seeds</label>
+							<sources>
+								<li>Telvanni_FirePetal</li>
+							</sources>
+							<graphicData><texPath>Things/Item/Seeds/Telvanni_FirePetal</texPath></graphicData>
+						</SeedsPlease.SeedDef>
+						
+						<SeedsPlease.SeedDef ParentName="SeedBase">
+							<defName>Seed_Telvanni_FrostLeaf</defName>
+							<label>frost leaf seeds</label>
+							<sources>
+								<li>Telvanni_FrostLeaf</li>
+							</sources>
+							<graphicData><texPath>Things/Item/Seeds/Telvanni_FrostLeaf</texPath></graphicData>
+						</SeedsPlease.SeedDef>
+						
+						<SeedsPlease.SeedDef ParentName="SeedBase">
+							<defName>Seed_Telvanni_VoidBloom</defName>
+							<label>void bloom seeds</label>
+							<sources>
+								<li>Telvanni_VoidBloom</li>
+							</sources>
+							<graphicData><texPath>Things/Item/Seeds/Telvanni_VoidBloom</texPath></graphicData>
+						</SeedsPlease.SeedDef>
+						
+						<SeedsPlease.SeedDef ParentName="SeedBase">
+							<defName>Seed_Telvanni_WindBulb</defName>
+							<label>wind bulb seeds</label>
+							<sources>
+								<li>Telvanni_WindBulb</li>
+							</sources>
+							<graphicData><texPath>Things/Item/Seeds/Telvanni_WindBulb</texPath></graphicData>
+						</SeedsPlease.SeedDef>
+						
+						<SeedsPlease.SeedDef ParentName="SeedBase">
+							<defName>Seed_Telvanni_StoneAnther</defName>
+							<label>stone anther seeds</label>
+							<sources>
+								<li>Telvanni_StoneAnther</li>
+							</sources>
+							<graphicData><texPath>Things/Item/Seeds/Telvanni_StoneAnther</texPath></graphicData>
+						</SeedsPlease.SeedDef>
+						
+						<SeedsPlease.SeedDef ParentName="SeedBase">
+							<defName>Seed_Telvanni_WaterRoot</defName>
+							<label>water root seeds</label>
+							<sources>
+								<li>Telvanni_WaterRoot</li>
+							</sources>
+							<graphicData><texPath>Things/Item/Seeds/Telvanni_WaterRoot</texPath></graphicData>
+						</SeedsPlease.SeedDef>
+						
+						<!-- Extracts -->
+						
+						<SeedsPlease.SeedDef ParentName="SeedBase">
+							<defName>Seed_Telvanni_GraveNut</defName>
+							<label>grave nut seeds</label>
+							<sources>
+								<li>Telvanni_GraveNut</li>
+							</sources>
+							<graphicData><texPath>Things/Item/Seeds/Telvanni_GraveNut</texPath></graphicData>
+						</SeedsPlease.SeedDef>
+						
+						<SeedsPlease.SeedDef ParentName="SeedBase">
+							<defName>Seed_Telvanni_VampireGrass</defName>
+							<label>vampire grass seeds</label>
+							<sources>
+								<li>Telvanni_VampireGrass</li>
+							</sources>
+							<graphicData><texPath>Things/Item/Seeds/Telvanni_VampireGrass</texPath></graphicData>
+						</SeedsPlease.SeedDef>
+						
+						<SeedsPlease.SeedDef ParentName="SeedBase">
+							<defName>Seed_Telvanni_SpectralBell</defName>
+							<label>spectre bell seeds</label>
+							<sources>
+								<li>Telvanni_SpectralBell</li>
+							</sources>
+							<graphicData><texPath>Things/Item/Seeds/Telvanni_SpectralBell</texPath></graphicData>
+						</SeedsPlease.SeedDef>
+						
+						<SeedsPlease.SeedDef ParentName="SeedBase">
+							<defName>Seed_Telvanni_NightPitcher</defName>
+							<label>night pitcher seeds</label>
+							<sources>
+								<li>Telvanni_NightPitcher</li>
+							</sources>
+							<graphicData><texPath>Things/Item/Seeds/Telvanni_NightPitcher</texPath></graphicData>
+						</SeedsPlease.SeedDef>
+						
+						<SeedsPlease.SeedDef ParentName="SeedBase">
+							<defName>Seed_Telvanni_BoltVine</defName>
+							<label>bolt vine seeds</label>
+							<sources>
+								<li>Telvanni_BoltVine</li>
+							</sources>
+							<graphicData><texPath>Things/Item/Seeds/Telvanni_BoltVine</texPath></graphicData>
+						</SeedsPlease.SeedDef>
+						
+						<!-- Exotics -->
+						
+						<SeedsPlease.SeedDef ParentName="SeedBase">
+							<defName>Seed_Telvanni_AetherVeil</defName>
+							<label>aether veil spores</label>
+							<sources>
+								<li>Telvanni_AetherVeil</li>
+							</sources>
+							<graphicData><texPath>Things/Item/Seeds/Telvanni_AetherVeil</texPath></graphicData>
+						</SeedsPlease.SeedDef>
+						
+						<SeedsPlease.SeedDef ParentName="SeedBase">
+							<defName>Seed_Telvanni_DopplerSpore</defName>
+							<label>doppler spore spores</label>
+							<sources>
+								<li>Telvanni_DopplerSpore</li>
+							</sources>
+							<graphicData><texPath>Things/Item/Seeds/Telvanni_DopplerSpore</texPath></graphicData>
+						</SeedsPlease.SeedDef>
+						
+						<SeedsPlease.SeedDef ParentName="SeedBase">
+							<defName>Seed_Telvanni_HeartRose</defName>
+							<label>heart rose seeds</label>
+							<sources>
+								<li>Telvanni_HeartRose</li>
+							</sources>
+							<graphicData><texPath>Things/Item/Seeds/Telvanni_HeartRose</texPath></graphicData>
+						</SeedsPlease.SeedDef>
+						
+						<!-- Resource -->
+						
+						<SeedsPlease.SeedDef ParentName="SeedBase">
+							<defName>Seed_Telvanni_ScuttleFleshParasol</defName>
+							<label>scuttle-flesh spores</label>
+							<sources>
+								<li>Telvanni_ScuttleFleshParasol</li>
+							</sources>
+							<graphicData><texPath>Things/Item/Seeds/Telvanni_ScuttleFleshParasol</texPath></graphicData>
+						</SeedsPlease.SeedDef>
+						
+						<SeedsPlease.SeedDef ParentName="SeedBase">
+							<defName>Seed_Telvanni_OgrimWoodParasol</defName>
+							<label>ogrim-wood spores</label>
+							<sources>
+								<li>Telvanni_OgrimWoodParasol</li>
+							</sources>
+							<graphicData><texPath>Things/Item/Seeds/Telvanni_OgrimWoodParasol</texPath></graphicData>
+						</SeedsPlease.SeedDef>
+						
+						<SeedsPlease.SeedDef ParentName="SeedBase">
+							<defName>Seed_Telvanni_MendingMossParasol</defName>
+							<label>mending-moss spores</label>
+							<sources>
+								<li>Telvanni_MendingMossParasol</li>
+							</sources>
+							<graphicData><texPath>Things/Item/Seeds/Telvanni_MendingMossParasol</texPath></graphicData>
+						</SeedsPlease.SeedDef>
+
+				</value>
+			</li>
+			
+			<!-- recipe defs -->
+			
+			<li Class="PatchOperationAdd">
+					<xpath>Defs</xpath>
+					<value>
+						
+						<!-- Salts -->
+						
+						<RecipeDef ParentName="MorrowRim_CreateSeedBase">
+							<defName>MorrowRim_CreateSeed_AshCap</defName>
+							<label>create ash cap spores</label>
+							<description>Create spores from ash salts.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>Dagoth_AshSalts</li>
+								  </thingDefs>
+								</filter>
+								<count>10</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>Dagoth_AshSalts</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <Seed_Telvanni_AshCap>5</Seed_Telvanni_AshCap>
+							</products>
+						</RecipeDef>
+						
+						<RecipeDef ParentName="MorrowRim_CreateSeedBase">
+							<defName>MorrowRim_CreateSeed_FirePetal</defName>
+							<label>create fire petal seeds</label>
+							<description>Create seeds from fire salts.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>MorrowRim_FireSalts</li>
+								  </thingDefs>
+								</filter>
+								<count>10</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>MorrowRim_FireSalts</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <Seed_Telvanni_FirePetal>5</Seed_Telvanni_FirePetal>
+							</products>
+						</RecipeDef>
+						
+						<RecipeDef ParentName="MorrowRim_CreateSeedBase">
+							<defName>MorrowRim_CreateSeed_FrostLeaf</defName>
+							<label>create frost leaf seeds</label>
+							<description>Create seeds from frost salts.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>MorrowRim_FrostSalts</li>
+								  </thingDefs>
+								</filter>
+								<count>10</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>MorrowRim_FrostSalts</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <Seed_Telvanni_FrostLeaf>5</Seed_Telvanni_FrostLeaf>
+							</products>
+						</RecipeDef>
+						
+						<RecipeDef ParentName="MorrowRim_CreateSeedBase">
+							<defName>MorrowRim_CreateSeed_VoidBloom</defName>
+							<label>create void bloom seeds</label>
+							<description>Create seeds from void salts.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>MorrowRim_VoidSalts</li>
+								  </thingDefs>
+								</filter>
+								<count>10</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>MorrowRim_VoidSalts</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <Seed_Telvanni_VoidBloom>5</Seed_Telvanni_VoidBloom>
+							</products>
+						</RecipeDef>
+						
+						<RecipeDef ParentName="MorrowRim_CreateSeedBase">
+							<defName>MorrowRim_CreateSeed_WindBulb</defName>
+							<label>create wind bulb seeds</label>
+							<description>Create seeds from air salts.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>MorrowRim_AirSalts</li>
+								  </thingDefs>
+								</filter>
+								<count>10</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>MorrowRim_AirSalts</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <Seed_Telvanni_WindBulb>5</Seed_Telvanni_WindBulb>
+							</products>
+						</RecipeDef>
+						
+						<RecipeDef ParentName="MorrowRim_CreateSeedBase">
+							<defName>MorrowRim_CreateSeed_StoneAnther</defName>
+							<label>create stone anther seeds</label>
+							<description>Create seeds from ferrous salts.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>MorrowRim_FerrousSalts</li>
+								  </thingDefs>
+								</filter>
+								<count>10</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>MorrowRim_FerrousSalts</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <Seed_Telvanni_StoneAnther>5</Seed_Telvanni_StoneAnther>
+							</products>
+						</RecipeDef>
+						
+						<RecipeDef ParentName="MorrowRim_CreateSeedBase">
+							<defName>MorrowRim_CreateSeed_WaterRoot</defName>
+							<label>create water root seeds</label>
+							<description>Create seeds from water salts.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>MorrowRim_WaterSalts</li>
+								  </thingDefs>
+								</filter>
+								<count>10</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>MorrowRim_WaterSalts</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <Seed_Telvanni_WaterRoot>5</Seed_Telvanni_WaterRoot>
+							</products>
+						</RecipeDef>
+
+						<!-- Extracts -->
+						
+						<RecipeDef ParentName="ExtractSeed">
+							<defName>MorrowRim_ExtractSeed_GraveNut</defName>
+							<label>extract grave nut seeds</label>
+							<description>Extract seeds from grave extract.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>MorrowRim_GraveExtract</li>
+								  </thingDefs>
+								</filter>
+								<count>5</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>MorrowRim_GraveExtract</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <Seed_Telvanni_GraveNut>5</Seed_Telvanni_GraveNut>
+							</products>
+							<researchPrerequisite>MorrowRim_TelvanniSowingExtracts</researchPrerequisite>
+						</RecipeDef>
+						
+						<RecipeDef ParentName="ExtractSeed">
+							<defName>MorrowRim_ExtractSeed_VampireGrass</defName>
+							<label>extract vampire grass seeds</label>
+							<description>Extract seeds from vampiric extract.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>MorrowRim_VampiricExtract</li>
+								  </thingDefs>
+								</filter>
+								<count>5</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>MorrowRim_VampiricExtract</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <Seed_Telvanni_VampireGrass>5</Seed_Telvanni_VampireGrass>
+							</products>
+							<researchPrerequisite>MorrowRim_TelvanniSowingExtracts</researchPrerequisite>
+						</RecipeDef>
+						
+						<RecipeDef ParentName="ExtractSeed">
+							<defName>MorrowRim_ExtractSeed_SpectralBell</defName>
+							<label>extract spectre bell seeds</label>
+							<description>Extract seeds from spectral extract.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>MorrowRim_SpectralExtract</li>
+								  </thingDefs>
+								</filter>
+								<count>5</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>MorrowRim_SpectralExtract</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <Seed_Telvanni_SpectralBell>5</Seed_Telvanni_SpectralBell>
+							</products>
+							<researchPrerequisite>MorrowRim_TelvanniSowingExtracts</researchPrerequisite>
+						</RecipeDef>
+						
+						<RecipeDef ParentName="ExtractSeed">
+							<defName>MorrowRim_ExtractSeed_NightPitcher</defName>
+							<label>extract night pitcher seeds</label>
+							<description>Extract seeds from night extract.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>MorrowRim_NightCapExtract</li>
+								  </thingDefs>
+								</filter>
+								<count>5</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>MorrowRim_NightCapExtract</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <Seed_Telvanni_NightPitcher>5</Seed_Telvanni_NightPitcher>
+							</products>
+							<researchPrerequisite>MorrowRim_TelvanniSowingExtracts</researchPrerequisite>
+						</RecipeDef>
+						
+						<RecipeDef ParentName="ExtractSeed">
+							<defName>MorrowRim_ExtractSeed_BoltVine</defName>
+							<label>extract bolt vine seeds</label>
+							<description>Extract seeds from bolt extract.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>MorrowRim_PoisonBoltExtract</li>
+								  </thingDefs>
+								</filter>
+								<count>5</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>MorrowRim_PoisonBoltExtract</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <Seed_Telvanni_BoltVine>5</Seed_Telvanni_BoltVine>
+							</products>
+							<researchPrerequisite>MorrowRim_TelvanniSowingExtracts</researchPrerequisite>
+						</RecipeDef>
+						
+						<!-- Exotics -->
+						
+						<RecipeDef ParentName="MorrowRim_CreateSeedBase">
+							<defName>MorrowRim_CreateSeed_AetherVeil</defName>
+							<label>create aether veil spores</label>
+							<description>Create seeds from aetherial salts.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>MorrowRim_AetherialSalts</li>
+								  </thingDefs>
+								</filter>
+								<count>10</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>MorrowRim_AetherialSalts</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <Seed_Telvanni_AetherVeil>5</Seed_Telvanni_AetherVeil>
+							</products>
+						</RecipeDef>
+						
+						<RecipeDef ParentName="ExtractSeed">
+							<defName>MorrowRim_ExtractSeed_DopplerSpore</defName>
+							<label>extract doppler spore spores</label>
+							<description>Extract spores from potent doppler spores.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>MorrowRim_DopplerSpores</li>
+								  </thingDefs>
+								</filter>
+								<count>5</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>MorrowRim_DopplerSpores</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <Seed_Telvanni_DopplerSpore>5</Seed_Telvanni_DopplerSpore>
+							</products>
+							<researchPrerequisite>MorrowRim_TelvanniSowingExotic</researchPrerequisite>
+						</RecipeDef>
+						
+						<RecipeDef ParentName="MorrowRim_CreateSeedBase">
+							<defName>MorrowRim_CreateSeed_HeartRose</defName>
+							<label>create heart rose seeds</label>
+							<description>Create seeds from ash, ferrous and fire salts.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>Dagoth_AshSalts</li>
+								  </thingDefs>
+								</filter>
+								<count>5</count>
+							  </li>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>MorrowRim_FerrousSalts</li>
+								  </thingDefs>
+								</filter>
+								<count>5</count>
+							  </li>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>MorrowRim_FireSalts</li>
+								  </thingDefs>
+								</filter>
+								<count>5</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>MorrowRim_AetherialSalts</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <Seed_Telvanni_HeartRose>5</Seed_Telvanni_HeartRose>
+							</products>
+						</RecipeDef>
+						
+						<!-- Resource -->
+						
+						<RecipeDef ParentName="ExtractSeed">
+							<defName>MorrowRim_ExtractSeed_ScuttleFleshParasol</defName>
+							<label>extract scuttle-flesh spores</label>
+							<description>Extract spores from raw scuttle-flesh fungus.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>MorrowRim_RawScuttleFleshFungus</li>
+								  </thingDefs>
+								</filter>
+								<count>10</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>MorrowRim_RawScuttleFleshFungus</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <Seed_Telvanni_ScuttleFleshParasol>5</Seed_Telvanni_ScuttleFleshParasol>
+							</products>
+							<researchPrerequisite>MorrowRim_TelvanniSowingResource</researchPrerequisite>
+						</RecipeDef>
+						
+						<RecipeDef ParentName="ExtractSeed">
+							<defName>MorrowRim_ExtractSeed_OgrimWoodParasol</defName>
+							<label>extract ogrim-wood spores</label>
+							<description>Extract spores from ogrim-wood logs.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>MorrowRim_OgrimWoodLog</li>
+								  </thingDefs>
+								</filter>
+								<count>10</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>MorrowRim_OgrimWoodLog</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <Seed_Telvanni_OgrimWoodParasol>5</Seed_Telvanni_OgrimWoodParasol>
+							</products>
+							<researchPrerequisite>MorrowRim_TelvanniSowingResource</researchPrerequisite>
+						</RecipeDef>
+						
+						<RecipeDef ParentName="ExtractSeed">
+							<defName>MorrowRim_ExtractSeed_MendingMossParasol</defName>
+							<label>extract mending-moss spores</label>
+							<description>Extract spores from mending-moss medicine.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>MorrowRim_MedicineMending</li>
+								  </thingDefs>
+								</filter>
+								<count>5</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>MorrowRim_MedicineMending</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <Seed_Telvanni_MendingMossParasol>5</Seed_Telvanni_MendingMossParasol>
+							</products>
+							<researchPrerequisite>MorrowRim_TelvanniSowingResource</researchPrerequisite>
+						</RecipeDef>
+
+				</value>
+			</li>
+			
+			<!-- Conversion recipes -->
+			
+			<li Class="PatchOperationAdd">
+					<xpath>Defs</xpath>
+					<value>
+						
+						<!-- Salts -->
+						
+						<RecipeDef ParentName="MorrowRim_ConvertSeedBase">
+							<defName>MorrowRim_ConvertSeed_AshCap</defName>
+							<label>convert ash cap spores</label>
+							<description>Convert spores into ash salts.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>Seed_Telvanni_AshCap</li>
+								  </thingDefs>
+								</filter>
+								<count>5</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>Seed_Telvanni_AshCap</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <Dagoth_AshSalts>10</Dagoth_AshSalts>
+							</products>
+						</RecipeDef>
+						
+						<RecipeDef ParentName="MorrowRim_ConvertSeedBase">
+							<defName>MorrowRim_ConvertSeed_FirePetal</defName>
+							<label>convert fire petal seeds</label>
+							<description>Convert seeds into fire salts.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>Seed_Telvanni_FirePetal</li>
+								  </thingDefs>
+								</filter>
+								<count>5</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>Seed_Telvanni_FirePetal</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <MorrowRim_FireSalts>10</MorrowRim_FireSalts>
+							</products>
+						</RecipeDef>
+						
+						<RecipeDef ParentName="MorrowRim_ConvertSeedBase">
+							<defName>MorrowRim_ConvertSeed_FrostLeaf</defName>
+							<label>convert frost leaf seeds</label>
+							<description>Convert seeds into frost salts.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>Seed_Telvanni_FrostLeaf</li>
+								  </thingDefs>
+								</filter>
+								<count>5</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>Seed_Telvanni_FrostLeaf</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <MorrowRim_FrostSalts>10</MorrowRim_FrostSalts>
+							</products>
+						</RecipeDef>
+						
+						<RecipeDef ParentName="MorrowRim_ConvertSeedBase">
+							<defName>MorrowRim_ConvertSeed_VoidBloom</defName>
+							<label>convert void bloom seeds</label>
+							<description>Convert seeds into void salts.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>Seed_Telvanni_VoidBloom</li>
+								  </thingDefs>
+								</filter>
+								<count>5</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>Seed_Telvanni_VoidBloom</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <MorrowRim_VoidSalts>10</MorrowRim_VoidSalts>
+							</products>
+						</RecipeDef>
+						
+						<RecipeDef ParentName="MorrowRim_ConvertSeedBase">
+							<defName>MorrowRim_ConvertSeed_WindBulb</defName>
+							<label>convert wind bulb seeds</label>
+							<description>Convert seeds into air salts.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>Seed_Telvanni_WindBulb</li>
+								  </thingDefs>
+								</filter>
+								<count>5</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>Seed_Telvanni_WindBulb</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <MorrowRim_AirSalts>10</MorrowRim_AirSalts>
+							</products>
+						</RecipeDef>
+						
+						<RecipeDef ParentName="MorrowRim_ConvertSeedBase">
+							<defName>MorrowRim_ConvertSeed_StoneAnther</defName>
+							<label>convert stone anther seeds</label>
+							<description>Convert seeds into ferrous salts.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>Seed_Telvanni_StoneAnther</li>
+								  </thingDefs>
+								</filter>
+								<count>5</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>Seed_Telvanni_StoneAnther</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <MorrowRim_FerrousSalts>10</MorrowRim_FerrousSalts>
+							</products>
+						</RecipeDef>
+						
+						<RecipeDef ParentName="MorrowRim_ConvertSeedBase">
+							<defName>MorrowRim_ConvertSeed_WaterRoot</defName>
+							<label>convert water root seeds</label>
+							<description>Convert seeds into water salts.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>Seed_Telvanni_WaterRoot</li>
+								  </thingDefs>
+								</filter>
+								<count>5</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>Seed_Telvanni_WaterRoot</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <MorrowRim_WaterSalts>10</MorrowRim_WaterSalts>
+							</products>
+						</RecipeDef>
+
+						<!-- Extracts -->
+						
+						<RecipeDef ParentName="MorrowRim_ConvertSeedBase">
+							<defName>MorrowRim_ConvertSeed_GraveNut</defName>
+							<label>convert grave nut seeds</label>
+							<description>Convert seeds into grave extract.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>Seed_Telvanni_GraveNut</li>
+								  </thingDefs>
+								</filter>
+								<count>5</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>Seed_Telvanni_GraveNut</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <MorrowRim_GraveExtract>10</MorrowRim_GraveExtract>
+							</products>
+						</RecipeDef>
+						
+						<RecipeDef ParentName="MorrowRim_ConvertSeedBase">
+							<defName>MorrowRim_ConvertSeed_VampireGrass</defName>
+							<label>convert vampire grass seeds</label>
+							<description>Convert seeds into vampiric extract.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>Seed_Telvanni_VampireGrass</li>
+								  </thingDefs>
+								</filter>
+								<count>5</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>Seed_Telvanni_VampireGrass</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <MorrowRim_VampiricExtract>10</MorrowRim_VampiricExtract>
+							</products>
+						</RecipeDef>
+						
+						<RecipeDef ParentName="MorrowRim_ConvertSeedBase">
+							<defName>MorrowRim_ConvertSeed_SpectralBell</defName>
+							<label>convert spectre bell seeds</label>
+							<description>Convert seeds into spectral extract.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>Seed_Telvanni_SpectralBell</li>
+								  </thingDefs>
+								</filter>
+								<count>5</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>Seed_Telvanni_SpectralBell</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <MorrowRim_SpectralExtract>5</MorrowRim_SpectralExtract>
+							</products>
+						</RecipeDef>
+						
+						<RecipeDef ParentName="MorrowRim_ConvertSeedBase">
+							<defName>MorrowRim_ConvertSeed_NightPitcher</defName>
+							<label>convert night pitcher seeds</label>
+							<description>Convert seeds into night extract.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>Seed_Telvanni_NightPitcher</li>
+								  </thingDefs>
+								</filter>
+								<count>5</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>Seed_Telvanni_NightPitcher</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <MorrowRim_NightCapExtract>10</MorrowRim_NightCapExtract>
+							</products>
+						</RecipeDef>
+						
+						<RecipeDef ParentName="MorrowRim_ConvertSeedBase">
+							<defName>MorrowRim_ConvertSeed_BoltVine</defName>
+							<label>convert bolt vine seeds</label>
+							<description>Convert seeds into bolt extract.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>Seed_Telvanni_BoltVine</li>
+								  </thingDefs>
+								</filter>
+								<count>5</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>Seed_Telvanni_BoltVine</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <MorrowRim_PoisonBoltExtract>10</MorrowRim_PoisonBoltExtract>
+							</products>
+						</RecipeDef>
+						
+						<!-- Exotics -->
+						
+						<RecipeDef ParentName="MorrowRim_ConvertSeedBase">
+							<defName>MorrowRim_ConvertSeed_AetherVeil</defName>
+							<label>convert aether veil spores</label>
+							<description>Convert seeds into aetherial salts.</description>
+							<ingredients>
+							  <li>
+								<filter>
+								  <thingDefs>
+									<li>Seed_Telvanni_AetherVeil</li>
+								  </thingDefs>
+								</filter>
+								<count>5</count>
+							  </li>
+							</ingredients>
+							<fixedIngredientFilter>
+							  <thingDefs>
+								<li>Seed_Telvanni_AetherVeil</li>
+							  </thingDefs>
+							</fixedIngredientFilter>
+							<products>
+							  <MorrowRim_AetherialSalts>10</MorrowRim_AetherialSalts>
+							</products>
+						</RecipeDef>
+
+				</value>
+			</li>
+			
+			<!-- Doppler spores fix -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="MorrowRim_DopplerSpores"]/label</xpath>
+				<value>
+					<label>potent doppler spores</label>
+				</value>
+			</li>
+
+		</operations>
+
+    </match>
+  </Operation>
+
+</Patch>

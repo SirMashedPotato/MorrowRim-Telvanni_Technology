@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- base -->
+	
+	<ThingDef ParentName="ResourceBase" Name="MorrowRim_PulserBase" Abstract="True">
+		<thingClass>ThingWithComps</thingClass>
+		<techLevel>Medieval</techLevel>
+		<thingCategories>
+		  <li>Artifacts</li>
+		</thingCategories>
+		<tradeTags>
+		  <li>TelvanniExotic</li>
+		</tradeTags>
+		<graphicData>
+			<texPath>Things/Item/Special/MorrowRim_Pulser</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<!--<shaderType>CutoutComplex</shaderType>-->
+		</graphicData>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<stackLimit>1</stackLimit>
+		<tradeNeverStack>true</tradeNeverStack>
+		<statBases>
+		  <Mass>0.5</Mass>
+		  <MarketValue>500</MarketValue>
+		  <MaxHitPoints>100</MaxHitPoints>
+		</statBases>
+		<drawGUIOverlay>false</drawGUIOverlay>
+		<comps>
+		  <li Class="CompProperties_Usable">
+			<useJob>UseArtifact</useJob>
+			<useLabel>Activate</useLabel>
+		  </li>
+		  <li Class="CompProperties_UseEffect">
+			<compClass>CompUseEffect_DestroySelf</compClass>
+		  </li>
+		</comps>
+	</ThingDef>
+
+	<!-- Weather -->
+	
+	<ThingDef ParentName="MorrowRim_PulserBase">
+		<defName>MorrowRim_PulserFire</defName>
+		<label>weather pulser - fire</label>
+		<description>A one-use weather pulser. It will instantly change the weather upon activation, resulting in nothing but clear skies.</description>
+		<graphicData>
+			<color>(238,139,96)</color>
+		</graphicData>
+
+		<comps>
+		  <li Class="MorrowRim_Telvanni.CompProperties_UseEffect_WeatherPulser">
+			<weatherDef>Clear</weatherDef>
+			<addHediff>MorrowRim_HiddenWeatherChanged</addHediff>
+		  </li>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="MorrowRim_PulserBase">
+		<defName>MorrowRim_PulserFrost</defName>
+		<label>weather pulser - frost</label>
+		<description>A one-use weather pulser. It will instantly change the weather upon activation, resulting in the sudden appearance of snowfall, even in the warmest of places.</description>
+		<graphicData>
+			<color>(222,239,253)</color>
+		</graphicData>
+
+		<comps>
+		  <li Class="MorrowRim_Telvanni.CompProperties_UseEffect_WeatherPulser">
+			<weatherDef>SnowGentle</weatherDef>
+			<addHediff>MorrowRim_HiddenWeatherChanged</addHediff>
+		  </li>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="MorrowRim_PulserBase">
+		<defName>MorrowRim_PulserVoid</defName>
+		<label>weather pulser - void</label>
+		<description>A one-use weather pulser. It will instantly change the weather upon activation, resulting in a rainy thunder storm appearing above the area.</description>
+		<graphicData>
+			<color>(146,151,164)</color>
+		</graphicData>
+
+		<comps>
+		  <li Class="MorrowRim_Telvanni.CompProperties_UseEffect_WeatherPulser">
+			<weatherDef>RainyThunderstorm</weatherDef>
+			<addHediff>MorrowRim_HiddenWeatherChanged</addHediff>
+		  </li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="MorrowRim_PulserBase">
+		<defName>MorrowRim_PulserAir</defName>
+		<label>weather pulser - air</label>
+		<description>A one-use weather pulser. It will instantly change the weather upon activation, resulting in a thick fog blanketing the area.</description>
+		<graphicData>
+			<color>(236,234,221)</color>
+		</graphicData>
+
+		<comps>
+		  <li Class="MorrowRim_Telvanni.CompProperties_UseEffect_WeatherPulser">
+			<weatherDef>Fog</weatherDef>
+			<addHediff>MorrowRim_HiddenWeatherChanged</addHediff>
+		  </li>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="MorrowRim_PulserBase">
+		<defName>MorrowRim_PulserFerrous</defName>
+		<label>weather pulser - ferrous</label>
+		<description>A one-use weather pulser. It will instantly change the weather upon activation, resulting in a dry thunder storm appearing above the area.</description>
+		<graphicData>
+			<color>(181,166,154)</color>
+		</graphicData>
+
+		<comps>
+		  <li Class="MorrowRim_Telvanni.CompProperties_UseEffect_WeatherPulser">
+			<weatherDef>DryThunderstorm</weatherDef>
+			<addHediff>MorrowRim_HiddenWeatherChanged</addHediff>
+		  </li>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="MorrowRim_PulserBase">
+		<defName>MorrowRim_PulserWater</defName>
+		<label>weather pulser - water</label>
+		<description>A one-use weather pulser. It will instantly change the weather upon activation, resulting in heavy rainfall, even in the driest of places.</description>
+		<graphicData>
+			<color>(173,216,252)</color>
+		</graphicData>
+
+		<comps>
+		  <li Class="MorrowRim_Telvanni.CompProperties_UseEffect_WeatherPulser">
+			<weatherDef>Rain</weatherDef>
+			<addHediff>MorrowRim_HiddenWeatherChanged</addHediff>
+		  </li>
+		</comps>
+	</ThingDef>
+
+</Defs>

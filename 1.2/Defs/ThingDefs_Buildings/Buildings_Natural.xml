@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="RockBase">
+    <defName>MorrowRim_MineableHeartStone</defName>
+    <label>heart stone cluster</label>
+    <description>Rock containing a cluster of heart stones.</description>
+    <graphicData>
+      <texPath>Things/Building/Linked/RockFlecked_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <color>(43,29,27)</color>
+      <colorTwo>(102,30,17)</colorTwo>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>1500</MaxHitPoints>
+    </statBases>
+    <building>
+      <isResourceRock>true</isResourceRock>
+      <mineableThing>MorrowRim_HeartStone</mineableThing>
+      <mineableYield>3</mineableYield>
+      <mineableScatterCommonality>0.04</mineableScatterCommonality>
+      <mineableScatterLumpSizeRange>1~3</mineableScatterLumpSizeRange>
+    </building>
+  </ThingDef>
+
+</Defs>

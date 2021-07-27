@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="RoughPlantBase">
+		<defName>MorrowRim_DopplerSpores</defName>
+		<label>doppler spores</label>
+		<description>Spores harvested from a doppler spore mushroom. While they are primarily used to duplicate elixirs at an elixir mixing table, they can also be used in cooking.</description>
+		<graphicData>
+		  <texPath>Things/Item/Resource/MorrowRim_DopplerSpores</texPath>
+		</graphicData>
+		<statBases>
+		  <MarketValue>10</MarketValue>
+		  <Flammability>1.6</Flammability>
+		  <FoodPoisonChanceFixedHuman>0.1</FoodPoisonChanceFixedHuman>
+		  <Nutrition>0.05</Nutrition>
+		</statBases>
+		<comps>
+		  <li Class="CompProperties_Rottable">
+			<daysToRotStart>30</daysToRotStart>
+			<rotDestroys>true</rotDestroys>
+		  </li>
+		</comps>
+		<thingCategories>
+		  <li>PlantMatter</li>
+		</thingCategories>
+		<ingestible>
+		  <foodType>VegetableOrFruit</foodType>
+		  <preferability>DesperateOnly</preferability>
+		</ingestible>
+		<tradeTags Inherit="false">
+		  <li>TelvanniCommon</li>
+		</tradeTags>
+  </ThingDef>
+  
+  <ThingDef ParentName="PlantFoodRawBase">
+		<defName>MorrowRim_RawScuttleFleshFungus</defName>
+		<label>raw scuttle-flesh fungus</label>
+		<description>Raw fungus of harvested from a scuttle-flesh parasol, a breed of giant fungus created by Master Neloth. Highly nutritious and long lasting, just like scuttle.</description>
+		<graphicData>
+		  <texPath>Things/Item/Resource/PlantFoodRaw/MorrowRim_RawScuttleFleshFungus</texPath>
+		</graphicData>
+		<statBases>
+		  <MarketValue>3.4</MarketValue>
+		  <Nutrition>0.08</Nutrition>
+		</statBases>
+		<ingestible>
+		  <foodType>VegetableOrFruit</foodType>
+		</ingestible>
+		<comps>
+		  <li Class="CompProperties_Rottable">
+			<daysToRotStart>120</daysToRotStart>
+			<rotDestroys>true</rotDestroys>
+		  </li>
+		</comps>
+		<tradeTags Inherit="false">
+		  <li>TelvanniCommon</li>
+		</tradeTags>
+	</ThingDef>
+ 
+</Defs>

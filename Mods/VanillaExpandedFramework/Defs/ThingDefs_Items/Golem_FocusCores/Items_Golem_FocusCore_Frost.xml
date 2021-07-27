@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Focus">
+		<defName>MorrowRim_GolemCore_FocusFrost</defName>
+		<label>golem frost focus</label>
+		<description>A golem focus, allows the golem to fire blasts of frost.\n\nOnly one focus can be installed per golem, and replacing one will destroy the currently installed focus in the process.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_FocusFrost</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemFocusAttachment</partToAddTo>
+                <isExclusive>true</isExclusive>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(222,239,253)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>MorrowRim_StaffFrost</li>
+			</researchPrerequisites>
+			<skillRequirements>
+				<Crafting>4</Crafting>
+				<Intellectual>10</Intellectual>
+			</skillRequirements>
+		</recipeMaker>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_FrostSalts>25</MorrowRim_FrostSalts>
+		</costList>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_FocusFrost</defName>
+		<label>frost focus</label>
+		<labelNoun>an frost focus</labelNoun>
+		<description>An installed golem focus, allows the golem to fire blasts of frost.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_FocusFrost</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_FocusFrost</spawnThingOnRemoved>
+		<!-- MVCF -->
+		<comps>
+			<li Class="MVCF.Comps.HediffCompProperties_ExtendedVerbGiver">
+			  <verbs>
+				<li>
+					<label>frost focus</label>
+					<verbClass>Verb_Shoot</verbClass>
+					<hasStandardCommand>true</hasStandardCommand>
+					<defaultProjectile>Telvanni_ProjectileFrostBasic</defaultProjectile>
+					<warmupTime>1.7</warmupTime>
+					<range>36.9</range>
+					<soundCast>MorrowRim_Fire_TelvanniStave</soundCast>
+					<soundCastTail>GunTail_Medium</soundCastTail>
+					<muzzleFlashScale>9</muzzleFlashScale>
+					<burstShotCount>2</burstShotCount>
+					<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+					
+					<commandIcon>Things/Item/Special/MorrowRim_TelvanniGolemFocusCore</commandIcon>
+					<accuracyTouch>0.65</accuracyTouch>
+					<accuracyShort>0.80</accuracyShort>
+					<accuracyMedium>0.90</accuracyMedium>
+					<accuracyLong>0.80</accuracyLong>
+				</li>
+			  </verbs>
+			  <verbProps>
+				<li>
+				  <label>frost focus</label>
+				  <draw>false</draw>
+				  <canBeToggled>true</canBeToggled>
+				  <canFireIndependently>false</canFireIndependently>
+				</li>
+			  </verbProps>
+			</li>
+		</comps>
+	</HediffDef>
+	
+</Defs>

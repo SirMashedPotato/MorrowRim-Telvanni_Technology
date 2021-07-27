@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Salt creation -->
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Alchemy">
+		<defName>MorrowRim_TelvanniSaltMixing</defName>
+		<label>salt mixing</label>
+		<description>Allows the creation of specific types of salt, by mixing together other salts at the Telvanni forge.</description>
+		<researchViewX>0.00</researchViewX>
+		<researchViewY>7.0</researchViewY>
+		
+		<prerequisites>
+			<li>MorrowRim_TelvanniForge</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Alchemy">
+		<defName>MorrowRim_TelvanniSaltPurifying</defName>
+		<label>salt purifying</label>
+		<description>Allows purifying salts using aetherial salts, removing imperfections and increasing their potency, at the Telvanni forge.</description>
+		<researchViewX>1.00</researchViewX>
+		<researchViewY>7.0</researchViewY>
+		
+		<prerequisites>
+			<li>MorrowRim_TelvanniForge</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<!-- Transmutation -->
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Advanced">
+		<defName>MorrowRim_TelvanniTransmuationBasic</defName>
+		<label>basic transmutation</label>
+		<description>Allows using salts to transmute steel, silver and gold, at the Telvanni forge.</description>
+		<researchViewX>2.00</researchViewX>
+		<researchViewY>7.0</researchViewY>
+		
+		<prerequisites>
+			<li>MorrowRim_TelvanniSaltMixing</li>
+			<li>MorrowRim_TelvanniSaltPurifying</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<!-- Misc -->
+		
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Alchemy">
+		<defName>MorrowRim_HeartStoneStudiesI</defName>
+		<label>Heart stone studies Vol. I</label>
+		<description>Allows reigniting depleted heart stones at the Telvanni forge.\n\nAdditionally, the chances of obtaining a depleted heart stone after activating a pulser, or completing unfinished roots, is increased by 5%.</description>
+		<researchViewX>4.00</researchViewX>
+		<researchViewY>7.0</researchViewY>
+		<prerequisites>
+			<li>MorrowRim_TelvanniForge</li>
+		</prerequisites>
+	</ResearchProjectDef>
+		
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Advanced">
+		<defName>MorrowRim_HeartStoneStudiesII</defName>
+		<label>Heart stone studies Vol. II</label>
+		<description>Allows crafting the heart stone implant at the Telvanni forge.\n\nAdditionally, the chances of obtaining a depleted heart stone after activating a pulser, or completing unfinished roots, is increased by 5%.</description>
+		<researchViewX>5.00</researchViewX>
+		<researchViewY>7.0</researchViewY>
+		<prerequisites>
+			<li>MorrowRim_HeartStoneStudiesI</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Elixir">
+		<defName>MorrowRim_ElixirDuplication</defName>
+		<label>elixir duplication</label>
+		<description>Allows duplicating elixirs using dopller spores at the elixir table.\n\nElixirs must be of the same type, but can be of different quality levels. The quality level of the duplicate elixir will match that of the parent.</description>
+		<researchViewX>6.00</researchViewX>
+		<researchViewY>7.0</researchViewY>
+		<prerequisites>
+			<li>MorrowRim_ElixirTable</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+</Defs>

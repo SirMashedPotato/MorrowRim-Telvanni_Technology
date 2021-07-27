@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="Telvanni_Gas_Base">
+		<defName>Telvanni_Gas_StaveAcidic</defName>
+		<thingClass>MorrowRim_Telvanni.Gas_AcidicStave</thingClass>
+		<label>acidic stave gas</label>
+		<graphicData>
+		  <color>(57,192,119,50)</color>
+		</graphicData>
+	</ThingDef>
+
+</Defs>

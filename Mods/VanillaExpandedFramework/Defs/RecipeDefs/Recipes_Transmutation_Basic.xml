@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<RecipeDef ParentName = "MorrowRim_TransmutationBase">
+		<defName>MorrowRim_TransmutationAcidCrystal</defName>
+		<label>transmutate acid crystals</label>
+		<description>Transmutate 15 acid crystals using 5 night extract, 5 grave extract and 10 fire salts.</description>
+		<jobString>Transmutating acid crystals.</jobString>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>MorrowRim_NightCapExtract</li>
+			  </thingDefs>
+			</filter>
+			<count>5</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>MorrowRim_GraveExtract</li>
+			  </thingDefs>
+			</filter>
+			<count>5</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>MorrowRim_FireSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>10</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>MorrowRim_NightCapExtract</li>
+			<li>MorrowRim_GraveExtract</li>
+			<li>MorrowRim_FerrousSalts</li>
+		  </thingDefs>
+		  <categories>
+			<li>StoneBlocks</li>
+		  </categories>
+		</fixedIngredientFilter>
+		<products>
+		  <MorrowRim_AcidicCrystal>15</MorrowRim_AcidicCrystal>
+		</products>
+	</RecipeDef>
+
+</Defs>

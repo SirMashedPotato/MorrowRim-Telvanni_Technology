@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Bases -->
+	
+	<ThingDef Name="TelvanniForgeBase" ParentName="BenchBase" Abstract="True">
+		<thingClass>Building_WorkTable</thingClass>
+		<rotatable>false</rotatable>
+		 <graphicData>
+		  <graphicClass>Graphic_Single</graphicClass>
+		  <drawSize>(3,2)</drawSize>
+		  <shadowData>
+			<volume>(2.9, 0.3, 0.5)</volume>
+			<offset>(0, 0, 0)</offset>
+		  </shadowData>
+		  <damageData>
+			<cornerTL>Damage/Corner</cornerTL>
+			<cornerTR>Damage/Corner</cornerTR>
+			<cornerBL>Damage/Corner</cornerBL>
+			<cornerBR>Damage/Corner</cornerBR>
+		  </damageData>
+		</graphicData>
+		<stuffCategories>
+		  <li>Metallic</li>
+		  <li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>125</costStuffCount>
+		<altitudeLayer>Building</altitudeLayer>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+		  <WorkToBuild>4000</WorkToBuild>
+		  <MaxHitPoints>180</MaxHitPoints>
+		  <Flammability>1.0</Flammability>
+		  <Cleanliness>-5</Cleanliness>
+		</statBases>
+		<size>(3,2)</size>
+		<designationCategory>Production</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<inspectorTabs>
+		  <li>ITab_Bills</li>
+		</inspectorTabs>
+		<building>
+		  <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+		</building>
+		<comps>
+		</comps>
+		<designationHotKey>Misc2</designationHotKey>
+		<placeWorkers>
+		  <li>PlaceWorker_ShowFacilitiesConnections</li>
+		  <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+		</placeWorkers>
+	</ThingDef>
+	
+	<ThingDef Name="TelvanniBenchBase" ParentName="BenchBase" Abstract="True">
+		<thingClass>Building_WorkTable</thingClass>
+		<graphicData>
+		  <graphicClass>Graphic_Multi</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+		  <drawSize>(3.5,1.5)</drawSize>
+		  <shadowData>
+			<volume>(2.9, 0.3, 0.5)</volume>
+			<offset>(0, 0, 0)</offset>
+		  </shadowData>
+		  <damageData>
+			<cornerTL>Damage/Corner</cornerTL>
+			<cornerTR>Damage/Corner</cornerTR>
+			<cornerBL>Damage/Corner</cornerBL>
+			<cornerBR>Damage/Corner</cornerBR>
+		  </damageData>
+		</graphicData>
+		<stuffCategories>
+		  <li>Metallic</li>
+		  <li>Woody</li>
+		  <li>Stony</li>
+		</stuffCategories>
+		<altitudeLayer>Building</altitudeLayer>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+		  <WorkToBuild>2500</WorkToBuild>
+		  <MaxHitPoints>180</MaxHitPoints>
+		  <Flammability>1.0</Flammability>
+		  <Cleanliness>-5</Cleanliness>
+		</statBases>
+		<size>(3,1)</size>
+		<designationCategory>Production</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<inspectorTabs>
+		  <li>ITab_Bills</li>
+		</inspectorTabs>
+		<building>
+		  <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+		</building>
+		<comps>
+		</comps>
+		<designationHotKey>Misc2</designationHotKey>
+		<placeWorkers>
+		  <li>PlaceWorker_ShowFacilitiesConnections</li>
+		  <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+		</placeWorkers>
+	</ThingDef>
+	
+	<!-- Forge -->
+	<!--
+	<ThingDef ParentName="TelvanniForgeBase">
+		<defName>MorrowRim_AtronachForge</defName>
+		<label>atronach forge</label>
+		<description>A Telvanni forge equipped for creating inactive atronach.</description>
+		<graphicData>
+			  <texPath>Things/Building/Production/MorrowRim_AtronachForge</texPath>
+		</graphicData>
+		<researchPrerequisites>
+			<li>MorrowRim_AtronachForge</li>
+		</researchPrerequisites>
+		<costList>
+			<MorrowRim_FireSalts>12</MorrowRim_FireSalts>
+			<MorrowRim_FrostSalts>12</MorrowRim_FrostSalts>
+			<MorrowRim_VoidSalts>12</MorrowRim_VoidSalts>
+		</costList>
+		<recipes>
+			<li>MorrowRim_Recipe_AtronachFire</li>
+			<li>MorrowRim_Recipe_AtronachFrost</li>
+			<li>MorrowRim_Recipe_AtronachStorm</li>
+			<li>MorrowRim_Recipe_AtronachAsh</li>
+			
+		</recipes>
+		<comps>
+		  <li Class="CompProperties_AffectedByFacilities">
+			<linkableFacilities>
+			  <li>MorrowRim_TelvanniTonalResonator</li>
+			</linkableFacilities>
+		  </li>
+		</comps>
+	</ThingDef>
+	-->
+
+	<ThingDef ParentName="TelvanniForgeBase">
+		<defName>MorrowRim_GolemForge</defName>
+		<label>golem forge</label>
+		<description>A Telvanni forge equipped for creating inactive golem.</description>
+		<graphicData>
+			  <texPath>Things/Building/Production/MorrowRim_GolemForge</texPath>
+		</graphicData>
+		<costList>
+			<MorrowRim_AirSalts>12</MorrowRim_AirSalts>
+			<MorrowRim_FerrousSalts>12</MorrowRim_FerrousSalts>
+			<MorrowRim_WaterSalts>12</MorrowRim_WaterSalts>
+		</costList>
+		<recipes>
+
+		</recipes>
+		<researchPrerequisites>
+			<li>MorrowRim_GolemForge</li>
+		</researchPrerequisites>
+		<comps>
+		  <li Class="CompProperties_AffectedByFacilities">
+			<linkableFacilities>
+			  <li>MorrowRim_TelvanniTonalResonator</li>
+			</linkableFacilities>
+		  </li>
+		</comps>
+	</ThingDef>
+	
+	<!-- Forge -->
+	
+	<ThingDef ParentName="TelvanniBenchBase">
+		<defName>MorrowRim_TelvanniForge</defName>
+		<label>telvanni forge</label>
+		<description>A Telvanni forge equipped for creating various items. It is powered by a heart stone, and periodically needs to be refuelled with any kind of elemental salt, other than aetherial.</description>
+		<graphicData>
+			  <texPath>Things/Building/Production/MorrowRim_TableTelvanniForge</texPath>
+		</graphicData>
+		<costStuffCount>75</costStuffCount>
+		<stuffCategories Inherit="False">
+		  <li>Stony</li>
+		</stuffCategories>
+		<costList>
+			<MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+			<Steel>25</Steel>
+		</costList>
+		<researchPrerequisites>
+			<li>MorrowRim_TelvanniForge</li>
+		</researchPrerequisites>
+		<recipes>
+
+		</recipes>
+		<comps>
+		  <li Class="CompProperties_Refuelable">
+			<fuelConsumptionRate>10.0</fuelConsumptionRate>
+			<fuelCapacity>25.0</fuelCapacity>
+			<fuelFilter>
+			  <thingDefs>
+				<li>MorrowRim_FireSalts</li>
+				<li>MorrowRim_FrostSalts</li>
+				<li>MorrowRim_VoidSalts</li>
+				<li>MorrowRim_AirSalts</li>
+				<li>MorrowRim_WaterSalts</li>
+				<li>MorrowRim_FerrousSalts</li>
+				<li>Dagoth_AshSalts</li>
+			  </thingDefs>
+			</fuelFilter>
+			<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+			<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+		  </li>
+		  <li Class="CompProperties_AffectedByFacilities">
+			<linkableFacilities>
+			  <li>MorrowRim_AlchemyBench</li>
+			</linkableFacilities>
+		  </li>
+		</comps>
+	</ThingDef>
+
+	<!-- energy staff -->
+	
+  <ThingDef ParentName="TelvanniBenchBase">
+    <defName>MorrowRim_StaveTable</defName>
+    <label>energy stave table</label>
+    <description>A workbench equipped for creating Telvanni energy staves. Curiously, multiple roots seem to grow out from within.</description>
+    <thingClass>Building_WorkTable</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Production/MorrowRim_TableEnergyStaff</texPath>
+    </graphicData>
+    <costList>
+      <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+    </costList>
+    <costStuffCount>75</costStuffCount>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>MorrowRim_TelvanniTonalResonator</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+	<researchPrerequisites>
+		<li>MorrowRim_StaffTable</li>
+	</researchPrerequisites>
+  </ThingDef>
+  
+  <!-- elixir -->
+  
+  <ThingDef ParentName="TelvanniBenchBase">
+    <defName>MorrowRim_ElixirTable</defName>
+    <label>elixir mixing table</label>
+    <description>A workbench equipped for creating elixirs.</description>
+    <thingClass>Building_WorkTable</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Production/MorrowRim_TableElixirs</texPath>
+    </graphicData>
+    <costStuffCount>75</costStuffCount>
+	<costList>
+		<Steel>50</Steel>
+	</costList>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>MorrowRim_AlchemyBench</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+	<researchPrerequisites>
+		<li>MorrowRim_ElixirTable</li>
+	</researchPrerequisites>
+  </ThingDef>
+	
+</Defs>

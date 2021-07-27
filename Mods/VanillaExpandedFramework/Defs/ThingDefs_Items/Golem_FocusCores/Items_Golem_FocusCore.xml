@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Base -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase" Name="MorrowRim_GolemCoreBase_Focus" Abstract="True">
+		<graphicData>
+		  <texPath>Things/Item/Special/MorrowRim_TelvanniGolemFocusCore</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<comps>
+		  <li Class="CompProperties_Usable">
+			<useJob>UseItem</useJob>
+			<useLabel>Apply golem focus</useLabel>
+			<useDuration>0</useDuration>
+		  </li>
+		  <li Class="CompProperties_Targetable">
+			<compClass>MorrowRim_Telvanni.CompTargetable_Golem</compClass>
+		  </li>
+		  <li>
+			<compClass>MorrowRim_Telvanni.CompTargetEffect_GolemAddCore</compClass>
+		  </li>
+		</comps>
+		<!-- Crafting -->
+		<recipeMaker>
+		  <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		  <workSkill>Crafting</workSkill>
+		  <effectWorking>Smith</effectWorking>
+		  <soundWorking>Recipe_Smith</soundWorking>
+		  <recipeUsers>
+			<li>MorrowRim_GolemForge</li>
+		  </recipeUsers>
+		  <unfinishedThingDef>MorrowRim_UnfinishedTelvanniRoots</unfinishedThingDef>
+		  <skillRequirements>
+			<Crafting>6</Crafting>
+			<Intellectual>10</Intellectual>
+		  </skillRequirements>
+		  <researchPrerequisites>
+				<li>MorrowRim_GolemFocusCore</li>
+			</researchPrerequisites>
+		</recipeMaker>
+	</ThingDef>
+
+	<!-- Aetherial -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Focus">
+		<defName>MorrowRim_GolemCore_FocusAetherial</defName>
+		<label>golem aetherial focus</label>
+		<description>A golem focus, allows the golem to fire blasts of aetherial energy.\n\nOnly one focus can be installed per golem, and replacing one will destroy the currently installed focus in the process.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_FocusAetherial</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemFocusAttachment</partToAddTo>
+                <isExclusive>true</isExclusive>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(156,225,232)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>MorrowRim_StaffAetherial</li>
+			</researchPrerequisites>
+			<skillRequirements>
+				<Crafting>8</Crafting>
+				<Intellectual>14</Intellectual>
+			</skillRequirements>
+		</recipeMaker>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_AetherialSalts>25</MorrowRim_AetherialSalts>
+		</costList>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_FocusAetherial</defName>
+		<label>aetherial focus</label>
+		<labelNoun>an aetherial focus</labelNoun>
+		<description>An installed golem focus, allows the golem to fire blasts of aetherial energy.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_FocusAetherial</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_FocusAetherial</spawnThingOnRemoved>
+		<!-- MVCF -->
+		<comps>
+			<li Class="MVCF.Comps.HediffCompProperties_ExtendedVerbGiver">
+			  <verbs>
+				<li>
+					<label>aetherial focus</label>
+					<verbClass>Verb_Shoot</verbClass>
+					<hasStandardCommand>true</hasStandardCommand>
+					<defaultProjectile>Telvanni_ProjectileAetherialBasic</defaultProjectile>
+					<warmupTime>1.7</warmupTime>
+					<range>36.9</range>
+					<soundCast>MorrowRim_Fire_AetherialStave</soundCast>
+					<soundCastTail>GunTail_Medium</soundCastTail>
+					<muzzleFlashScale>9</muzzleFlashScale>
+					<burstShotCount>2</burstShotCount>
+					<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+					
+					<commandIcon>Things/Item/Special/MorrowRim_TelvanniGolemFocusCore</commandIcon>
+					<accuracyTouch>0.65</accuracyTouch>
+					<accuracyShort>0.80</accuracyShort>
+					<accuracyMedium>0.90</accuracyMedium>
+					<accuracyLong>0.80</accuracyLong>
+				</li>
+			  </verbs>
+			  <verbProps>
+				<li>
+				  <label>aetherial focus</label>
+				  <draw>false</draw>
+				  <canBeToggled>true</canBeToggled>
+				  <canFireIndependently>false</canFireIndependently>
+				</li>
+			  </verbProps>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	<!-- Acid -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Focus">
+		<defName>MorrowRim_GolemCore_FocusAcidic</defName>
+		<label>golem acidic focus</label>
+		<description>A golem focus, allows the golem to fire blasts of acidic energy.\n\nOnly one focus can be installed per golem, and replacing one will destroy the currently installed focus in the process.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_FocusAcidic</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemFocusAttachment</partToAddTo>
+                <isExclusive>true</isExclusive>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(57,192,119)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>MorrowRim_StaffAetherial</li>
+			</researchPrerequisites>
+			<skillRequirements>
+				<Crafting>8</Crafting>
+				<Intellectual>14</Intellectual>
+			</skillRequirements>
+		</recipeMaker>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_AcidicCrystal>25</MorrowRim_AcidicCrystal>
+		</costList>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_FocusAcidic</defName>
+		<label>acidic focus</label>
+		<labelNoun>an acidic focus</labelNoun>
+		<description>An installed golem focus, allows the golem to fire blasts of acidic energy.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_FocusAcidic</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_FocusAcidic</spawnThingOnRemoved>
+		<!-- MVCF -->
+		<comps>
+			<li Class="MVCF.Comps.HediffCompProperties_ExtendedVerbGiver">
+			  <verbs>
+				<li>
+					<label>acidic focus</label>
+					<verbClass>Verb_Shoot</verbClass>
+					<hasStandardCommand>true</hasStandardCommand>
+					<defaultProjectile>Telvanni_ProjectileAcidicBasic</defaultProjectile>
+					<warmupTime>1.7</warmupTime>
+					<range>36.9</range>
+					<soundCast>MorrowRim_Fire_TelvanniStave</soundCast>
+					<soundCastTail>GunTail_Medium</soundCastTail>
+					<muzzleFlashScale>9</muzzleFlashScale>
+					<burstShotCount>2</burstShotCount>
+					<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+					
+					<commandIcon>Things/Item/Special/MorrowRim_TelvanniGolemFocusCore</commandIcon>
+					<accuracyTouch>0.65</accuracyTouch>
+					<accuracyShort>0.80</accuracyShort>
+					<accuracyMedium>0.90</accuracyMedium>
+					<accuracyLong>0.80</accuracyLong>
+				</li>
+			  </verbs>
+			  <verbProps>
+				<li>
+				  <label>acidic focus</label>
+				  <draw>false</draw>
+				  <canBeToggled>true</canBeToggled>
+				  <canFireIndependently>false</canFireIndependently>
+				</li>
+			  </verbProps>
+			</li>
+		</comps>
+	</HediffDef>
+	
+</Defs>

@@ -1,0 +1,735 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Base -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase" Name="MorrowRim_GolemCoreBase_Work" Abstract="True">
+		<graphicData>
+		  <texPath>Things/Item/Special/MorrowRim_TelvanniGolemWorkCore</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<comps>
+		  <li Class="CompProperties_Usable">
+			<useJob>UseItem</useJob>
+			<useLabel>Apply golem core</useLabel>
+			<useDuration>0</useDuration>
+		  </li>
+		  <li Class="CompProperties_Targetable">
+			<compClass>MorrowRim_Telvanni.CompTargetable_Golem</compClass>
+		  </li>
+		  <li>
+			<compClass>MorrowRim_Telvanni.CompTargetEffect_GolemAddCore</compClass>
+		  </li>
+		</comps>
+		<!-- Crafting -->
+		<recipeMaker>
+		  <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		  <workSkill>Crafting</workSkill>
+		  <effectWorking>Smith</effectWorking>
+		  <soundWorking>Recipe_Smith</soundWorking>
+		  <recipeUsers>
+			<li>MorrowRim_GolemForge</li>
+		  </recipeUsers>
+		  <unfinishedThingDef>MorrowRim_UnfinishedTelvanniRoots</unfinishedThingDef>
+		  <skillRequirements>
+			<Crafting>6</Crafting>
+			<Intellectual>8</Intellectual>
+		  </skillRequirements>
+		  <researchPrerequisite>MorrowRim_GolemWorkCore</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+	<!-- mining -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Work">
+		<defName>MorrowRim_GolemCore_WorkMine</defName>
+		<label>golem mining work core</label>
+		<description>A golem work core, allows the golem to mine once installed.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_WorkMine</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemBrainCore</partToAddTo>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(155,137,106)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_GraveExtract>15</MorrowRim_GraveExtract>
+		  <MorrowRim_FerrousSalts>15</MorrowRim_FerrousSalts>
+		</costList>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_WorkMine</defName>
+		<label>mining work core</label>
+		<labelNoun>a mining work core</labelNoun>
+		<description>An installed golem work core, allows the golem to mine.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_WorkMine</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_WorkMine</spawnThingOnRemoved>
+	</HediffDef>
+	
+	<!-- plant cutting -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Work">
+		<defName>MorrowRim_GolemCore_WorkPlantCut</defName>
+		<label>golem plant cutting work core</label>
+		<description>A golem work core, allows the golem to cut plants once installed.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_WorkPlantCut</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemBrainCore</partToAddTo>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(217,179,43)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_PoisonBoltExtract>15</MorrowRim_PoisonBoltExtract>
+		  <MorrowRim_AirSalts>15</MorrowRim_AirSalts>
+		</costList>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_WorkPlantCut</defName>
+		<label>plant cutting work core</label>
+		<labelNoun>a plant cutting work core</labelNoun>
+		<description>An installed golem work core, allows the golem to cut plants.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_WorkPlantCut</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_WorkPlantCut</spawnThingOnRemoved>
+	</HediffDef>
+	
+	<!-- cleaning -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Work">
+		<defName>MorrowRim_GolemCore_WorkClean</defName>
+		<label>golem cleaning work core</label>
+		<description>A golem work core, allows the golem to clean filth once installed.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_WorkClean</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemBrainCore</partToAddTo>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(191,236,221)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_SpectralExtract>15</MorrowRim_SpectralExtract>
+		  <MorrowRim_WaterSalts>15</MorrowRim_WaterSalts>
+		</costList>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_WorkClean</defName>
+		<label>cleaning work core</label>
+		<labelNoun>a cleaning work core</labelNoun>
+		<description>An installed golem work core, allows the golem to clean filth.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_WorkClean</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_WorkClean</spawnThingOnRemoved>
+	</HediffDef>
+	
+	<!-- flicking -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Work">
+		<defName>MorrowRim_GolemCore_WorkFlick</defName>
+		<label>golem flicking work core</label>
+		<description>A golem work core, allows the golem to flick switches once installed.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_WorkFlick</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemBrainCore</partToAddTo>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(103,22,66)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_NightCapExtract>15</MorrowRim_NightCapExtract>
+		  <MorrowRim_VoidSalts>15</MorrowRim_VoidSalts>
+		</costList>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_WorkFlick</defName>
+		<label>flicking work core</label>
+		<labelNoun>a flicking work core</labelNoun>
+		<description>An installed golem work core, allows the golem to flick switches.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_WorkFlick</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_WorkFlick</spawnThingOnRemoved>
+	</HediffDef>
+	
+	<!-- refueling -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Work">
+		<defName>MorrowRim_GolemCore_WorkRefuel</defName>
+		<label>golem refueling work core</label>
+		<description>A golem work core, allows the golem to refuel buildings once installed.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_WorkRefuel</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemBrainCore</partToAddTo>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(194,31,58)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_VampiricExtract>15</MorrowRim_VampiricExtract>
+		  <MorrowRim_FireSalts>15</MorrowRim_FireSalts>
+		</costList>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_WorkRefuel</defName>
+		<label>refueling work core</label>
+		<labelNoun>a refueling work core</labelNoun>
+		<description>An installed golem work core, allows the golem to refuel buildings.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_WorkRefuel</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_WorkRefuel</spawnThingOnRemoved>
+	</HediffDef>
+	
+	<!-- delivering -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Work">
+		<defName>MorrowRim_GolemCore_WorkDeliver</defName>
+		<label>golem delivering work core</label>
+		<description>A golem work core, allows the golem to deliver to frames and blueprints once installed.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_WorkDeliver</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemBrainCore</partToAddTo>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(155,137,106)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_GraveExtract>15</MorrowRim_GraveExtract>
+		  <MorrowRim_FrostSalts>15</MorrowRim_FrostSalts>
+		</costList>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_WorkDeliver</defName>
+		<label>delivering work core</label>
+		<labelNoun>a delivering work core</labelNoun>
+		<description>An installed golem work core, allows the golem to deliver to frames and blueprints.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_WorkDeliver</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_WorkDeliver</spawnThingOnRemoved>
+	</HediffDef>
+	
+	<!-- repairing -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Work">
+		<defName>MorrowRim_GolemCore_WorkRepair</defName>
+		<label>golem repairing work core</label>
+		<description>A golem work core, allows the golem to repair buildings once installed.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_WorkRepair</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemBrainCore</partToAddTo>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(217,179,43)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_PoisonBoltExtract>15</MorrowRim_PoisonBoltExtract>
+		  <MorrowRim_FerrousSalts>15</MorrowRim_FerrousSalts>
+		</costList>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_WorkRepair</defName>
+		<label>repairing work core</label>
+		<labelNoun>a repairing work core</labelNoun>
+		<description>An installed golem work core, allows the golem to repair buildings.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_WorkRepair</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_WorkRepair</spawnThingOnRemoved>
+	</HediffDef>
+	
+	<!-- uninstalling -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Work">
+		<defName>MorrowRim_GolemCore_WorkUninstall</defName>
+		<label>golem uninstalling work core</label>
+		<description>A golem work core, allows the golem to uninstall and deconstruct buildings once installed.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_WorkUninstall</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemBrainCore</partToAddTo>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(191,236,221)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_SpectralExtract>15</MorrowRim_SpectralExtract>
+		  <MorrowRim_VoidSalts>15</MorrowRim_VoidSalts>
+		</costList>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_WorkUninstall</defName>
+		<label>uninstalling work core</label>
+		<labelNoun>a uninstalling work core</labelNoun>
+		<description>An installed golem work core, allows the golem to uninstall and deconstruct buildings.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_WorkUninstall</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_WorkUninstall</spawnThingOnRemoved>
+	</HediffDef>
+	
+	<!-- constructing -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Work">
+		<defName>MorrowRim_GolemCore_WorkConstruct</defName>
+		<label>golem constructing work core</label>
+		<description>A golem work core, allows the golem to construct simple frames once installed.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_WorkConstruct</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemBrainCore</partToAddTo>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(103,22,66)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_NightCapExtract>15</MorrowRim_NightCapExtract>
+		  <Dagoth_AshSalts>15</Dagoth_AshSalts>
+		</costList>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_WorkConstruct</defName>
+		<label>constructing work core</label>
+		<labelNoun>a constructing work core</labelNoun>
+		<description>An installed golem work core, allows the golem to construct simple frames.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_WorkConstruct</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_WorkConstruct</spawnThingOnRemoved>
+	</HediffDef>
+	
+	<!-- guarding -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Work">
+		<defName>MorrowRim_GolemCore_WorkGuard</defName>
+		<label>golem guarding work core</label>
+		<description>A golem work core, allows the golem to aggressively attack nearby hostiles once installed.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_WorkGuard</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemBrainCore</partToAddTo>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(194,31,58)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_VampiricExtract>15</MorrowRim_VampiricExtract>
+		  <MorrowRim_FrostSalts>15</MorrowRim_FrostSalts>
+		</costList>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_WorkGuard</defName>
+		<label>guarding work core</label>
+		<labelNoun>a guarding work core</labelNoun>
+		<description>An installed golem work core, allows the golem to aggressively attack nearby hostiles.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_WorkGuard</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_WorkGuard</spawnThingOnRemoved>
+	</HediffDef>
+	
+	<!-- rescuing -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Work">
+		<defName>MorrowRim_GolemCore_WorkRescue</defName>
+		<label>golem rescuing work core</label>
+		<description>A golem work core, allows the golem to rescue downed allies once installed.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_WorkRescue</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemBrainCore</partToAddTo>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(155,137,106)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_GraveExtract>15</MorrowRim_GraveExtract>
+		  <MorrowRim_FireSalts>15</MorrowRim_FireSalts>
+		</costList>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_WorkRescue</defName>
+		<label>rescuing work core</label>
+		<labelNoun>a rescuing work core</labelNoun>
+		<description>An installed golem work core, allows the golem to rescue downed allies.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_WorkRescue</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_WorkRescue</spawnThingOnRemoved>
+	</HediffDef>
+	
+	<!-- hauling -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Work">
+		<defName>MorrowRim_GolemCore_WorkHaul</defName>
+		<label>golem hauling work core</label>
+		<description>A golem work core, allows the golem to items to haul items to storage once installed.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_WorkHaul</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemBrainCore</partToAddTo>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(217,179,43)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_PoisonBoltExtract>15</MorrowRim_PoisonBoltExtract>
+		  <Dagoth_AshSalts>15</Dagoth_AshSalts>
+		</costList>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_WorkHaul</defName>
+		<label>hauling work core</label>
+		<labelNoun>a hauling work core</labelNoun>
+		<description>An installed golem work core, allows the golem to haul items to storage.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_WorkHaul</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_WorkHaul</spawnThingOnRemoved>
+	</HediffDef>
+
+	<!-- animal handling -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Work">
+		<defName>MorrowRim_GolemCore_WorkAnimals</defName>
+		<label>golem slaughtering work core</label>
+		<description>A golem work core, allows the golem to slaughter tamed animals once installed.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_WorkAnimals</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemBrainCore</partToAddTo>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(191,236,221)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_SpectralExtract>15</MorrowRim_SpectralExtract>
+		  <MorrowRim_FireSalts>15</MorrowRim_FireSalts>
+		</costList>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_WorkAnimals</defName>
+		<label>slaughtering work core</label>
+		<labelNoun>a slaughtering work core</labelNoun>
+		<description>An installed golem work core, allows the golem to slaughter tamed animals.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_WorkAnimals</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_WorkAnimals</spawnThingOnRemoved>
+	</HediffDef>
+
+	<!-- self repairing -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Work">
+		<defName>MorrowRim_GolemCore_WorkSelfRepair</defName>
+		<label>golem self repairing work core</label>
+		<description>A golem work core, allows the golem to self repair once installed.\n\nGolems with this core will require accessible golem repair crystals, and will only self repair if they have at least five wounds.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_WorkSelfRepair</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemBrainCore</partToAddTo>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(103,22,66)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_NightCapExtract>15</MorrowRim_NightCapExtract>
+		  <MorrowRim_FireSalts>15</MorrowRim_FireSalts>
+		</costList>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_WorkSelfRepair</defName>
+		<label>self repairing work core</label>
+		<labelNoun>a self repairing work core</labelNoun>
+		<description>An installed golem work core, allows the golem to self repair.\n\nGolems with this core will require accessible golem repair crystals, and will only self repair if they have at least five wounds.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_WorkSelfRepair</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_WorkSelfRepair</spawnThingOnRemoved>
+	</HediffDef>
+	
+	<!-- snow clearing -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Work">
+		<defName>MorrowRim_GolemCore_WorkSnowClear</defName>
+		<label>golem snow clearing work core</label>
+		<description>A golem work core, allows the golem to clear snow once installed.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_WorkSnowClear</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemBrainCore</partToAddTo>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(194,31,58)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_VampiricExtract>15</MorrowRim_VampiricExtract>
+		  <MorrowRim_VoidSalts>15</MorrowRim_VoidSalts>
+		</costList>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_WorkSnowClear</defName>
+		<label>snow clearing work core</label>
+		<labelNoun>a snow clearing work core</labelNoun>
+		<description>An installed golem work core, allows the golem to clear snow.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_WorkSnowClear</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_WorkSnowClear</spawnThingOnRemoved>
+	</HediffDef>
+	
+	<!-- roofing -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Work">
+		<defName>MorrowRim_GolemCore_WorkRoof</defName>
+		<label>golem roofing work core</label>
+		<description>A golem work core, allows the golem to build and remove roofs once installed.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_WorkRoof</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemBrainCore</partToAddTo>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(155,137,106)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_GraveExtract>15</MorrowRim_GraveExtract>
+		  <MorrowRim_AirSalts>15</MorrowRim_AirSalts>
+		</costList>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_WorkRoof</defName>
+		<label>roofing work core</label>
+		<labelNoun>a roofing work core</labelNoun>
+		<description>An installed golem work core, allows the golem to build and remove roofs.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_WorkRoof</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_WorkRoof</spawnThingOnRemoved>
+	</HediffDef>
+	
+	<!-- smoothing -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Work">
+		<defName>MorrowRim_GolemCore_WorkSmooth</defName>
+		<label>golem smoothing work core</label>
+		<description>A golem work core, allows the golem to smooth floors and walls once installed.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_WorkSmooth</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemBrainCore</partToAddTo>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(217,179,43)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_PoisonBoltExtract>15</MorrowRim_PoisonBoltExtract>
+		  <MorrowRim_FrostSalts>15</MorrowRim_FrostSalts>
+		</costList>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_WorkSmooth</defName>
+		<label>smoothing work core</label>
+		<labelNoun>a smoothing work core</labelNoun>
+		<description>An installed golem work core, allows the golem to smooth floors and walls.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_WorkSmooth</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_WorkSmooth</spawnThingOnRemoved>
+	</HediffDef>
+		
+	<!-- ===== Special ===== -->
+	
+	
+	<!-- researching -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Work">
+		<defName>MorrowRim_GolemCore_WorkResearch</defName>
+		<label>golem researching work core</label>
+		<description>A golem work core, allows the golem to research once installed.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_WorkResearch</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemBrainCore</partToAddTo>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(156,225,232)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_AetherialSalts>25</MorrowRim_AetherialSalts>
+		</costList>
+		<recipeMaker>
+		  <researchPrerequisite>MorrowRim_GolemAdvanced</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_WorkResearch</defName>
+		<label>researching work core</label>
+		<labelNoun>a researching work core</labelNoun>
+		<description>An installed golem work core, allows the golem to research.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_WorkResearch</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_WorkResearch</spawnThingOnRemoved>
+	</HediffDef>
+	
+	<!-- drafting -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Work">
+		<defName>MorrowRim_GolemCore_WorkDraft</defName>
+		<label>golem drafting core</label>
+		<description>A golem core, allows the golem to be drafted once installed.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_WorkDraft</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemBrainCore</partToAddTo>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(214,193,165)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_FireSalts>6</MorrowRim_FireSalts>
+		  <MorrowRim_FrostSalts>6</MorrowRim_FrostSalts>
+		  <MorrowRim_VoidSalts>6</MorrowRim_VoidSalts>
+		</costList>
+		<recipeMaker>
+		  <researchPrerequisite>MorrowRim_GolemForge</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_WorkDraft</defName>
+		<label>drafting core</label>
+		<labelNoun>a drafting core</labelNoun>
+		<description>An installed golem core, allows the golem to be drafted.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_WorkDraft</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_WorkDraft</spawnThingOnRemoved>
+	</HediffDef>
+	
+	<!-- sentry -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Work">
+		<defName>MorrowRim_GolemCore_WorkSentry</defName>
+		<label>golem sentry core</label>
+		<description>A golem core,  causes the golem to remain motionless if it has nothing else to do.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_WorkSentry</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemBrainCore</partToAddTo>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(214,193,165)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_AirSalts>3</MorrowRim_AirSalts>
+		  <MorrowRim_FerrousSalts>3</MorrowRim_FerrousSalts>
+		  <MorrowRim_WaterSalts>3</MorrowRim_WaterSalts>
+		</costList>
+		<recipeMaker>
+		  <researchPrerequisite>MorrowRim_GolemForge</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_WorkSentry</defName>
+		<label>sentry core</label>
+		<labelNoun>a sentry core</labelNoun>
+		<description>An installed golem core, causes the golem to remain motionless if it has nothing else to do.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_WorkSentry</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_WorkSentry</spawnThingOnRemoved>
+	</HediffDef>
+
+</Defs>

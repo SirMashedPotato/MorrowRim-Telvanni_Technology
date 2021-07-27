@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- Base -->
+	<ThingDef ParentName="ResourceBase" Name="Telvanni_SaltsBase" Abstract="True">
+		<graphicData>
+			<graphicClass>Graphic_StackCount</graphicClass>
+			<drawSize>1.0</drawSize>
+		</graphicData>
+		<stackLimit>75</stackLimit>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<statBases>
+		  <MaxHitPoints>50</MaxHitPoints>
+		  <MarketValue>8</MarketValue>
+		  <Mass>0.02</Mass>
+		  <Flammability>0.0</Flammability>
+		  <DeteriorationRate>1.0</DeteriorationRate>
+		</statBases>
+		<thingCategories>
+		  <li>Manufactured</li>
+		</thingCategories>
+		<tradeTags>
+		  <li>TelvanniSalt</li>
+		</tradeTags>
+	</ThingDef>
+	
+	<!-- Specifics -->
+
+	<ThingDef ParentName="Telvanni_SaltsBase">
+		<defName>MorrowRim_FireSalts</defName>
+		<label>fire salts</label>
+		<description>Red salts, imbued with the power of fire. They are warm to the touch, even in the coldest of winters.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/MorrowRim_FireSalts</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="Telvanni_SaltsBase">
+		<defName>MorrowRim_FrostSalts</defName>
+		<label>frost salts</label>
+		<description>White salts, imbued with the power of ice. Touching them sends shivers through ones body.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/MorrowRim_FrostSalts</texPath>
+		</graphicData>
+	</ThingDef>
+	  
+	<ThingDef ParentName="Telvanni_SaltsBase">
+		<defName>MorrowRim_VoidSalts</defName>
+		<label>void salts</label>
+		<description>Light grey salts, imbued with the power of lightning. They seem to flicker with an unnatural light.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/MorrowRim_VoidSalts</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<!-- Additional salts -->
+	
+	<ThingDef ParentName="Telvanni_SaltsBase">
+		<defName>MorrowRim_AirSalts</defName>
+		<label>air salts</label>
+		<description>Pale salts, imbued with the power of air. They are constantly shifting in their bowl, as if wind courses through them.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/MorrowRim_AirSalts</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_SaltsBase">
+		<defName>MorrowRim_WaterSalts</defName>
+		<label>water salts</label>
+		<description>Blue salts, imbued with the power of water. Staring into them produces a crystal-clear reflection.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/MorrowRim_WaterSalts</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_SaltsBase">
+		<defName>MorrowRim_FerrousSalts</defName>
+		<label>ferrous salts</label>
+		<description>Brown salts, imbued with the power of rock. Each individual piece is almost impossible to crush.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/MorrowRim_FerrousSalts</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<!-- Ash salts -->
+	  
+	<ThingDef ParentName="Telvanni_SaltsBase">
+		<defName>Dagoth_AshSalts</defName>
+		<label>ash salts</label>
+		<description>Grey salts harvested from servants of Dagoth Ur. The salts accumulate within their body, likely a mixture of dormant ash blights and environmental ash.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/MorrowRim_AshSalts</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<!-- Special -->
+		
+	<ThingDef ParentName="Telvanni_SaltsBase">
+		<defName>MorrowRim_AetherialSalts</defName>
+		<label>aetherial salts</label>
+		<description>A combination of fire, frost and void salts, creating a powerful compound. Can be used to make certain elixirs and aetherial energy staves.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/MorrowRim_AetherialSalts</texPath>
+		</graphicData>
+		<statBases>
+			<MarketValue>40</MarketValue>
+		</statBases>
+	</ThingDef>
+  
+</Defs>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>MorrowRim - Ashlands Swamp</li>
+		</mods> 
+				
+		<match Class="PatchOperationSequence">
+			<operations>
+				
+				<li Class="PatchOperationAdd"> 
+					<xpath>/Defs/ThingDef[defName="MorrowRim_ElixirFiltering"]</xpath>
+					<value>
+						<thingCategories Inherit="False">
+							<li>MorrowRim_Elixir</li>
+						</thingCategories>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationAdd"> 
+					<xpath>/Defs/ThingDef[defName="MorrowRim_ElixirPurging"]</xpath>
+					<value>
+						<thingCategories Inherit="False">
+							<li>MorrowRim_Elixir</li>
+						</thingCategories>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationAdd"> 
+					<xpath>/Defs/RecipeDef[@Name="MorrowRim_CraftElixirBase_Primitive"]/recipeUsers</xpath>
+					<value>
+						<li>MorrowRim_ElixirTable</li>
+					</value>
+				</li>
+
+			</operations>
+		</match>
+	</Operation>
+	
+</Patch>
+

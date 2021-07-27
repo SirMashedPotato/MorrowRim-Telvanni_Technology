@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Plant">
+		<defName>MorrowRim_TelvanniSowingFlowers</defName>
+		<label>Telvanni sowing Vol. I</label>
+		<description>Allows the sowing of plants specially designed by the Telvanni to produce salts.\n\nEach of these plants grows faster under certain weather conditions.</description>
+		<researchViewX>0.00</researchViewX>
+		<researchViewY>0.0</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Plant">
+		<defName>MorrowRim_TelvanniSowingExtracts</defName>
+		<label>Telvanni sowing Vol. II</label>
+		<description>Allows the sowing of plants specially designed by the Telvanni to produce extracts.</description>
+		<researchViewX>1.00</researchViewX>
+		<researchViewY>0.0</researchViewY>
+		<prerequisites>
+			<li>MorrowRim_TelvanniSowingFlowers</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Plant">
+		<defName>MorrowRim_TelvanniSowingExotic</defName>
+		<label>Telvanni sowing Vol. III</label>
+		<description>Allows the sowing of plants specially designed by the Telvanni to produce exotic materials.</description>
+		<researchViewX>2.00</researchViewX>
+		<researchViewY>0.0</researchViewY>
+		<prerequisites>
+			<li>MorrowRim_TelvanniSowingExtracts</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Plant">
+		<defName>MorrowRim_TelvanniSowingResource</defName>
+		<label>Telvanni sowing Vol. IV</label>
+		<description>Allows the sowing of plants specially designed by the Telvanni to produce resources.</description>
+		<researchViewX>3.00</researchViewX>
+		<researchViewY>0.0</researchViewY>
+		<prerequisites>
+			<li>MorrowRim_TelvanniSowingExotic</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<!-- Extra -->
+	
+	<!-- <researchViewX>4.00</researchViewX> -->
+	
+	<!-- <researchViewX>5.00</researchViewX> -->
+		
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Elixir">
+		<defName>MorrowRim_ElixirDuplication</defName>
+		<label>elixir duplication</label>
+		<description>Allows duplicating elixirs using dopller spores at the elixir table.\n\nElixirs must be of the same type, but can be of different quality levels. The quality level of the duplicate elixir will match that of the parent.</description>
+		<researchViewX>6.00</researchViewX>
+		<researchViewY>0.0</researchViewY>
+		<prerequisites>
+			<li>MorrowRim_ElixirTable</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+	
+</Defs>

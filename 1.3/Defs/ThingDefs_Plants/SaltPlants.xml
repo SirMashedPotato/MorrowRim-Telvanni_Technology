@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- base -->
+	
+	<ThingDef Name="Telvanni_SaltFlowerBase" ParentName="PlantBase" Abstract="True">
+  		<statBases>
+		  <MaxHitPoints>15</MaxHitPoints>
+		  <Nutrition>0.1</Nutrition>
+		</statBases>
+		<selectable>true</selectable>
+		<pathCost>10</pathCost>
+		<ingestible />
+		<plant>
+		  <fertilityMin>0.7</fertilityMin>
+		  <sowMinSkill>4</sowMinSkill>
+		  <growDays>12</growDays>
+		  <dieIfLeafless>true</dieIfLeafless>
+		  <harvestTag>Standard</harvestTag>
+		  <harvestYield>5</harvestYield>
+		  <sowTags>
+			<li>Ground</li>
+			<li>Hydroponic</li>
+		  </sowTags>
+		  <topWindExposure>0.1</topWindExposure>
+		  <visualSizeRange>0.3~1.05</visualSizeRange>
+		  <wildOrder>2</wildOrder>
+		  <sowResearchPrerequisites>
+			<li>MorrowRim_TelvanniSowingFlowers</li>
+		  </sowResearchPrerequisites>
+		  <harvestAfterGrowth>0.30</harvestAfterGrowth>
+		  <harvestMinGrowth>0.70</harvestMinGrowth>
+		</plant>
+	</ThingDef>
+
+	<ThingDef ParentName="Telvanni_SaltFlowerBase">
+		<defName>Telvanni_AshCap</defName>
+		<label>ash cap</label>
+		<description>A genetically engineered mushroom, created by Great House Telvanni. The ash cap grows mossy a covering as it matures, which can be harvested for ash salts.</description>
+		<graphicData>
+		  <texPath>Things/Plant/MorrowRim_AshCap</texPath>
+		  <graphicClass>Graphic_Random</graphicClass>
+		</graphicData>
+		<ingestible />
+		<plant>
+		  <harvestedThingDef>Dagoth_AshSalts</harvestedThingDef>
+		  <immatureGraphicPath>Things/Plant_Immature/MorrowRim_AshCap</immatureGraphicPath>
+		</plant>
+		
+		<comps>
+			<!-- In MorrowRim patch -->
+		</comps>
+		
+	</ThingDef>
+  
+	<ThingDef ParentName="Telvanni_SaltFlowerBase">
+		<defName>Telvanni_FirePetal</defName>
+		<label>fire petal</label>
+		<description>A genetically engineered flowering plant, created by Great House Telvanni. Its petals can be harvested for fire salts.</description>
+		<graphicData>
+		  <texPath>Things/Plant/MorrowRim_FirePetal</texPath>
+		  <graphicClass>Graphic_Random</graphicClass>
+		</graphicData>
+		<ingestible />
+		<plant>
+		  <harvestedThingDef>MorrowRim_FireSalts</harvestedThingDef>
+		  <immatureGraphicPath>Things/Plant_Immature/MorrowRim_FirePetal</immatureGraphicPath>
+		</plant>
+		
+		<comps>
+			<li Class="MorrowRim_Telvanni.CompProperties_GrowthModifier">
+				<weather>
+					<li>Clear</li>
+				</weather>
+				<checkLight>true</checkLight>
+			</li>
+		</comps>
+		
+	</ThingDef>
+  
+	<ThingDef ParentName="Telvanni_SaltFlowerBase">
+		<defName>Telvanni_FrostLeaf</defName>
+		<label>frost leaf</label>
+		<description>A genetically engineered flowering plant, created by Great House Telvanni. Its petals can be harvested for frost salts.</description>
+		<graphicData>
+		  <texPath>Things/Plant/MorrowRim_FrostLeaf</texPath>
+		  <graphicClass>Graphic_Random</graphicClass>
+		</graphicData>
+		<ingestible />
+		<plant>
+		  <harvestedThingDef>MorrowRim_FrostSalts</harvestedThingDef>
+		  <immatureGraphicPath>Things/Plant_Immature/MorrowRim_FrostLeaf</immatureGraphicPath>
+		</plant>
+		
+		<comps>
+			<li Class="MorrowRim_Telvanni.CompProperties_GrowthModifier">
+				<weather>
+					<li>SnowGentle</li>
+				</weather>
+			</li>
+		</comps>
+		
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_SaltFlowerBase">
+		<defName>Telvanni_VoidBloom</defName>
+		<label>void bloom</label>
+		<description>A genetically engineered flowering plant, created by Great House Telvanni. Its petals can be harvested for void salts.</description>
+		<graphicData>
+		  <texPath>Things/Plant/MorrowRim_VoidBloom</texPath>
+		  <graphicClass>Graphic_Random</graphicClass>
+		</graphicData>
+		<ingestible />
+		<plant>
+		  <harvestedThingDef>MorrowRim_VoidSalts</harvestedThingDef>
+		  <immatureGraphicPath>Things/Plant_Immature/MorrowRim_VoidBloom</immatureGraphicPath>
+		</plant>
+		
+		<comps>
+			<li Class="MorrowRim_Telvanni.CompProperties_GrowthModifier">
+				<weather>
+					<li>RainyThunderstorm</li>
+				</weather>
+			</li>
+		</comps>
+		
+	</ThingDef>
+	
+	<!-- Additional -->
+	
+	<ThingDef ParentName="Telvanni_SaltFlowerBase">
+		<defName>Telvanni_WindBulb</defName>
+		<label>wind bulb</label>
+		<description>A genetically engineered flowering plant, created by Great House Telvanni. Its petals can be harvested for air salts.</description>
+		<graphicData>
+		  <texPath>Things/Plant/MorrowRim_WindBulb</texPath>
+		  <graphicClass>Graphic_Random</graphicClass>
+		</graphicData>
+		<ingestible />
+		<plant>
+		  <harvestedThingDef>MorrowRim_AirSalts</harvestedThingDef>
+		  <immatureGraphicPath>Things/Plant_Immature/MorrowRim_WindBulb</immatureGraphicPath>
+		</plant>
+		
+		<comps>
+			<li Class="MorrowRim_Telvanni.CompProperties_GrowthModifier">
+				<weather>
+					<li>Fog</li>
+				</weather>
+			</li>
+		</comps>
+		
+	</ThingDef>
+  
+	<ThingDef ParentName="Telvanni_SaltFlowerBase">
+		<defName>Telvanni_StoneAnther</defName>
+		<label>stone anther</label>
+		<description>A genetically engineered flowering plant, created by Great House Telvanni. Its petals can be harvested for ferrous salts.</description>
+		<graphicData>
+		  <texPath>Things/Plant/MorrowRim_StoneAnther</texPath>
+		  <graphicClass>Graphic_Random</graphicClass>
+		</graphicData>
+		<ingestible />
+		<plant>
+		  <harvestedThingDef>MorrowRim_FerrousSalts</harvestedThingDef>
+		  <immatureGraphicPath>Things/Plant_Immature/MorrowRim_StoneAnther</immatureGraphicPath>
+		</plant>
+		
+		<comps>
+			<li Class="MorrowRim_Telvanni.CompProperties_GrowthModifier">
+				<weather>
+					<li>DryThunderstorm</li>
+				</weather>
+			</li>
+		</comps>
+		
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_SaltFlowerBase">
+		<defName>Telvanni_WaterRoot</defName>
+		<label>water root</label>
+		<description>A genetically engineered flowering plant, created by Great House Telvanni. Its petals can be harvested for water salts.</description>
+		<graphicData>
+		  <texPath>Things/Plant/MorrowRim_WaterRoot</texPath>
+		  <graphicClass>Graphic_Random</graphicClass>
+		</graphicData>
+		<ingestible />
+		<plant>
+		  <harvestedThingDef>MorrowRim_WaterSalts</harvestedThingDef>
+		  <immatureGraphicPath>Things/Plant_Immature/MorrowRim_WaterRoot</immatureGraphicPath>
+		</plant>
+		
+		<comps>
+			<li Class="MorrowRim_Telvanni.CompProperties_GrowthModifier">
+				<weather>
+					<li>Rain</li>
+				</weather>
+			</li>
+		</comps>
+		
+	</ThingDef>
+
+</Defs>

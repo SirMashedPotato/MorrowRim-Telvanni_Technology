@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+		<defName>MorrowRim_MeleeWeapon_RootSword</defName>
+		<label>Telvanni root sword</label>
+		<description>A sword made from infused roots, which still seem to be moving. Often used by Telvanni guards, who are deemed too un-important for staves. Strikes relatively fast, and is perfect for stabbing and slashing.\n\nDue to its Telvanni design, this sword has a 15% chance of inflicting additional stun damage.</description>
+		<graphicData>
+		  <texPath>Things/Item/Equipment/WeaponMelee/MorrowRim_RootSword</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<uiIconScale>1.2</uiIconScale>
+		<techLevel>Medieval</techLevel>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		</costList>
+		<weaponTags>
+		  <li>TelvanniWeaponRoot</li>
+		</weaponTags>
+		<statBases>
+		  <Beauty>3</Beauty>
+		  <WorkToMake>16000</WorkToMake>
+		  <Mass>0.85</Mass>
+		</statBases>
+		<equippedAngleOffset>-65</equippedAngleOffset>
+		<tools>
+		  <li>
+			<label>handle</label>
+			<capacities>
+			  <li>Blunt</li>
+			</capacities>
+			<power>9</power>
+			<cooldownTime>2</cooldownTime>
+			<extraMeleeDamages>
+			  <li>
+				<def>Stun</def>
+				<amount>5</amount>
+				<chance>0.15</chance>
+			  </li>
+			</extraMeleeDamages>
+		  </li>
+		  <li>
+			<label>point</label>
+			<capacities>
+			  <li>Stab</li>
+			</capacities>
+			<power>14</power>
+			<cooldownTime>1.8</cooldownTime>
+			<extraMeleeDamages>
+			  <li>
+				<def>Stun</def>
+				<amount>5</amount>
+				<chance>0.15</chance>
+			  </li>
+			</extraMeleeDamages>
+		  </li>
+		  <li>
+			<label>edge</label>
+			<capacities>
+			  <li>Cut</li>
+			</capacities>
+			<power>14</power>
+			<cooldownTime>1.7</cooldownTime>
+			<extraMeleeDamages>
+			  <li>
+				<def>Stun</def>
+				<amount>5</amount>
+				<chance>0.15</chance>
+			  </li>
+			</extraMeleeDamages>
+		  </li>
+		</tools>
+		<recipeMaker>
+		  <researchPrerequisite>MorrowRim_TelvanniForge</researchPrerequisite>
+		  <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		  <workSkill>Crafting</workSkill>
+		  <effectWorking>Smith</effectWorking>
+		  <soundWorking>Recipe_Smith</soundWorking>
+		  <recipeUsers Inherit="False">
+			<li>MorrowRim_TelvanniForge</li>
+		  </recipeUsers>
+		  <unfinishedThingDef>MorrowRim_UnfinishedTelvanniRoots</unfinishedThingDef>
+		  <skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>5</Intellectual>
+		  </skillRequirements>
+		</recipeMaker>
+	</ThingDef>
+
+</Defs>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>MorrowRim - Glass and Ebony</li>
+    </mods>
+
+    <match Class="PatchOperationSequence">
+
+		<operations>
+
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					
+					<RecipeDef ParentName = "MorrowRim_TransmutationBase">
+						<defName>MorrowRim_TransmutationVolcanicGlass</defName>
+						<label>transmutate volcanic glass</label>
+						<description>Transmutate 30 volcanic glass using 15 ash salts, 15 fire salts and 50 silver.</description>
+						<jobString>Transmutating volcanic glass.</jobString>
+						<ingredients>
+						  <li>
+							<filter>
+							  <thingDefs>
+								<li>Dagoth_AshSalts</li>
+							  </thingDefs>
+							</filter>
+							<count>15</count>
+						  </li>
+						  <li>
+							<filter>
+							  <thingDefs>
+								<li>MorrowRim_FireSalts</li>
+							  </thingDefs>
+							</filter>
+							<count>15</count>
+						  </li>
+						  <li>
+							<filter>
+							  <thingDefs>
+								<li>Silver</li>
+							  </thingDefs>
+							</filter>
+							<count>5</count>
+						  </li>
+						</ingredients>
+						<fixedIngredientFilter>
+						  <thingDefs>
+							<li>Dagoth_AshSalts</li>
+							<li>MorrowRim_FireSalts</li>
+							<li>Silver</li>
+						  </thingDefs>
+						</fixedIngredientFilter>
+						<products>
+						  <MorrowRim_Glass>30</MorrowRim_Glass>
+						</products>
+					</RecipeDef>
+					
+					<RecipeDef ParentName = "MorrowRim_TransmutationBase">
+						<defName>MorrowRim_TransmutationVolcanicEbony</defName>
+						<label>transmutate volcanic ebony</label>
+						<description>Transmutate 30 volcanic ebony using 15 ash salts, 15 ferrous salts and 50 silver.</description>
+						<jobString>Transmutating volcanic ebony.</jobString>
+						<ingredients>
+						  <li>
+							<filter>
+							  <thingDefs>
+								<li>Dagoth_AshSalts</li>
+							  </thingDefs>
+							</filter>
+							<count>15</count>
+						  </li>
+						  <li>
+							<filter>
+							  <thingDefs>
+								<li>MorrowRim_FerrousSalts</li>
+							  </thingDefs>
+							</filter>
+							<count>15</count>
+						  </li>
+						  <li>
+							<filter>
+							  <thingDefs>
+								<li>Silver</li>
+							  </thingDefs>
+							</filter>
+							<count>5</count>
+						  </li>
+						</ingredients>
+						<fixedIngredientFilter>
+						  <thingDefs>
+							<li>Dagoth_AshSalts</li>
+							<li>MorrowRim_FerrousSalts</li>
+							<li>Silver</li>
+						  </thingDefs>
+						</fixedIngredientFilter>
+						<products>
+						  <MorrowRim_Ebony>30</MorrowRim_Ebony>
+						</products>
+					</RecipeDef>
+
+				</value>
+			</li>
+			
+		</operations>
+    </match>
+  </Operation>
+
+</Patch>

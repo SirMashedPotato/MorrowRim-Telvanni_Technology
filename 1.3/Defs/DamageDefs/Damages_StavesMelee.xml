@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- generic -->
+
+	<DamageDef ParentName="CutBase">
+		<defName>MorrowRim_CutBleed</defName>
+		<label>lacerating cut</label>
+		<additionalHediffs>
+		  <li>
+			<hediff>BloodLoss</hediff>
+			<severityPerDamageDealt>0.005</severityPerDamageDealt>
+			<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+		  </li>
+		</additionalHediffs>
+	</DamageDef>
+	
+	<!-- Frost -->
+	
+	<DamageDef ParentName="CutBase">
+		<defName>MorrowRim_CutFrost</defName>
+		<label>freezing cut</label>
+		<additionalHediffs>
+		  <li>
+			<hediff>Hypothermia</hediff>
+			<severityPerDamageDealt>0.005</severityPerDamageDealt>
+			<victimSeverityScaling>ArmorRating_Heat</victimSeverityScaling>
+			<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+		  </li>
+		</additionalHediffs>
+	</DamageDef>
+	
+	<DamageDef ParentName="BluntBase">
+		<defName>MorrowRim_BluntFrost</defName>
+		<label>freezing impact</label>
+		<additionalHediffs>
+		  <li>
+			<hediff>Hypothermia</hediff>
+			<severityPerDamageDealt>0.005</severityPerDamageDealt>
+			<victimSeverityScaling>ArmorRating_Heat</victimSeverityScaling>
+			<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+		  </li>
+		</additionalHediffs>
+	</DamageDef>
+	
+	<DamageDef>
+		<defName>MorrowRim_StabFrost</defName>
+		<label>freezing stab</label>
+		<additionalHediffs>
+		  <li>
+			<hediff>Hypothermia</hediff>
+			<severityPerDamageDealt>0.005</severityPerDamageDealt>
+			<victimSeverityScaling>ArmorRating_Heat</victimSeverityScaling>
+			<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+		  </li>
+		</additionalHediffs>
+		<!-- copied from Stab -->
+		<workerClass>DamageWorker_Stab</workerClass>
+		<externalViolence>true</externalViolence>
+		<deathMessage>{0} has been stabbed to death.</deathMessage>
+		<hediff>Stab</hediff>
+		<hediffSolid>Crack</hediffSolid>
+		<impactSoundType>Slice</impactSoundType>
+		<armorCategory>Sharp</armorCategory>
+		<stabChanceOfForcedInternal>0.6</stabChanceOfForcedInternal>
+		<overkillPctToDestroyPart>0.4~1.0</overkillPctToDestroyPart>
+	</DamageDef>
+	
+	<!-- Toxin -->
+	
+	<DamageDef ParentName="CutBase">
+		<defName>MorrowRim_CutToxin</defName>
+		<label>toxic cut</label>
+		<additionalHediffs>
+		  <li>
+			<hediff>ToxicBuildup</hediff>
+			<severityPerDamageDealt>0.005</severityPerDamageDealt>
+			<victimSeverityScaling>ToxicSensitivity</victimSeverityScaling>
+			<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+		  </li>
+		</additionalHediffs>
+	</DamageDef>
+	
+	<DamageDef ParentName="BluntBase">
+		<defName>MorrowRim_BluntToxin</defName>
+		<label>toxic impact</label>
+		<additionalHediffs>
+		  <li>
+			<hediff>ToxicBuildup</hediff>
+			<severityPerDamageDealt>0.005</severityPerDamageDealt>
+			<victimSeverityScaling>ToxicSensitivity</victimSeverityScaling>
+			<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+		  </li>
+		</additionalHediffs>
+	</DamageDef>
+	
+	<DamageDef>
+		<defName>MorrowRim_StabToxin</defName>
+		<label>toxic stab</label>
+		<additionalHediffs>
+		  <li>
+			<hediff>ToxicBuildup</hediff>
+			<severityPerDamageDealt>0.005</severityPerDamageDealt>
+			<victimSeverityScaling>ToxicSensitivity</victimSeverityScaling>
+			<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+		  </li>
+		</additionalHediffs>
+		<!-- copied from Stab -->
+		<workerClass>DamageWorker_Stab</workerClass>
+		<externalViolence>true</externalViolence>
+		<deathMessage>{0} has been stabbed to death.</deathMessage>
+		<hediff>Stab</hediff>
+		<hediffSolid>Crack</hediffSolid>
+		<impactSoundType>Slice</impactSoundType>
+		<armorCategory>Sharp</armorCategory>
+		<stabChanceOfForcedInternal>0.6</stabChanceOfForcedInternal>
+		<overkillPctToDestroyPart>0.4~1.0</overkillPctToDestroyPart>
+	</DamageDef>
+	
+	<!-- Vampiric -->
+	
+	<DamageDef ParentName="CutBase">
+		<defName>MorrowRim_CutVampiric</defName>
+		<label>haemolysing cut</label>
+		<makesBlood>false</makesBlood>
+		<additionalHediffs>
+		  <li>
+			<hediff>BloodLoss</hediff>
+			<severityPerDamageDealt>0.005</severityPerDamageDealt>
+			<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+		  </li>
+		</additionalHediffs>
+	</DamageDef>
+	
+	<DamageDef ParentName="BluntBase">
+		<defName>MorrowRim_BluntVampiric</defName>
+		<label>haemolysing impact</label>
+		<makesBlood>false</makesBlood>
+		<additionalHediffs>
+		  <li>
+			<hediff>BloodLoss</hediff>
+			<severityPerDamageDealt>0.005</severityPerDamageDealt>
+			<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+		  </li>
+		</additionalHediffs>
+	</DamageDef>
+	
+	<DamageDef>
+		<defName>MorrowRim_StabVampiric</defName>
+		<label>haemolysing stab</label>
+		<makesBlood>false</makesBlood>
+		<additionalHediffs>
+		  <li>
+			<hediff>BloodLoss</hediff>
+			<severityPerDamageDealt>0.005</severityPerDamageDealt>
+			<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+		  </li>
+		</additionalHediffs>
+		<!-- copied from Stab -->
+		<workerClass>DamageWorker_Stab</workerClass>
+		<externalViolence>true</externalViolence>
+		<deathMessage>{0} has been stabbed to death.</deathMessage>
+		<hediff>Stab</hediff>
+		<hediffSolid>Crack</hediffSolid>
+		<impactSoundType>Slice</impactSoundType>
+		<armorCategory>Sharp</armorCategory>
+		<stabChanceOfForcedInternal>0.6</stabChanceOfForcedInternal>
+		<overkillPctToDestroyPart>0.4~1.0</overkillPctToDestroyPart>
+	</DamageDef>
+	
+	<!-- Grave -->
+	
+	<DamageDef ParentName="CutBase">
+		<defName>MorrowRim_CutGrave</defName>
+		<label>corrosive cut</label>
+		<makesBlood>false</makesBlood>
+		<additionalHediffs>
+		  <li>
+			<hediff>MorrowRim_ArmorCorrosion</hediff>
+			<severityPerDamageDealt>0.005</severityPerDamageDealt>
+			<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+		  </li>
+		</additionalHediffs>
+	</DamageDef>
+	
+	<DamageDef ParentName="BluntBase">
+		<defName>MorrowRim_BluntGrave</defName>
+		<label>corrosive impact</label>
+		<makesBlood>false</makesBlood>
+		<additionalHediffs>
+		  <li>
+			<hediff>MorrowRim_ArmorCorrosion</hediff>
+			<severityPerDamageDealt>0.005</severityPerDamageDealt>
+			<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+		  </li>
+		</additionalHediffs>
+	</DamageDef>
+	
+	<DamageDef>
+		<defName>MorrowRim_StabGrave</defName>
+		<label>corrosive stab</label>
+		<makesBlood>false</makesBlood>
+		<additionalHediffs>
+		  <li>
+			<hediff>MorrowRim_ArmorCorrosion</hediff>
+			<severityPerDamageDealt>0.005</severityPerDamageDealt>
+			<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+		  </li>
+		</additionalHediffs>
+		<!-- copied from Stab -->
+		<workerClass>DamageWorker_Stab</workerClass>
+		<externalViolence>true</externalViolence>
+		<deathMessage>{0} has been stabbed to death.</deathMessage>
+		<hediff>Stab</hediff>
+		<hediffSolid>Crack</hediffSolid>
+		<impactSoundType>Slice</impactSoundType>
+		<armorCategory>Sharp</armorCategory>
+		<stabChanceOfForcedInternal>0.6</stabChanceOfForcedInternal>
+		<overkillPctToDestroyPart>0.4~1.0</overkillPctToDestroyPart>
+	</DamageDef>
+	
+	<!-- Paralysis -->
+	
+	<DamageDef ParentName="CutBase">
+		<defName>MorrowRim_CutParalysis</defName>
+		<label>paralytic cut</label>
+		<additionalHediffs>
+		  <li>
+			<hediff>MorrowRim_StaveParalysis</hediff>
+			<severityPerDamageDealt>0.005</severityPerDamageDealt>
+			<victimSeverityScaling>ToxicSensitivity</victimSeverityScaling>
+			<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+		  </li>
+		</additionalHediffs>
+	</DamageDef>
+	
+	<DamageDef ParentName="BluntBase">
+		<defName>MorrowRim_BluntParalysis</defName>
+		<label>paralytic impact</label>
+		<additionalHediffs>
+		  <li>
+			<hediff>MorrowRim_StaveParalysis</hediff>
+			<severityPerDamageDealt>0.005</severityPerDamageDealt>
+			<victimSeverityScaling>ToxicSensitivity</victimSeverityScaling>
+			<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+		  </li>
+		</additionalHediffs>
+	</DamageDef>
+	
+	<DamageDef>
+		<defName>MorrowRim_StabParalysis</defName>
+		<label>paralytic stab</label>
+		<additionalHediffs>
+		  <li>
+			<hediff>MorrowRim_StaveParalysis</hediff>
+			<severityPerDamageDealt>0.005</severityPerDamageDealt>
+			<victimSeverityScaling>ToxicSensitivity</victimSeverityScaling>
+			<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+		  </li>
+		</additionalHediffs>
+		<!-- copied from Stab -->
+		<workerClass>DamageWorker_Stab</workerClass>
+		<externalViolence>true</externalViolence>
+		<deathMessage>{0} has been stabbed to death.</deathMessage>
+		<hediff>Stab</hediff>
+		<hediffSolid>Crack</hediffSolid>
+		<impactSoundType>Slice</impactSoundType>
+		<armorCategory>Sharp</armorCategory>
+		<stabChanceOfForcedInternal>0.6</stabChanceOfForcedInternal>
+		<overkillPctToDestroyPart>0.4~1.0</overkillPctToDestroyPart>
+	</DamageDef>
+	
+</Defs>

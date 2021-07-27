@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>MorrowRim_MonarchCore</defName>
+		<label>monarch core</label>
+		<description>A peculiar crystal, imbued with aetherial energy. Can be activated to ascend an atronach.\n\nAscending an atronach will increase the monarch ascension level by 1, up to level 10, destroying the monarch core in the process.</description>
+		<graphicData>
+		  <texPath>Things/Item/Special/MorrowRim_MonarchCore</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		  <drawSize>0.85</drawSize>
+		</graphicData>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Metal_Drop</soundDrop>
+		<stackLimit>25</stackLimit>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+		  <!--<MarketValue>800</MarketValue>-->
+		  <MaxHitPoints>100</MaxHitPoints>
+		  <Mass>2</Mass>
+		  <Flammability>0.2</Flammability>
+		</statBases>
+		<thingCategories>
+		  <li>Items</li>
+		</thingCategories>
+		<techLevel>Medieval</techLevel>
+		<tradeTags>
+		  <li>TelvanniExotic</li>
+		</tradeTags>
+	</ThingDef>
+	
+	<ThingDef ParentName="ResourceBase">
+		<defName>MorrowRim_HeartStone</defName>
+		<label>heart stone</label>
+		<description>A peculiar stone mined from volcanic debris, said to be a shard of the Heart of Lorkhan. It's warm to the touch, and seems to radiate with energy.</description>
+		<graphicData>
+		  <texPath>Things/Item/Special/MorrowRim_HeartStone</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		  <drawSize>0.70</drawSize>
+		</graphicData>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Metal_Drop</soundDrop>
+		<stackLimit>25</stackLimit>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+		  <MarketValue>200</MarketValue>
+		  <MaxHitPoints>100</MaxHitPoints>
+		  <Mass>2</Mass>
+		  <Flammability>0.2</Flammability>
+		</statBases>
+		<thingCategories>
+		  <li>Items</li>
+		</thingCategories>
+		<techLevel>Medieval</techLevel>
+		<tradeTags>
+		  <li>TelvanniExotic</li>
+		  <li>AshlandExotic</li>
+		  <li>ExoticMisc</li>
+		</tradeTags>
+		<butcherProducts>
+		  <Dagoth_AshSalts>5</Dagoth_AshSalts>
+		  <MorrowRim_FireSalts>5</MorrowRim_FireSalts>
+		  <MorrowRim_FerrousSalts>5</MorrowRim_FerrousSalts>
+		</butcherProducts>
+	</ThingDef>
+  
+	<ThingDef ParentName="ResourceBase">
+		<defName>MorrowRim_HeartStoneDepleted</defName>
+		<label>depleted heart stone</label>
+		<description>A heart stone completely drained of its inner fire. You may be able to reignite the flame at a Telvanni forge.</description>
+		<graphicData>
+		  <texPath>Things/Item/Special/MorrowRim_HeartStoneDepleted</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		  <drawSize>0.70</drawSize>
+		</graphicData>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Metal_Drop</soundDrop>
+		<stackLimit>25</stackLimit>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+		  <MarketValue>20</MarketValue>
+		  <MaxHitPoints>100</MaxHitPoints>
+		  <Mass>2</Mass>
+		  <Flammability>0.2</Flammability>
+		</statBases>
+		<thingCategories>
+		  <li>Items</li>
+		  <li>ResourcesRaw</li>
+		</thingCategories>
+		<techLevel>Medieval</techLevel>
+		<tradeTags>
+		  <li>TelvanniRare</li>
+		  <li>AshlandRare</li>
+		</tradeTags>
+		<butcherProducts>
+		  <Dagoth_AshSalts>5</Dagoth_AshSalts>
+		  <MorrowRim_FerrousSalts>5</MorrowRim_FerrousSalts>
+		</butcherProducts>
+	</ThingDef>
+
+</Defs>

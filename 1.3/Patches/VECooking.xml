@@ -1,0 +1,786 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Cooking Expanded</li>
+    </mods>
+
+    <match Class="PatchOperationSequence">
+
+		<operations>
+
+			<li Class="PatchOperationAdd">
+			<xpath>/Defs</xpath>
+				<value>
+
+					<!-- Fire -->
+
+					<ThingDef ParentName="RoughPlantBase">
+						<defName>VCE_CookingFireSalts</defName>
+						<label>cooking fire salts</label>
+						<description>Fire salts, prepared for use in cooking. Fortifies ones resistance to the cold by 5 degrees for 24 hours, but increases alchemical toxicity slightly.</description>
+						<graphicData>
+							<texPath>Things/Item/Resource/VCE/CondimentMorrowRim_FireSalts</texPath>
+							<graphicClass>Graphic_StackCount</graphicClass>
+							<drawSize>1</drawSize>
+						</graphicData>
+						<statBases>
+							<MarketValue>4</MarketValue>
+							<Nutrition>0</Nutrition>
+							<Flammability>0.1</Flammability>
+						</statBases>
+						<thingCategories>
+							<li>VCE_Condiments</li>
+						</thingCategories>
+						<ingestible>
+							<preferability>NeverForNutrition</preferability>
+							<specialThoughtAsIngredient>VCE_ConsumedFireSalts</specialThoughtAsIngredient>
+						</ingestible>
+						<tradeTags>
+							<li>TelvanniCookingSalt</li>
+						</tradeTags>
+					</ThingDef>
+
+					<ThoughtDef>	
+						<thoughtClass>VanillaCookingExpanded.Thought_Hediff</thoughtClass>
+						<hediff>VCE_ConsumedFireSalts</hediff>
+						<defName>VCE_ConsumedFireSalts</defName>
+						<durationDays>1</durationDays>
+						<stages>
+							<li>
+								<label>consumed fire salts</label>
+								<description>My tongue feels weird.</description>
+								<baseMoodEffect>-1</baseMoodEffect>
+							</li>
+						</stages>	
+						<modExtensions>
+							<li Class="VanillaCookingExpanded.Thought_Hediff_Extension">
+								<hediffToAffect>MorrowRim_PotionSickness</hediffToAffect>
+								<partToAffect>Body</partToAffect>
+								<percentage>0.0075</percentage>
+							</li>
+						</modExtensions>
+					</ThoughtDef>
+
+					<HediffDef>
+						<defName>VCE_ConsumedFireSalts</defName>
+						<label>consumed fire salts (from meal)</label>
+						<makesSickThought>false</makesSickThought>
+						<description>Fire salts, prepared for use in cooking. Fortifies ones resistance to the cold by 5 degrees for 24 hours.</description>
+						<tendable>false</tendable>
+						<isBad>false</isBad>
+						<defaultLabelColor>(98,36,208)</defaultLabelColor>
+						<hediffClass>HediffWithComps</hediffClass>
+						<initialSeverity>1.0</initialSeverity>
+						<maxSeverity>1.0</maxSeverity>
+						<comps>
+							<li Class="VanillaCookingExpanded.HediffCompProperties_WhileHavingThoughts">
+								<thoughtDefs>
+									<li>VCE_ConsumedFireSalts</li>
+								</thoughtDefs>
+							</li>
+						</comps>
+						<stages>
+							<li>   
+								<statOffsets>
+									<ComfyTemperatureMin>-5</ComfyTemperatureMin>
+								</statOffsets>
+							</li>
+						</stages>
+					</HediffDef>
+
+					<RecipeDef>
+						<defName>VCE_CookingFireSalts</defName>
+						<label>make cooking fire salts</label>
+						<description>Create 10 cooking fire salts from 5 fire salts.</description>
+						<jobString>Making cooking fire salts.</jobString>
+						<workSpeedStat>CookSpeed</workSpeedStat>
+						<effectWorking>Cook</effectWorking>
+						<soundWorking>Recipe_CookMeal</soundWorking>
+						<workAmount>200</workAmount>
+						<recipeUsers>
+							<li>VCE_CondimentPrepTable</li>	  
+						</recipeUsers>	
+						<ingredients>
+							<li>
+								<filter>
+									<thingDefs>
+										<li>MorrowRim_FireSalts</li>
+									</thingDefs>
+								</filter>
+								<count>5</count>
+							</li>
+						</ingredients>
+						<fixedIngredientFilter>
+							<thingDefs>
+								<li>MorrowRim_FireSalts</li>
+							</thingDefs>
+						</fixedIngredientFilter>
+						<products>
+							<VCE_CookingFireSalts>10</VCE_CookingFireSalts>
+						</products>
+						<researchPrerequisite>MorrowRim_TelvanniSaltPurifying</researchPrerequisite>
+					</RecipeDef>
+					
+					<!-- Frost -->
+
+					<ThingDef ParentName="RoughPlantBase">
+						<defName>VCE_CookingFrostSalts</defName>
+						<label>cooking frost salts</label>
+						<description>Frost salts, prepared for use in cooking. Fortifies ones resistance to the heat by 5 degrees for 24 hours, but increases alchemical toxicity slightly.</description>
+						<graphicData>
+							<texPath>Things/Item/Resource/VCE/CondimentMorrowRim_FrostSalts</texPath>
+							<graphicClass>Graphic_StackCount</graphicClass>
+							<drawSize>1</drawSize>
+						</graphicData>
+						<statBases>
+							<MarketValue>4</MarketValue>
+							<Nutrition>0</Nutrition>
+							<Flammability>0.1</Flammability>
+						</statBases>
+						<thingCategories>
+							<li>VCE_Condiments</li>
+						</thingCategories>
+						<ingestible>
+							<preferability>NeverForNutrition</preferability>
+							<specialThoughtAsIngredient>VCE_ConsumedFrostSalts</specialThoughtAsIngredient>
+						</ingestible>
+						<tradeTags>
+							<li>TelvanniCookingSalt</li>
+						</tradeTags>
+					</ThingDef>
+
+					<ThoughtDef>	
+						<thoughtClass>VanillaCookingExpanded.Thought_Hediff</thoughtClass>
+						<hediff>VCE_ConsumedFrostSalts</hediff>
+						<defName>VCE_ConsumedFrostSalts</defName>
+						<durationDays>1</durationDays>
+						<stages>
+							<li>
+								<label>consumed frost salts</label>
+								<description>My tongue feels weird.</description>
+								<baseMoodEffect>-1</baseMoodEffect>
+							</li>
+						</stages>	
+						<modExtensions>
+							<li Class="VanillaCookingExpanded.Thought_Hediff_Extension">
+								<hediffToAffect>MorrowRim_PotionSickness</hediffToAffect>
+								<partToAffect>Body</partToAffect>
+								<percentage>0.0075</percentage>
+							</li>
+						</modExtensions>
+					</ThoughtDef>
+
+					<HediffDef>
+						<defName>VCE_ConsumedFrostSalts</defName>
+						<label>consumed frost salts (from meal)</label>
+						<makesSickThought>false</makesSickThought>
+						<description>Frost salts, prepared for use in cooking. Fortifies ones resistance to the heat by 5 degrees for 24 hours.</description>
+						<tendable>false</tendable>
+						<isBad>false</isBad>
+						<defaultLabelColor>(98,36,208)</defaultLabelColor>
+						<hediffClass>HediffWithComps</hediffClass>
+						<initialSeverity>1.0</initialSeverity>
+						<maxSeverity>1.0</maxSeverity>
+						<comps>
+							<li Class="VanillaCookingExpanded.HediffCompProperties_WhileHavingThoughts">
+								<thoughtDefs>
+									<li>VCE_ConsumedFrostSalts</li>
+								</thoughtDefs>
+							</li>
+						</comps>
+						<stages>
+							<li>   
+								<statOffsets>
+									<ComfyTemperatureMax>5</ComfyTemperatureMax>
+								</statOffsets>
+							</li>
+						</stages>
+					</HediffDef>
+
+					<RecipeDef>
+						<defName>VCE_CookingFrostSalts</defName>
+						<label>make cooking frost salts</label>
+						<description>Create 10 cooking frost salts from 5 frost salts.</description>
+						<jobString>Making cooking frost salts.</jobString>
+						<workSpeedStat>CookSpeed</workSpeedStat>
+						<effectWorking>Cook</effectWorking>
+						<soundWorking>Recipe_CookMeal</soundWorking>
+						<workAmount>200</workAmount>
+						<recipeUsers>
+							<li>VCE_CondimentPrepTable</li>	  
+						</recipeUsers>	
+						<ingredients>
+							<li>
+								<filter>
+									<thingDefs>
+										<li>MorrowRim_FrostSalts</li>
+									</thingDefs>
+								</filter>
+								<count>5</count>
+							</li>
+						</ingredients>
+						<fixedIngredientFilter>
+							<thingDefs>
+								<li>MorrowRim_FrostSalts</li>
+							</thingDefs>
+						</fixedIngredientFilter>
+						<products>
+							<VCE_CookingFrostSalts>10</VCE_CookingFrostSalts>
+						</products>
+						<researchPrerequisite>MorrowRim_TelvanniSaltPurifying</researchPrerequisite>
+					</RecipeDef>
+					
+					<!-- Void -->
+
+					<ThingDef ParentName="RoughPlantBase">
+						<defName>VCE_CookingVoidSalts</defName>
+						<label>cooking void salts</label>
+						<description>Void salts, prepared for use in cooking. Fortifies ones resistance to pain by 5% for 24 hours, but increases alchemical toxicity slightly.</description>
+						<graphicData>
+							<texPath>Things/Item/Resource/VCE/CondimentMorrowRim_VoidSalts</texPath>
+							<graphicClass>Graphic_StackCount</graphicClass>
+							<drawSize>1</drawSize>
+						</graphicData>
+						<statBases>
+							<MarketValue>4</MarketValue>
+							<Nutrition>0</Nutrition>
+							<Flammability>0.1</Flammability>
+						</statBases>
+						<thingCategories>
+							<li>VCE_Condiments</li>
+						</thingCategories>
+						<ingestible>
+							<preferability>NeverForNutrition</preferability>
+							<specialThoughtAsIngredient>VCE_ConsumedVoidSalts</specialThoughtAsIngredient>
+						</ingestible>
+						<tradeTags>
+							<li>TelvanniCookingSalt</li>
+						</tradeTags>
+					</ThingDef>
+
+					<ThoughtDef>	
+						<thoughtClass>VanillaCookingExpanded.Thought_Hediff</thoughtClass>
+						<hediff>VCE_ConsumedVoidSalts</hediff>
+						<defName>VCE_ConsumedVoidSalts</defName>
+						<durationDays>1</durationDays>
+						<stages>
+							<li>
+								<label>consumed void salts</label>
+								<description>My tongue feels weird.</description>
+								<baseMoodEffect>-1</baseMoodEffect>
+							</li>
+						</stages>	
+						<modExtensions>
+							<li Class="VanillaCookingExpanded.Thought_Hediff_Extension">
+								<hediffToAffect>MorrowRim_PotionSickness</hediffToAffect>
+								<partToAffect>Body</partToAffect>
+								<percentage>0.0075</percentage>
+							</li>
+						</modExtensions>
+					</ThoughtDef>
+
+					<HediffDef>
+						<defName>VCE_ConsumedVoidSalts</defName>
+						<label>consumed void salts (from meal)</label>
+						<makesSickThought>false</makesSickThought>
+						<description>Void salts, prepared for use in cooking. Fortifies ones resistance to pain by 5% for 24 hours.</description>
+						<tendable>false</tendable>
+						<isBad>false</isBad>
+						<defaultLabelColor>(98,36,208)</defaultLabelColor>
+						<hediffClass>HediffWithComps</hediffClass>
+						<initialSeverity>1.0</initialSeverity>
+						<maxSeverity>1.0</maxSeverity>
+						<comps>
+							<li Class="VanillaCookingExpanded.HediffCompProperties_WhileHavingThoughts">
+								<thoughtDefs>
+									<li>VCE_ConsumedVoidSalts</li>
+								</thoughtDefs>
+							</li>
+						</comps>
+						<stages>
+							<li>   
+								<painFactor>-0.5</painFactor>
+							</li>
+						</stages>
+					</HediffDef>
+
+					<RecipeDef>
+						<defName>VCE_CookingVoidSalts</defName>
+						<label>make cooking void salts</label>
+						<description>Create 10 cooking void salts from 5 void salts.</description>
+						<jobString>Making cooking void salts.</jobString>
+						<workSpeedStat>CookSpeed</workSpeedStat>
+						<effectWorking>Cook</effectWorking>
+						<soundWorking>Recipe_CookMeal</soundWorking>
+						<workAmount>200</workAmount>
+						<recipeUsers>
+							<li>VCE_CondimentPrepTable</li>	  
+						</recipeUsers>	
+						<ingredients>
+							<li>
+								<filter>
+									<thingDefs>
+										<li>MorrowRim_VoidSalts</li>
+									</thingDefs>
+								</filter>
+								<count>5</count>
+							</li>
+						</ingredients>
+						<fixedIngredientFilter>
+							<thingDefs>
+								<li>MorrowRim_VoidSalts</li>
+							</thingDefs>
+						</fixedIngredientFilter>
+						<products>
+							<VCE_CookingVoidSalts>10</VCE_CookingVoidSalts>
+						</products>
+						<researchPrerequisite>MorrowRim_TelvanniSaltPurifying</researchPrerequisite>
+					</RecipeDef>
+					
+					<!-- Ash -->
+
+					<ThingDef ParentName="RoughPlantBase">
+						<defName>VCE_CookingAshSalts</defName>
+						<label>cooking ash salts</label>
+						<description>Ash salts, prepared for use in cooking. Fortifies ones resistance to sharp damage by 5% for 24 hours, but increases alchemical toxicity slightly.</description>
+						<graphicData>
+							<texPath>Things/Item/Resource/VCE/CondimentMorrowRim_AshSalts</texPath>
+							<graphicClass>Graphic_StackCount</graphicClass>
+							<drawSize>1</drawSize>
+						</graphicData>
+						<statBases>
+							<MarketValue>4</MarketValue>
+							<Nutrition>0</Nutrition>
+							<Flammability>0.1</Flammability>
+						</statBases>
+						<thingCategories>
+							<li>VCE_Condiments</li>
+						</thingCategories>
+						<ingestible>
+							<preferability>NeverForNutrition</preferability>
+							<specialThoughtAsIngredient>VCE_ConsumedAshSalts</specialThoughtAsIngredient>
+						</ingestible>
+						<tradeTags>
+							<li>TelvanniCookingSalt</li>
+						</tradeTags>
+					</ThingDef>
+
+					<ThoughtDef>	
+						<thoughtClass>VanillaCookingExpanded.Thought_Hediff</thoughtClass>
+						<hediff>VCE_ConsumedAshSalts</hediff>
+						<defName>VCE_ConsumedAshSalts</defName>
+						<durationDays>1</durationDays>
+						<stages>
+							<li>
+								<label>consumed ash salts</label>
+								<description>My tongue feels weird.</description>
+								<baseMoodEffect>-1</baseMoodEffect>
+							</li>
+						</stages>	
+						<modExtensions>
+							<li Class="VanillaCookingExpanded.Thought_Hediff_Extension">
+								<hediffToAffect>MorrowRim_PotionSickness</hediffToAffect>
+								<partToAffect>Body</partToAffect>
+								<percentage>0.0075</percentage>
+							</li>
+						</modExtensions>
+					</ThoughtDef>
+
+					<HediffDef>
+						<defName>VCE_ConsumedAshSalts</defName>
+						<label>consumed ash salts (from meal)</label>
+						<makesSickThought>false</makesSickThought>
+						<description>Ash salts, prepared for use in cooking. Fortifies ones resistance to sharp damage by 5% for 24 hours.</description>
+						<tendable>false</tendable>
+						<isBad>false</isBad>
+						<defaultLabelColor>(98,36,208)</defaultLabelColor>
+						<hediffClass>HediffWithComps</hediffClass>
+						<initialSeverity>1.0</initialSeverity>
+						<maxSeverity>1.0</maxSeverity>
+						<comps>
+							<li Class="VanillaCookingExpanded.HediffCompProperties_WhileHavingThoughts">
+								<thoughtDefs>
+									<li>VCE_ConsumedAshSalts</li>
+								</thoughtDefs>
+							</li>
+						</comps>
+						<stages>
+							<li>   
+								<statOffsets>
+									<ArmorRating_Sharp>0.05</ArmorRating_Sharp>
+								</statOffsets>
+							</li>
+						</stages>
+					</HediffDef>
+
+					<RecipeDef>
+						<defName>VCE_CookingAshSalts</defName>
+						<label>make cooking ash salts</label>
+						<description>Create 10 cooking ash salts from 5 ash salts.</description>
+						<jobString>Making cooking ash salts.</jobString>
+						<workSpeedStat>CookSpeed</workSpeedStat>
+						<effectWorking>Cook</effectWorking>
+						<soundWorking>Recipe_CookMeal</soundWorking>
+						<workAmount>200</workAmount>
+						<recipeUsers>
+							<li>VCE_CondimentPrepTable</li>	  
+						</recipeUsers>	
+						<ingredients>
+							<li>
+								<filter>
+									<thingDefs>
+										<li>Dagoth_AshSalts</li>
+									</thingDefs>
+								</filter>
+								<count>5</count>
+							</li>
+						</ingredients>
+						<fixedIngredientFilter>
+							<thingDefs>
+								<li>Dagoth_AshSalts</li>
+							</thingDefs>
+						</fixedIngredientFilter>
+						<products>
+							<VCE_CookingAshSalts>10</VCE_CookingAshSalts>
+						</products>
+						<researchPrerequisite>MorrowRim_TelvanniSaltPurifying</researchPrerequisite>
+					</RecipeDef>
+					
+					<!-- Ferrous -->
+
+					<ThingDef ParentName="RoughPlantBase">
+						<defName>VCE_CookingFerrousSalts</defName>
+						<label>cooking ferrous salts</label>
+						<description>Ferrous salts, prepared for use in cooking. Fortifies ones resistance to blunt damage by 5% for 24 hours, but increases alchemical toxicity slightly.</description>
+						<graphicData>
+							<texPath>Things/Item/Resource/VCE/CondimentMorrowRim_FerrousSalts</texPath>
+							<graphicClass>Graphic_StackCount</graphicClass>
+							<drawSize>1</drawSize>
+						</graphicData>
+						<statBases>
+							<MarketValue>4</MarketValue>
+							<Nutrition>0</Nutrition>
+							<Flammability>0.1</Flammability>
+						</statBases>
+						<thingCategories>
+							<li>VCE_Condiments</li>
+						</thingCategories>
+						<ingestible>
+							<preferability>NeverForNutrition</preferability>
+							<specialThoughtAsIngredient>VCE_ConsumedFerrousSalts</specialThoughtAsIngredient>
+						</ingestible>
+						<tradeTags>
+							<li>TelvanniCookingSalt</li>
+						</tradeTags>
+					</ThingDef>
+
+					<ThoughtDef>	
+						<thoughtClass>VanillaCookingExpanded.Thought_Hediff</thoughtClass>
+						<hediff>VCE_ConsumedFerrousSalts</hediff>
+						<defName>VCE_ConsumedFerrousSalts</defName>
+						<durationDays>1</durationDays>
+						<stages>
+							<li>
+								<label>consumed ferrous salts</label>
+								<description>My tongue feels weird.</description>
+								<baseMoodEffect>-1</baseMoodEffect>
+							</li>
+						</stages>	
+						<modExtensions>
+							<li Class="VanillaCookingExpanded.Thought_Hediff_Extension">
+								<hediffToAffect>MorrowRim_PotionSickness</hediffToAffect>
+								<partToAffect>Body</partToAffect>
+								<percentage>0.0075</percentage>
+							</li>
+						</modExtensions>
+					</ThoughtDef>
+
+					<HediffDef>
+						<defName>VCE_ConsumedFerrousSalts</defName>
+						<label>consumed ferrous salts (from meal)</label>
+						<makesSickThought>false</makesSickThought>
+						<description>Ferrous salts, prepared for use in cooking. Fortifies ones resistance to blunt damage by 5% by 5 degrees for 24 hours.</description>
+						<tendable>false</tendable>
+						<isBad>false</isBad>
+						<defaultLabelColor>(98,36,208)</defaultLabelColor>
+						<hediffClass>HediffWithComps</hediffClass>
+						<initialSeverity>1.0</initialSeverity>
+						<maxSeverity>1.0</maxSeverity>
+						<comps>
+							<li Class="VanillaCookingExpanded.HediffCompProperties_WhileHavingThoughts">
+								<thoughtDefs>
+									<li>VCE_ConsumedFerrousSalts</li>
+								</thoughtDefs>
+							</li>
+						</comps>
+						<stages>
+							<li>   
+								<statOffsets>
+									<ArmorRating_Blunt>0.05</ArmorRating_Blunt>
+								</statOffsets>
+							</li>
+						</stages>
+					</HediffDef>
+
+					<RecipeDef>
+						<defName>VCE_CookingFerrousSalts</defName>
+						<label>make cooking ferrous salts</label>
+						<description>Create 10 cooking ferrous salts from 5 ferrous salts.</description>
+						<jobString>Making cooking ferrous salts.</jobString>
+						<workSpeedStat>CookSpeed</workSpeedStat>
+						<effectWorking>Cook</effectWorking>
+						<soundWorking>Recipe_CookMeal</soundWorking>
+						<workAmount>200</workAmount>
+						<recipeUsers>
+							<li>VCE_CondimentPrepTable</li>	  
+						</recipeUsers>	
+						<ingredients>
+							<li>
+								<filter>
+									<thingDefs>
+										<li>MorrowRim_FerrousSalts</li>
+									</thingDefs>
+								</filter>
+								<count>5</count>
+							</li>
+						</ingredients>
+						<fixedIngredientFilter>
+							<thingDefs>
+								<li>MorrowRim_FerrousSalts</li>
+							</thingDefs>
+						</fixedIngredientFilter>
+						<products>
+							<VCE_CookingFerrousSalts>10</VCE_CookingFerrousSalts>
+						</products>
+						<researchPrerequisite>MorrowRim_TelvanniSaltPurifying</researchPrerequisite>
+					</RecipeDef>
+					
+					<!-- Air -->
+
+					<ThingDef ParentName="RoughPlantBase">
+						<defName>VCE_CookingAirSalts</defName>
+						<label>cooking air salts</label>
+						<description>Air salts, prepared for use in cooking. Fortifies ones resistance to psychic effects by 5% for 24 hours, but increases alchemical toxicity slightly.</description>
+						<graphicData>
+							<texPath>Things/Item/Resource/VCE/CondimentMorrowRim_AirSalts</texPath>
+							<graphicClass>Graphic_StackCount</graphicClass>
+							<drawSize>1</drawSize>
+						</graphicData>
+						<statBases>
+							<MarketValue>4</MarketValue>
+							<Nutrition>0</Nutrition>
+							<Flammability>0.1</Flammability>
+						</statBases>
+						<thingCategories>
+							<li>VCE_Condiments</li>
+						</thingCategories>
+						<ingestible>
+							<preferability>NeverForNutrition</preferability>
+							<specialThoughtAsIngredient>VCE_ConsumedAirSalts</specialThoughtAsIngredient>
+						</ingestible>
+						<tradeTags>
+							<li>TelvanniCookingSalt</li>
+						</tradeTags>
+					</ThingDef>
+
+					<ThoughtDef>	
+						<thoughtClass>VanillaCookingExpanded.Thought_Hediff</thoughtClass>
+						<hediff>VCE_ConsumedAirSalts</hediff>
+						<defName>VCE_ConsumedAirSalts</defName>
+						<durationDays>1</durationDays>
+						<stages>
+							<li>
+								<label>consumed air salts</label>
+								<description>My tongue feels weird.</description>
+								<baseMoodEffect>-1</baseMoodEffect>
+							</li>
+						</stages>	
+						<modExtensions>
+							<li Class="VanillaCookingExpanded.Thought_Hediff_Extension">
+								<hediffToAffect>MorrowRim_PotionSickness</hediffToAffect>
+								<partToAffect>Body</partToAffect>
+								<percentage>0.0075</percentage>
+							</li>
+						</modExtensions>
+					</ThoughtDef>
+
+					<HediffDef>
+						<defName>VCE_ConsumedAirSalts</defName>
+						<label>consumed air salts (from meal)</label>
+						<makesSickThought>false</makesSickThought>
+						<description>Air salts, prepared for use in cooking. Fortifies ones resistance to psychic effects by 5% by 5 degrees for 24 hours.</description>
+						<tendable>false</tendable>
+						<isBad>false</isBad>
+						<defaultLabelColor>(98,36,208)</defaultLabelColor>
+						<hediffClass>HediffWithComps</hediffClass>
+						<initialSeverity>1.0</initialSeverity>
+						<maxSeverity>1.0</maxSeverity>
+						<comps>
+							<li Class="VanillaCookingExpanded.HediffCompProperties_WhileHavingThoughts">
+								<thoughtDefs>
+									<li>VCE_ConsumedAirSalts</li>
+								</thoughtDefs>
+							</li>
+						</comps>
+						<stages>
+							<li>   
+								<statOffsets>
+									<PsychicSensitivity>-0.05</PsychicSensitivity>
+								</statOffsets>
+							</li>
+						</stages>
+					</HediffDef>
+
+					<RecipeDef>
+						<defName>VCE_CookingAirSalts</defName>
+						<label>make cooking air salts</label>
+						<description>Create 10 cooking air salts from 5 air salts.</description>
+						<jobString>Making cooking air salts.</jobString>
+						<workSpeedStat>CookSpeed</workSpeedStat>
+						<effectWorking>Cook</effectWorking>
+						<soundWorking>Recipe_CookMeal</soundWorking>
+						<workAmount>200</workAmount>
+						<recipeUsers>
+							<li>VCE_CondimentPrepTable</li>	  
+						</recipeUsers>	
+						<ingredients>
+							<li>
+								<filter>
+									<thingDefs>
+										<li>MorrowRim_AirSalts</li>
+									</thingDefs>
+								</filter>
+								<count>5</count>
+							</li>
+						</ingredients>
+						<fixedIngredientFilter>
+							<thingDefs>
+								<li>MorrowRim_AirSalts</li>
+							</thingDefs>
+						</fixedIngredientFilter>
+						<products>
+							<VCE_CookingAirSalts>10</VCE_CookingAirSalts>
+						</products>
+						<researchPrerequisite>MorrowRim_TelvanniSaltPurifying</researchPrerequisite>
+					</RecipeDef>
+					
+					<!-- Water -->
+
+					<ThingDef ParentName="RoughPlantBase">
+						<defName>VCE_CookingWaterSalts</defName>
+						<label>cooking water salts</label>
+						<description>Water salts, prepared for use in cooking. Fortifies ones resistance to toxic effects by 5% for 24 hours, but increases alchemical toxicity slightly.</description>
+						<graphicData>
+							<texPath>Things/Item/Resource/VCE/CondimentMorrowRim_WaterSalts</texPath>
+							<graphicClass>Graphic_StackCount</graphicClass>
+							<drawSize>1</drawSize>
+						</graphicData>
+						<statBases>
+							<MarketValue>4</MarketValue>
+							<Nutrition>0</Nutrition>
+							<Flammability>0.1</Flammability>
+						</statBases>
+						<thingCategories>
+							<li>VCE_Condiments</li>
+						</thingCategories>
+						<ingestible>
+							<preferability>NeverForNutrition</preferability>
+							<specialThoughtAsIngredient>VCE_ConsumedWaterSalts</specialThoughtAsIngredient>
+						</ingestible>
+						<tradeTags>
+							<li>TelvanniCookingSalt</li>
+						</tradeTags>
+					</ThingDef>
+
+					<ThoughtDef>	
+						<thoughtClass>VanillaCookingExpanded.Thought_Hediff</thoughtClass>
+						<hediff>VCE_ConsumedWaterSalts</hediff>
+						<defName>VCE_ConsumedWaterSalts</defName>
+						<durationDays>1</durationDays>
+						<stages>
+							<li>
+								<label>consumed water salts</label>
+								<description>My tongue feels weird.</description>
+								<baseMoodEffect>-1</baseMoodEffect>
+							</li>
+						</stages>	
+						<modExtensions>
+							<li Class="VanillaCookingExpanded.Thought_Hediff_Extension">
+								<hediffToAffect>MorrowRim_PotionSickness</hediffToAffect>
+								<partToAffect>Body</partToAffect>
+								<percentage>0.0075</percentage>
+							</li>
+						</modExtensions>
+					</ThoughtDef>
+
+					<HediffDef>
+						<defName>VCE_ConsumedWaterSalts</defName>
+						<label>consumed water salts (from meal)</label>
+						<makesSickThought>false</makesSickThought>
+						<description>Water salts, prepared for use in cooking. Fortifies ones resistance to toxic effects by 5% by 5 degrees for 24 hours.</description>
+						<tendable>false</tendable>
+						<isBad>false</isBad>
+						<defaultLabelColor>(98,36,208)</defaultLabelColor>
+						<hediffClass>HediffWithComps</hediffClass>
+						<initialSeverity>1.0</initialSeverity>
+						<maxSeverity>1.0</maxSeverity>
+						<comps>
+							<li Class="VanillaCookingExpanded.HediffCompProperties_WhileHavingThoughts">
+								<thoughtDefs>
+									<li>VCE_ConsumedWaterSalts</li>
+								</thoughtDefs>
+							</li>
+						</comps>
+						<stages>
+							<li>   
+								<statOffsets>
+									<ToxicSensitivity>-0.05</ToxicSensitivity>
+								</statOffsets>
+							</li>
+						</stages>
+					</HediffDef>
+
+					<RecipeDef>
+						<defName>VCE_CookingWaterSalts</defName>
+						<label>make cooking water salts</label>
+						<description>Create 10 cooking water salts from 5 water salts.</description>
+						<jobString>Making cooking water salts.</jobString>
+						<workSpeedStat>CookSpeed</workSpeedStat>
+						<effectWorking>Cook</effectWorking>
+						<soundWorking>Recipe_CookMeal</soundWorking>
+						<workAmount>200</workAmount>
+						<recipeUsers>
+							<li>VCE_CondimentPrepTable</li>	  
+						</recipeUsers>	
+						<ingredients>
+							<li>
+								<filter>
+									<thingDefs>
+										<li>MorrowRim_WaterSalts</li>
+									</thingDefs>
+								</filter>
+								<count>5</count>
+							</li>
+						</ingredients>
+						<fixedIngredientFilter>
+							<thingDefs>
+								<li>MorrowRim_WaterSalts</li>
+							</thingDefs>
+						</fixedIngredientFilter>
+						<products>
+							<VCE_CookingWaterSalts>10</VCE_CookingWaterSalts>
+						</products>
+						<researchPrerequisite>MorrowRim_TelvanniSaltPurifying</researchPrerequisite>
+					</RecipeDef>
+					
+				</value>
+			</li>
+
+		</operations>
+
+    </match>
+  </Operation>
+
+</Patch>

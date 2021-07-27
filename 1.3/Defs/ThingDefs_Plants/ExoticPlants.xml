@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- base -->
+	
+	<ThingDef Name="Telvanni_ExoticPlantBase" ParentName="PlantBase" Abstract="True">
+  		<statBases>
+		  <MaxHitPoints>150</MaxHitPoints>
+		  <Nutrition>0.1</Nutrition>
+		</statBases>
+		<selectable>true</selectable>
+		<passability>PassThroughOnly</passability>
+		<pathCost>130</pathCost>
+		<blockWind>true</blockWind>
+		<ingestible>
+			<foodType>Tree</foodType>
+			<preferability>RawBad</preferability>
+		</ingestible>
+		<plant>
+		  <sowWork>4000</sowWork>
+		  <fertilityMin>1.0</fertilityMin>
+		  <sowMinSkill>8</sowMinSkill>
+		  <growDays>22</growDays>
+		  <dieIfLeafless>true</dieIfLeafless>
+		  <harvestTag>Standard</harvestTag>
+		  <sowTags>
+			<li>Ground</li>
+		  </sowTags>
+		  <topWindExposure>0.1</topWindExposure>
+		  <wildOrder>2</wildOrder>
+		  <blockAdjacentSow>true</blockAdjacentSow>
+		  <sowResearchPrerequisites>
+			<li>MorrowRim_TelvanniSowingExotic</li>
+		  </sowResearchPrerequisites>
+		  <harvestAfterGrowth>0.30</harvestAfterGrowth>
+		  <harvestMinGrowth>0.70</harvestMinGrowth>
+		</plant>
+	</ThingDef>
+	
+	<ThingDef Name="Telvanni_ExoticTreeBase" ParentName="Telvanni_ExoticPlantBase" Abstract="True">
+		<plant>
+		  <interferesWithRoof>true</interferesWithRoof>
+		</plant>
+	</ThingDef>
+	
+	<!-- Trees -->
+	
+	<ThingDef ParentName="Telvanni_ExoticTreeBase">
+		<defName>Telvanni_AetherVeil</defName>
+		<label>aether veil mushroom</label>
+		<description>A genetically engineered mushroom, created by Great House Telvanni. The aether veil is named after the veil that grows from the rim of its head, which can be harvested for aetherial salts.</description>
+		<altitudeLayer>Building</altitudeLayer>
+		<graphicData>
+		  <texPath>Things/Plant/MorrowRim_AetherVeil</texPath>
+		  <graphicClass>Graphic_Random</graphicClass>
+		</graphicData>
+		<ingestible />
+		<plant>
+		  <harvestedThingDef>MorrowRim_AetherialSalts</harvestedThingDef>
+		  <immatureGraphicPath>Things/Plant_Immature/MorrowRim_AetherVeil</immatureGraphicPath>
+		  <visualSizeRange>1.5~2.0</visualSizeRange>
+		  <harvestYield>10</harvestYield>
+		</plant>
+		<comps>
+			<li Class="CompProperties_Glower">
+				<glowRadius>2</glowRadius>
+				<glowColor>(33,94,84,0)</glowColor>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_ExoticTreeBase">
+		<defName>Telvanni_DopplerSpore</defName>
+		<label>doppler spore mushroom</label>
+		<description>A genetically engineered mushroom, created by Great House Telvanni. The doppler spore is named after its unique spores, which, when prepared correctly, take on the properties of the liquid they are submerged in. Its spores can be harvested and used to duplicate elixirs.</description>
+		<altitudeLayer>Building</altitudeLayer>
+		<graphicData>
+		  <texPath>Things/Plant/MorrowRim_DopplerSpore</texPath>
+		  <graphicClass>Graphic_Random</graphicClass>
+		</graphicData>
+		<ingestible />
+		<plant>
+		  <harvestedThingDef>MorrowRim_DopplerSpores</harvestedThingDef>
+		  <immatureGraphicPath>Things/Plant_Immature/MorrowRim_DopplerSpore</immatureGraphicPath>
+		  <visualSizeRange>1.5~2.0</visualSizeRange>
+		  <harvestYield>10</harvestYield>
+		</plant>
+	</ThingDef>
+	
+	<!-- Plants -->
+	
+	<ThingDef ParentName="Telvanni_ExoticPlantBase">
+		<defName>Telvanni_HeartRose</defName>
+		<label>heart rose</label>
+		<description>A genetically engineered flowering plant, created by Great House Telvanni. The plant slowly draws energy from the earth, which eventually forms into a large heart stone.</description>
+		<altitudeLayer>Building</altitudeLayer>
+		<graphicData>
+		  <texPath>Things/Plant/MorrowRim_HeartRose</texPath>
+		  <graphicClass>Graphic_Random</graphicClass>
+		</graphicData>
+		<ingestible />
+		<plant>
+		  <harvestedThingDef>MorrowRim_HeartStone</harvestedThingDef>
+		  <immatureGraphicPath>Things/Plant_Immature/MorrowRim_HeartRose</immatureGraphicPath>
+		  <visualSizeRange>1.0~1.5</visualSizeRange>
+		  <harvestYield>3</harvestYield>
+		</plant>
+	</ThingDef>
+	
+	<!--
+	<ThingDef ParentName="Telvanni_ExoticPlantBase">
+		<defName>Telvanni_AtronachMold</defName>
+		<label>atronach mold</label>
+		<description>A genetically engineered slime mold, created by Great House Telvanni. The mold draws energy from the surroundings, slowly solidifying it into a harvestable atronach core.</description>
+		<altitudeLayer>Building</altitudeLayer>
+		<graphicData>
+		  <texPath>Things/Plant/DopplerSpore</texPath>
+		  <graphicClass>Graphic_Random</graphicClass>
+		</graphicData>
+		<ingestible />
+		<plant>
+		  <harvestedThingDef>MorrowRim_AtronachCore</harvestedThingDef>
+		  <immatureGraphicPath>Things/Plant_Immature/DopplerSpore</immatureGraphicPath>
+		  <visualSizeRange>1.5~2.0</visualSizeRange>
+		  <harvestYield>1</harvestYield>
+		</plant>
+	</ThingDef>
+	-->
+
+</Defs>

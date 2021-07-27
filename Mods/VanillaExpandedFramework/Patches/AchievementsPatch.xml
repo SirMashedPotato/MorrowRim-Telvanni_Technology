@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Achievements Expanded</li>
+		</mods>
+
+		<match Class="PatchOperationSequence">
+			<operations>
+
+
+				<li Class="PatchOperationAdd"> 
+					<xpath>/Defs</xpath>
+					<value>
+
+						<!-- Rewards -->
+
+						<!-- Building -->
+
+						<!-- Crafting -->
+
+						<AchievementsExpanded.AchievementDef> <!-- Uses custom tracker -->
+							<defName>MorrowRim_AchievementTelvanni_CraftAcidic</defName>
+							<label>Acidic Crafter</label>
+							<description>Create an acidic stave or acidic sentinal crystal</description>
+							<bgtexPath>Achievements/MorrowRim_AchievementBackgroundTelvanni</bgtexPath>
+							<tab>Telvanni_AchievementsTab</tab>
+							<tracker Class="AchievementsExpanded.ItemCraftTracker_WithDefList">
+								<defList>
+									<li>MorrowRim_SentinalCrystalAcidic</li>
+									<li>Telvanni_StaveAcidicBasic</li>
+									<li>Telvanni_StaveAcidicBlast</li>
+									<li>Telvanni_StaveAcidicCharged</li>
+									<li>Telvanni_StaveAcidicCloud</li>
+									<li>Telvanni_StaveAcidicFocused</li>
+									<li>Telvanni_StaveAcidicPrismatic</li>
+									<li>Telvanni_StaveAcidicRapid</li>
+								</defList>
+								<count>1</count>
+							</tracker>
+
+							<texPath>Achievements/MorrowRim_AchievementTelvanni_CraftAcidic</texPath>
+							<points>15</points>
+						</AchievementsExpanded.AchievementDef>
+						
+						<!-- Crafting Legendary -->
+	
+						<!-- Hediffs -->
+	
+						<!-- Multi Hediffs -->
+
+						<!-- Incidents -->
+	
+						<!-- Colonist -->
+		
+						<!-- Items -->
+
+						<AchievementsExpanded.AchievementDef>
+							<defName>MorrowRim_AchievementTelvanni_AcidicCrystal</defName>
+							<label>Completely Safe to Collect</label>
+							<description>Obtain 100 acid crystals</description>
+							<bgtexPath>Achievements/MorrowRim_AchievementBackgroundTelvanni</bgtexPath>
+							<tab>Telvanni_AchievementsTab</tab>
+							<tracker Class="AchievementsExpanded.ItemTracker">
+								<def>MorrowRim_HeartStone</def>
+								<count>100</count>
+							</tracker>
+
+							<texPath>Achievements/MorrowRim_AchievementTelvanni_AcidicCrystal</texPath>
+							<points>25</points>
+						</AchievementsExpanded.AchievementDef>
+						
+						<!-- Kills -->
+						
+						<!-- Livestock -->
+	
+						<!-- Records -->
+		
+						<!-- Research -->
+	
+						<!-- Trade -->
+	
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+
+</Patch>
+

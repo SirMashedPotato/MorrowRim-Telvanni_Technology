@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="MorrowRim_ElixirBase_Standard">
+		<defName>MorrowRim_ElixirRateRestFall</defName>
+		<label>elixir of fortify fatigue</label>
+		<description>An elixir prepared by a alchemist, reduces ones fatigue gain, decreasing rest fall rate by 15%.\n\nThe duration of the effect depends on the quality of the elixir, with the elixir lasting 10% of the maximum duration per quality level, or 100% of the maximum duration for legendary. The effect can be stacked for up to 48 hours.\n\nIngesting this elixir will also increase alchemical toxicity by 2.5%, regardless of quality level.</description>
+		<descriptionHyperlinks>
+			<HediffDef>MorrowRim_ElixirRateRestFall_High</HediffDef>
+		</descriptionHyperlinks>
+		<ingestible>
+		  <drugCategory>Medical</drugCategory>
+		  <outcomeDoers>
+			<li Class="MorrowRim_Telvanni.IngestionOutcomeDoer_GiveHediff">
+				<Hediff>MorrowRim_ElixirRateRestFall_High</Hediff>
+			</li>
+		  </outcomeDoers>
+		</ingestible>
+		<comps>
+		</comps>
+		<recipeMaker>
+			<researchPrerequisite>MorrowRim_ElixirVampiric</researchPrerequisite>
+		</recipeMaker>
+		<costList>
+			<MorrowRim_VampiricExtract>1</MorrowRim_VampiricExtract>
+			<MorrowRim_VoidSalts>2</MorrowRim_VoidSalts>
+			<MorrowRim_WaterSalts>2</MorrowRim_WaterSalts>
+		</costList>
+	</ThingDef>
+  
+	<HediffDef ParentName="MorrowRim_ElixirHighBase">
+		<defName>MorrowRim_ElixirRateRestFall_High</defName>
+		<label>elixir of fortify fatigue</label>
+		<description>Reduces ones fatigue gain, decreasing rest fall rate, for up to 48 hours.</description>
+		<stages>
+			<li>
+
+					<restFallFactor>-0.15</restFallFactor>
+
+			</li>
+		</stages>
+	</HediffDef>
+
+</Defs>

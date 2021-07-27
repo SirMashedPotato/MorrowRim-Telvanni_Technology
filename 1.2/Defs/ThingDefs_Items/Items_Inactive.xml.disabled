@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- base -->
+
+	<ThingDef ParentName="ResourceBase" Name="MorrowRim_InactiveAtronachBase" Abstract="True">
+		<thingClass>ThingWithComps</thingClass>
+		<techLevel>Neolithic</techLevel>
+		<description>An inactive atronach.</description>
+		<thingCategories>
+		  <li>InactiveServant</li>
+		</thingCategories>
+		<statBases>
+		  <Mass>10</Mass>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<comps>
+		  <li Class="CompProperties_Usable">
+			<useJob>DarkDescent_ActivateServant</useJob>
+			<useLabel>Activate</useLabel>
+		  </li>
+		  <li Class="CompProperties_UseEffect">
+			<compClass>CompUseEffect_DestroySelf</compClass>
+		  </li>
+		</comps>
+	</ThingDef>
+	<!--
+	<ThingDef ParentName="MorrowRim_InactiveAtronachBase">
+		<defName>MorrowRim_InactiveAtronachFire</defName>
+		<label>inactive fire atronach</label>
+		<descriptionHyperlinks><ThingDef>MorrowRim_AtronachFire</ThingDef></descriptionHyperlinks>
+		<graphicData>
+		  <texPath>Things/Pawn/Atronach/AtronachFire/AtronachFire_south</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<stackLimit>1</stackLimit>
+		<tradeNeverStack>true</tradeNeverStack>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+		  <MarketValue>400</MarketValue>
+		  <MaxHitPoints>80</MaxHitPoints>
+		</statBases>
+		<drawGUIOverlay>false</drawGUIOverlay>
+		<comps>
+		  <li Class="MorrowRim_Telvanni.CompProperties_UseEffect_ActivateServant">
+			<ServantKind>MorrowRim_AtronachFire</ServantKind>
+			<applyAwakeningHediff>false</applyAwakeningHediff>
+		  </li>
+		  <li Class="MorrowRim_Telvanni.CompProperties_AutoActivateServant">
+			<ServantKind>MorrowRim_AtronachFire</ServantKind>
+		  </li>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="MorrowRim_InactiveAtronachBase">
+		<defName>MorrowRim_InactiveAtronachFrost</defName>
+		<label>inactive frost atronach</label>
+		<descriptionHyperlinks><ThingDef>MorrowRim_AtronachFrost</ThingDef></descriptionHyperlinks>
+		<graphicData>
+		  <texPath>Things/Pawn/Atronach/AtronachIce/AtronachIce_south</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<stackLimit>1</stackLimit>
+		<tradeNeverStack>true</tradeNeverStack>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+		  <MarketValue>400</MarketValue>
+		  <MaxHitPoints>80</MaxHitPoints>
+		</statBases>
+		<drawGUIOverlay>false</drawGUIOverlay>
+		<comps>
+		  <li Class="MorrowRim_Telvanni.CompProperties_UseEffect_ActivateServant">
+			<ServantKind>MorrowRim_AtronachFrost</ServantKind>
+			<applyAwakeningHediff>false</applyAwakeningHediff>
+		  </li>
+		  <li Class="MorrowRim_Telvanni.CompProperties_AutoActivateServant">
+			<ServantKind>MorrowRim_AtronachFrost</ServantKind>
+		  </li>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="MorrowRim_InactiveAtronachBase">
+		<defName>MorrowRim_InactiveAtronachStorm</defName>
+		<label>inactive storm atronach</label>
+		<descriptionHyperlinks><ThingDef>MorrowRim_AtronachStorm</ThingDef></descriptionHyperlinks>
+		<graphicData>
+		  <texPath>Things/Pawn/Atronach/AtronachStorm/AtronachStorm_south</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<stackLimit>1</stackLimit>
+		<tradeNeverStack>true</tradeNeverStack>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+		  <MarketValue>400</MarketValue>
+		  <MaxHitPoints>80</MaxHitPoints>
+		</statBases>
+		<drawGUIOverlay>false</drawGUIOverlay>
+		<comps>
+		  <li Class="MorrowRim_Telvanni.CompProperties_UseEffect_ActivateServant">
+			<ServantKind>MorrowRim_AtronachStorm</ServantKind>
+			<applyAwakeningHediff>false</applyAwakeningHediff>
+		  </li>
+		  <li Class="MorrowRim_Telvanni.CompProperties_AutoActivateServant">
+			<ServantKind>MorrowRim_AtronachStorm</ServantKind>
+		  </li>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="MorrowRim_InactiveAtronachBase">
+		<defName>MorrowRim_InactiveAtronachAsh</defName>
+		<label>inactive ash atronach</label>
+		<descriptionHyperlinks><ThingDef>MorrowRim_AtronachAsh</ThingDef></descriptionHyperlinks>
+		<graphicData>
+		  <texPath>Things/Pawn/Atronach/AtronachAsh/AtronachAsh_south</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<stackLimit>1</stackLimit>
+		<tradeNeverStack>true</tradeNeverStack>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+		  <MarketValue>400</MarketValue>
+		  <MaxHitPoints>80</MaxHitPoints>
+		</statBases>
+		<drawGUIOverlay>false</drawGUIOverlay>
+		<comps>
+		  <li Class="MorrowRim_Telvanni.CompProperties_UseEffect_ActivateServant">
+			<ServantKind>MorrowRim_AtronachAsh</ServantKind>
+			<applyAwakeningHediff>false</applyAwakeningHediff>
+		  </li>
+		  <li Class="MorrowRim_Telvanni.CompProperties_AutoActivateServant">
+			<ServantKind>MorrowRim_AtronachAsh</ServantKind>
+		  </li>
+		</comps>
+	</ThingDef>
+	-->
+</Defs>

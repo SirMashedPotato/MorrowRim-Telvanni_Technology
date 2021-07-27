@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>MorrowRim</li>
+    </mods>
+
+    <match Class="PatchOperationSequence">
+
+		<operations>
+		
+			<!-- Add ash resistance to things -->
+			
+			<li Class="PatchOperationAddModExtension">
+				<xpath>/Defs/ThingDef[defName="Telvanni_AshCap" or defName="Telvanni_HeartRose" or defName="Telvanni_ScuttleFleshParasol" or defName="Telvanni_OgrimWoodParasol" or defName="Telvanni_MendingMossParasol"]</xpath>
+				<value>
+					<li Class="MorrowRim.ExtendedRaceProperties">
+						<ashResistant>Resistant</ashResistant>
+					</li>
+				</value>
+			</li>
+			
+			<!-- Add ash storm stuff -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="MorrowRim_PulserAsh"]/comps</xpath>
+				<value>
+					<li Class="MorrowRim_Telvanni.CompProperties_UseEffect_WeatherPulser">
+						<weatherDef>MorrowRim_AshStorm</weatherDef>
+						<addHediff>MorrowRim_HiddenWeatherChanged</addHediff>
+					</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="Telvanni_AshCap"]/comps</xpath>
+				<value>
+					<li Class="MorrowRim_Telvanni.CompProperties_GrowthModifier">
+						<weather>
+							<li>MorrowRim_AshStorm</li>
+						</weather>
+					</li>
+				</value>
+			</li>
+		
+		</operations>
+    </match>
+  </Operation>
+
+</Patch>

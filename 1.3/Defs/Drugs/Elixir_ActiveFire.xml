@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="MorrowRim_ElixirBase_Active">
+		<defName>MorrowRim_ElixirActiveFire</defName>
+		<label>elixir of fire retaliation</label>
+		<description>An elixir prepared by a alchemist, causes the ingestor to release clouds of heat upon taking damage, weakening the elixir at the same time. The ingestor will also be immune to these clouds while the elixir is active.\n\nThe strength of the effect depends on the quality of the elixir, with the elixir being 10% of the maximum duration per quality level, or 100% of the maximum duration for legendary. The effect can be stacked for up to 48 hours.\n\nThe stength of the effect depends on the quality of the elixir, with the strength increasing by 10% per quality level, or 100% for legendary.\nThe strength will decrease by 5% every time the ingestor recieves damage.\n\nIngesting this elixir will also increase alchemical toxicity by 2.5%, regardless of quality level.</description>
+		<descriptionHyperlinks>
+			<HediffDef>MorrowRim_ElixirActiveFire_High</HediffDef>
+		</descriptionHyperlinks>
+		<graphicData>
+		  <color>(238,139,96)</color>
+		</graphicData>
+		<ingestible>
+		  <drugCategory>Medical</drugCategory>
+		  <outcomeDoers>
+			<li Class="MorrowRim_Telvanni.IngestionOutcomeDoer_GiveHediff">
+				<Hediff>MorrowRim_ElixirActiveFire_High</Hediff>
+			</li>
+		  </outcomeDoers>
+		</ingestible>
+		<comps>
+		</comps>
+		<recipeMaker>
+			<researchPrerequisite>MorrowRim_ElixirNight</researchPrerequisite>
+		</recipeMaker>
+		<costList>
+			<MorrowRim_NightCapExtract>1</MorrowRim_NightCapExtract>
+			<MorrowRim_FireSalts>4</MorrowRim_FireSalts>
+			<MorrowRim_AirSalts>2</MorrowRim_AirSalts>
+		</costList>
+	</ThingDef>
+  
+	<HediffDef ParentName="MorrowRim_ElixirHighActiveBase">
+		<defName>MorrowRim_ElixirActiveFire_High</defName>
+		<label>elixir of fire retaliation</label>
+		<description>An elixir prepared by a alchemist, causes the ingestor to release clouds of heat upon taking damage, weakening the elixir at the same time.</description>
+		<stages>
+		</stages>
+		<comps>
+			<li Class="MorrowRim_Telvanni.HediffCompProperties_ActiveElixir_OnDamage">
+				<thingToSpawn>Telvanni_Gas_StaveFire</thingToSpawn>
+			</li>
+		</comps>
+	</HediffDef>
+
+</Defs>

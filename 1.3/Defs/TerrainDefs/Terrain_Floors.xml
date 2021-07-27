@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <TerrainDef  ParentName="FloorBase">
+    <defName>MorrowRim_OgrimWoodPlankFloor</defName>
+    <label>ogrim-wood floor</label>
+    <renderPrecedence>250</renderPrecedence>
+    <description>Ogrim-wood plank flooring for that warm, fungus infested, homey feeling.</description>
+    <texturePath>Terrain/Surfaces/WoodFloor</texturePath>
+    <burnedDef>BurnedWoodPlankFloor</burnedDef>
+    <color>(146,137,89)</color>
+    <statBases>
+      <WorkToBuild>85</WorkToBuild>
+      <Flammability>0.02</Flammability>
+    </statBases>
+    <costList>
+      <MorrowRim_OgrimWoodLog>3</MorrowRim_OgrimWoodLog>
+    </costList>
+    <constructEffect>ConstructWood</constructEffect>
+    <designationHotKey>Misc9</designationHotKey>
+  </TerrainDef>
+
+</Defs>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>MorrowRim - The Sixth House</li>
+		</mods> 
+				
+		<match Class="PatchOperationSequence">
+			<operations>
+				
+				<li Class="PatchOperationAdd"> 
+					<xpath>/Defs/ThingDef[defName="Dagoth_BlightBeGone"]</xpath>
+					<value>
+						<thingCategories Inherit="False">
+							<li>MorrowRim_Elixir</li>
+						</thingCategories>
+					</value>
+				</li>
+
+				<li Class="PatchOperationAdd"> 
+					<xpath>/Defs/ThingDef[defName="Dagoth_BlightBeGone"]/recipeMaker/recipeUsers</xpath>
+					<value>
+						<li>MorrowRim_ElixirTable</li>
+					</value>
+				</li>
+				
+				<!-- cure blight elixirs -->
+				
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+					
+						<ThingDef Name="MorrowRim_ElixirBase_CureBlight" ParentName="MorrowRim_ElixirBase_Cure" Abstract="True">
+							<graphicData>
+							  <texPath>Things/Item/Drug/MorrowRim_PotionBlightCure</texPath>
+							</graphicData>
+						</ThingDef>
+						
+						<ThingDef ParentName="MorrowRim_ElixirBase_CureBlight">
+							<defName>MorrowRim_ElixirCureBlightAshChancre</defName>
+							<label>elixir of cure ash-chancre blight</label>
+							<description>An elixir prepared by a alchemist, cures ash-chancre blight when ingested.\n\nIngesting this elixir will also increase alchemical toxicity by 2.5%.</description>
+							<descriptionHyperlinks>
+								<HediffDef>Dagoth_Blight_AshChancre</HediffDef>
+							</descriptionHyperlinks>
+							<ingestible>
+							  <drugCategory>Medical</drugCategory>
+							  <outcomeDoers>
+								<li Class="MorrowRim_Telvanni.IngestionOutcomeDoer_RemoveHediff">
+									<Hediff>Dagoth_Blight_AshChancre</Hediff>
+								</li>
+							  </outcomeDoers>
+							</ingestible>
+							<comps>
+							</comps>
+							<costList>
+								<MorrowRim_MedicineTelvanni>1</MorrowRim_MedicineTelvanni>
+								<Dagoth_AshSalts>10</Dagoth_AshSalts>
+								<MorrowRim_SpectralExtract>3</MorrowRim_SpectralExtract>
+							</costList>
+						</ThingDef>
+						
+						<ThingDef ParentName="MorrowRim_ElixirBase_CureBlight">
+							<defName>MorrowRim_ElixirCureBlightAshWoe</defName>
+							<label>elixir of cure ash-woe blight</label>
+							<description>An elixir prepared by a alchemist, cures ash-woe blight when ingested.\n\nIngesting this elixir will also increase alchemical toxicity by 2.5%.</description>
+							<descriptionHyperlinks>
+								<HediffDef>Dagoth_Blight_AshWoe</HediffDef>
+							</descriptionHyperlinks>
+							<ingestible>
+							  <drugCategory>Medical</drugCategory>
+							  <outcomeDoers>
+								<li Class="MorrowRim_Telvanni.IngestionOutcomeDoer_RemoveHediff">
+									<Hediff>Dagoth_Blight_AshWoe</Hediff>
+								</li>
+							  </outcomeDoers>
+							</ingestible>
+							<comps>
+							</comps>
+							<costList>
+								<MorrowRim_MedicineTelvanni>1</MorrowRim_MedicineTelvanni>
+								<Dagoth_AshSalts>10</Dagoth_AshSalts>
+								<MorrowRim_VampiricExtract>3</MorrowRim_VampiricExtract>
+							</costList>
+						</ThingDef>
+						
+						<ThingDef ParentName="MorrowRim_ElixirBase_CureBlight">
+							<defName>MorrowRim_ElixirCureBlightBlackHeart</defName>
+							<label>elixir of cure black-heart blight</label>
+							<description>An elixir prepared by a alchemist, cures black-heart blight when ingested.\n\nIngesting this elixir will also increase alchemical toxicity by 2.5%.</description>
+							<descriptionHyperlinks>
+								<HediffDef>Dagoth_Blight_BlackHeart</HediffDef>
+							</descriptionHyperlinks>
+							<ingestible>
+							  <drugCategory>Medical</drugCategory>
+							  <outcomeDoers>
+								<li Class="MorrowRim_Telvanni.IngestionOutcomeDoer_RemoveHediff">
+									<Hediff>Dagoth_Blight_BlackHeart</Hediff>
+								</li>
+							  </outcomeDoers>
+							</ingestible>
+							<comps>
+							</comps>
+							<costList>
+								<MorrowRim_MedicineTelvanni>1</MorrowRim_MedicineTelvanni>
+								<Dagoth_AshSalts>10</Dagoth_AshSalts>
+								<MorrowRim_GraveExtract>3</MorrowRim_GraveExtract>
+							</costList>
+						</ThingDef>
+						
+						<ThingDef ParentName="MorrowRim_ElixirBase_CureBlight">
+							<defName>MorrowRim_ElixirCureBlightChanthrax</defName>
+							<label>elixir of cure chanthrax blight</label>
+							<description>An elixir prepared by a alchemist, cures chanthrax blight when ingested.\n\nIngesting this elixir will also increase alchemical toxicity by 2.5%.</description>
+							<descriptionHyperlinks>
+								<HediffDef>Dagoth_Blight_Chanthrax</HediffDef>
+							</descriptionHyperlinks>
+							<ingestible>
+							  <drugCategory>Medical</drugCategory>
+							  <outcomeDoers>
+								<li Class="MorrowRim_Telvanni.IngestionOutcomeDoer_RemoveHediff">
+									<Hediff>Dagoth_Blight_Chanthrax</Hediff>
+								</li>
+							  </outcomeDoers>
+							</ingestible>
+							<comps>
+							</comps>
+							<costList>
+								<MorrowRim_MedicineTelvanni>1</MorrowRim_MedicineTelvanni>
+								<Dagoth_AshSalts>10</Dagoth_AshSalts>
+								<MorrowRim_NightCapExtract>3</MorrowRim_NightCapExtract>
+							</costList>
+						</ThingDef>
+						
+					</value>
+				</li>
+
+			</operations>
+		</match>
+	</Operation>
+	
+</Patch>
+

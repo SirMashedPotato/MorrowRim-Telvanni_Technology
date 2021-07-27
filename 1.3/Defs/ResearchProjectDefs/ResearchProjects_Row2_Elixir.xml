@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Elixir">
+		<defName>MorrowRim_ElixirTable</defName>
+		<label>elixir creation Vol. I</label>
+		<description>Allows the construction of the Elixir Table, a table made for creating elixirs, and the creation of elixirs using bolt extract as a base.</description>
+		<researchViewX>0.00</researchViewX>
+		<researchViewY>1.0</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Elixir">
+		<defName>MorrowRim_ElixirNight</defName>
+		<label>elixir creation Vol. II</label>
+		<description>Allows the creation of elixirs using night extract as a base.</description>
+		<researchViewX>1.00</researchViewX>
+		<researchViewY>1.0</researchViewY>
+		<prerequisites>
+			<li>MorrowRim_ElixirTable</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Elixir">
+		<defName>MorrowRim_ElixirGrave</defName>
+		<label>elixir creation Vol. III</label>
+		<description>Allows the creation of elixirs using grave extract as a base.</description>
+		<researchViewX>2.00</researchViewX>
+		<researchViewY>1.0</researchViewY>
+		<prerequisites>
+			<li>MorrowRim_ElixirTable</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Elixir">
+		<defName>MorrowRim_ElixirVampiric</defName>
+		<label>elixir creation Vol. IV</label>
+		<description>Allows the creation of elixirs using vampiric extract as a base.</description>
+		<researchViewX>3.00</researchViewX>
+		<researchViewY>1.0</researchViewY>
+		<prerequisites>
+			<li>MorrowRim_ElixirTable</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Elixir">
+		<defName>MorrowRim_ElixirSpectral</defName>
+		<label>elixir creation Vol. V</label>
+		<description>Allows the creation of elixirs using spectral extract as a base.</description>
+		<researchViewX>4.00</researchViewX>
+		<researchViewY>1.0</researchViewY>
+		<prerequisites>
+			<li>MorrowRim_ElixirTable</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Advanced">
+		<defName>MorrowRim_ElixirAdvanced</defName>
+		<label>advanced elixir creation</label>
+		<description>Allows the creation of advanced elixirs using multiple extracts.</description>
+		<researchViewX>5.00</researchViewX>
+		<researchViewY>1.0</researchViewY>
+		<prerequisites>
+			<li>MorrowRim_ElixirNight</li>
+			<li>MorrowRim_ElixirGrave</li>
+			<li>MorrowRim_ElixirVampiric</li>
+			<li>MorrowRim_ElixirSpectral</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<!-- Secondary -->
+
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Advanced">
+		<defName>MorrowRim_ElixirCurative</defName>
+		<label>curative elixir creation</label>
+		<description>Allows the creation of curative elixirs using extracts and telvanni medicine.</description>
+		<researchViewX>6.00</researchViewX>
+		<researchViewY>2.0</researchViewY>
+		<prerequisites>
+			<li>MorrowRim_ElixirNight</li>
+			<li>MorrowRim_TelvanniMedicineCreation</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<!-- Final -->
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Advanced">
+		<defName>MorrowRim_ElixirNecromantic</defName>
+		<label>necromantic elixir creation</label>
+		<description>Allows the creation of elixirs that allow pawns to cheat death.\n\nThese elixirs leave a lingering impact on the pawn, preventing them from being resurrected until this is removed.</description>
+		<researchViewX>6.00</researchViewX>
+		<researchViewY>1.0</researchViewY>
+		<prerequisites>
+			<li>MorrowRim_ElixirCurative</li>
+			<li>MorrowRim_ElixirAdvanced</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+</Defs>

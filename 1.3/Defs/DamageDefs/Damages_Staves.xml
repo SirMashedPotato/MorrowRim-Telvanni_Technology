@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<DamageDef ParentName="Flame">
+		<defName>Telvanni_StaveBurn</defName>
+		<label>energy burn</label>
+		<workerClass>MorrowRim_Telvanni.DamageWorker_FireStave</workerClass>
+	</DamageDef>
+	
+	<DamageDef>
+		<defName>Telvanni_StaveFrostbite</defName>
+		<label>energy frostbite</label>
+		<workerClass>DamageWorker_Frostbite</workerClass>
+		<externalViolence>false</externalViolence>
+		<deathMessage>{0} has succumbed to frostbite.</deathMessage>
+		<hediff>Frostbite</hediff>
+		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+		<canUseDeflectMetalEffect>false</canUseDeflectMetalEffect>
+		<makesBlood>false</makesBlood>
+		<additionalHediffs>
+		  <li>
+			<hediff>Hypothermia</hediff>
+			<severityPerDamageDealt>0.005</severityPerDamageDealt>
+			<victimSeverityScaling>ArmorRating_Heat</victimSeverityScaling>
+			<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+		  </li>
+		</additionalHediffs>
+	</DamageDef>
+	
+	<DamageDef ParentName="BluntBase">
+		<defName>Telvanni_StaveEMP</defName>
+		<label>energy EMP</label>
+		<workerClass>MorrowRim_Telvanni.DamageWorker_StormStave</workerClass>
+		<impactSoundType>Electric</impactSoundType>
+		<explosionCellMote>Mote_BlastEMP</explosionCellMote>
+		<explosionColorEdge>(0.8, 0.8, 0.8, 0.8)</explosionColorEdge>
+		<explosionInteriorMote>Mote_ElectricalSpark</explosionInteriorMote>
+		<soundExplosion>Explosion_EMP</soundExplosion>
+		<externalViolenceForMechanoids>true</externalViolenceForMechanoids>
+	</DamageDef>
+	
+	<DamageDef ParentName="Scratch">
+		<defName>Telvanni_StaveStun</defName>
+		<label>energy stun</label>
+		<workerClass>MorrowRim_Telvanni.DamageWorker_AshStave</workerClass>
+	</DamageDef>
+	
+	<DamageDef ParentName="BluntBase">
+		<defName>Telvanni_StaveParalytic</defName>
+		<label>paralysing energy</label>
+		<workerClass>DamageWorker_Stab</workerClass>
+		<stabChanceOfForcedInternal>0.4</stabChanceOfForcedInternal>
+		<additionalHediffs>
+		  <li>
+			<hediff>MorrowRim_StaveParalysis</hediff>
+			<severityPerDamageDealt>0.005</severityPerDamageDealt>
+			<victimSeverityScaling>ToxicSensitivity</victimSeverityScaling>
+			<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+		  </li>
+		</additionalHediffs>
+	</DamageDef>
+	
+	<DamageDef>
+		<defName>Telvanni_StaveToxic</defName>
+		<label>energy neurotoxin</label>
+		<workerClass>DamageWorker_Stab</workerClass>
+		<externalViolence>true</externalViolence>
+		<deathMessage>{0} has been stabbed to death.</deathMessage>
+		<hediff>Stab</hediff>
+		<hediffSolid>Crack</hediffSolid>
+		<impactSoundType>Slice</impactSoundType>
+		<armorCategory>Sharp</armorCategory>
+		<stabChanceOfForcedInternal>0.6</stabChanceOfForcedInternal>
+		<overkillPctToDestroyPart>0.4~1.0</overkillPctToDestroyPart>
+		<additionalHediffs>
+		  <li>
+			<hediff>ToxicBuildup</hediff>
+			<severityPerDamageDealt>0.005</severityPerDamageDealt>
+			<victimSeverityScaling>ToxicSensitivity</victimSeverityScaling>
+			<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+		  </li>
+		</additionalHediffs>
+	</DamageDef>
+	
+	<DamageDef>
+		<defName>Telvanni_StaveVampiric</defName>
+		<label>haemolysing energy</label>
+		<workerClass>DamageWorker_Stab</workerClass>
+		<externalViolence>true</externalViolence>
+		<deathMessage>{0} has been stabbed to death.</deathMessage>
+		<hediff>Stab</hediff>
+		<hediffSolid>Crack</hediffSolid>
+		<impactSoundType>Slice</impactSoundType>
+		<armorCategory>Sharp</armorCategory>
+		<stabChanceOfForcedInternal>0.6</stabChanceOfForcedInternal>
+		<overkillPctToDestroyPart>0.4~1.0</overkillPctToDestroyPart>
+		<makesBlood>false</makesBlood>
+		<additionalHediffs>
+		  <li>
+			<hediff>BloodLoss</hediff>
+			<severityPerDamageDealt>0.005</severityPerDamageDealt>
+			<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+		  </li>
+		</additionalHediffs>
+	</DamageDef>
+	
+	<DamageDef ParentName="Flame">
+		<defName>Telvanni_StaveSpectral</defName>
+		<label>ethereal burn</label>
+		<workerClass>MorrowRim_Telvanni.DamageWorker_SpectralStave</workerClass>
+		<hediff>Telvanni_EtherealBurn</hediff>
+		<armorCategory>Heat</armorCategory>
+	</DamageDef>
+	
+	<DamageDef ParentName="Flame">
+		<defName>Telvanni_StaveCaustic</defName>
+		<label>caustic burn</label>
+		<workerClass>DamageWorker_AddInjury</workerClass>
+		<makesBlood>false</makesBlood>
+		<additionalHediffs>
+		  <li>
+			<hediff>MorrowRim_ArmorCorrosion</hediff>
+			<severityPerDamageDealt>0.005</severityPerDamageDealt>
+			<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+		  </li>
+		</additionalHediffs>
+	</DamageDef>
+
+</Defs>

@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Base -->
+	
+	<RecipeDef Name="MorrowRim_Recipe_WeatherPulserBase" Abstract="True">
+		<researchPrerequisite>MorrowRim_TelvanniForge</researchPrerequisite>
+		<label>create weather pulser</label>
+		<jobString>Creating weather pulser.</jobString>
+		<workAmount>450</workAmount>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<workSkill>Crafting</workSkill>
+		<effectWorking>Cremate</effectWorking>
+		<soundWorking>Recipe_Cremate</soundWorking>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+					<li>MorrowRim_HeartStone</li>
+			  </thingDefs>
+			</filter>
+			<count>1</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+				<li>MorrowRim_HeartStone</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<skillRequirements>
+		  <Intellectual>8</Intellectual>
+		</skillRequirements>
+		<recipeUsers>
+			<li>MorrowRim_TelvanniForge</li>
+		</recipeUsers>
+	</RecipeDef>
+	
+	<!-- Specifics -->
+	
+	<RecipeDef ParentName="MorrowRim_Recipe_WeatherPulserBase">
+		<defName>MorrowRim_Recipe_WeatherPulser_Air</defName>
+		<label>create air pulser</label>
+		<description>Create a air pulser from a heart stone and 25 air salts.</description>
+		<jobString>Creating air pulser.</jobString>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+					<li>MorrowRim_AirSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>25</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+				<li>MorrowRim_AirSalts</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		  <MorrowRim_PulserAir>1</MorrowRim_PulserAir>
+		</products>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="MorrowRim_Recipe_WeatherPulserBase">
+		<defName>MorrowRim_Recipe_WeatherPulser_Ferrous</defName>
+		<label>create ferrous pulser</label>
+		<description>Create a ferrous pulser from a heart stone and 25 ferrous salts.</description>
+		<jobString>Creating ferrous pulser.</jobString>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+					<li>MorrowRim_FerrousSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>25</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+				<li>MorrowRim_FerrousSalts</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		  <MorrowRim_PulserFerrous>1</MorrowRim_PulserFerrous>
+		</products>
+	</RecipeDef>
+
+	<RecipeDef ParentName="MorrowRim_Recipe_WeatherPulserBase">
+		<defName>MorrowRim_Recipe_WeatherPulser_Fire</defName>
+		<label>create fire pulser</label>
+		<description>Create a fire pulser from a heart stone and 25 fire salts.</description>
+		<jobString>Creating fire pulser.</jobString>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+					<li>MorrowRim_FireSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>25</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+				<li>MorrowRim_FireSalts</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		  <MorrowRim_PulserFire>1</MorrowRim_PulserFire>
+		</products>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="MorrowRim_Recipe_WeatherPulserBase">
+		<defName>MorrowRim_Recipe_WeatherPulser_Frost</defName>
+		<label>create frost pulser</label>
+		<description>Create a frost pulser from a heart stone and 25 frost salts.</description>
+		<jobString>Creating frost pulser.</jobString>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+					<li>MorrowRim_FrostSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>25</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+				<li>MorrowRim_FrostSalts</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		  <MorrowRim_PulserFrost>1</MorrowRim_PulserFrost>
+		</products>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="MorrowRim_Recipe_WeatherPulserBase">
+		<defName>MorrowRim_Recipe_WeatherPulser_Void</defName>
+		<label>create void pulser</label>
+		<description>Create a void pulser from a heart stone and 25 void salts.</description>
+		<jobString>Creating void pulser.</jobString>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+					<li>MorrowRim_VoidSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>25</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+				<li>MorrowRim_VoidSalts</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		  <MorrowRim_PulserVoid>1</MorrowRim_PulserVoid>
+		</products>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="MorrowRim_Recipe_WeatherPulserBase">
+		<defName>MorrowRim_Recipe_WeatherPulser_Water</defName>
+		<label>create water pulser</label>
+		<description>Create a water pulser from a heart stone and 25 water salts.</description>
+		<jobString>Creating water pulser.</jobString>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+					<li>MorrowRim_WaterSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>25</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+				<li>MorrowRim_WaterSalts</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		  <MorrowRim_PulserWater>1</MorrowRim_PulserWater>
+		</products>
+	</RecipeDef>
+	
+</Defs>

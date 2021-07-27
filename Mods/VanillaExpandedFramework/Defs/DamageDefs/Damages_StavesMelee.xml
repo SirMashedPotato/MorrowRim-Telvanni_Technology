@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Acidic -->
+	
+	<DamageDef ParentName="CutBase">
+		<defName>MorrowRim_CutAcidic</defName>
+		<label>acidic cut</label>
+		<additionalHediffs>
+		  <li>
+			<hediff>VEF_AcidBuildup</hediff>
+			<severityPerDamageDealt>0.001</severityPerDamageDealt>
+			<victimSeverityScaling>ToxicSensitivity</victimSeverityScaling>
+		  </li>
+		</additionalHediffs>
+	</DamageDef>
+	
+	<DamageDef ParentName="BluntBase">
+		<defName>MorrowRim_BluntAcidic</defName>
+		<label>acidic impact</label>
+		<additionalHediffs>
+		  <li>
+			<hediff>VEF_AcidBuildup</hediff>
+			<severityPerDamageDealt>0.001</severityPerDamageDealt>
+			<victimSeverityScaling>ToxicSensitivity</victimSeverityScaling>
+		  </li>
+		</additionalHediffs>
+	</DamageDef>
+	
+	<DamageDef>
+		<defName>MorrowRim_StabAcidic</defName>
+		<label>acidic stab</label>
+		<additionalHediffs>
+		  <li>
+			<hediff>VEF_AcidBuildup</hediff>
+			<severityPerDamageDealt>0.001</severityPerDamageDealt>
+			<victimSeverityScaling>ToxicSensitivity</victimSeverityScaling>
+		  </li>
+		</additionalHediffs>
+		<!-- copied from Stab -->
+		<workerClass>DamageWorker_Stab</workerClass>
+		<externalViolence>true</externalViolence>
+		<deathMessage>{0} has been stabbed to death.</deathMessage>
+		<hediff>Stab</hediff>
+		<hediffSolid>Crack</hediffSolid>
+		<impactSoundType>Slice</impactSoundType>
+		<armorCategory>Sharp</armorCategory>
+		<stabChanceOfForcedInternal>0.6</stabChanceOfForcedInternal>
+		<overkillPctToDestroyPart>0.4~1.0</overkillPctToDestroyPart>
+	</DamageDef>
+
+</Defs>

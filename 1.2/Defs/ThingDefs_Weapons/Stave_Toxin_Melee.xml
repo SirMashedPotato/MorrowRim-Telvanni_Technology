@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Base Toxin -->
+	
+	<ThingDef Name="Telvanni_BaseStaveMelee_Toxin" ParentName="Telvanni_BaseStaveMelee" Abstract="True">
+		<recipeMaker>
+			<researchPrerequisite>MorrowRim_StaffToxin</researchPrerequisite>
+		</recipeMaker>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_NightCapExtract>25</MorrowRim_NightCapExtract>
+		</costList>
+	</ThingDef>
+	
+	<!-- Cutting -->
+	
+	<ThingDef ParentName="Telvanni_BaseStaveMelee_Toxin">
+		<defName>Telvanni_StaveToxinCutting</defName>
+		<label>cutting toxin stave</label>
+		<description>A melee toxin stave of Telvanni design, its focus inflicts toxic buildup equivalent to 5% of damage dealt. This particular stave features a scythed focus, and is perfect for cleaving opponents.</description>
+		<graphicData>
+		  <texPath>Things/Item/Equipment/WeaponStave_Melee/Stave_Cutting</texPath>
+		  <color>(103,22,66)</color>
+		</graphicData>
+		<statBases>
+
+		</statBases>
+		<tools>
+		  <li>
+			<label>focus</label>
+			<capacities>
+			  <li>MorrowRim_CutToxin</li>
+			</capacities>
+			<power>20</power>
+			<cooldownTime>2</cooldownTime>
+			<extraMeleeDamages>
+			</extraMeleeDamages>
+		  </li>
+		  <li>
+			<label>handle</label>
+			<capacities>
+			  <li>Poke</li>
+			  <li>Blunt</li>
+			</capacities>
+			<power>4</power>
+			<cooldownTime>2</cooldownTime>
+		  </li>
+		</tools>
+	</ThingDef>
+	
+	<!-- Crushing -->
+	
+	<ThingDef ParentName="Telvanni_BaseStaveMelee_Toxin">
+		<defName>Telvanni_StaveToxinImpact</defName>
+		<label>impact toxin stave</label>
+		<description>A melee toxin stave of Telvanni design, its focus inflicts toxic buildup equivalent to 5% of damage dealt. This particular stave features a weighted focus, and is perfect for crushing opponents.</description>
+		<graphicData>
+		  <texPath>Things/Item/Equipment/WeaponStave_Melee/Stave_Melee</texPath>
+		  <color>(103,22,66)</color>
+		</graphicData>
+		<statBases>
+
+		</statBases>
+		<tools>
+		  <li>
+			<label>focus</label>
+			<capacities>
+			  <li>MorrowRim_BluntToxin</li>
+			</capacities>
+			<power>20</power>
+			<cooldownTime>2</cooldownTime>
+			<extraMeleeDamages>
+			</extraMeleeDamages>
+		  </li>
+		  <li>
+			<label>handle</label>
+			<capacities>
+			  <li>Poke</li>
+			  <li>Blunt</li>
+			</capacities>
+			<power>4</power>
+			<cooldownTime>2</cooldownTime>
+		  </li>
+		</tools>
+	</ThingDef>
+	
+	<!-- Piercing -->
+	
+	<ThingDef ParentName="Telvanni_BaseStaveMelee_Toxin">
+		<defName>Telvanni_StaveToxinPiercing</defName>
+		<label>piercing toxin stave</label>
+		<description>A melee toxin stave of Telvanni design, its focus inflicts toxic buildup equivalent to 5% of damage dealt. This particular stave features a pointed focus, and is perfect for piercing opponents.</description>
+		<graphicData>
+		  <texPath>Things/Item/Equipment/WeaponStave_Melee/Stave_Piercing</texPath>
+		  <color>(103,22,66)</color>
+		</graphicData>
+		<statBases>
+
+		</statBases>
+		<tools>
+		  <li>
+			<label>focus</label>
+			<capacities>
+			  <li>MorrowRim_StabToxin</li>
+			</capacities>
+			<power>20</power>
+			<cooldownTime>2</cooldownTime>
+		  </li>
+		  <li>
+			<label>handle</label>
+			<capacities>
+			  <li>Poke</li>
+			  <li>Blunt</li>
+			</capacities>
+			<power>4</power>
+			<cooldownTime>2</cooldownTime>
+		  </li>
+		</tools>
+	</ThingDef>
+
+</Defs>

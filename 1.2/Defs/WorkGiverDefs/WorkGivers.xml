@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!--
+	<WorkGiverDef>
+		<defName>MorrowRim_WorkAtronachForge</defName>
+		<label>work atronach forge</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Crafting</workType>
+		<workTags>
+		  <li>Intellectual</li>
+		</workTags>
+		<priorityInType>115</priorityInType>
+		<fixedBillGiverDefs>
+		  <li>MorrowRim_AtronachForge</li>
+		</fixedBillGiverDefs>
+		<verb>working atronach forge</verb>
+		<gerund>crafting atronach at</gerund>
+		<requiredCapacities>
+		  <li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+	-->
+	
+	<!--
+	<WorkGiverDef>
+		<defName>MorrowRim_WorkGolemForge</defName>
+		<label>work golem forge</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Crafting</workType>
+		<workTags>
+		  <li>Intellectual</li>
+		</workTags>
+		<priorityInType>115</priorityInType>
+		<fixedBillGiverDefs>
+		  <li>MorrowRim_GolemForge</li>
+		</fixedBillGiverDefs>
+		<verb>working golem forge</verb>
+		<gerund>crafting golem at</gerund>
+		<requiredCapacities>
+		  <li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+	-->
+	
+	<WorkGiverDef>
+		<defName>MorrowRim_WorkEnergyStaffTable</defName>
+		<label>work energy staff table</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Crafting</workType>
+		<workTags>
+		  <li>Intellectual</li>
+		</workTags>
+		<priorityInType>115</priorityInType>
+		<fixedBillGiverDefs>
+		  <li>MorrowRim_StaveTable</li>
+		</fixedBillGiverDefs>
+		<verb>working energy staff table</verb>
+		<gerund>crafting energy staff at</gerund>
+		<requiredCapacities>
+		  <li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+	
+	<WorkGiverDef>
+		<defName>MorrowRim_WorkElixirTable</defName>
+		<label>work elixir mixing table</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Crafting</workType>
+		<workTags>
+		  <li>Intellectual</li>
+		</workTags>
+		<priorityInType>115</priorityInType>
+		<fixedBillGiverDefs>
+		  <li>MorrowRim_ElixirTable</li>
+		</fixedBillGiverDefs>
+		<verb>working elixir mixing table</verb>
+		<gerund>crafting elixir at</gerund>
+		<requiredCapacities>
+		  <li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+	
+	<WorkGiverDef>
+		<defName>MorrowRim_WorkTelvanniForge</defName>
+		<label>work Telvanni forge</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Crafting</workType>
+		<workTags>
+		  <li>Intellectual</li>
+		</workTags>
+		<priorityInType>115</priorityInType>
+		<fixedBillGiverDefs>
+		  <li>MorrowRim_TelvanniForge</li>
+		</fixedBillGiverDefs>
+		<verb>working telvanni forge</verb>
+		<gerund>working at</gerund>
+		<requiredCapacities>
+		  <li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+
+</Defs>

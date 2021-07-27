@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Base Vampiric -->
+	
+	<ThingDef Name="Telvanni_BaseStave_Vampiric" ParentName="Telvanni_BaseStave" Abstract="True">
+		<recipeMaker>
+			<researchPrerequisite>MorrowRim_StaffVampiric</researchPrerequisite>
+		</recipeMaker>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_VampiricExtract>25</MorrowRim_VampiricExtract>
+		</costList>
+	</ThingDef>
+	
+	<!-- basic -->
+	
+	<ThingDef ParentName="Telvanni_BaseStave_Vampiric">
+		<defName>Telvanni_StaveVampiricBasic</defName>
+		<label>basic vampiric stave</label>
+		<description>An energy stave of Telvanni design, its focus releases blasts of haemolysing energy. This particular stave is capable of firing infrequent blasts over a reasonable distance, with fairly high accuracy, making it perfect for beginners.</description>
+		<graphicData>
+		  <texPath>Things/Item/Equipment/WeaponStave/Stave_Basic</texPath>
+		  <color>(194,31,58)</color>
+		</graphicData>
+		<statBases>
+		  <AccuracyTouch>0.65</AccuracyTouch>
+		  <AccuracyShort>0.80</AccuracyShort>
+		  <AccuracyMedium>0.90</AccuracyMedium>
+		  <AccuracyLong>0.80</AccuracyLong>
+		  <RangedWeapon_Cooldown>1.0</RangedWeapon_Cooldown> <!-- - 0.5 -->
+		</statBases>
+		<verbs>
+		  <li>
+			<verbClass>Verb_Shoot</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<defaultProjectile>Telvanni_ProjectileVampiricBasic</defaultProjectile>
+			<warmupTime>1.7</warmupTime>
+			<range>36.9</range>
+			<soundCast>MorrowRim_Fire_TelvanniStave</soundCast>
+			<soundCastTail>GunTail_Medium</soundCastTail>
+			<muzzleFlashScale>9</muzzleFlashScale>
+		  </li>
+		</verbs>
+	</ThingDef>
+	<ThingDef ParentName="Telvanni_BaseProjectile">
+		<defName>Telvanni_ProjectileVampiricBasic</defName>
+		<projectile>
+		  <damageDef>Telvanni_StaveVampiric</damageDef>
+		  <damageAmountBase>18</damageAmountBase>
+		  <stoppingPower>1.5</stoppingPower>
+		  <speed>70</speed>
+		</projectile>
+		<graphicData>
+		  <texPath>Things/Projectile/StaveShot_small</texPath>
+		  <color>(194,31,58)</color>
+		</graphicData>
+	</ThingDef>
+	
+	<!-- Blast -->
+	
+	<ThingDef ParentName="Telvanni_BaseStave_Vampiric">
+		<defName>Telvanni_StaveVampiricBlast</defName>
+		<label>blast vampiric stave</label>
+		<description>An energy stave of Telvanni design, its focus releases blasts of haemolysing energy. This particular stave fires a single blast from each of its five focuses. Each blast is short lived, but packs a punch.</description>
+		<graphicData>
+		  <texPath>Things/Item/Equipment/WeaponStave/Stave_Blast</texPath>
+		  <color>(194,31,58)</color>
+		</graphicData>
+		<statBases>
+		  <AccuracyTouch>0.80</AccuracyTouch>
+		  <AccuracyShort>0.87</AccuracyShort>
+		  <AccuracyMedium>0.77</AccuracyMedium>
+		  <AccuracyLong>0.64</AccuracyLong>
+		  <RangedWeapon_Cooldown>1.25</RangedWeapon_Cooldown>
+		</statBases>
+		<verbs>
+		  <li>
+			<verbClass>Verb_Shoot</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<defaultProjectile>Telvanni_ProjectileVampiricBlast</defaultProjectile>
+			<warmupTime>0.9</warmupTime>
+			<range>15.9</range>
+			<soundCast>MorrowRim_Fire_TelvanniStave</soundCast>
+			<soundCastTail>GunTail_Medium</soundCastTail>
+			<muzzleFlashScale>9</muzzleFlashScale>
+			<burstShotCount>5</burstShotCount>
+			<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+		  </li>
+		</verbs>
+	</ThingDef>
+	<ThingDef ParentName="Telvanni_BaseProjectile">
+		<defName>Telvanni_ProjectileVampiricBlast</defName>
+		<projectile>
+		  <damageDef>Telvanni_StaveVampiric</damageDef>
+		  <damageAmountBase>10</damageAmountBase>
+		  <stoppingPower>3</stoppingPower>
+		  <armorPenetrationBase>0.14</armorPenetrationBase>
+		  <speed>90</speed>
+		</projectile>
+		<graphicData>
+		  <texPath>Things/Projectile/StaveShot_Tiny</texPath>
+		  <color>(194,31,58)</color>
+		</graphicData>
+	</ThingDef>
+	
+	<!-- Charged -->
+	
+	<ThingDef ParentName="Telvanni_BaseStave_Vampiric">
+		<defName>Telvanni_StaveVampiricCharged</defName>
+		<label>charged vampiric stave</label>
+		<description>An energy stave of Telvanni design, its focus releases blasts of haemolysing energy. This particular stave creates a supercharged blast between its two focuses, causing it to hit the target with great force and speed.</description>
+		<graphicData>
+		  <texPath>Things/Item/Equipment/WeaponStave/Stave_Charged</texPath>
+		  <color>(194,31,58)</color>
+		</graphicData>
+		<statBases>
+		  <AccuracyTouch>0.65</AccuracyTouch>
+		  <AccuracyShort>0.85</AccuracyShort>
+		  <AccuracyMedium>0.85</AccuracyMedium>
+		  <AccuracyLong>0.75</AccuracyLong>
+		  <RangedWeapon_Cooldown>2.7</RangedWeapon_Cooldown>
+		</statBases>
+		<verbs>
+		  <li>
+			<verbClass>Verb_Shoot</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<defaultProjectile>Telvanni_ProjectileVampiricCharged</defaultProjectile>
+			<warmupTime>4.1</warmupTime>
+			<range>29.9</range>
+			<soundCast>MorrowRim_Fire_TelvanniStave</soundCast>
+			<soundCastTail>GunTail_Medium</soundCastTail>
+			<muzzleFlashScale>9</muzzleFlashScale>
+		  </li>
+		</verbs>
+	</ThingDef>
+	<ThingDef ParentName="Telvanni_BaseProjectile">
+		<defName>Telvanni_ProjectileVampiricCharged</defName>
+		<projectile>
+		  <damageDef>Telvanni_StaveVampiric</damageDef>
+		  <damageAmountBase>28.8</damageAmountBase>
+		  <stoppingPower>2.0</stoppingPower>
+		  <armorPenetrationBase>0.5</armorPenetrationBase>
+		  <speed>180</speed>
+		</projectile>
+		<graphicData>
+		  <texPath>Things/Projectile/StaveShot_Charged</texPath>
+		  <color>(194,31,58)</color>
+		</graphicData>
+	</ThingDef>
+	
+	<!-- Cloud -->
+	
+	<ThingDef ParentName="Telvanni_BaseStave_Vampiric">
+		<defName>Telvanni_StaveVampiricCloud</defName>
+		<label>cloud vampiric stave</label>
+		<description>An energy stave of Telvanni design, its focus releases blasts of haemolysing energy. This particular stave fires a single slow moving blast, that releases a cloud of heamolysing gas upon reaching its target.</description>
+		<tickerType>Normal</tickerType>
+		<graphicData>
+		  <texPath>Things/Item/Equipment/WeaponStave/Stave_Cloud</texPath>
+		  <color>(194,31,58)</color>
+		</graphicData>
+		<statBases>
+		  <RangedWeapon_Cooldown>2.6</RangedWeapon_Cooldown>
+		</statBases>
+		<verbs>
+		  <li>
+			<verbClass>Verb_Shoot</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<defaultProjectile>Telvanni_ProjectileVampiricCloud</defaultProjectile>
+			<forcedMissRadius>1.9</forcedMissRadius>
+			<warmupTime>1.8</warmupTime>
+			<range>15.9</range>
+			<soundCast>MorrowRim_Fire_TelvanniStave</soundCast>
+			<soundCastTail>GunTail_Medium</soundCastTail>
+			<muzzleFlashScale>9</muzzleFlashScale>
+			<targetParams>
+			  <canTargetLocations>true</canTargetLocations>
+			</targetParams>
+			<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+			<noiseRadius>4</noiseRadius>
+		  </li>
+		</verbs>
+	</ThingDef>
+	<ThingDef ParentName="Telvanni_BaseProjectile">
+		<defName>Telvanni_ProjectileVampiricCloud</defName>
+		<thingClass>Projectile_Explosive</thingClass>
+		<projectile>
+		  <explosionRadius>1.9</explosionRadius>
+		  <damageDef>Burn</damageDef>
+		  <explosionDelay>0</explosionDelay>
+		  <damageAmountBase>0</damageAmountBase>
+		  <postExplosionSpawnThingDef>Telvanni_Gas_StaveVampiric</postExplosionSpawnThingDef>
+		  <postExplosionSpawnChance>1</postExplosionSpawnChance>
+		</projectile>
+		<graphicData>
+		  <texPath>Things/Projectile/StaveShot_Explosive</texPath>
+		  <color>(194,31,58)</color>
+		</graphicData>
+	</ThingDef>
+	
+	<!-- Focused -->
+	
+	<ThingDef ParentName="Telvanni_BaseStave_Vampiric">
+		<defName>Telvanni_StaveVampiricFocused</defName>
+		<label>focused vampiric stave</label>
+		<description>An energy stave of Telvanni design, its focus releases blasts of haemolysing energy. This particular stave fires a highly focused blast, causing it to remain accurate at great distances.</description>
+		<graphicData>
+		  <texPath>Things/Item/Equipment/WeaponStave/Stave_Focused</texPath>
+		  <color>(194,31,58)</color>
+		</graphicData>
+		<statBases>
+		  <AccuracyTouch>0.50</AccuracyTouch>
+		  <AccuracyShort>0.70</AccuracyShort>
+		  <AccuracyMedium>0.86</AccuracyMedium>
+		  <AccuracyLong>0.88</AccuracyLong>
+		  <RangedWeapon_Cooldown>2.3</RangedWeapon_Cooldown>
+		</statBases>
+		<verbs>
+		  <li>
+			<verbClass>Verb_Shoot</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<defaultProjectile>Telvanni_ProjectileVampiricFocused</defaultProjectile>
+			<warmupTime>3.5</warmupTime>
+			<range>44.9</range>
+			<soundCast>MorrowRim_Fire_TelvanniStave</soundCast>
+			<soundCastTail>GunTail_Medium</soundCastTail>
+			<muzzleFlashScale>9</muzzleFlashScale>
+		  </li>
+		</verbs>
+	</ThingDef>
+	<ThingDef ParentName="Telvanni_BaseProjectile">
+		<defName>Telvanni_ProjectileVampiricFocused</defName>
+		<projectile>
+		  <damageDef>Telvanni_StaveVampiric</damageDef>
+		  <damageAmountBase>24</damageAmountBase>
+		  <stoppingPower>1.5</stoppingPower>
+		  <speed>100</speed>
+		</projectile>
+		<graphicData>
+		  <texPath>Things/Projectile/StaveShot_Charged</texPath>
+		  <color>(194,31,58)</color>
+		</graphicData>
+	</ThingDef>
+
+	<!-- Prismatic -->
+	
+	<ThingDef ParentName="Telvanni_BaseStave_Vampiric">
+		<defName>Telvanni_StaveVampiricPrismatic</defName>
+		<label>prismatic vampiric stave</label>
+		<description>An energy stave of Telvanni design, its focus releases blasts of haemolysing energy. This particular stave fires many blasts from its focus, with low accuracy.</description>
+		<graphicData>
+		  <texPath>Things/Item/Equipment/WeaponStave/Stave_Prismatic</texPath>
+		  <color>(194,31,58)</color>
+		</graphicData>
+		<statBases>
+		  <AccuracyTouch>0.15</AccuracyTouch>
+		  <AccuracyShort>0.25</AccuracyShort>
+		  <AccuracyMedium>0.25</AccuracyMedium>
+		  <AccuracyLong>0.18</AccuracyLong>
+		  <RangedWeapon_Cooldown>2.3</RangedWeapon_Cooldown>
+		</statBases>
+		<verbs>
+		  <li>
+			<verbClass>Verb_Shoot</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<defaultProjectile>Telvanni_ProjectileVampiricPrismatic</defaultProjectile>
+			<warmupTime>2.5</warmupTime>
+			<range>30.9</range>
+			<burstShotCount>25</burstShotCount>
+			<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+			<soundCast>MorrowRim_Fire_TelvanniStave</soundCast>
+			<soundCastTail>GunTail_Medium</soundCastTail>
+			<muzzleFlashScale>9</muzzleFlashScale>
+		  </li>
+		</verbs>
+	</ThingDef>
+	<ThingDef ParentName="Telvanni_BaseProjectile">
+		<defName>Telvanni_ProjectileVampiricPrismatic</defName>
+		<projectile>
+		  <damageDef>Telvanni_StaveVampiric</damageDef>
+		  <damageAmountBase>10</damageAmountBase>
+		  <speed>70</speed>
+		</projectile>
+		<graphicData>
+		  <texPath>Things/Projectile/StaveShot_Tiny</texPath>
+		  <color>(194,31,58)</color>
+		</graphicData>
+	</ThingDef>
+	
+	<!-- Pulse -->
+	<!--
+	<ThingDef ParentName="Telvanni_BaseStave_Vampiric">
+		<defName>Telvanni_StaveVampiricPulse</defName>
+		<label>pulse vampiric stave</label>
+		<description>An energy stave of Telvanni design, its focus releases blasts of haemolysing energy. This particular stave fires a single slow moving blast, that releases a pulse of vampiric upon reaching its target.</description>
+		<tickerType>Normal</tickerType>
+		<graphicData>
+		  <texPath>Things/Item/Equipment/WeaponStave/Stave_Pulse</texPath>
+		  <color>(194,31,58)</color>
+		</graphicData>
+		<statBases>
+		  <RangedWeapon_Cooldown>2.6</RangedWeapon_Cooldown>
+		</statBases>
+		<verbs>
+		  <li>
+			<verbClass>Verb_Shoot</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<defaultProjectile>Telvanni_ProjectileVampiricPulse</defaultProjectile>
+			<forcedMissRadius>1.9</forcedMissRadius>
+			<warmupTime>1.8</warmupTime>
+			<range>15.9</range>
+			<soundCast>MorrowRim_Fire_TelvanniStave</soundCast>
+			<soundCastTail>GunTail_Medium</soundCastTail>
+			<muzzleFlashScale>9</muzzleFlashScale>
+			<targetParams>
+			  <canTargetLocations>true</canTargetLocations>
+			</targetParams>
+			<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+			<noiseRadius>4</noiseRadius>
+		  </li>
+		</verbs>
+	</ThingDef>
+	<ThingDef ParentName="Telvanni_BaseProjectile">
+		<defName>Telvanni_ProjectileVampiricPulse</defName>
+		<thingClass>Projectile_Explosive</thingClass>
+		<projectile>
+		  <explosionRadius >1.9</explosionRadius >
+		  <damageDef>Flame</damageDef>
+		  <explosionDelay>0</explosionDelay>
+		</projectile>
+		<graphicData>
+		  <texPath>Things/Projectile/StaveShot_Explosive</texPath>
+		  <color>(194,31,58)</color>
+		</graphicData>
+	</ThingDef>
+	-->
+	<!-- Rapid -->
+
+	<ThingDef ParentName="Telvanni_BaseStave_Vampiric">
+		<defName>Telvanni_StaveVampiricRapid</defName>
+		<label>rapid vampiric stave</label>
+		<description>An energy stave of Telvanni design, its focus releases blasts of haemolysing energy. This particular stave fires a three blasts in rapid succession, though its accuracy suffers at longer distances.</description>
+		<graphicData>
+		  <texPath>Things/Item/Equipment/WeaponStave/Stave_Rapid</texPath>
+		  <color>(194,31,58)</color>
+		</graphicData>
+		<statBases>
+		  <AccuracyTouch>0.55</AccuracyTouch>
+		  <AccuracyShort>0.64</AccuracyShort>
+		  <AccuracyMedium>0.55</AccuracyMedium>
+		  <AccuracyLong>0.45</AccuracyLong>
+		  <RangedWeapon_Cooldown>1.1</RangedWeapon_Cooldown>
+		</statBases>
+		<verbs>
+		  <li>
+			<verbClass>Verb_Shoot</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<defaultProjectile>Telvanni_ProjectileVampiricRapid</defaultProjectile>
+			<warmupTime>0.5</warmupTime>
+			<range>22.9</range>
+			<burstShotCount>3</burstShotCount>
+			<ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+			<soundCast>MorrowRim_Fire_TelvanniStave</soundCast>
+			<soundCastTail>GunTail_Medium</soundCastTail>
+			<muzzleFlashScale>9</muzzleFlashScale>
+		  </li>
+		</verbs>
+	</ThingDef>
+	<ThingDef ParentName="Telvanni_BaseProjectile">
+		<defName>Telvanni_ProjectileVampiricRapid</defName>
+		<projectile>
+		  <damageDef>Telvanni_StaveVampiric</damageDef>
+		  <damageAmountBase>18</damageAmountBase>
+		  <speed>85</speed>
+		</projectile>
+		<graphicData>
+		  <texPath>Things/Projectile/StaveShot_small</texPath>
+		  <color>(194,31,58)</color>
+		</graphicData>
+	</ThingDef>
+	
+</Defs>

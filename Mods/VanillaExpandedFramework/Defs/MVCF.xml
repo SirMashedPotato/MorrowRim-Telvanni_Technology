@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<MVCF.ModDef>
+		<defName>MorrowRimTelvanniTechnologyVFE</defName>
+		<label>MorrowRim - Telvanni Technology VFE Addon</label>
+		<description>Adds in golem focus cores, allowing golems to perform ranged attacks</description>
+		<Features>
+			<RangedAnimals>true</RangedAnimals>
+			<HediffVerbs>true</HediffVerbs>
+			<IntegratedToggle>true</IntegratedToggle>
+		</Features>
+	</MVCF.ModDef>
+	
+</Defs>

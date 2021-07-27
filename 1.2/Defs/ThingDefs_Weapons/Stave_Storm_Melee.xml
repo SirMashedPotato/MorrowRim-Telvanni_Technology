@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Base Storm -->
+	
+	<ThingDef Name="Telvanni_BaseStaveMelee_Storm" ParentName="Telvanni_BaseStaveMelee" Abstract="True">
+		<recipeMaker>
+			<researchPrerequisite>MorrowRim_StaffStorm</researchPrerequisite>
+		</recipeMaker>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_VoidSalts>25</MorrowRim_VoidSalts>
+		</costList>
+	</ThingDef>
+	
+	<!-- Cutting -->
+	
+	<ThingDef ParentName="Telvanni_BaseStaveMelee_Storm">
+		<defName>Telvanni_StaveStormCutting</defName>
+		<label>cutting storm stave</label>
+		<description>A melee storm stave of Telvanni design, its focus gives a 30% chance of overloading electronic circuits. This particular stave features a scythed focus, and is perfect for cleaving opponents.</description>
+		<graphicData>
+		  <texPath>Things/Item/Equipment/WeaponStave_Melee/Stave_Cutting</texPath>
+		  <color>(146,151,164)</color>
+		</graphicData>
+		<statBases>
+
+		</statBases>
+		<tools>
+		  <li>
+			<label>focus</label>
+			<capacities>
+			  <li>Cut</li>
+			</capacities>
+			<power>20</power>
+			<cooldownTime>2</cooldownTime>
+			<extraMeleeDamages>
+			  <li>
+				<def>EMP</def>
+				<amount>5</amount>
+				<chance>0.3</chance>
+			  </li>
+			</extraMeleeDamages>
+		  </li>
+		  <li>
+			<label>handle</label>
+			<capacities>
+			  <li>Poke</li>
+			  <li>Blunt</li>
+			</capacities>
+			<power>4</power>
+			<cooldownTime>2</cooldownTime>
+		  </li>
+		</tools>
+	</ThingDef>
+	
+	<!-- Crushing -->
+	
+	<ThingDef ParentName="Telvanni_BaseStaveMelee_Storm">
+		<defName>Telvanni_StaveStormImpact</defName>
+		<label>impact storm stave</label>
+		<description>A melee storm stave of Telvanni design, its focus gives a 30% chance of overloading electronic circuits. This particular stave features a weighted focus, and is perfect for crushing opponents.</description>
+		<graphicData>
+		  <texPath>Things/Item/Equipment/WeaponStave_Melee/Stave_Melee</texPath>
+		  <color>(146,151,164)</color>
+		</graphicData>
+		<statBases>
+
+		</statBases>
+		<tools>
+		  <li>
+			<label>focus</label>
+			<capacities>
+			  <li>Blunt</li>
+			</capacities>
+			<power>20</power>
+			<cooldownTime>2</cooldownTime>
+			<extraMeleeDamages>
+			  <li>
+				<def>EMP</def>
+				<amount>5</amount>
+				<chance>0.3</chance>
+			  </li>
+			</extraMeleeDamages>
+		  </li>
+		  <li>
+			<label>handle</label>
+			<capacities>
+			  <li>Poke</li>
+			  <li>Blunt</li>
+			</capacities>
+			<power>4</power>
+			<cooldownTime>2</cooldownTime>
+		  </li>
+		</tools>
+	</ThingDef>
+	
+	<!-- Piercing -->
+	
+	<ThingDef ParentName="Telvanni_BaseStaveMelee_Storm">
+		<defName>Telvanni_StaveStormPiercing</defName>
+		<label>piercing storm stave</label>
+		<description>A melee storm stave of Telvanni design, its focus gives a 30% chance of overloading electronic circuits. This particular stave features a pointed focus, and is perfect for piercing opponents.</description>
+		<graphicData>
+		  <texPath>Things/Item/Equipment/WeaponStave_Melee/Stave_Piercing</texPath>
+		  <color>(146,151,164)</color>
+		</graphicData>
+		<statBases>
+
+		</statBases>
+		<tools>
+		  <li>
+			<label>focus</label>
+			<capacities>
+			  <li>Stab</li>
+			</capacities>
+			<power>20</power>
+			<cooldownTime>2</cooldownTime>
+			<extraMeleeDamages>
+			  <li>
+				<def>EMP</def>
+				<amount>5</amount>
+				<chance>0.3</chance>
+			  </li>
+			</extraMeleeDamages>
+		  </li>
+		  <li>
+			<label>handle</label>
+			<capacities>
+			  <li>Poke</li>
+			  <li>Blunt</li>
+			</capacities>
+			<power>4</power>
+			<cooldownTime>2</cooldownTime>
+		  </li>
+		</tools>
+	</ThingDef>
+
+</Defs>

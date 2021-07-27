@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Base -->
+
+  <ThingDef Name="MorrowRim_BodyPartTelvanniBase" ParentName="BodyPartBase" Abstract="True">
+    <techLevel>Medieval</techLevel>
+    <thingCategories>
+      <li>BodyPartsTelvanni</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.80</drawSize>
+      <color>(189,169,118)</color>
+    </graphicData>
+    <tradeTags>
+      <li>TelvanniImplant</li>
+    </tradeTags>
+    <techHediffsTags>
+      <li>Telvanni</li>
+    </techHediffsTags>
+    <statBases>
+      <WorkToMake>800</WorkToMake>
+    </statBases>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+        <Intellectual>12</Intellectual>
+      </skillRequirements>
+      <!--<researchPrerequisite>MorrowRim_TelvanniImplants</researchPrerequisite>-->
+      <recipeUsers Inherit="False">
+        <li>MorrowRim_TelvanniForge</li>
+      </recipeUsers>
+    </recipeMaker>
+  </ThingDef>
+
+  <!-- Heart stone implant -->
+
+  <HediffDef ParentName="MorrowRim_BodyPartTelvanniBase">
+    <defName>MorrowRim_ImplantedHeartStone</defName>
+    <label>implanted heart stone</label>
+    <labelNoun>an implanted heart stone</labelNoun>
+    <description>A heart stone that has been implanted into the chest.</description>
+    <descriptionHyperlinks><ThingDef>MorrowRim_ImplantedHeartStone</ThingDef></descriptionHyperlinks>
+    <spawnThingOnRemoved>MorrowRim_ImplantedHeartStone</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1.15</partEfficiency>
+      <betterThanNatural>true</betterThanNatural>
+    </addedPartProps>
+	<stages>
+		<li>
+			<statOffsets>
+				<PsychicSensitivity>0.10</PsychicSensitivity>
+			</statOffsets>
+		</li>
+	</stages>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartBionicBase">
+    <defName>MorrowRim_ImplantedHeartStone</defName>
+    <label>heart stone implant</label>
+    <description>A heart stone that has been prepared for implantation. The energy that radiates from within is strong enough to pump blood through the stone, as if it were a regular heart.</description>
+    <descriptionHyperlinks><RecipeDef>MorrowRim_InstallImplantedHeartStone</RecipeDef></descriptionHyperlinks>
+    <costList>
+      <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+      <MorrowRim_WaterSalts>5</MorrowRim_WaterSalts>
+      <MorrowRim_AirSalts>5</MorrowRim_AirSalts>
+    </costList>
+	<recipeMaker>
+      <researchPrerequisite>MorrowRim_HeartStoneStudiesII</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>MorrowRim_InstallImplantedHeartStone</defName>
+    <label>install heart stone implant</label>
+    <description>Install a heart stone implant.</description>
+    <descriptionHyperlinks>
+      <ThingDef>MorrowRim_ImplantedHeartStone</ThingDef>
+      <HediffDef>MorrowRim_ImplantedHeartStone</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing heart stone implant.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MorrowRim_ImplantedHeartStone</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MorrowRim_ImplantedHeartStone</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Heart</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>MorrowRim_ImplantedHeartStone</addsHediff>
+  </RecipeDef>
+
+</Defs>

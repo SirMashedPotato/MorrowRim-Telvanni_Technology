@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+	<ToolCapacityDef>
+		<defName>MorrowRim_CutAcidic</defName>
+		<label>acidic cut</label>
+	</ToolCapacityDef>
+	
+	<ToolCapacityDef>
+		<defName>MorrowRim_BluntAcidic</defName>
+		<label>acidic impact</label>
+	</ToolCapacityDef>
+	
+	<ToolCapacityDef>
+		<defName>MorrowRim_StabAcidic</defName>
+		<label>acidic stab</label>
+	</ToolCapacityDef>
+
+</Defs>

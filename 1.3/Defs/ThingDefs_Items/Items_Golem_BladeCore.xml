@@ -1,0 +1,658 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Base -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase" Name="MorrowRim_GolemCoreBase_Blade" Abstract="True">
+		<graphicData>
+		  <texPath>Things/Item/Special/MorrowRim_TelvanniGolemBlade</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<comps>
+		  <li Class="CompProperties_Usable">
+			<useJob>UseItem</useJob>
+			<useLabel>Apply golem blade</useLabel>
+			<useDuration>0</useDuration>
+		  </li>
+		  <li Class="CompProperties_Targetable">
+			<compClass>MorrowRim_Telvanni.CompTargetable_Golem</compClass>
+		  </li>
+		  <li>
+			<compClass>MorrowRim_Telvanni.CompTargetEffect_GolemAddCore</compClass>
+		  </li>
+		</comps>
+		<!-- Crafting -->
+		<recipeMaker>
+		  <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		  <workSkill>Crafting</workSkill>
+		  <effectWorking>Smith</effectWorking>
+		  <soundWorking>Recipe_Smith</soundWorking>
+		  <recipeUsers>
+			<li>MorrowRim_GolemForge</li>
+		  </recipeUsers>
+		  <unfinishedThingDef>MorrowRim_UnfinishedTelvanniRoots</unfinishedThingDef>
+		  <skillRequirements>
+			<Crafting>6</Crafting>
+			<Intellectual>10</Intellectual>
+		  </skillRequirements>
+			<researchPrerequisite>MorrowRim_GolemFocusCore</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+	<!-- Aetherial -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Blade">
+		<defName>MorrowRim_GolemCore_BladeAetherial</defName>
+		<label>golem aetherial blade</label>
+		<description>A golem blade, allows the golem to cleave foes with an aetherial blade.\n\nOnly one blade can be installed per root golem, and replacing one will destroy the currently installed blade in the process.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_BladeAetherial</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemBladeAttachment</partToAddTo>
+                <thingDef>MorrowRim_GolemRoot</thingDef>
+                <isExclusive>true</isExclusive>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(156,225,232)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>MorrowRim_StaffAetherial</li>
+				<li>MorrowRim_GolemFocusCore</li>
+			</researchPrerequisites>
+			<skillRequirements>
+				<Crafting>8</Crafting>
+				<Intellectual>14</Intellectual>
+			</skillRequirements>
+		</recipeMaker>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_AetherialSalts>25</MorrowRim_AetherialSalts>
+		</costList>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_BladeAetherial</defName>
+		<label>aetherial blade</label>
+		<labelNoun>an aetherial blade</labelNoun>
+		<description>An installed golem blade, allows the golem to cleave foes with an aetherial blade.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_BladeAetherial</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<comps>
+		  <li Class="HediffCompProperties_VerbGiver">
+			<tools>
+			  <li>
+				<label>aetherial blade</label>
+				<capacities>
+				  <li>Cut</li>
+				</capacities>
+				<power>30</power>
+				<cooldownTime>2</cooldownTime>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			  </li>
+			</tools>
+		  </li>
+		</comps>
+		<addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1.0</partEfficiency>
+      <betterThanNatural>true</betterThanNatural>
+    </addedPartProps>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_BladeAetherial</spawnThingOnRemoved>
+	</HediffDef>
+	
+	<!-- Ash -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Blade">
+		<defName>MorrowRim_GolemCore_BladeAsh</defName>
+		<label>golem ash blade</label>
+		<description>A golem blade, allows the golem to cleave foes with an ash imbued blade.\n\nOnly one blade can be installed per root golem, and replacing one will destroy the currently installed blade in the process.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_BladeAsh</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemBladeAttachment</partToAddTo>
+                <thingDef>MorrowRim_GolemRoot</thingDef>
+                <isExclusive>true</isExclusive>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(109,105,85)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<recipeMaker>
+		</recipeMaker>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <Dagoth_AshSalts>25</Dagoth_AshSalts>
+		</costList>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_BladeAsh</defName>
+		<label>ash blade</label>
+		<labelNoun>an ash blade</labelNoun>
+		<description>An installed golem blade, allows the golem to cleave foes with an ash imbued blade. This blade has a 30% chance of stunning targets.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_BladeAsh</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<comps>
+		  <li Class="HediffCompProperties_VerbGiver">
+			<tools>
+			  <li>
+				<label>ash blade</label>
+				<capacities>
+				  <li>Cut</li>
+				</capacities>
+				<power>20</power>
+				<cooldownTime>2</cooldownTime>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+				<extraMeleeDamages>
+				  <li>
+					<def>Stun</def>
+					<amount>5</amount>
+					<chance>0.3</chance>
+				  </li>
+				</extraMeleeDamages>
+			  </li>
+			</tools>
+		  </li>
+		</comps>
+		<addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1.0</partEfficiency>
+      <betterThanNatural>true</betterThanNatural>
+    </addedPartProps>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_BladeAsh</spawnThingOnRemoved>
+	</HediffDef>
+	
+	<!-- Fire -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Blade">
+		<defName>MorrowRim_GolemCore_BladeFire</defName>
+		<label>golem fire blade</label>
+		<description>A golem blade, allows the golem to cleave foes with a fire imbued blade.\n\nOnly one blade can be installed per root golem, and replacing one will destroy the currently installed blade in the process.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_BladeFire</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemBladeAttachment</partToAddTo>
+                <thingDef>MorrowRim_GolemRoot</thingDef>
+                <isExclusive>true</isExclusive>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(238,139,96)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<recipeMaker>
+		</recipeMaker>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_FireSalts>25</MorrowRim_FireSalts>
+		</costList>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_BladeFire</defName>
+		<label>fire blade</label>
+		<labelNoun>a fire blade</labelNoun>
+		<description>An installed golem blade, allows the golem to cleave foes with a fire imbued blade. This blade has a 30% chance of setting targets alight.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_BladeFire</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<comps>
+		  <li Class="HediffCompProperties_VerbGiver">
+			<tools>
+			  <li>
+				<label>fire blade</label>
+				<capacities>
+				  <li>Cut</li>
+				</capacities>
+				<power>20</power>
+				<cooldownTime>2</cooldownTime>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+				<extraMeleeDamages>
+				  <li>
+					<def>Flame</def>
+					<amount>5</amount>
+					<chance>0.3</chance>
+				  </li>
+				</extraMeleeDamages>
+			  </li>
+			</tools>
+		  </li>
+		</comps>
+		<addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1.0</partEfficiency>
+      <betterThanNatural>true</betterThanNatural>
+    </addedPartProps>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_BladeFire</spawnThingOnRemoved>
+	</HediffDef>
+	
+	<!-- Frost -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Blade">
+		<defName>MorrowRim_GolemCore_BladeFrost</defName>
+		<label>golem frost blade</label>
+		<description>A golem blade, allows the golem to cleave foes with a frost imbued blade.\n\nOnly one blade can be installed per root golem, and replacing one will destroy the currently installed blade in the process.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_BladeFrost</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemBladeAttachment</partToAddTo>
+                <thingDef>MorrowRim_GolemRoot</thingDef>
+                <isExclusive>true</isExclusive>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(222,239,253)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<recipeMaker>
+		</recipeMaker>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_FrostSalts>25</MorrowRim_FrostSalts>
+		</costList>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_BladeFrost</defName>
+		<label>frost blade</label>
+		<labelNoun>a frost blade</labelNoun>
+		<description>An installed golem blade, allows the golem to cleave foes with a frost imbued blade. This blade inflicts hypothermia equivalent to 5% of damage dealt.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_BladeFrost</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<comps>
+		  <li Class="HediffCompProperties_VerbGiver">
+			<tools>
+			  <li>
+				<label>frost blade</label>
+				<capacities>
+				  <li>MorrowRim_CutFrost</li>
+				</capacities>
+				<power>20</power>
+				<cooldownTime>2</cooldownTime>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+				<extraMeleeDamages>
+				</extraMeleeDamages>
+			  </li>
+			</tools>
+		  </li>
+		</comps>
+		<addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1.0</partEfficiency>
+      <betterThanNatural>true</betterThanNatural>
+    </addedPartProps>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_BladeFrost</spawnThingOnRemoved>
+	</HediffDef>
+	
+	<!-- Storm -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Blade">
+		<defName>MorrowRim_GolemCore_BladeStorm</defName>
+		<label>golem storm blade</label>
+		<description>A golem blade, allows the golem to cleave foes with a storm imbued blade.\n\nOnly one blade can be installed per root golem, and replacing one will destroy the currently installed blade in the process.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_BladeStorm</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemBladeAttachment</partToAddTo>
+                <thingDef>MorrowRim_GolemRoot</thingDef>
+                <isExclusive>true</isExclusive>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(146,151,164)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<recipeMaker>
+		</recipeMaker>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_VoidSalts>25</MorrowRim_VoidSalts>
+		</costList>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_BladeStorm</defName>
+		<label>storm blade</label>
+		<labelNoun>a storm blade</labelNoun>
+		<description>An installed golem blade, allows the golem to cleave foes with a storm imbued blade. This blade has a 30% chance of overloading electronic circuits.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_BladeStorm</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<comps>
+		  <li Class="HediffCompProperties_VerbGiver">
+			<tools>
+			  <li>
+				<label>storm blade</label>
+				<capacities>
+				  <li>Cut</li>
+				</capacities>
+				<power>20</power>
+				<cooldownTime>2</cooldownTime>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+				<extraMeleeDamages>
+				  <li>
+					<def>EMP</def>
+					<amount>5</amount>
+					<chance>0.3</chance>
+				  </li>
+				</extraMeleeDamages>
+			  </li>
+			</tools>
+		  </li>
+		</comps>
+		<addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1.0</partEfficiency>
+      <betterThanNatural>true</betterThanNatural>
+    </addedPartProps>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_BladeStorm</spawnThingOnRemoved>
+	</HediffDef>
+	
+	<!-- ===== Extracts ===== -->
+	
+	<!-- Paralysis -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Blade">
+		<defName>MorrowRim_GolemCore_BladeParalysis</defName>
+		<label>golem paralysis blade</label>
+		<description>A golem blade, allows the golem to cleave foes with a paralysis imbued blade.\n\nOnly one blade can be installed per root golem, and replacing one will destroy the currently installed blade in the process.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_BladeParalysis</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemBladeAttachment</partToAddTo>
+                <thingDef>MorrowRim_GolemRoot</thingDef>
+                <isExclusive>true</isExclusive>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(217,179,43)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<recipeMaker>
+		</recipeMaker>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_PoisonBoltExtract>25</MorrowRim_PoisonBoltExtract>
+		</costList>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_BladeParalysis</defName>
+		<label>paralysis blade</label>
+		<labelNoun>a paralysis blade</labelNoun>
+		<description>An installed golem blade, allows the golem to cleave foes with a paralysis imbued blade. This blade inflicts paralysis buildup equivalent to 5% of damage dealt.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_BladeParalysis</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<comps>
+		  <li Class="HediffCompProperties_VerbGiver">
+			<tools>
+			  <li>
+				<label>paralysis blade</label>
+				<capacities>
+				  <li>MorrowRim_CutParalysis</li>
+				</capacities>
+				<power>20</power>
+				<cooldownTime>2</cooldownTime>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+				<extraMeleeDamages>
+				</extraMeleeDamages>
+			  </li>
+			</tools>
+		  </li>
+		</comps>
+		<addedPartProps>
+		  <solid>true</solid>
+		  <partEfficiency>1.0</partEfficiency>
+		  <betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_BladeParalysis</spawnThingOnRemoved>
+	</HediffDef>
+	
+	<!-- Spectral -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Blade">
+		<defName>MorrowRim_GolemCore_BladeSpectral</defName>
+		<label>golem spectral blade</label>
+		<description>A golem blade, allows the golem to cleave foes with an ethereal blade.\n\nOnly one blade can be installed per root golem, and replacing one will destroy the currently installed blade in the process.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_BladeSpectral</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemBladeAttachment</partToAddTo>
+                <thingDef>MorrowRim_GolemRoot</thingDef>
+                <isExclusive>true</isExclusive>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(191,236,221)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<recipeMaker>
+		</recipeMaker>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_SpectralExtract>25</MorrowRim_SpectralExtract>
+		</costList>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_BladeSpectral</defName>
+		<label>spectral blade</label>
+		<labelNoun>a spectral blade</labelNoun>
+		<description>An installed golem blade, allows the golem to cleave foes with an ethereal blade. This blade inflicts half the damage as ethereal burns.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_BladeSpectral</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<comps>
+		  <li Class="HediffCompProperties_VerbGiver">
+			<tools>
+			  <li>
+				<label>spectral blade</label>
+				<capacities>
+				  <li>Cut</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>2</cooldownTime>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+				<extraMeleeDamages>
+				  <li>
+					<def>Telvanni_StaveSpectral</def>
+					<amount>10</amount>
+				  </li>
+				</extraMeleeDamages>
+			  </li>
+			</tools>
+		  </li>
+		</comps>
+		<addedPartProps>
+		  <solid>true</solid>
+		  <partEfficiency>1.0</partEfficiency>
+		  <betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_BladeSpectral</spawnThingOnRemoved>
+	</HediffDef>
+	
+	<!-- Toxin -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Blade">
+		<defName>MorrowRim_GolemCore_BladeToxin</defName>
+		<label>golem toxin blade</label>
+		<description>A golem blade, allows the golem to cleave foes with a toxin imbued blade.\n\nOnly one blade can be installed per root golem, and replacing one will destroy the currently installed blade in the process.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_BladeToxin</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemBladeAttachment</partToAddTo>
+                <thingDef>MorrowRim_GolemRoot</thingDef>
+                <isExclusive>true</isExclusive>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(103,22,66)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<recipeMaker>
+		</recipeMaker>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_NightCapExtract>25</MorrowRim_NightCapExtract>
+		</costList>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_BladeToxin</defName>
+		<label>toxin blade</label>
+		<labelNoun>a toxin blade</labelNoun>
+		<description>An installed golem blade, allows the golem to cleave foes with a toxin imbued blade. This blade inflicts toxic buildup equivalent to 5% of damage dealt.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_BladeToxin</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<comps>
+		  <li Class="HediffCompProperties_VerbGiver">
+			<tools>
+			  <li>
+				<label>toxin blade</label>
+				<capacities>
+				  <li>MorrowRim_CutToxin</li>
+				</capacities>
+				<power>20</power>
+				<cooldownTime>2</cooldownTime>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+				<extraMeleeDamages>
+				</extraMeleeDamages>
+			  </li>
+			</tools>
+		  </li>
+		</comps>
+		<addedPartProps>
+		  <solid>true</solid>
+		  <partEfficiency>1.0</partEfficiency>
+		  <betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_BladeToxin</spawnThingOnRemoved>
+	</HediffDef>
+	
+	<!-- Vampiric -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Blade">
+		<defName>MorrowRim_GolemCore_BladeVampiric</defName>
+		<label>golem vampiric blade</label>
+		<description>A golem blade, allows the golem to cleave foes with a vampiric imbued blade.\n\nOnly one blade can be installed per root golem, and replacing one will destroy the currently installed blade in the process.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_BladeVampiric</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemBladeAttachment</partToAddTo>
+                <thingDef>MorrowRim_GolemRoot</thingDef>
+                <isExclusive>true</isExclusive>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(194,31,58)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<recipeMaker>
+		</recipeMaker>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_VampiricExtract>25</MorrowRim_VampiricExtract>
+		</costList>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_BladeVampiric</defName>
+		<label>vampiric blade</label>
+		<labelNoun>a vampiric blade</labelNoun>
+		<description>An installed golem blade, allows the golem to cleave foes with a vampiric imbued blade. This blade inflicts blood-loss equivalent to 5% of damage dealt.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_BladeVampiric</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<comps>
+		  <li Class="HediffCompProperties_VerbGiver">
+			<tools>
+			  <li>
+				<label>vampiric blade</label>
+				<capacities>
+				  <li>MorrowRim_CutVampiric</li>
+				</capacities>
+				<power>20</power>
+				<cooldownTime>2</cooldownTime>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+				<extraMeleeDamages>
+				</extraMeleeDamages>
+			  </li>
+			</tools>
+		  </li>
+		</comps>
+		<addedPartProps>
+		  <solid>true</solid>
+		  <partEfficiency>1.0</partEfficiency>
+		  <betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_BladeVampiric</spawnThingOnRemoved>
+	</HediffDef>
+	
+	<!-- Breach -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Blade">
+		<defName>MorrowRim_GolemCore_BreachAxe</defName>
+		<label>golem breach blade</label>
+		<description>A golem blade, highly efficient at tearing down buildings.\n\nOnly one blade can be installed per root golem, and replacing one will destroy the currently installed blade in the process.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_BladeBreach</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemBladeAttachment</partToAddTo>
+                <thingDef>MorrowRim_GolemRoot</thingDef>
+                <isExclusive>true</isExclusive>
+            </li>
+		</modExtensions>
+		<graphicData>
+		</graphicData>
+		<!-- Crafting -->
+		<recipeMaker>
+		</recipeMaker>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <Steel>75</Steel>
+		</costList>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_BladeBreach</defName>
+		<label>breach blade</label>
+		<labelNoun>a breach blade</labelNoun>
+		<description>An installed golem blade, highly efficient at tearing down buildings.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_BladeBreach</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<comps>
+		  <li Class="HediffCompProperties_VerbGiver">
+			<tools>
+			  <li>
+				<label>breach blade</label>
+				<capacities>
+				  <li>Demolish</li>
+				</capacities>
+				<power>20</power>
+				<cooldownTime>2</cooldownTime>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+				<extraMeleeDamages>
+				</extraMeleeDamages>
+			  </li>
+			</tools>
+		  </li>
+		</comps>
+		<addedPartProps>
+		  <solid>true</solid>
+		  <partEfficiency>1.0</partEfficiency>
+		  <betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_BladeBreach</spawnThingOnRemoved>
+	</HediffDef>
+	
+</Defs>

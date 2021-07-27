@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Absolute Priority -->
+
+	<ThinkTreeDef>
+		<defName>MorrowRim_GolemWorkInsertion_PreMain</defName>
+		<insertTag>Golem_PreMain</insertTag>
+		<insertPriority>1</insertPriority>
+		<thinkRoot Class="ThinkNode_ConditionalHasFaction">
+			<subNodes>
+				<li Class="ThinkNode_ChancePerHour_Constant">
+				  <mtbHours>0.5</mtbHours>
+				  <subNodes>
+						<li Class="MorrowRim_Telvanni.ThinkNode_ConditionalGolemWorkCore">
+							<coreHediff>MorrowRim_GolemCore_WorkRescue</coreHediff>
+							<subNodes>
+								<li Class="ThinkNode_Tagger">
+									<tagToGive>TrainedAnimalBehavior</tagToGive>
+									<subNodes>
+										<li Class="JobGiver_RescueNearby">
+										  <radius>75</radius>
+										</li>
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+						
+						<li Class="MorrowRim_Telvanni.ThinkNode_ConditionalGolemWorkCore">
+							<coreHediff>MorrowRim_GolemCore_WorkGuard</coreHediff>
+							<subNodes>
+								<li Class="ThinkNode_Tagger">
+									<tagToGive>TrainedAnimalBehavior</tagToGive>
+									<subNodes>
+										<li Class="JobGiver_AIGotoNearestHostile" />
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+
+						<li Class="MorrowRim_Telvanni.ThinkNode_ConditionalGolemWorkCore">
+							<coreHediff>MorrowRim_GolemCore_WorkSelfRepair</coreHediff>
+							<subNodes>
+								<li Class="ThinkNode_Tagger">
+									<tagToGive>TrainedAnimalBehavior</tagToGive>
+									<subNodes>
+										<li Class="MorrowRim_Telvanni.JobGiver_SelfRepair" />
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+					</subNodes>
+				</li>
+			</subNodes>
+		</thinkRoot>
+	</ThinkTreeDef>
+
+	<ThinkTreeDef>
+		<defName>MorrowRim_GolemWorkInsertion_PreWander</defName>
+		<insertTag>Golem_PreWander</insertTag>
+		<insertPriority>1</insertPriority>
+		<thinkRoot Class="ThinkNode_ConditionalHasFaction">
+			<subNodes>
+				<li Class="ThinkNode_ChancePerHour_Constant">
+				  <mtbHours>1.0</mtbHours>
+				  <subNodes>
+						<li Class="MorrowRim_Telvanni.ThinkNode_ConditionalGolemWorkCore">
+							<coreHediff>MorrowRim_GolemCore_WorkFlick</coreHediff>
+							<subNodes>
+								<li Class="ThinkNode_Tagger">
+									<tagToGive>TrainedAnimalBehavior</tagToGive>
+									<subNodes>
+										<li Class="MorrowRim_Telvanni.JobGiver_Flick" />
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+	
+						<li Class="MorrowRim_Telvanni.ThinkNode_ConditionalGolemWorkCore">
+							<coreHediff>MorrowRim_GolemCore_WorkRefuel</coreHediff>
+							<subNodes>
+								<li Class="ThinkNode_Tagger">
+									<tagToGive>TrainedAnimalBehavior</tagToGive>
+									<subNodes>
+										<li Class="MorrowRim_Telvanni.JobGiver_Refuel" />
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+	
+						<li Class="MorrowRim_Telvanni.ThinkNode_ConditionalGolemWorkCore">
+							<coreHediff>MorrowRim_GolemCore_WorkAnimals</coreHediff>
+							<subNodes>
+								<li Class="ThinkNode_Tagger">
+									<tagToGive>TrainedAnimalBehavior</tagToGive>
+									<subNodes>
+										<li Class="MorrowRim_Telvanni.JobGiver_AnimalsSlaughter" />
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+
+						<li Class="MorrowRim_Telvanni.ThinkNode_ConditionalGolemWorkCore">
+							<coreHediff>MorrowRim_GolemCore_WorkRepair</coreHediff>
+							<subNodes>
+								<li Class="ThinkNode_Tagger">
+									<tagToGive>TrainedAnimalBehavior</tagToGive>
+									<subNodes>
+										<li Class="MorrowRim_Telvanni.JobGiver_Repair" />
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+	
+						<li Class="MorrowRim_Telvanni.ThinkNode_ConditionalGolemWorkCore">
+							<coreHediff>MorrowRim_GolemCore_WorkMine</coreHediff>
+							<subNodes>
+								<li Class="ThinkNode_Tagger">
+									<tagToGive>TrainedAnimalBehavior</tagToGive>
+									<subNodes>
+										<li Class="MorrowRim_Telvanni.JobGiver_Mine" />
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+						
+						<!-- Regular priority -->
+						
+						<li Class="MorrowRim_Telvanni.ThinkNode_ConditionalGolemWorkCore">
+							<coreHediff>MorrowRim_GolemCore_WorkSnowClear</coreHediff>
+							<subNodes>
+								<li Class="ThinkNode_Tagger">
+									<tagToGive>TrainedAnimalBehavior</tagToGive>
+									<subNodes>
+										<li Class="MorrowRim_Telvanni.JobGiver_ClearSnow" />
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+						
+						<li Class="MorrowRim_Telvanni.ThinkNode_ConditionalGolemWorkCore">
+							<coreHediff>MorrowRim_GolemCore_WorkPlantCut</coreHediff>
+							<subNodes>
+								<li Class="ThinkNode_Tagger">
+									<tagToGive>TrainedAnimalBehavior</tagToGive>
+									<subNodes>
+										<li Class="MorrowRim_Telvanni.JobGiver_PlantCut" />
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+
+						<li Class="MorrowRim_Telvanni.ThinkNode_ConditionalGolemWorkCore">
+							<coreHediff>MorrowRim_GolemCore_WorkClean</coreHediff>
+							<subNodes>
+								<li Class="ThinkNode_Tagger">
+									<tagToGive>TrainedAnimalBehavior</tagToGive>
+									<subNodes>
+										<li Class="MorrowRim_Telvanni.JobGiver_Clean" />
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+						
+						<li Class="MorrowRim_Telvanni.ThinkNode_ConditionalGolemWorkCore">
+							<coreHediff>MorrowRim_GolemCore_WorkRoof</coreHediff>
+							<subNodes>
+								<li Class="ThinkNode_Tagger">
+									<tagToGive>TrainedAnimalBehavior</tagToGive>
+									<subNodes>
+										<li Class="MorrowRim_Telvanni.JobGiver_BuildRoof" />
+										<li Class="MorrowRim_Telvanni.JobGiver_RemoveRoof" />
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+
+						<li Class="MorrowRim_Telvanni.ThinkNode_ConditionalGolemWorkCore">
+							<coreHediff>MorrowRim_GolemCore_WorkDeliver</coreHediff>
+							<subNodes>
+								<li Class="ThinkNode_Tagger">
+									<tagToGive>TrainedAnimalBehavior</tagToGive>
+									<subNodes>
+										<li Class="MorrowRim_Telvanni.JobGiver_ConstructDeliverResourcesToFrames" />
+										<li Class="MorrowRim_Telvanni.JobGiver_ConstructDeliverResourcesToBlueprints" />
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+	
+						<li Class="MorrowRim_Telvanni.ThinkNode_ConditionalGolemWorkCore">
+							<coreHediff>MorrowRim_GolemCore_WorkUninstall</coreHediff>
+							<subNodes>
+								<li Class="ThinkNode_Tagger">
+									<tagToGive>TrainedAnimalBehavior</tagToGive>
+									<subNodes>
+										<li Class="MorrowRim_Telvanni.JobGiver_UninstallBuilding" />
+										<li Class="MorrowRim_Telvanni.JobGiver_DeconstructBuilding" />
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+
+						<li Class="MorrowRim_Telvanni.ThinkNode_ConditionalGolemWorkCore">
+							<coreHediff>MorrowRim_GolemCore_WorkConstruct</coreHediff>
+							<subNodes>
+								<li Class="ThinkNode_Tagger">
+									<tagToGive>TrainedAnimalBehavior</tagToGive>
+									<subNodes>
+										<li Class="MorrowRim_Telvanni.JobGiver_ConstructFinishFrames" />
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+						
+						<li Class="MorrowRim_Telvanni.ThinkNode_ConditionalGolemWorkCore">
+							<coreHediff>MorrowRim_GolemCore_WorkSmooth</coreHediff>
+							<subNodes>
+								<li Class="ThinkNode_Tagger">
+									<tagToGive>TrainedAnimalBehavior</tagToGive>
+									<subNodes>
+										<li Class="MorrowRim_Telvanni.JobGiver_SmoothFloor" />
+										<li Class="MorrowRim_Telvanni.JobGiver_SmoothWall" />
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+						
+						<!-- long term tasks -->
+						
+						<li Class="MorrowRim_Telvanni.ThinkNode_ConditionalGolemWorkCore">
+							<coreHediff>MorrowRim_GolemCore_WorkHaul</coreHediff>
+							<subNodes>
+								<li Class="ThinkNode_Tagger">
+									<tagToGive>TrainedAnimalBehavior</tagToGive>
+									<subNodes>
+										<li Class="JobGiver_Haul" />
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+
+						<li Class="MorrowRim_Telvanni.ThinkNode_ConditionalGolemWorkCore">
+							<coreHediff>MorrowRim_GolemCore_WorkResearch</coreHediff>
+							<subNodes>
+								<li Class="ThinkNode_Tagger">
+									<tagToGive>TrainedAnimalBehavior</tagToGive>
+									<subNodes>
+										<li Class="MorrowRim_Telvanni.JobGiver_Research" />
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+						
+						<!-- absolute lowest priority -->
+				
+					</subNodes>
+				</li>
+			</subNodes>
+		</thinkRoot>
+	</ThinkTreeDef>
+
+</Defs>

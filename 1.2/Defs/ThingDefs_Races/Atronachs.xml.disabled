@@ -1,0 +1,561 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+		
+	<ThingDef ParentName="AnimalThingBase" Name="MorrowRim_AtronachBase" Abstract="True">
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AtronachProperties">
+                <isAtronach>true</isAtronach>
+            </li>
+		</modExtensions>
+		<statBases>
+			<PsychicSensitivity>1.5</PsychicSensitivity>
+			<ToxicSensitivity>0</ToxicSensitivity>
+			<Flammability>0</Flammability>
+			<MoveSpeed>4.0</MoveSpeed>
+			<ComfyTemperatureMin>-70</ComfyTemperatureMin>
+			<ComfyTemperatureMax>70</ComfyTemperatureMax>
+			<ArmorRating_Heat>1.00</ArmorRating_Heat>
+			<MeatAmount>0</MeatAmount>
+			<LeatherAmount>0</LeatherAmount>
+		</statBases>
+		<race>
+		  <deathActionWorkerClass>MorrowRim_Telvanni.DeathActionWorker_Atronach</deathActionWorkerClass>
+		  <bloodDef>Filth_MachineBits</bloodDef> <!-- CHANGE ME -->
+		  <needsRest>false</needsRest>
+		  <hasGenders>false</hasGenders>
+		  <foodType>None</foodType>
+		  <useMeatFrom>Megaspider</useMeatFrom>
+		  <wildness>0.1</wildness>
+		  <trainability>Advanced</trainability>
+		  <canBePredatorPrey>false</canBePredatorPrey>
+		  <lifeExpectancy>40</lifeExpectancy>
+		  <manhunterOnTameFailChance>1</manhunterOnTameFailChance>
+		  <manhunterOnDamageChance>1</manhunterOnDamageChance>
+		  <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+		  <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+		  <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+		  <ageGenerationCurve>
+			<points>
+			  <li>(0,0)</li>
+			  <li>(1,100)</li>
+			  <li>(2,0)</li>
+			</points>
+		  </ageGenerationCurve>
+		</race>
+	</ThingDef>
+	
+	<!-- Fire -->
+	
+	<ThingDef ParentName="MorrowRim_AtronachBase">
+		<defName>MorrowRim_AtronachFire</defName>
+		<label>fire atronach</label>
+		<uiIconScale>1.35</uiIconScale>
+		<description>An atronach made of concentrated fire.</description>
+		<statBases>
+		  <ArmorRating_Blunt>0.55</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>0.15</ArmorRating_Sharp>
+		  <ComfyTemperatureMax>150</ComfyTemperatureMax>
+		  <ArmorRating_Heat>2.50</ArmorRating_Heat>
+		  <MarketValue>400</MarketValue>
+		</statBases>
+	   <tools>
+		  <li>
+			<label>left fist</label>
+			<capacities>
+			  <li>Scratch</li>
+			</capacities>
+			<power>10</power>
+			<cooldownTime>2</cooldownTime>
+			<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+			<surpriseAttack>
+			  <extraMeleeDamages>
+				<li>
+				  <def>Stun</def>
+				  <amount>14</amount>
+				</li>
+			  </extraMeleeDamages>
+			</surpriseAttack>
+			<extraMeleeDamages>
+			  <li>
+				<def>Burn</def>
+				<amount>2</amount>
+				<chance>1</chance>
+			  </li>
+			  <li>
+				<def>Flame</def>
+				<amount>8</amount>
+				<chance>0.5</chance>
+			  </li>
+			</extraMeleeDamages>
+		  </li>
+		  <li>
+			<label>right fist</label>
+			<capacities>
+			  <li>Scratch</li>
+			</capacities>
+			<power>10</power>
+			<cooldownTime>2</cooldownTime>
+			<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+			<surpriseAttack>
+			  <extraMeleeDamages>
+				<li>
+				  <def>Stun</def>
+				  <amount>14</amount>
+				</li>
+			  </extraMeleeDamages>
+			</surpriseAttack>
+			<extraMeleeDamages>
+			  <li>
+				<def>Burn</def>
+				<amount>2</amount>
+				<chance>1</chance>
+			  </li>
+			  <li>
+				<def>Flame</def>
+				<amount>8</amount>
+				<chance>0.5</chance>
+			  </li>
+			</extraMeleeDamages>
+		  </li>
+		  <li>
+			<label>head</label>
+			<capacities>
+			  <li>Stab</li>
+			</capacities>
+			<power>7</power>
+			<cooldownTime>2</cooldownTime>
+			<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+			<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+			<chanceFactor>0.2</chanceFactor>
+		  </li>
+		</tools>
+		<race>
+		  <body>Human</body>
+		  <leatherDef>MorrowRim_FireSalts</leatherDef>
+		  <baseBodySize>1.0</baseBodySize>
+		  <baseHealthScale>2.5</baseHealthScale>
+		  <lifeStageAges>
+			<li>
+			  <def>AnimalAdult_Sterile</def>
+			  <minAge>0</minAge>
+			</li>
+		  </lifeStageAges>
+		</race>
+		<butcherProducts>
+		  <MorrowRim_FireSalts>15</MorrowRim_FireSalts>
+		</butcherProducts>
+	</ThingDef>
+	  
+	<PawnKindDef Name="MorrowRim_AtronachFire" ParentName="AnimalKindBase">
+		<defName>MorrowRim_AtronachFire</defName>
+		<label>fire atronach</label>
+		<race>MorrowRim_AtronachFire</race>
+		<combatPower>180</combatPower>
+		<ecoSystemWeight>50</ecoSystemWeight>
+		<canArriveManhunter>false</canArriveManhunter>
+		<wildGroupSize>1</wildGroupSize>
+		<lifeStages>
+		  <li>
+			<bodyGraphicData>
+			  <texPath>Things/Pawn/Atronach/AtronachFire/AtronachFire</texPath>
+			  <drawSize>2.4</drawSize>
+			  <shadowData>
+				<volume>(0.3, 0.8, 0.4)</volume>
+				<offset>(0,0,-0.3)</offset>
+			  </shadowData>
+			</bodyGraphicData>
+			<dessicatedBodyGraphicData>
+			  <texPath>Things/Pawn/Atronach/MorrowRim_Dessicated_atronach</texPath>
+			  <color>(238,139,96)</color>
+			  <drawSize>1.0</drawSize>
+			</dessicatedBodyGraphicData>
+		  </li>
+		</lifeStages>
+	</PawnKindDef>
+	
+	<!-- Frost -->
+	
+	<ThingDef ParentName="MorrowRim_AtronachBase">
+		<defName>MorrowRim_AtronachFrost</defName>
+		<label>frost atronach</label>
+		<uiIconScale>1.35</uiIconScale>
+		<description>An atronach made of concentrated frost.</description>
+		<statBases>
+		  <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>0.55</ArmorRating_Sharp>
+		  <ComfyTemperatureMin>150</ComfyTemperatureMin>
+		  <MarketValue>400</MarketValue>
+		</statBases>
+	   <tools>
+		  <li>
+			<label>left fist</label>
+			<capacities>
+			  <li>Stab</li>
+			</capacities>
+			<power>10</power>
+			<cooldownTime>2</cooldownTime>
+			<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+			<surpriseAttack>
+			  <extraMeleeDamages>
+				<li>
+				  <def>Stun</def>
+				  <amount>14</amount>
+				</li>
+			  </extraMeleeDamages>
+			</surpriseAttack>
+			<extraMeleeDamages>
+			  <li>
+				<def>Burn</def>
+				<amount>2</amount>
+				<chance>1</chance>
+			  </li>
+			  <li>
+				<def>Frostbite</def>
+				<amount>8</amount>
+				<chance>0.5</chance>
+			  </li>
+			</extraMeleeDamages>
+		  </li>
+		  <li>
+			<label>right fist</label>
+			<capacities>
+			  <li>Stab</li>
+			</capacities>
+			<power>10</power>
+			<cooldownTime>2</cooldownTime>
+			<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+			<surpriseAttack>
+			  <extraMeleeDamages>
+				<li>
+				  <def>Stun</def>
+				  <amount>14</amount>
+				</li>
+			  </extraMeleeDamages>
+			</surpriseAttack>
+			<extraMeleeDamages>
+			  <li>
+				<def>Burn</def>
+				<amount>2</amount>
+				<chance>1</chance>
+			  </li>
+			  <li>
+				<def>Frostbite</def>
+				<amount>8</amount>
+				<chance>0.5</chance>
+			  </li>
+			</extraMeleeDamages>
+		  </li>
+		  <li>
+			<label>head</label>
+			<capacities>
+			  <li>Blunt</li>
+			</capacities>
+			<power>7</power>
+			<cooldownTime>2</cooldownTime>
+			<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+			<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+			<chanceFactor>0.2</chanceFactor>
+		  </li>
+		</tools>
+		<race>
+		  <body>Human</body>
+		  <leatherDef>MorrowRim_FrostSalts</leatherDef>
+		  <baseBodySize>1.0</baseBodySize>
+		  <baseHealthScale>2.8</baseHealthScale>
+		  <lifeStageAges>
+			<li>
+			  <def>AnimalAdult_Sterile</def>
+			  <minAge>0</minAge>
+			</li>
+		  </lifeStageAges>
+		</race>
+		<butcherProducts>
+		  <MorrowRim_FrostSalts>15</MorrowRim_FrostSalts>
+		</butcherProducts>
+	</ThingDef>
+
+	<PawnKindDef Name="MorrowRim_AtronachFrost" ParentName="AnimalKindBase">
+		<defName>MorrowRim_AtronachFrost</defName>
+		<label>frost atronach</label>
+		<race>MorrowRim_AtronachFrost</race>
+		<combatPower>180</combatPower>
+		<ecoSystemWeight>50</ecoSystemWeight>
+		<canArriveManhunter>false</canArriveManhunter>
+		<wildGroupSize>1</wildGroupSize>
+		<lifeStages>
+		  <li>
+			<bodyGraphicData>
+			  <texPath>Things/Pawn/Atronach/AtronachIce/AtronachIce</texPath>
+			  <drawSize>2.6</drawSize>
+			  <shadowData>
+				<volume>(0.3, 0.8, 0.4)</volume>
+				<offset>(0,0,-0.3)</offset>
+			  </shadowData>
+			</bodyGraphicData>
+			<dessicatedBodyGraphicData>
+			  <texPath>Things/Pawn/Atronach/MorrowRim_Dessicated_atronach</texPath>
+			  <color>(222,239,253)</color>
+			  <drawSize>1.0</drawSize>
+			</dessicatedBodyGraphicData>
+		  </li>
+		</lifeStages>
+	</PawnKindDef>
+
+	<!-- Storm -->
+	
+	<ThingDef ParentName="MorrowRim_AtronachBase">
+		<defName>MorrowRim_AtronachStorm</defName>
+		<label>storm atronach</label>
+		<uiIconScale>1.35</uiIconScale>
+		<description>An atronach made of concentrated storm.</description>
+		<statBases>
+		  <ArmorRating_Blunt>0.65</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>0.35</ArmorRating_Sharp>
+		  <MarketValue>450</MarketValue>
+		</statBases>
+	   <tools>
+		  <li>
+			<label>left fist</label>
+			<capacities>
+			  <li>Blunt</li>
+			</capacities>
+			<power>10</power>
+			<cooldownTime>2</cooldownTime>
+			<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+			<surpriseAttack>
+			  <extraMeleeDamages>
+				<li>
+				  <def>Stun</def>
+				  <amount>14</amount>
+				</li>
+			  </extraMeleeDamages>
+			</surpriseAttack>
+			<extraMeleeDamages>
+			  <li>
+				<def>Burn</def>
+				<amount>2</amount>
+				<chance>1</chance>
+			  </li>
+			  <li>
+				<def>EMP</def>
+				<amount>8</amount>
+				<chance>0.5</chance>
+			  </li>
+			</extraMeleeDamages>
+		  </li>
+		  <li>
+			<label>right fist</label>
+			<capacities>
+			  <li>Blunt</li>
+			</capacities>
+			<power>10</power>
+			<cooldownTime>2</cooldownTime>
+			<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+			<surpriseAttack>
+			  <extraMeleeDamages>
+				<li>
+				  <def>Stun</def>
+				  <amount>14</amount>
+				</li>
+			  </extraMeleeDamages>
+			</surpriseAttack>
+			<extraMeleeDamages>
+			  <li>
+				<def>Burn</def>
+				<amount>2</amount>
+				<chance>1</chance>
+			  </li>
+			  <li>
+				<def>EMP</def>
+				<amount>8</amount>
+				<chance>0.5</chance>
+			  </li>
+			</extraMeleeDamages>
+		  </li>
+		  <li>
+			<label>head</label>
+			<capacities>
+			  <li>Blunt</li>
+			</capacities>
+			<power>7</power>
+			<cooldownTime>2</cooldownTime>
+			<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+			<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+			<chanceFactor>0.2</chanceFactor>
+		  </li>
+		</tools>
+		<race>
+		  <body>Human</body>
+		  <leatherDef>MorrowRim_VoidSalts</leatherDef>
+		  <baseBodySize>1.0</baseBodySize>
+		  <baseHealthScale>2.8</baseHealthScale>
+		  <lifeStageAges>
+			<li>
+			  <def>AnimalAdult_Sterile</def>
+			  <minAge>0</minAge>
+			</li>
+		  </lifeStageAges>
+		</race>
+		<butcherProducts>
+		  <MorrowRim_VoidSalts>15</MorrowRim_VoidSalts>
+		</butcherProducts>
+	</ThingDef>
+	  
+	<PawnKindDef Name="MorrowRim_AtronachStorm" ParentName="AnimalKindBase">
+		<defName>MorrowRim_AtronachStorm</defName>
+		<label>storm atronach</label>
+		<race>MorrowRim_AtronachStorm</race>
+		<combatPower>200</combatPower>
+		<ecoSystemWeight>50</ecoSystemWeight>
+		<canArriveManhunter>false</canArriveManhunter>
+		<wildGroupSize>1</wildGroupSize>
+		<lifeStages>
+		  <li>
+			<bodyGraphicData>
+			  <texPath>Things/Pawn/Atronach/AtronachStorm/AtronachStorm</texPath>
+			  <drawSize>2.8</drawSize>
+			  <shadowData>
+				<volume>(0.3, 0.8, 0.4)</volume>
+				<offset>(0,0,-0.3)</offset>
+			  </shadowData>
+			</bodyGraphicData>
+			<dessicatedBodyGraphicData>
+			  <texPath>Things/Pawn/Atronach/MorrowRim_Dessicated_atronach</texPath>
+			  <color>(146,151,164)</color>
+			  <drawSize>1.0</drawSize>
+			</dessicatedBodyGraphicData>
+		  </li>
+		</lifeStages>
+	</PawnKindDef>
+	
+	
+	<!-- Storm -->
+	
+	<ThingDef ParentName="MorrowRim_AtronachBase">
+		<defName>MorrowRim_AtronachAsh</defName>
+		<label>ash atronach</label>
+		<uiIconScale>1.35</uiIconScale>
+		<description>An atronach made of concentrated ash.</description>
+		<statBases>
+		  <ArmorRating_Blunt>0.35</ArmorRating_Blunt>
+		  <ArmorRating_Sharp>0.65</ArmorRating_Sharp>
+		  <MarketValue>450</MarketValue>
+		</statBases>
+	   <tools>
+		  <li>
+			<label>left fist</label>
+			<capacities>
+			  <li>Blunt</li>
+			</capacities>
+			<power>10</power>
+			<cooldownTime>2</cooldownTime>
+			<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+			<surpriseAttack>
+			  <extraMeleeDamages>
+				<li>
+				  <def>Stun</def>
+				  <amount>14</amount>
+				</li>
+			  </extraMeleeDamages>
+			</surpriseAttack>
+			<extraMeleeDamages>
+			  <li>
+				<def>Scratch</def>
+				<amount>2</amount>
+				<chance>1</chance>
+			  </li>
+			  <li>
+				<def>Stun</def>
+				<amount>8</amount>
+				<chance>0.5</chance>
+			  </li>
+			</extraMeleeDamages>
+		  </li>
+		  <li>
+			<label>right fist</label>
+			<capacities>
+			  <li>Blunt</li>
+			</capacities>
+			<power>10</power>
+			<cooldownTime>2</cooldownTime>
+			<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+			<surpriseAttack>
+			  <extraMeleeDamages>
+				<li>
+				  <def>Stun</def>
+				  <amount>14</amount>
+				</li>
+			  </extraMeleeDamages>
+			</surpriseAttack>
+			<extraMeleeDamages>
+			  <li>
+				<def>Scratch</def>
+				<amount>2</amount>
+				<chance>1</chance>
+			  </li>
+			  <li>
+				<def>Stun</def>
+				<amount>8</amount>
+				<chance>0.5</chance>
+			  </li>
+			</extraMeleeDamages>
+		  </li>
+		  <li>
+			<label>head</label>
+			<capacities>
+			  <li>Blunt</li>
+			</capacities>
+			<power>7</power>
+			<cooldownTime>2</cooldownTime>
+			<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+			<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+			<chanceFactor>0.2</chanceFactor>
+		  </li>
+		</tools>
+		<race>
+		  <body>Human</body>
+		  <leatherDef>Dagoth_AshSalts</leatherDef>
+		  <baseBodySize>1.0</baseBodySize>
+		  <baseHealthScale>2.8</baseHealthScale>
+		  <lifeStageAges>
+			<li>
+			  <def>AnimalAdult_Sterile</def>
+			  <minAge>0</minAge>
+			</li>
+		  </lifeStageAges>
+		</race>
+		<butcherProducts>
+		  <Dagoth_AshSalts>15</Dagoth_AshSalts>
+		</butcherProducts>
+	</ThingDef>
+	  
+	<PawnKindDef Name="MorrowRim_AtronachAsh" ParentName="AnimalKindBase">
+		<defName>MorrowRim_AtronachAsh</defName>
+		<label>ash atronach</label>
+		<race>MorrowRim_AtronachAsh</race>
+		<combatPower>200</combatPower>
+		<ecoSystemWeight>50</ecoSystemWeight>
+		<canArriveManhunter>false</canArriveManhunter>
+		<wildGroupSize>1</wildGroupSize>
+		<lifeStages>
+		  <li>
+			<bodyGraphicData>
+			  <texPath>Things/Pawn/Atronach/AtronachAsh/AtronachAsh</texPath>
+			  <drawSize>2.8</drawSize>
+			  <shadowData>
+				<volume>(0.3, 0.8, 0.4)</volume>
+				<offset>(0,0,-0.3)</offset>
+			  </shadowData>
+			</bodyGraphicData>
+			<dessicatedBodyGraphicData>
+			  <texPath>Things/Pawn/Atronach/MorrowRim_Dessicated_atronach</texPath>
+			  <color>(109,105,85)</color>
+			  <drawSize>1.0</drawSize>
+			</dessicatedBodyGraphicData>
+		  </li>
+		</lifeStages>
+	</PawnKindDef>
+	
+	
+</Defs>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef Name="Telvanni_BaseBeltGolem" ParentName="ApparelNoQualityBase"  Abstract="True">
+		<graphicData>
+		  <graphicClass>Graphic_Single</graphicClass>
+		  <texPath>Things/Item/Equipment/MorrowRim_TelvanniShifter</texPath>
+		</graphicData>
+		<techLevel>Medieval</techLevel>
+		<tradeTags>
+		  <li>Telvanni_ApparelFocus</li>
+		</tradeTags>
+		<recipeMaker>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<effectWorking>Smith</effectWorking>
+			<soundWorking>Recipe_Smith</soundWorking>
+			<recipeUsers>
+				<li>MorrowRim_GolemForge</li>
+			</recipeUsers>
+			<unfinishedThingDef>MorrowRim_UnfinishedTelvanniRoots</unfinishedThingDef>
+			<skillRequirements>
+				<Crafting>6</Crafting>
+				<Intellectual>12</Intellectual>
+			</skillRequirements>
+		</recipeMaker>
+		<statBases>
+		  <WorkToMake>10000</WorkToMake>
+		  <Mass>0.5</Mass>
+		  <EquipDelay>2</EquipDelay>
+		  <MaxHitPoints>80</MaxHitPoints>
+		  <RangedWeapon_Cooldown>1.25</RangedWeapon_Cooldown>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<thingCategories>
+		  <li>ApparelFocus</li>
+		</thingCategories>
+		<apparel>
+		  <tags>
+			<li>Telvanni_ApparelFocus</li>
+		  </tags>
+		  <scoreOffset>4</scoreOffset>
+		  <careIfWornByCorpse>false</careIfWornByCorpse>
+		  <careIfDamaged>false</careIfDamaged>
+		  <wearPerDay>0</wearPerDay>
+		  <bodyPartGroups>
+			<li>Waist</li>
+		  </bodyPartGroups>
+		  <layers>
+			<li>Belt</li>
+		  </layers>
+		  <defaultOutfitTags>
+			<li>Soldier</li>
+		  </defaultOutfitTags>
+		</apparel>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<tradeNeverStack>true</tradeNeverStack>
+		<smeltable>true</smeltable>
+		<burnableByRecipe>false</burnableByRecipe>
+		<drawGUIOverlay>false</drawGUIOverlay>
+		<verbs>
+		</verbs>
+		<comps>
+		</comps>
+	</ThingDef>
+	
+	<!-- ===================== -->
+	
+	<ThingDef ParentName="Telvanni_BaseBeltGolem">
+		<defName>MorrowRim_GolemShifterCrystal</defName>
+		<label>golem shifter crystal</label>
+		<description>A small crystal that attaches to the belt, and can be used to instantly teleport a golem to the users location. Doing so will deplete the crystals energy, which can be recharged using aetherial salts.\n\nGolems must have the golem shifter core installed in order to make them targetable by this crystal.</description>
+		<techLevel>Medieval</techLevel>
+		<comps>
+		  <li Class="CompProperties_Reloadable">
+			<maxCharges>3</maxCharges>
+			<ammoDef>MorrowRim_AetherialSalts</ammoDef>
+			<ammoCountPerCharge>5</ammoCountPerCharge>
+			<baseReloadTicks>60</baseReloadTicks>
+			<soundReload>Standard_Reload</soundReload>
+			<hotKey>Misc4</hotKey>
+			<chargeNoun>charge</chargeNoun>
+			<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		  </li>
+		  <li Class="CompProperties_TargetEffect_MoteConnecting">
+			<moteDef>Mote_PsycastPsychicLine</moteDef>
+		  </li>
+		</comps>
+
+		<verbs>
+		  <li>
+		    <verbClass>MorrowRim_Telvanni.Verb_GolemShifter</verbClass>
+			<label>teleport golem</label>
+			<violent>false</violent>
+			<hasStandardCommand>true</hasStandardCommand>
+			<targetable>true</targetable>
+			<onlyManualCast>True</onlyManualCast>
+			<range>15.9</range>
+			<warmupTime>0.5</warmupTime>
+			<targetParams> <!-- overridden in verbClass -->
+			  <canTargetPawns>true</canTargetPawns>
+			</targetParams>
+			<requireLineOfSight>false</requireLineOfSight>
+			<soundCast>PsychicInsanityLanceCast</soundCast>
+		  </li>
+		</verbs>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>MorrowRim_GolemTeleporter</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_AetherialSalts>15</MorrowRim_AetherialSalts>
+		  <MorrowRim_VoidSalts>10</MorrowRim_VoidSalts>
+		  <MorrowRim_AirSalts>10</MorrowRim_AirSalts>
+		</costList>
+	</ThingDef>
+
+</Defs>

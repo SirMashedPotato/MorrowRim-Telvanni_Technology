@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Base Paralysis -->
+	
+	<ThingDef Name="Telvanni_BaseStaveMelee_Paralysis" ParentName="Telvanni_BaseStaveMelee" Abstract="True">
+		<recipeMaker>
+			<researchPrerequisite>MorrowRim_StaffParalysis</researchPrerequisite>
+		</recipeMaker>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_PoisonBoltExtract>25</MorrowRim_PoisonBoltExtract>
+		</costList>
+	</ThingDef>
+	
+	<!-- Cutting -->
+	
+	<ThingDef ParentName="Telvanni_BaseStaveMelee_Paralysis">
+		<defName>Telvanni_StaveParalysisCutting</defName>
+		<label>cutting paralysis stave</label>
+		<description>A melee paralysis stave of Telvanni design, its focus inflicts paralysis buildup equivalent to 5% of damage dealt. This particular stave features a scythed focus, and is perfect for cleaving opponents.</description>
+		<graphicData>
+		  <texPath>Things/Item/Equipment/WeaponStave_Melee/Stave_Cutting</texPath>
+		  <color>(217,179,43)</color>
+		</graphicData>
+		<statBases>
+
+		</statBases>
+		<tools>
+		  <li>
+			<label>focus</label>
+			<capacities>
+			  <li>MorrowRim_CutParalysis</li>
+			</capacities>
+			<power>20</power>
+			<cooldownTime>2</cooldownTime>
+			<extraMeleeDamages>
+			</extraMeleeDamages>
+		  </li>
+		  <li>
+			<label>handle</label>
+			<capacities>
+			  <li>Poke</li>
+			  <li>Blunt</li>
+			</capacities>
+			<power>4</power>
+			<cooldownTime>2</cooldownTime>
+		  </li>
+		</tools>
+	</ThingDef>
+	
+	<!-- Crushing -->
+	
+	<ThingDef ParentName="Telvanni_BaseStaveMelee_Paralysis">
+		<defName>Telvanni_StaveParalysisImpact</defName>
+		<label>impact paralysis stave</label>
+		<description>A melee paralysis stave of Telvanni design, its focus inflicts paralysis buildup equivalent to 5% of damage dealt. This particular stave features a weighted focus, and is perfect for crushing opponents.</description>
+		<graphicData>
+		  <texPath>Things/Item/Equipment/WeaponStave_Melee/Stave_Melee</texPath>
+		  <color>(217,179,43)</color>
+		</graphicData>
+		<statBases>
+
+		</statBases>
+		<tools>
+		  <li>
+			<label>focus</label>
+			<capacities>
+			  <li>MorrowRim_BluntParalysis</li>
+			</capacities>
+			<power>20</power>
+			<cooldownTime>2</cooldownTime>
+			<extraMeleeDamages>
+			</extraMeleeDamages>
+		  </li>
+		  <li>
+			<label>handle</label>
+			<capacities>
+			  <li>Poke</li>
+			  <li>Blunt</li>
+			</capacities>
+			<power>4</power>
+			<cooldownTime>2</cooldownTime>
+		  </li>
+		</tools>
+	</ThingDef>
+	
+	<!-- Piercing -->
+	
+	<ThingDef ParentName="Telvanni_BaseStaveMelee_Paralysis">
+		<defName>Telvanni_StaveParalysisPiercing</defName>
+		<label>piercing paralysis stave</label>
+		<description>A melee paralysis stave of Telvanni design, its focus inflicts paralysis buildup equivalent to 5% of damage dealt. This particular stave features a pointed focus, and is perfect for piercing opponents.</description>
+		<graphicData>
+		  <texPath>Things/Item/Equipment/WeaponStave_Melee/Stave_Piercing</texPath>
+		  <color>(217,179,43)</color>
+		</graphicData>
+		<statBases>
+
+		</statBases>
+		<tools>
+		  <li>
+			<label>focus</label>
+			<capacities>
+			  <li>MorrowRim_StabParalysis</li>
+			</capacities>
+			<power>20</power>
+			<cooldownTime>2</cooldownTime>
+		  </li>
+		  <li>
+			<label>handle</label>
+			<capacities>
+			  <li>Poke</li>
+			  <li>Blunt</li>
+			</capacities>
+			<power>4</power>
+			<cooldownTime>2</cooldownTime>
+		  </li>
+		</tools>
+	</ThingDef>
+
+</Defs>

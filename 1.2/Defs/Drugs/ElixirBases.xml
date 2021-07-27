@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef Name="MorrowRim_ElixirBase" ParentName="DrugBase" Abstract="True">
+		<ingestible>
+		  <foodType>Fluid, Processed</foodType>
+		  <baseIngestTicks>100</baseIngestTicks>
+		  <chairSearchRadius>0</chairSearchRadius>
+		  <ingestSound>Ingest_Beer</ingestSound>
+		  <nurseable>true</nurseable>
+		  <ingestHoldUsesTable>false</ingestHoldUsesTable>
+		  <ingestCommandString>Drink {0}</ingestCommandString>
+		  <ingestReportString>Drinking {0}.</ingestReportString>
+		  <outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+				  <hediffDef>MorrowRim_PotionSickness</hediffDef>
+				  <severity>0.025</severity>
+				</li>
+		  </outcomeDoers>
+		</ingestible>
+		<socialPropernessMatters>false</socialPropernessMatters>
+		<rotatable>false</rotatable>
+		<techLevel>Medieval</techLevel>
+		<stackLimit>25</stackLimit>
+		<tradeTags>
+		  <li>TelvanniElixir</li>
+		</tradeTags>
+		<thingCategories Inherit="False">
+		  <li>MorrowRim_Elixir</li>
+		</thingCategories>
+		<comps>
+			  <li>
+				<compClass>CompQuality</compClass>
+			  </li>
+			  <li Class="CompProperties_Drug">
+				<listOrder>1000</listOrder>
+			  </li>
+		</comps>
+		<graphicData>
+			<graphicClass>Graphic_StackCount</graphicClass>
+			<drawSize>0.85</drawSize>
+		</graphicData>
+		<descriptionHyperlinks>
+			<HediffDef>MorrowRim_PotionSickness</HediffDef>
+		</descriptionHyperlinks>
+		
+		<!-- Crafting -->
+		<recipeMaker>
+			<workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+			<workSkill>Intellectual</workSkill>
+			<effectWorking>Cook</effectWorking>
+			<soundWorking>Recipe_CookMeal</soundWorking>
+			<productCount>5</productCount>
+			<bulkRecipeCount>5</bulkRecipeCount>
+			<workAmount>500</workAmount>
+			<recipeUsers>
+				<li>MorrowRim_ElixirTable</li>
+			</recipeUsers>
+		</recipeMaker>
+		
+	</ThingDef>
+  
+  <!-- Specific bases -->
+  
+  <!-- For Stats -->
+   <ThingDef Name="MorrowRim_ElixirBase_Bargain" ParentName="MorrowRim_ElixirBase" Abstract="True">
+    <graphicData>
+      <texPath>Things/Item/Drug/MorrowRim_PotionBargain</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>25</MarketValue>
+      <Mass>0.01</Mass>
+      <Flammability>0.7</Flammability>
+    </statBases>
+  </ThingDef>
+  
+  <!-- For Resists -->
+  <ThingDef Name="MorrowRim_ElixirBase_Cheap" ParentName="MorrowRim_ElixirBase" Abstract="True">
+    <graphicData>
+      <texPath>Things/Item/Drug/MorrowRim_PotionCheap</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>50</MarketValue>
+      <Mass>0.01</Mass>
+      <Flammability>0.7</Flammability>
+    </statBases>
+  </ThingDef>
+  
+  <!-- For Rate -->
+  <ThingDef Name="MorrowRim_ElixirBase_Standard" ParentName="MorrowRim_ElixirBase" Abstract="True">
+    <graphicData>
+      <texPath>Things/Item/Drug/MorrowRim_PotionStandard</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>100</MarketValue>
+      <Mass>0.01</Mass>
+      <Flammability>0.7</Flammability>
+    </statBases>
+  </ThingDef>
+  
+  <!-- For Fortify Capacities -->
+  <ThingDef Name="MorrowRim_ElixirBase_Quality" ParentName="MorrowRim_ElixirBase" Abstract="True">
+    <graphicData>
+      <texPath>Things/Item/Drug/MorrowRim_PotionQuality</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>200</MarketValue>
+      <Mass>0.01</Mass>
+      <Flammability>0.7</Flammability>
+    </statBases>
+  </ThingDef>
+  
+  <!-- For fortify work -->
+  <ThingDef Name="MorrowRim_ElixirBase_Exclusive" ParentName="MorrowRim_ElixirBase" Abstract="True">
+    <graphicData>
+      <texPath>Things/Item/Drug/MorrowRim_PotionExclusive</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>400</MarketValue>
+      <Mass>0.01</Mass>
+      <Flammability>0.7</Flammability>
+    </statBases>
+  </ThingDef>
+  
+  <!-- Highs -->
+  
+	<HediffDef Name="MorrowRim_ElixirHighBase" Abstract="True">
+		<hediffClass>Hediff_High</hediffClass>
+		<defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			 <li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.5</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			 </li>
+		</comps>
+	</HediffDef>
+
+</Defs>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+ 
+	<HediffDef>
+		<defName>MorrowRim_MindControl</defName>
+		<label>mind control</label>
+		<description>The result of ones mind being controlled by another being, forcing them to violently attack anything nearby. The victim will regain control after awhile.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(0.9, 1.0, 0.35)</defaultLabelColor>
+		<initialSeverity>1</initialSeverity>
+		<comps>
+		  <li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-8</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			 </li>
+		  <li Class="HediffCompProperties_CauseMentalState">
+			<animalMentalState>Manhunter</animalMentalState>
+			<humanMentalState>Berserk</humanMentalState>
+			<letterDef>ThreatSmall</letterDef>
+			<mtbDaysToCauseMentalState>0.0001</mtbDaysToCauseMentalState>
+		  </li>
+		</comps>
+	</HediffDef>
+ 
+</Defs>

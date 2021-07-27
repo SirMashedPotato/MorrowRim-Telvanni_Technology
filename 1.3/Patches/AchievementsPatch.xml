@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Achievements Expanded</li>
+		</mods>
+
+		<match Class="PatchOperationSequence">
+			<operations>
+
+
+				<li Class="PatchOperationAdd"> 
+					<xpath>/Defs</xpath>
+					<value>
+
+						<AchievementsExpanded.AchievementTabDef>
+							<defName>Telvanni_AchievementsTab</defName>
+							<label>Telvanni</label>
+						</AchievementsExpanded.AchievementTabDef>
+						
+						<!-- Rewards -->
+						
+						<AchievementsExpanded.Reward_MapIncident>
+							<defName>MorrowRim_RewardSaltFlowerSprout</defName>
+							<label>Telvanni Salt Flower Sprout</label>
+							<tab>Telvanni_AchievementsTab</tab>
+							
+							<cost>25</cost>
+							<incident>MorrowRim_TelvanniFlowerSprout</incident>
+						</AchievementsExpanded.Reward_MapIncident>
+						
+						<AchievementsExpanded.Reward_MapIncident>
+							<defName>MorrowRim_RewardExtractPlantSprout</defName>
+							<label>Telvanni Extract Plant Sprout</label>
+							<tab>Telvanni_AchievementsTab</tab>
+							
+							<cost>25</cost>
+							<incident>MorrowRim_TelvanniExtractSprout</incident>
+						</AchievementsExpanded.Reward_MapIncident>
+						
+						<!-- Telvanni drop pod reward?? -->
+						<!--
+						<AchievementsExpanded.Reward_MapIncident>
+							<defName>MorrowRim_RewardHeartStoneMeteor</defName>
+							<label>Heart Stone Impact</label>
+							<tab>Telvanni_AchievementsTab</tab>
+							
+							<cost>50</cost>
+							<incident>MorrowRim_RewardHeartStoneMeteor</incident>
+						</AchievementsExpanded.Reward_MapIncident>
+						-->
+						<!-- Building -->
+
+						<!-- Crafting -->
+						
+						<AchievementsExpanded.AchievementDef>
+							<defName>MorrowRim_AchievementTelvanni_CraftHeartStone</defName>
+							<label>Rekindle The Flame</label>
+							<description>Reignite the fires within a depleted heart stone at the Telvanni forge</description>
+							<bgtexPath>Achievements/MorrowRim_AchievementBackgroundTelvanni</bgtexPath>
+							<tab>Telvanni_AchievementsTab</tab>
+							<tracker Class="AchievementsExpanded.ItemCraftTracker">
+								<def>MorrowRim_HeartStone</def>
+								<count>1</count>
+							</tracker>
+
+							<texPath>Achievements/MorrowRim_AchievementTelvanni_CraftHeartStone</texPath>
+							<points>5</points>
+						</AchievementsExpanded.AchievementDef>
+						
+						<AchievementsExpanded.AchievementDef> <!-- Uses custom tracker -->
+							<defName>MorrowRim_AchievementTelvanni_CraftAetherial</defName>
+							<label>Aetherial Crafter</label>
+							<description>Create an aetherial stave or aetherial sentinal crystal</description>
+							<bgtexPath>Achievements/MorrowRim_AchievementBackgroundTelvanni</bgtexPath>
+							<tab>Telvanni_AchievementsTab</tab>
+							<tracker Class="AchievementsExpanded.ItemCraftTracker_WithDefList">
+								<defList>
+									<li>MorrowRim_SentinalCrystalAetherial</li>
+									<li>Telvanni_StaveAetherialBasic</li>
+									<li>Telvanni_StaveAetherialBlast</li>
+									<li>Telvanni_StaveAetherialCharged</li>
+									<li>Telvanni_StaveAetherialFocused</li>
+									<li>Telvanni_StaveAetherialPrismatic</li>
+									<li>Telvanni_StaveAetherialPulse</li>
+									<li>Telvanni_StaveAetherialRapid</li>
+								</defList>
+								<count>1</count>
+							</tracker>
+
+							<texPath>Achievements/MorrowRim_AchievementTelvanni_CraftAetherial</texPath>
+							<points>15</points>
+						</AchievementsExpanded.AchievementDef>
+						
+						<!-- Crafting Legendary -->
+						
+						<AchievementsExpanded.AchievementDef>
+							<defName>MorrowRim_AchievementTelvanni_LegendaryStaveSpectralCutting</defName>
+							<label>The Reaper of Souls</label>
+							<description>Create a legendary quality cutting spectral stave</description>
+							<bgtexPath>Achievements/MorrowRim_AchievementBackgroundTelvanni</bgtexPath>
+							<tab>Telvanni_AchievementsTab</tab>
+							<tracker Class="AchievementsExpanded.ItemCraftTracker">
+								<def>Telvanni_StaveSpectralCutting</def>
+								<quality>Legendary</quality>
+								<count>1</count>
+							</tracker>
+
+							<texPath>Achievements/MorrowRim_AchievementTelvanni_LegendaryStaveSpectralCutting</texPath>
+							<points>15</points>
+						</AchievementsExpanded.AchievementDef>
+						
+						<AchievementsExpanded.AchievementDef>
+							<defName>MorrowRim_AchievementTelvanni_LegendaryStaveStormImpact</defName>
+							<label>The Hammer of Storms</label>
+							<description>Create a legendary quality impact storm stave</description>
+							<bgtexPath>Achievements/MorrowRim_AchievementBackgroundTelvanni</bgtexPath>
+							<tab>Telvanni_AchievementsTab</tab>
+							<tracker Class="AchievementsExpanded.ItemCraftTracker">
+								<def>Telvanni_StaveStormImpact</def>
+								<quality>Legendary</quality>
+								<count>1</count>
+							</tracker>
+
+							<texPath>Achievements/MorrowRim_AchievementTelvanni_LegendaryStaveStormImpact</texPath>
+							<points>15</points>
+						</AchievementsExpanded.AchievementDef>
+						
+						<AchievementsExpanded.AchievementDef>
+							<defName>MorrowRim_AchievementTelvanni_LegendaryStaveFirePiercing</defName>
+							<label>The Red Demons Spear</label>
+							<description>Create a legendary quality piercing fire stave</description>
+							<bgtexPath>Achievements/MorrowRim_AchievementBackgroundTelvanni</bgtexPath>
+							<tab>Telvanni_AchievementsTab</tab>
+							<tracker Class="AchievementsExpanded.ItemCraftTracker">
+								<def>Telvanni_StaveFirePiercing</def>
+								<quality>Legendary</quality>
+								<count>1</count>
+							</tracker>
+
+							<texPath>Achievements/MorrowRim_AchievementTelvanni_LegendaryStaveFirePiercing</texPath>
+							<points>15</points>
+						</AchievementsExpanded.AchievementDef>
+						
+						<AchievementsExpanded.AchievementDef> <!-- Uses custom tracker -->
+							<defName>MorrowRim_AchievementTelvanni_LegendaryElixir</defName>
+							<label>Legendary Elixir</label>
+							<description>Create a legendary quality elixir of any kind</description>
+							<bgtexPath>Achievements/MorrowRim_AchievementBackgroundTelvanni</bgtexPath>
+							<tab>Telvanni_AchievementsTab</tab>
+							<tracker Class="AchievementsExpanded.ItemCraftTracker_WithThingCategory">
+								<thingCategory>MorrowRim_Elixir</thingCategory>
+								<quality>Legendary</quality>
+								<count>1</count>
+							</tracker>
+
+							<texPath>Achievements/MorrowRim_AchievementTelvanni_LegendaryElixir</texPath>
+							<points>10</points>
+						</AchievementsExpanded.AchievementDef>
+										
+						<AchievementsExpanded.AchievementDef>
+							<defName>MorrowRim_AchievementTelvanni_LegendaryGolem</defName>
+							<label>Art Given Life</label>
+							<description>Craft or upgrade a golem of legendary quality</description>
+							<bgtexPath>Achievements/MorrowRim_AchievementBackgroundTelvanni</bgtexPath>
+							<tab>Telvanni_AchievementsTab</tab>
+							<tracker Class="AchievementsExpanded.HediffTracker">
+								<def>MorrowRim_GolemQuality_Legendary</def>
+								<count>1</count>
+							</tracker>
+
+							<texPath>Achievements/MorrowRim_AchievementTelvanni_LegendaryGolem</texPath>
+							<points>15</points>
+						</AchievementsExpanded.AchievementDef>
+
+						<!-- Hediffs -->
+						
+						<AchievementsExpanded.AchievementDef>
+							<defName>MorrowRim_AchievementTelvanni_DeathPotions</defName>
+							<label>Certainly No Witcher</label>
+							<description>Have a pawn die of alchemical toxicity</description>
+							<bgtexPath>Achievements/MorrowRim_AchievementBackgroundTelvanni</bgtexPath>
+							<tab>Telvanni_AchievementsTab</tab>
+							<tracker Class="AchievementsExpanded.HediffDeathTracker">
+								<def>MorrowRim_PotionSickness</def>
+								<count>1</count>
+							</tracker>
+
+							<texPath>Achievements/MorrowRim_AchievementTelvanni_DeathPotions</texPath>
+							<points>10</points>
+						</AchievementsExpanded.AchievementDef>
+						
+						<AchievementsExpanded.AchievementDef>
+							<defName>MorrowRim_AchievementTelvanni_NecromanticResurrection</defName>
+							<label>Re-Animator</label>
+							<description>Have a pawn be resurrected through use of a necromantic elixir</description>
+							<bgtexPath>Achievements/MorrowRim_AchievementBackgroundTelvanni</bgtexPath>
+							<tab>Telvanni_AchievementsTab</tab>
+							<tracker Class="AchievementsExpanded.HediffTracker">
+								<def>MorrowRim_TelvanniResurrects</def>
+								<count>1</count>
+							</tracker>
+
+							<texPath>Achievements/MorrowRim_AchievementTelvanni_NecromanticResurrection</texPath>
+							<points>15</points>
+						</AchievementsExpanded.AchievementDef>
+
+						<!-- Multi Hediffs -->
+						
+						<AchievementsExpanded.AchievementDef>
+							<defName>MorrowRim_AchievementTelvanni_BigBrain</defName>
+							<label>Big Brain Time</label>
+							<description>Have a colonist be affected by elixirs of consciousness, learning and research speed</description>
+							<bgtexPath>Achievements/MorrowRim_AchievementBackgroundTelvanni</bgtexPath>
+							<tab>Telvanni_AchievementsTab</tab>
+							<tracker Class="AchievementsExpanded.MultiHediffTracker">
+								<defs>
+									<li>
+										<key>MorrowRim_ElixirCapacityConsciousness_High</key>
+										<value>1</value>
+									</li>
+									<li>
+										<key>MorrowRim_ElixirRateLearningRate_High</key>
+										<value>1</value>
+									</li>
+									<li>
+										<key>MorrowRim_ElixirWorkResearchSpeed_High</key>
+										<value>1</value>
+									</li>
+								</defs>
+							</tracker>
+
+							<texPath>Achievements/MorrowRim_AchievementTelvanni_BigBrain</texPath>
+							<points>15</points>
+						</AchievementsExpanded.AchievementDef>
+
+						<AchievementsExpanded.AchievementDef>
+							<defName>MorrowRim_AchievementTelvanni_GolemFullCores</defName>
+							<label>A Weapon to Surpass Akulakhan</label>
+							<description>Install every possible core, excluding focuses and blades, into a single legendary quality golem</description>
+							<bgtexPath>Achievements/MorrowRim_AchievementBackgroundTelvanni</bgtexPath>
+							<tab>Telvanni_AchievementsTab</tab>
+							<tracker Class="AchievementsExpanded.MultiHediffTracker">
+								<defs>
+									<li>
+										<key>MorrowRim_ElixirCapacityConsciousness_High</key>
+										<value>1</value>
+									</li>
+									<li>
+										<key>MorrowRim_ElixirRateLearningRate_High</key>
+										<value>1</value>
+									</li>
+									<li>
+										<key>MorrowRim_ElixirWorkResearchSpeed_High</key>
+										<value>1</value>
+									</li>
+								</defs>
+							</tracker>
+
+							<texPath>Achievements/MorrowRim_AchievementTelvanni_GolemFullCores</texPath>
+							<points>50</points>
+						</AchievementsExpanded.AchievementDef>
+						
+						<!-- Incidents -->
+						
+						<AchievementsExpanded.AchievementDef>
+							<defName>MorrowRim_AchievementTelvanni_WeatherSurfer</defName>
+							<label>Weather Surfer</label>
+							<description>Change the weather using any kind of weather pulser</description>
+							<bgtexPath>Achievements/MorrowRim_AchievementBackgroundTelvanni</bgtexPath>
+							<tab>Telvanni_AchievementsTab</tab>
+							<tracker Class="AchievementsExpanded.HediffTracker">
+								<def>MorrowRim_HiddenWeatherChanged</def>
+								<count>1</count>
+							</tracker>
+
+							<texPath>Achievements/MorrowRim_AchievementTelvanni_WeatherSurfer</texPath>
+							<points>5</points>
+						</AchievementsExpanded.AchievementDef>
+
+						<!-- Colonist -->
+		
+						<!-- Items -->
+						
+						<AchievementsExpanded.AchievementDef>
+							<defName>MorrowRim_AchievementTelvanni_ElixirCleansing</defName>
+							<label>No Toxicity Here</label>
+							<description>Obtain 100 elixirs of cleansing</description>
+							<bgtexPath>Achievements/MorrowRim_AchievementBackgroundTelvanni</bgtexPath>
+							<tab>Telvanni_AchievementsTab</tab>
+							<tracker Class="AchievementsExpanded.ItemTracker">
+								<def>MorrowRim_ElixirCleansing</def>
+								<count>100</count>
+							</tracker>
+
+							<texPath>Achievements/MorrowRim_AchievementTelvanni_ElixirCleansing</texPath>
+							<points>10</points>
+						</AchievementsExpanded.AchievementDef>
+
+						<AchievementsExpanded.AchievementDef>
+							<defName>MorrowRim_AchievementTelvanni_HeartStone</defName>
+							<label>Almost Enough to Rebuild the Heart of Lorkhan</label>
+							<description>Obtain 100 heart stones</description>
+							<bgtexPath>Achievements/MorrowRim_AchievementBackgroundTelvanni</bgtexPath>
+							<tab>Telvanni_AchievementsTab</tab>
+							<tracker Class="AchievementsExpanded.ItemTracker">
+								<def>MorrowRim_HeartStone</def>
+								<count>100</count>
+							</tracker>
+
+							<texPath>Achievements/MorrowRim_AchievementTelvanni_HeartStone</texPath>
+							<points>25</points>
+						</AchievementsExpanded.AchievementDef>
+						
+						<!-- Kills -->
+						
+						<!-- Livestock -->
+						
+						<AchievementsExpanded.AchievementDef>
+							<defName>MorrowRim_AchievementTelvanni_CollectGolem</defName>
+							<label>Golem Collector</label>
+							<description>Have one of each type of Telvanni golem at the same time</description>
+							<bgtexPath>Achievements/MorrowRim_AchievementBackgroundTelvanni</bgtexPath>
+							<tab>Telvanni_AchievementsTab</tab>
+							<tracker Class="AchievementsExpanded.KindDefTracker">
+								<kindDefs>
+									<li>
+										<key>MorrowRim_ElementalSpiderAsh</key>
+										<value>1</value>
+									</li>
+									<li>
+										<key>MorrowRim_ElementalSpiderFire</key>
+										<value>1</value>
+									</li>
+									<li>
+										<key>MorrowRim_ElementalSpiderFrost</key>
+										<value>1</value>
+									</li>
+									<li>
+										<key>MorrowRim_ElementalSpiderGrave</key>
+										<value>1</value>
+									</li>
+									<li>
+										<key>MorrowRim_ElementalSpiderParalysis</key>
+										<value>1</value>
+									</li>
+									<li>
+										<key>MorrowRim_ElementalSpiderStorm</key>
+										<value>1</value>
+									</li>
+									<li>
+										<key>MorrowRim_ElementalSpiderToxin</key>
+										<value>1</value>
+									</li>
+									<li>
+										<key>MorrowRim_ElementalSpiderVampiric</key>
+										<value>1</value>
+									</li>
+								</kindDefs>
+								
+							</tracker>
+
+							<texPath>Achievements/MorrowRim_AchievementTelvanni_CollectGolem</texPath>
+							<points>25</points>
+						</AchievementsExpanded.AchievementDef>
+						
+						<!-- Records -->
+						
+						<AchievementsExpanded.AchievementDef>
+							<defName>MorrowRim_AchievementTelvanni_InstallGolemCores</defName>
+							<label>Core Installing Champion</label>
+							<description>Have a single pawn install 100 golem cores</description>
+							<bgtexPath>Achievements/MorrowRim_AchievementBackgroundTelvanni</bgtexPath>
+							<tab>Telvanni_AchievementsTab</tab>
+							<tracker Class="AchievementsExpanded.RecordEventTracker">
+								<def>MorrowRim_TelvanniGolemCores</def>
+								<count>100</count>
+							</tracker>
+
+							<texPath>Achievements/MorrowRim_AchievementTelvanni_InstallGolemCores</texPath>
+							<points>50</points>
+						</AchievementsExpanded.AchievementDef>
+	
+						<!-- Research -->
+						
+						<AchievementsExpanded.AchievementDef> <!-- Uses custom tracker -->
+							<defName>MorrowRim_AchievementTelvanni_ResearchArchmagister</defName>
+							<label>Archmagister Researcher</label>
+							<description>Complete all Telvanni research</description>
+							<bgtexPath>Achievements/MorrowRim_AchievementBackgroundTelvanni</bgtexPath>
+							<tab>Telvanni_AchievementsTab</tab>
+							<tracker Class="AchievementsExpanded.ResearchTracker__WithTab">
+								<researchTabDef>Telvanni_Tab</researchTabDef>
+							</tracker>
+
+							<texPath>Achievements/MorrowRim_AchievementTelvanni_ResearchArchmagister</texPath>
+							<points>75</points>
+						</AchievementsExpanded.AchievementDef>
+						
+						<AchievementsExpanded.AchievementDef>
+							<defName>MorrowRim_AchievementTelvanni_ResearchPlantsMaster</defName>
+							<label>Master Sowing Researcher</label>
+							<description>Complete all Telvanni sowing research</description>
+							<bgtexPath>Achievements/MorrowRim_AchievementBackgroundTelvanni</bgtexPath>
+							<tab>Telvanni_AchievementsTab</tab>
+							<tracker Class="AchievementsExpanded.ResearchTracker">
+								<def>MorrowRim_TelvanniSowingResource</def>
+							</tracker>
+
+							<texPath>Achievements/MorrowRim_AchievementTelvanni_ResearchPlantsMaster</texPath>
+							<points>15</points>
+						</AchievementsExpanded.AchievementDef>
+	
+						<AchievementsExpanded.AchievementDef>
+							<defName>MorrowRim_AchievementTelvanni_ResearchElixirApprentice</defName>
+							<label>Apprentice Elixir Researcher</label>
+							<description>Begin your journey into elixir creation</description>
+							<bgtexPath>Achievements/MorrowRim_AchievementBackgroundTelvanni</bgtexPath>
+							<tab>Telvanni_AchievementsTab</tab>
+							<tracker Class="AchievementsExpanded.ResearchTracker">
+								<def>MorrowRim_ElixirTable</def>
+							</tracker>
+
+							<texPath>Achievements/MorrowRim_AchievementTelvanni_ResearchElixirApprentice</texPath>
+							<points>5</points>
+						</AchievementsExpanded.AchievementDef>
+						
+						<AchievementsExpanded.AchievementDef>
+							<defName>MorrowRim_AchievementTelvanni_ResearchElixirAdvanced</defName>
+							<label>Master Elixir Researcher</label>
+							<description>Complete the advanced elixir research</description>
+							<bgtexPath>Achievements/MorrowRim_AchievementBackgroundTelvanni</bgtexPath>
+							<tab>Telvanni_AchievementsTab</tab>
+							<tracker Class="AchievementsExpanded.ResearchTracker">
+								<def>MorrowRim_ElixirAdvanced</def>
+							</tracker>
+
+							<texPath>Achievements/MorrowRim_AchievementTelvanni_ResearchElixirAdvanced</texPath>
+							<points>25</points>
+						</AchievementsExpanded.AchievementDef>
+						
+						<AchievementsExpanded.AchievementDef>
+							<defName>MorrowRim_AchievementTelvanni_ResearchElixirUltimate</defName>
+							<label>Magister Elixir Researcher</label>
+							<description>Push your elixir research to its limits</description>
+							<bgtexPath>Achievements/MorrowRim_AchievementBackgroundTelvanni</bgtexPath>
+							<tab>Telvanni_AchievementsTab</tab>
+							<tracker Class="AchievementsExpanded.ResearchTracker">
+								<def>MorrowRim_ElixirNecromantic</def>
+							</tracker>
+
+							<texPath>Achievements/MorrowRim_AchievementTelvanni_ResearchElixirUltimate</texPath>
+							<points>25</points>
+						</AchievementsExpanded.AchievementDef>
+						
+						<AchievementsExpanded.AchievementDef>
+							<defName>MorrowRim_AchievementTelvanni_ResearchStaveApprentice</defName>
+							<label>Apprentice Stave Researcher</label>
+							<description>Begin your journey into energy stave creation</description>
+							<bgtexPath>Achievements/MorrowRim_AchievementBackgroundTelvanni</bgtexPath>
+							<tab>Telvanni_AchievementsTab</tab>
+							<tracker Class="AchievementsExpanded.ResearchTracker">
+								<def>MorrowRim_StaffTable</def>
+							</tracker>
+
+							<texPath>Achievements/MorrowRim_AchievementTelvanni_ResearchStaveApprentice</texPath>
+							<points>5</points>
+						</AchievementsExpanded.AchievementDef>
+						
+						<AchievementsExpanded.AchievementDef>
+							<defName>MorrowRim_AchievementTelvanni_ResearchStaveAdvanced</defName>
+							<label>Master Stave Researcher</label>
+							<description>Complete the advanced energy stave research</description>
+							<bgtexPath>Achievements/MorrowRim_AchievementBackgroundTelvanni</bgtexPath>
+							<tab>Telvanni_AchievementsTab</tab>
+							<tracker Class="AchievementsExpanded.ResearchTracker">
+								<def>MorrowRim_StaffAetherial</def>
+							</tracker>
+
+							<texPath>Achievements/MorrowRim_AchievementTelvanni_ResearchStaveAdvanced</texPath>
+							<points>25</points>
+						</AchievementsExpanded.AchievementDef>
+						
+						<AchievementsExpanded.AchievementDef>
+							<defName>MorrowRim_AchievementTelvanni_ResearchGolemApprentice</defName>
+							<label>Apprentice Golem Researcher</label>
+							<description>Begin your journey into golem creation</description>
+							<bgtexPath>Achievements/MorrowRim_AchievementBackgroundTelvanni</bgtexPath>
+							<tab>Telvanni_AchievementsTab</tab>
+							<tracker Class="AchievementsExpanded.ResearchTracker">
+								<def>MorrowRim_GolemForge</def>
+							</tracker>
+
+							<texPath>Achievements/MorrowRim_AchievementTelvanni_ResearchGolemApprentice</texPath>
+							<points>5</points>
+						</AchievementsExpanded.AchievementDef>
+						
+						<AchievementsExpanded.AchievementDef>
+							<defName>MorrowRim_AchievementTelvanni_ResearchGolemAdvanced</defName>
+							<label>Master Golem Researcher</label>
+							<description>Complete the advanced golem research</description>
+							<bgtexPath>Achievements/MorrowRim_AchievementBackgroundTelvanni</bgtexPath>
+							<tab>Telvanni_AchievementsTab</tab>
+							<tracker Class="AchievementsExpanded.ResearchTracker">
+								<def>MorrowRim_GolemAdvanced</def>
+							</tracker>
+
+							<texPath>Achievements/MorrowRim_AchievementTelvanni_ResearchGolemAdvanced</texPath>
+							<points>25</points>
+						</AchievementsExpanded.AchievementDef>
+
+						<!-- Trade -->
+						
+						<AchievementsExpanded.AchievementDef>
+							<defName>MorrowRim_AchievementTelvanni_AetherialSaltsSeller</defName>
+							<label>Seeing Aetherial Stars</label>
+							<description>Earn 10,000 silver from selling aetherial salts</description>
+							<bgtexPath>Achievements/MorrowRim_AchievementBackgroundTelvanni</bgtexPath>
+							<tab>Telvanni_AchievementsTab</tab>
+							<tracker Class="AchievementsExpanded.TraderTracker">
+								<def>MorrowRim_AetherialSalts</def>
+								<worth>10000</worth>
+								<singleTransaction>false</singleTransaction>
+							</tracker>
+
+							<texPath>Achievements/MorrowRim_AchievementTelvanni_AetherialSaltsSeller</texPath>
+							<points>25</points>
+						</AchievementsExpanded.AchievementDef>
+
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+
+</Patch>
+

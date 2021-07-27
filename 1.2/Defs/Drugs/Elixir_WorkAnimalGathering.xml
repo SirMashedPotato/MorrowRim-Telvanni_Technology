@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="MorrowRim_ElixirBase_Exclusive">
+		<defName>MorrowRim_ElixirWorkAnimalGathering</defName>
+		<label>elixir of fortify gathering</label>
+		<description>An elixir prepared by a alchemist, fortifies ones animal gathering abilities, increasing speed by 25% and yield by 15%.\n\nThe duration of the effect depends on the quality of the elixir, with the elixir lasting 10% of the maximum duration per quality level, or 100% of the maximum duration for legendary. The effect can be stacked for up to 48 hours.\n\nIngesting this elixir will also increase alchemical toxicity by 2.5%, regardless of quality level.</description>
+		<descriptionHyperlinks>
+			<HediffDef>MorrowRim_ElixirWorkAnimalGathering_High</HediffDef>
+		</descriptionHyperlinks>
+		<ingestible>
+		  <drugCategory>Medical</drugCategory>
+		  <outcomeDoers>
+			<li Class="MorrowRim_Telvanni.IngestionOutcomeDoer_GiveHediff">
+				<Hediff>MorrowRim_ElixirWorkAnimalGathering_High</Hediff>
+			</li>
+		  </outcomeDoers>
+		</ingestible>
+		<comps>
+		</comps>
+		<recipeMaker>
+			<researchPrerequisite>MorrowRim_ElixirAdvanced</researchPrerequisite>
+		</recipeMaker>
+		<costList>
+			<MorrowRim_GraveExtract>1</MorrowRim_GraveExtract>
+			<MorrowRim_VampiricExtract>1</MorrowRim_VampiricExtract>
+			<MorrowRim_AirSalts>3</MorrowRim_AirSalts>
+		</costList>
+	</ThingDef>
+  
+	<HediffDef ParentName="MorrowRim_ElixirHighBase">
+		<defName>MorrowRim_ElixirWorkAnimalGathering_High</defName>
+		<label>elixir of fortify animal gathering</label>
+		<description>Fortifies ones animal gathering abilities, increasing speed by 25% and yield by 15%, for up to 48 hours.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<AnimalGatherSpeed>0.25</AnimalGatherSpeed>
+					<AnimalGatherYield>0.15</AnimalGatherYield>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+</Defs>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="MorrowRim_ElixirBase_Necromantic">
+		<defName>MorrowRim_NecromanticSpectral</defName>
+		<label>elixir of spectral resurrection</label>
+		<description>An elixir prepared by a alchemist, resurrects the ingestor upon death, healing wounds in the process.\n\nDue to the nature of these elixirs, the resurrection effect will only work once.\n\nIngesting this elixir will also increase alchemical toxicity by 2.5%, regardless of quality level.</description>
+		<descriptionHyperlinks>
+			<HediffDef>MorrowRim_NecromanticSpectral_High</HediffDef>
+		</descriptionHyperlinks>
+		<graphicData>
+		  <texPath>Things/Item/Drug/MorrowRim_PotionSpectral</texPath>
+		</graphicData>
+		<ingestible>
+		  <drugCategory>Medical</drugCategory>
+		  <outcomeDoers>
+			<li Class="MorrowRim_Telvanni.IngestionOutcomeDoer_GiveHediff">
+				<Hediff>MorrowRim_NecromanticSpectral_High</Hediff>
+			</li>
+		  </outcomeDoers>
+		</ingestible>
+		<comps>
+		</comps>
+		<costList>
+			<MorrowRim_SpectralExtract>25</MorrowRim_SpectralExtract>
+			<MorrowRim_AetherialSalts>10</MorrowRim_AetherialSalts>
+		</costList>
+	</ThingDef>
+  
+	<HediffDef ParentName="MorrowRim_ElixirHighActiveBase">
+		<defName>MorrowRim_NecromanticSpectral_High</defName>
+		<label>elixir of spectral resurrection</label>
+		<description>An elixir prepared by a alchemist, causes the ingestor to release clouds of corrosive gas upon taking damage, weakening the elixir at the same time.</description>
+		<stages>
+		</stages>
+		<comps>
+			<li Class="MorrowRim_Telvanni.HediffCompProperties_NecromanticElixir">
+				<resDef>MorrowRim_TelvanniResurrects</resDef>
+				<severity>0.2</severity>
+			</li>
+		</comps>
+	</HediffDef>
+
+</Defs>

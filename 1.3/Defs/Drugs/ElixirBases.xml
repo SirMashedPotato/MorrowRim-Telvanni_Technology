@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef Name="MorrowRim_ElixirBase" ParentName="DrugBase" Abstract="True">
+		<ingestible>
+		  <foodType>Fluid, Processed</foodType>
+		  <baseIngestTicks>100</baseIngestTicks>
+		  <chairSearchRadius>0</chairSearchRadius>
+		  <ingestSound>Ingest_Beer</ingestSound>
+		  <nurseable>true</nurseable>
+		  <ingestHoldUsesTable>false</ingestHoldUsesTable>
+		  <ingestCommandString>Drink {0}</ingestCommandString>
+		  <ingestReportString>Drinking {0}.</ingestReportString>
+		  <outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+				  <hediffDef>MorrowRim_PotionSickness</hediffDef>
+				  <severity>0.025</severity>
+				</li>
+		  </outcomeDoers>
+		</ingestible>
+		<socialPropernessMatters>false</socialPropernessMatters>
+		<rotatable>false</rotatable>
+		<techLevel>Medieval</techLevel>
+		<stackLimit>25</stackLimit>
+		<tradeTags>
+		  <li>TelvanniElixir</li>
+		</tradeTags>
+		<thingCategories Inherit="False">
+		  <li>MorrowRim_Elixir</li>
+		</thingCategories>
+		
+		<graphicData>
+			<graphicClass>Graphic_StackCount</graphicClass>
+			<drawSize>0.85</drawSize>
+		</graphicData>
+		<descriptionHyperlinks>
+			<HediffDef>MorrowRim_PotionSickness</HediffDef>
+		</descriptionHyperlinks>
+		
+		<!-- Crafting -->
+		<recipeMaker>
+			<workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+			<workSkill>Intellectual</workSkill>
+			<effectWorking>Cook</effectWorking>
+			<soundWorking>Recipe_CookMeal</soundWorking>
+			<productCount>5</productCount>
+			<bulkRecipeCount>5</bulkRecipeCount>
+			<workAmount>500</workAmount>
+			<recipeUsers>
+				<li>MorrowRim_ElixirTable</li>
+			</recipeUsers>
+		</recipeMaker>
+		
+	</ThingDef>
+	
+	<ThingDef Name="MorrowRim_ElixirBaseQuality" ParentName="MorrowRim_ElixirBase" Abstract="True">
+		<comps>
+			  <li>
+				<compClass>CompQuality</compClass>
+			  </li>
+			  <li Class="CompProperties_Drug">
+				<listOrder>1000</listOrder>
+			  </li>
+		</comps>
+	</ThingDef>
+  
+  <!-- Specific bases -->
+  
+  <!-- For Stats -->
+   <ThingDef Name="MorrowRim_ElixirBase_Bargain" ParentName="MorrowRim_ElixirBaseQuality" Abstract="True">
+    <graphicData>
+      <texPath>Things/Item/Drug/MorrowRim_PotionBargain</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>25</MarketValue>
+      <Mass>0.01</Mass>
+      <Flammability>0.7</Flammability>
+    </statBases>
+  </ThingDef>
+  
+  <!-- For Resists -->
+  <ThingDef Name="MorrowRim_ElixirBase_Cheap" ParentName="MorrowRim_ElixirBaseQuality" Abstract="True">
+    <graphicData>
+      <texPath>Things/Item/Drug/MorrowRim_PotionCheap</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>50</MarketValue>
+      <Mass>0.01</Mass>
+      <Flammability>0.7</Flammability>
+    </statBases>
+  </ThingDef>
+  
+  <!-- For Rate -->
+  <ThingDef Name="MorrowRim_ElixirBase_Standard" ParentName="MorrowRim_ElixirBaseQuality" Abstract="True">
+    <graphicData>
+      <texPath>Things/Item/Drug/MorrowRim_PotionStandard</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>100</MarketValue>
+      <Mass>0.01</Mass>
+      <Flammability>0.7</Flammability>
+    </statBases>
+  </ThingDef>
+  
+  <!-- For Fortify Capacities -->
+  <ThingDef Name="MorrowRim_ElixirBase_Quality" ParentName="MorrowRim_ElixirBaseQuality" Abstract="True">
+    <graphicData>
+      <texPath>Things/Item/Drug/MorrowRim_PotionQuality</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>200</MarketValue>
+      <Mass>0.01</Mass>
+      <Flammability>0.7</Flammability>
+    </statBases>
+  </ThingDef>
+  
+  <!-- For fortify work -->
+  <ThingDef Name="MorrowRim_ElixirBase_Exclusive" ParentName="MorrowRim_ElixirBaseQuality" Abstract="True">
+    <graphicData>
+      <texPath>Things/Item/Drug/MorrowRim_PotionExclusive</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>400</MarketValue>
+      <Mass>0.01</Mass>
+      <Flammability>0.7</Flammability>
+    </statBases>
+  </ThingDef>
+  
+  <!-- For cure -->
+  <ThingDef Name="MorrowRim_ElixirBase_Cure" ParentName="MorrowRim_ElixirBase" Abstract="True">
+    <graphicData>
+      <texPath>Things/Item/Drug/MorrowRim_PotionCure</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>150</MarketValue>
+      <Mass>0.01</Mass>
+      <Flammability>0.7</Flammability>
+    </statBases>
+	<comps>
+		<li Class="CompProperties_Drug">
+			<listOrder>1000</listOrder>
+		</li>
+	</comps>
+	<recipeMaker>
+		<researchPrerequisite>MorrowRim_ElixirCurative</researchPrerequisite>
+	</recipeMaker>
+  </ThingDef>
+  
+  <!-- For active -->
+  <ThingDef Name="MorrowRim_ElixirBase_Active" ParentName="MorrowRim_ElixirBaseQuality" Abstract="True">
+    <graphicData>
+      <texPath>Things/Item/Drug/MorrowRim_PotionActive</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>250</MarketValue>
+      <Mass>0.01</Mass>
+      <Flammability>0.7</Flammability>
+    </statBases>
+	<comps>
+		<li Class="CompProperties_Drug">
+			<listOrder>1000</listOrder>
+		</li>
+		
+	</comps>
+	<recipeMaker>
+		<skillRequirements>
+			<Intellectual>4</Intellectual>
+		</skillRequirements>
+	</recipeMaker>
+  </ThingDef>
+  
+  <!-- For necromantic -->
+  <ThingDef Name="MorrowRim_ElixirBase_Necromantic" ParentName="MorrowRim_ElixirBase" Abstract="True">
+    <graphicData>
+    </graphicData>
+    <statBases>
+      <MarketValue>500</MarketValue>
+      <Mass>0.01</Mass>
+      <Flammability>0.7</Flammability>
+    </statBases>
+	<comps>
+		<li Class="CompProperties_Drug">
+			<listOrder>1000</listOrder>
+		</li>
+	</comps>
+	<recipeMaker>
+		<researchPrerequisite>MorrowRim_ElixirNecromantic</researchPrerequisite>
+		<productCount>1</productCount>
+		<bulkRecipeCount>3</bulkRecipeCount>
+		<skillRequirements>
+			<Intellectual>14</Intellectual>
+		</skillRequirements>
+	</recipeMaker>
+  </ThingDef>
+
+  <!-- Highs -->
+  
+	<HediffDef Name="MorrowRim_ElixirHighBase" Abstract="True">
+		<hediffClass>Hediff_High</hediffClass>
+		<defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			 <li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.5</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			 </li>
+		</comps>
+	</HediffDef>
+	
+	<HediffDef Name="MorrowRim_ElixirHighActiveBase" Abstract="True">
+		<hediffClass>Hediff_High</hediffClass>
+		<defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			 <li Class="HediffCompProperties_SeverityPerDay">
+				<showHoursToRecover>true</showHoursToRecover>
+			 </li>
+		</comps>
+	</HediffDef>
+	
+	<!-- Res hediff -->
+	
+	<HediffDef ParentName="MorrowRim_ElixirHighActiveBase">
+		<defName>MorrowRim_TelvanniResurrects</defName>
+		<label>necromantic resurrection</label>
+		<description>Resurrection through a Telvanni designed necromantic elixir. While it will provide a small bonus, based on the type of elixir used, it will also prevent subsequent resurrection from all necromantic elixirs.</description>
+		<stages>
+			<li>
+				<label>grave</label>
+				<minSeverity>0.1</minSeverity>
+				<statOffsets>
+					<ToxicSensitivity>-0.25</ToxicSensitivity>
+					<PsychicSensitivity>-0.15</PsychicSensitivity>
+				</statOffsets>
+				<painFactor>-0.10</painFactor>
+			</li>
+			<li>
+				<label>spectral</label>
+				<minSeverity>0.2</minSeverity>
+				<statOffsets>
+					<IncomingDamageFactor>-0.05</IncomingDamageFactor>
+					<MeleeDodgeChance>0.15</MeleeDodgeChance>
+				</statOffsets>
+				<painFactor>-0.10</painFactor>
+			</li>
+			<li>
+				<label>vampiric</label>
+				<minSeverity>0.3</minSeverity>
+				<statOffsets>
+					<ArmorRating_Heat>-0.10</ArmorRating_Heat>
+					<ComfyTemperatureMax>8</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-8</ComfyTemperatureMin>
+				</statOffsets>
+				<painFactor>-0.10</painFactor>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	
+
+</Defs>

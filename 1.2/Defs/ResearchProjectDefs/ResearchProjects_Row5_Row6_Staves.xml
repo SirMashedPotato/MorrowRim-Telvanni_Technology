@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Stave">
+		<defName>MorrowRim_StaffTable</defName>
+		<label>energy stave creation Vol. I</label>
+		<description>Allows the construction of the Staff Table, a table where you can create energy staves. As well as the construction of basic energy staves.</description>
+		<researchViewX>0.00</researchViewX>
+		<researchViewY>4.0</researchViewY>
+		
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Stave">
+		<defName>MorrowRim_StaffFire</defName>
+		<label>energy stave creation Vol. II</label>
+		<description>Allows the construction of fire energy staves. Fire staves inflict burns with the intense heat they emit, and have a 15% chance of setting targets alight.</description>
+		<researchViewX>1.00</researchViewX>
+		<researchViewY>4.0</researchViewY>
+		
+		<prerequisites>
+			<li>MorrowRim_StaffTable</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Stave">
+		<defName>MorrowRim_StaffFrost</defName>
+		<label>energy stave creation Vol. III</label>
+		<description>Allows the construction of frost energy staves. Frost staves inflict frostbite with the chilling air the emit, and cause hypothermia equivalent to 5% of damage dealt.</description>
+		<researchViewX>2.00</researchViewX>
+		<researchViewY>4.0</researchViewY>
+		
+		<prerequisites>
+			<li>MorrowRim_StaffTable</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Stave">
+		<defName>MorrowRim_StaffStorm</defName>
+		<label>energy stave creation Vol. IV</label>
+		<description>Allows the construction of storm energy staves. Storm staves impact targets with great force, and have a 25% chance of overloading electronic circuits.</description>
+		<researchViewX>3.00</researchViewX>
+		<researchViewY>4.0</researchViewY>
+		
+		<prerequisites>
+			<li>MorrowRim_StaffTable</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Stave">
+		<defName>MorrowRim_StaffAsh</defName>
+		<label>energy stave creation Vol. V</label>
+		<description>Allows the construction of ash energy staves. Ash staves inflict multiple cuts with lacerating ash, and have a 15% chance of stunning targets.</description>
+		<researchViewX>4.00</researchViewX>
+		<researchViewY>4.0</researchViewY>
+		
+		<prerequisites>
+			<li>MorrowRim_StaffTable</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<!-- Gadgets -->
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Advanced">
+		<defName>MorrowRim_SentinalCrystalCreation</defName>
+		<label>sentinal crystal creation</label>
+		<description>Allows creating sentinal crystals at the energy stave table.\n\nSentinal crystals are multi use items attached to a belt. When activated, they will consume a charge, creating a sentinal at the targeted location.\n\nSentinals will automatically attack nearby enemies within a small range, until they depelete their energy and die.</description>
+		<researchViewX>6.00</researchViewX>
+		<researchViewY>4.0</researchViewY>
+		
+		<prerequisites>
+			<li>MorrowRim_StaffTable</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<!-- second row -->
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Stave">
+		<defName>MorrowRim_StaffParalysis</defName>
+		<label>energy stave creation Vol. VI</label>
+		<description>Allows the construction of paralytic energy staves. Paralytic staves impact their target with weakening bolts, and cause paralysis buildup equivalent to 5% of damage dealt.</description>
+		<researchViewX>0.00</researchViewX>
+		<researchViewY>5.0</researchViewY>
+		
+		<prerequisites>
+			<li>MorrowRim_StaffTable</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Stave">
+		<defName>MorrowRim_StaffToxin</defName>
+		<label>energy stave creation Vol. VII</label>
+		<description>Allows the construction of toxin energy staves. Toxin staves pierce their target with energized bolts, and cause toxic buildup equivalent to 5% of damage dealt.</description>
+		<researchViewX>1.00</researchViewX>
+		<researchViewY>5.0</researchViewY>
+		
+		<prerequisites>
+			<li>MorrowRim_StaffTable</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Stave">
+		<defName>MorrowRim_StaffVampiric</defName>
+		<label>energy stave creation Vol. VIII</label>
+		<description>Allows the construction of vampiric energy staves. Vampiric staves pierce their target with draining needles, and cause blood-loss equivalent to 5% of damage dealt.</description>
+		<researchViewX>2.00</researchViewX>
+		<researchViewY>5.0</researchViewY>
+		
+		<prerequisites>
+			<li>MorrowRim_StaffTable</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Stave">
+		<defName>MorrowRim_StaffSpectral</defName>
+		<label>energy stave creation Vol. IX</label>
+		<description>Allows the construction of spectral energy staves. Spectral staves sear their target with ethereal energy, and have 25% chance of causing additional damage equivalent to 25% of damage dealt.</description>
+		<researchViewX>3.00</researchViewX>
+		<researchViewY>5.0</researchViewY>
+		
+		<prerequisites>
+			<li>MorrowRim_StaffTable</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Stave">
+		<defName>MorrowRim_StaffGrave</defName>
+		<label>energy stave creation Vol. X</label>
+		<description>Allows the construction of grave energy staves. Grave staves burn their target with caustic energy, and cause armor corrosion equivalent to 5% of damage dealt.</description>
+		<researchViewX>4.00</researchViewX>
+		<researchViewY>5.0</researchViewY>
+		
+		<prerequisites>
+			<li>MorrowRim_StaffTable</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Advanced">
+		<defName>MorrowRim_StaffAetherial</defName>
+		<label>advanced energy stave creation</label>
+		<description>Allows the construction of aetherial energy staves. Aetherial staves unleash blasts of pure energy, which pass through event the strongest armour with ease, and fire twice as many projectiles.</description>
+		<researchViewX>5.00</researchViewX>
+		<researchViewY>5.0</researchViewY>
+		
+		<prerequisites>
+			<li>MorrowRim_StaffFire</li>
+			<li>MorrowRim_StaffFrost</li>
+			<li>MorrowRim_StaffStorm</li>
+			<li>MorrowRim_StaffAsh</li>
+			<li>MorrowRim_StaffParalysis</li>
+			<li>MorrowRim_StaffToxin</li>
+			<li>MorrowRim_StaffVampiric</li>
+			<li>MorrowRim_StaffSpectral</li>
+			<li>MorrowRim_StaffGrave</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+</Defs>

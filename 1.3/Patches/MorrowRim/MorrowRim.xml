@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>MorrowRim</li>
+    </mods>
+
+    <match Class="PatchOperationSequence">
+
+		<operations>
+		
+			<!-- Add ash resistance to things -->
+			
+			<li Class="PatchOperationAddModExtension">
+				<xpath>/Defs/ThingDef[defName="Telvanni_AshCap" or defName="Telvanni_HeartRose" or defName="Telvanni_ScuttleFleshParasol" or defName="Telvanni_OgrimWoodParasol" or defName="Telvanni_MendingMossParasol"]</xpath>
+				<value>
+					<li Class="MorrowRim.ExtendedRaceProperties">
+						<ashResistant>Resistant</ashResistant>
+					</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAddModExtension">
+				<xpath>/Defs/ThingDef[@Name="MorrowRim_BaseGolem"]</xpath>
+				<value>
+					<li Class="MorrowRim.ExtendedRaceProperties">
+						<ashResistant>Resistant</ashResistant>
+					</li>
+				</value>
+			</li>
+			
+			<!-- Add ash storm stuff -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+
+					<ThingDef ParentName="MorrowRim_PulserBase">
+						<defName>MorrowRim_PulserAsh</defName>
+						<label>weather pulser - ash</label>
+						<description>A one-use weather pulser. It will instantly change the weather upon activation, resulting in an ash storm enveloping the map*.\n\n*Requires MorrowRim to be active.</description>
+						<graphicData>
+							<color>(109,105,85)</color>
+						</graphicData>
+
+						<comps>
+						  <li Class="MorrowRim_Telvanni.CompProperties_UseEffect_WeatherPulser">
+								<weatherDef>MorrowRim_AshStorm</weatherDef>
+								<addHediff>MorrowRim_HiddenWeatherChanged</addHediff>
+							</li>
+						</comps>
+					</ThingDef>
+						
+					<RecipeDef ParentName="MorrowRim_Recipe_WeatherPulserBase">
+						<defName>MorrowRim_Recipe_WeatherPulser_Ash</defName>
+						<label>create ash pulser</label>
+						<description>Create a ash pulser from a heart stone and 25 ash salts.</description>
+						<jobString>Creating ash pulser.</jobString>
+						<ingredients>
+						  <li>
+							<filter>
+							  <thingDefs>
+									<li>Dagoth_AshSalts</li>
+							  </thingDefs>
+							</filter>
+							<count>25</count>
+						  </li>
+						</ingredients>
+						<fixedIngredientFilter>
+						  <thingDefs>
+								<li>Dagoth_AshSalts</li>
+						  </thingDefs>
+						</fixedIngredientFilter>
+						<products>
+						  <MorrowRim_PulserAsh>1</MorrowRim_PulserAsh>
+						</products>
+					</RecipeDef>
+			
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="Telvanni_AshCap"]/comps</xpath>
+				<value>
+					<li Class="MorrowRim_Telvanni.CompProperties_GrowthModifier">
+						<weather>
+							<li>MorrowRim_AshStorm</li>
+						</weather>
+					</li>
+				</value>
+			</li>
+		
+		</operations>
+    </match>
+  </Operation>
+
+</Patch>

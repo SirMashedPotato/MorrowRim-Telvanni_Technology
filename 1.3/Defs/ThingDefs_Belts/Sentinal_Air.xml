@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Air -->
+	
+	<ThingDef ParentName="Telvanni_BaseBeltSentinal">
+		<defName>MorrowRim_SentinalCrystalAir</defName>
+		<label>air sentinal crystal</label>
+		<description>A small crystal that attaches to the belt, and can be used to create a sentinal at the target location. Doing so will deplete the crystals energy, which can be recharged using air salts.\n\nAir sentinals boast twice the range and projectile speed of other sentinals.</description>
+		<techLevel>Medieval</techLevel>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.CreateAtProperties">
+                <thingToSpawn>MorrowRim_SentinalAir</thingToSpawn>
+                <range>30.9</range>
+            </li>
+		</modExtensions>
+		<comps>
+		  <li Class="CompProperties_Reloadable">
+			<maxCharges>3</maxCharges>
+			<ammoDef>MorrowRim_AirSalts</ammoDef>
+			<ammoCountPerCharge>10</ammoCountPerCharge>
+			<baseReloadTicks>60</baseReloadTicks>
+			<soundReload>Standard_Reload</soundReload>
+			<hotKey>Misc4</hotKey>
+			<chargeNoun>sentinal</chargeNoun>
+			<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		  </li>
+		</comps>
+
+		<verbs>
+		  <li>
+		    <verbClass>MorrowRim_Telvanni.Verb_CreateAt</verbClass>
+			<label>create sentinal</label>
+			<violent>false</violent>
+			<hasStandardCommand>true</hasStandardCommand>
+			<targetable>true</targetable>
+			<onlyManualCast>True</onlyManualCast>
+			<range>10.9</range>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+			  <canTargetLocations>true</canTargetLocations>
+			  <canTargetBuildings>false</canTargetBuildings>
+			  <onlyTargetPsychicSensitive>false</onlyTargetPsychicSensitive>
+			  <neverTargetIncapacitated>false</neverTargetIncapacitated>
+			  <canTargetAnimals>false</canTargetAnimals>
+			  <canTargetHumans>false</canTargetHumans>
+			  <canTargetMechs>false</canTargetMechs>
+			</targetParams>
+			<soundCast>PsychicInsanityLanceCast</soundCast>
+		  </li>
+		</verbs>
+		<recipeMaker>
+		</recipeMaker>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_AirSalts>25</MorrowRim_AirSalts>
+		</costList>
+		<graphicData>
+		  <color>(236,234,221)</color>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_BaseSentinal">
+		<defName>MorrowRim_SentinalAir</defName>
+		<label>air sentinal</label>
+		<description>A small sentinal made of air energy. It will automatically release its energy at hostile targets, and will disappear once its energy is depleted.</description>
+		<graphicData>
+		  <color>(236,234,221)</color>
+		</graphicData>
+		<statBases>
+		  <ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+		</statBases>
+		<building>
+		  <combatPower>45</combatPower>
+		  <turretGunDef>MorrowRim_SentinalAirFocus</turretGunDef>
+		</building>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_BaseSentinalGun">
+		<defName>MorrowRim_SentinalAirFocus</defName>
+		<graphicData>
+		  <color>(236,234,221)</color>
+		</graphicData>
+		<verbs>
+		  <li>
+			<verbClass>Verb_Shoot</verbClass>
+			<defaultProjectile>Telvanni_ProjectileSentinalAir</defaultProjectile>
+			<warmupTime>1</warmupTime>
+			<range>30.9</range>
+			<ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+			<burstShotCount>2</burstShotCount>
+			<soundCast>MorrowRim_Fire_TelvanniStave</soundCast>
+			<soundCastTail>GunTail_Light</soundCastTail>
+			<muzzleFlashScale>9</muzzleFlashScale>
+			<consumeFuelPerShot>1</consumeFuelPerShot>
+		  </li>
+		</verbs>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_BaseProjectile">
+		<defName>Telvanni_ProjectileSentinalAir</defName>
+		<projectile>
+		  <damageDef>Bullet</damageDef>
+		  <damageAmountBase>18</damageAmountBase>
+		  <stoppingPower>1.5</stoppingPower>
+		  <speed>140</speed>
+		</projectile>
+		<graphicData>
+		  <texPath>Things/Projectile/StaveShot_small</texPath>
+		  <color>(236,234,221)</color>
+		</graphicData>
+	</ThingDef>
+
+</Defs>

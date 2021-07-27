@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>MorrowRim - Adamantium</li>
+    </mods>
+
+    <match Class="PatchOperationSequence">
+
+		<operations>
+
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					
+					<RecipeDef ParentName = "MorrowRim_TransmutationBase">
+						<defName>MorrowRim_TransmutationAdamantium</defName>
+						<label>transmutate adamantium</label>
+						<description>Transmutate 15 adamantium using 15 ferrous salts, 15 aetherial salts and 50 silver.</description>
+						<jobString>Transmutating adamantium.</jobString>
+						<ingredients>
+						  <li>
+							<filter>
+							  <thingDefs>
+								<li>MorrowRim_FerrousSalts</li>
+							  </thingDefs>
+							</filter>
+							<count>15</count>
+						  </li>
+						  <li>
+							<filter>
+							  <thingDefs>
+								<li>MorrowRim_AetherialSalts</li>
+							  </thingDefs>
+							</filter>
+							<count>15</count>
+						  </li>
+						  <li>
+							<filter>
+							  <thingDefs>
+								<li>Silver</li>
+							  </thingDefs>
+							</filter>
+							<count>5</count>
+						  </li>
+						</ingredients>
+						<fixedIngredientFilter>
+						  <thingDefs>
+							<li>MorrowRim_FerrousSalts</li>
+							<li>MorrowRim_AetherialSalts</li>
+							<li>Silver</li>
+						  </thingDefs>
+						</fixedIngredientFilter>
+						<products>
+						  <MorrowRim_Adamantium>15</MorrowRim_Adamantium>
+						</products>
+					</RecipeDef>
+					
+					<RecipeDef ParentName = "MorrowRim_TransmutationBase">
+						<defName>MorrowRim_BlessAdamantium</defName>
+						<label>bless adamantium</label>
+						<description>Bless adamantium, creating 5 blessed adamantium using 1 heart stone, 15 aetherial salts, and 5 adamantium.</description>
+						<jobString>Blessing adamantium.</jobString>
+						<ingredients>
+						  <li>
+							<filter>
+							  <thingDefs>
+								<li>MorrowRim_HeartStone</li>
+							  </thingDefs>
+							</filter>
+							<count>1</count>
+						  </li>
+						  <li>
+							<filter>
+							  <thingDefs>
+								<li>MorrowRim_AetherialSalts</li>
+							  </thingDefs>
+							</filter>
+							<count>15</count>
+						  </li>
+						  <li>
+							<filter>
+							  <thingDefs>
+								<li>MorrowRim_Adamantium</li>
+							  </thingDefs>
+							</filter>
+							<count>5</count>
+						  </li>
+						</ingredients>
+						<fixedIngredientFilter>
+						  <thingDefs>
+							<li>MorrowRim_HeartStone</li>
+							<li>MorrowRim_AetherialSalts</li>
+							<li>MorrowRim_Adamantium</li>
+						  </thingDefs>
+						</fixedIngredientFilter>
+						<products>
+						  <MorrowRim_BlessedAdamantium>5</MorrowRim_BlessedAdamantium>
+						</products>
+					</RecipeDef>
+					
+				</value>
+			</li>
+			
+		</operations>
+    </match>
+  </Operation>
+
+</Patch>

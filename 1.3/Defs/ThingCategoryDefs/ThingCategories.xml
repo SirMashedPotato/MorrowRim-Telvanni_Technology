@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>InactiveServant</defName>
+      <label>inactive servant</label>
+      <parent>Items</parent>
+    </ThingCategoryDef>
+	
+	<ThingCategoryDef>
+      <defName>MorrowRim_Elixir</defName>
+      <label>elixirs</label>
+      <parent>Drugs</parent>
+      <resourceReadoutRoot>true</resourceReadoutRoot>
+      <iconPath>UI/Icons/ThingCategories/Drugs</iconPath>
+    </ThingCategoryDef>
+	
+	<ThingCategoryDef>
+        <defName>BodyPartsTelvanni</defName>
+        <label>Telvanni</label>
+        <parent>BodyParts</parent>
+    </ThingCategoryDef>
+	
+	<!-- Staves -->
+	
+	<ThingCategoryDef>
+      <defName>WeaponsStaveRanged</defName>
+      <label>ranged energy staves</label>
+      <parent>Weapons</parent>
+    </ThingCategoryDef>
+	
+	<ThingCategoryDef>
+      <defName>WeaponsStaveMelee</defName>
+      <label>melee energy staves</label>
+      <parent>Weapons</parent>
+    </ThingCategoryDef>
+	
+	<ThingCategoryDef>
+      <defName>ApparelFocus</defName>
+      <label>crystal focus</label>
+      <parent>ApparelUtility</parent>
+    </ThingCategoryDef>
+	
+	<ThingCategoryDef>
+      <defName>ApparelAtronachPulser</defName>
+      <label>atronach pulser</label>
+      <parent>ApparelUtility</parent>
+    </ThingCategoryDef>
+	
+	<ThingCategoryDef>
+      <defName>ApparelWardStone</defName>
+      <label>ward stone</label>
+      <parent>ApparelUtility</parent>
+    </ThingCategoryDef>
+	
+	<!-- Golems -->
+	
+	<ThingCategoryDef>
+      <defName>MorrowRim_CorpsesGolem</defName>
+      <label>golem corpses</label>
+      <parent>Corpses</parent>
+    </ThingCategoryDef>
+	
+	<ThingCategoryDef>
+      <defName>TelvanniGolemCore</defName>
+      <label>golem cores</label>
+      <parent>Items</parent>
+    </ThingCategoryDef>
+
+</Defs>

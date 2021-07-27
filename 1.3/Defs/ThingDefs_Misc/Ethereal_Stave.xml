@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Base -->
+
+	<ThingDef Name="Telvanni_Gas_Base" ParentName="BaseGas" Abstract="True">
+		<label>energy stave gas</label>
+		<graphicData>
+		  <texPath>Things/Gas/Puff</texPath>
+		  <drawSize>2.2</drawSize>
+		</graphicData>
+		<gas>
+		  <expireSeconds>10~16</expireSeconds>
+		  <blockTurretTracking>true</blockTurretTracking>
+		  <accuracyPenalty>0.7</accuracyPenalty>
+		  <rotationSpeed>10</rotationSpeed>
+		</gas>
+	</ThingDef>
+  
+	<!-- Specifics -->
+	
+	<ThingDef ParentName="Telvanni_Gas_Base">
+		<defName>Telvanni_Gas_StaveEnergy</defName>
+		<graphicData>
+		  <color>(214,193,165,50)</color>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="Telvanni_Gas_Base">
+		<defName>Telvanni_Gas_StaveFire</defName>
+		<thingClass>MorrowRim_Telvanni.Gas_FireStave</thingClass>
+		<label>fire stave gas</label>
+		<graphicData>
+		  <color>(238,139,96,50)</color>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_Gas_Base">
+		<defName>Telvanni_Gas_StaveFrost</defName>
+		<thingClass>MorrowRim_Telvanni.Gas_FrostStave</thingClass>
+		<label>frost stave gas</label>
+		<graphicData>
+		  <color>(222,239,253,50)</color>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_Gas_Base">
+		<defName>Telvanni_Gas_StaveToxin</defName>
+		<thingClass>MorrowRim_Telvanni.Gas_ToxinStave</thingClass>
+		<label>toxin stave gas</label>
+		<graphicData>
+		  <color>(103,22,66,50)</color>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_Gas_Base">
+		<defName>Telvanni_Gas_StaveStorm</defName>
+		<thingClass>MorrowRim_Telvanni.Gas_StormStave</thingClass>
+		<label>storm stave gas</label>
+		<graphicData>
+		  <color>(146,151,164,50)</color>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_Gas_Base">
+		<defName>Telvanni_Gas_StaveAsh</defName>
+		<thingClass>MorrowRim_Telvanni.Gas_AshStave</thingClass>
+		<label>ash stave gas</label>
+		<graphicData>
+		  <color>(109,105,85,50)</color>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_Gas_Base">
+		<defName>Telvanni_Gas_StaveVampiric</defName>
+		<thingClass>MorrowRim_Telvanni.Gas_VampiricStave</thingClass>
+		<label>vampiric stave gas</label>
+		<graphicData>
+		  <color>(194,31,58,50)</color>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_Gas_Base">
+		<defName>Telvanni_Gas_StaveSpectral</defName>
+		<thingClass>MorrowRim_Telvanni.Gas_SpectralStave</thingClass>
+		<label>spectral stave gas</label>
+		<graphicData>
+		  <color>(191,236,221,50)</color>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_Gas_Base">
+		<defName>Telvanni_Gas_StaveGrave</defName>
+		<thingClass>MorrowRim_Telvanni.Gas_GraveStave</thingClass>
+		<label>grave stave gas</label>
+		<graphicData>
+		  <color>(155,137,106,50)</color>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_Gas_Base">
+		<defName>Telvanni_Gas_StaveParalysis</defName>
+		<thingClass>MorrowRim_Telvanni.Gas_ParalysisStave</thingClass>
+		<label>paralysis stave gas</label>
+		<graphicData>
+		  <color>(217,179,43,50)</color>
+		</graphicData>
+	</ThingDef>
+
+
+</Defs>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<JobDef>
+		<defName>MorrowRim_ServantRepair</defName>
+		<driverClass>MorrowRim_Telvanni.JobDriver_Repair</driverClass>
+		<reportString>repairing TargetA.</reportString>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+	</JobDef>
+	
+	<JobDef>
+		<defName>MorrowRim_ServantDeconstruct</defName>
+		<driverClass>MorrowRim_Telvanni.JobDriver_Deconstruct</driverClass>
+		<reportString>deconstructing TargetA.</reportString>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+	</JobDef>
+	
+	<JobDef>
+		<defName>MorrowRim_ServantFinishFrame</defName>
+		<driverClass>MorrowRim_Telvanni.JobDriver_ConstructFinishFrame</driverClass>
+		<reportString>building TargetA.</reportString>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+	</JobDef>
+	
+	<JobDef>
+		<defName>MorrowRim_ServantResearch</defName>
+		<driverClass>MorrowRim_Telvanni.JobDriver_Research</driverClass>
+		<reportString>researching at TargetA.</reportString>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+	</JobDef>
+	
+	<JobDef>
+		<defName>MorrowRim_ServantSelfRepair</defName>
+		<driverClass>MorrowRim_Telvanni.JobDriver_RepairSelf</driverClass>
+		<reportString>self repairing TargetA.</reportString>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+	</JobDef>
+
+</Defs>

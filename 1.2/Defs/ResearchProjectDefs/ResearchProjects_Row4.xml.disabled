@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ResearchProjectDef ParentName="BaseTelvanniResearch">
+		<defName>MorrowRim_GolemForge</defName>
+		<label>golem forge</label>
+		<description>Allows the construction of the Golem Forge, a forge capable of creating inactive golem.</description>
+		<researchViewX>0.00</researchViewX>
+		<researchViewY>3.0</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch">
+		<defName>MorrowRim_LivingGolem</defName>
+		<label>living golem creation</label>
+		<description>Allows the creation of golem from living materials at the golem forge.</description>
+		<researchViewX>1.00</researchViewX>
+		<researchViewY>3.0</researchViewY>
+		<prerequisites>
+			<li>MorrowRim_GolemForge</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch">
+		<defName>MorrowRim_StoneGolem</defName>
+		<label>stone golem creation</label>
+		<description>Allows the creation of golem from stone at the golem forge.</description>
+		<researchViewX>2.00</researchViewX>
+		<researchViewY>3.0</researchViewY>
+		<prerequisites>
+			<li>MorrowRim_LivingGolem</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch">
+		<defName>MorrowRim_MetalAtronach</defName>
+		<label>metallic golem creation</label>
+		<description>Allows the creation of golem from metal at the golem forge.</description>
+		<researchViewX>3.00</researchViewX>
+		<researchViewY>3.0</researchViewY>
+		<prerequisites>
+			<li>MorrowRim_StoneGolem</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+</Defs>

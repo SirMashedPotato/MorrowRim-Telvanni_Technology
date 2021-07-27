@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>A RimWorld of Magic</li>
+    </mods>
+
+    <match Class="PatchOperationSequence">
+
+		<operations>
+		
+			<!-- add missing tabs -->
+		
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[@Name = "Telvanni_BaseStave_NonCraftable" or @Name = "Telvanni_BaseStaveMelee_NonCraftable"]/inspectorTabs</xpath>
+				<value>
+					<li>TorannMagic.Enchantment.ITab_Enchantment</li>
+				</value>
+			</li>
+	
+			<!-- increase the enchantability of stuff -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[@Name = "Telvanni_BaseStave_NonCraftable" or @Name = "Telvanni_BaseStaveMelee_NonCraftable"]/comps</xpath>
+				<value>
+					<li Class="TorannMagic.Enchantment.CompProperties_EnchantedItem">
+						<hasEnchantment>true</hasEnchantment>
+						<maxMP>0.10</maxMP>
+						<maxMPTier>Standard</maxMPTier>
+						<arcaneDmg>0.10</arcaneDmg>
+						<arcaneDmgTier>Standard</arcaneDmgTier>
+					</li>
+				</value>
+			</li>
+
+		</operations>
+
+    </match>
+  </Operation>
+
+</Patch>

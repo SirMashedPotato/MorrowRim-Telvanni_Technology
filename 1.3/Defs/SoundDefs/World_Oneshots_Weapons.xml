@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Defs>
+
+	<SoundDef>
+		<defName>MorrowRim_Interact_TelvanniStave</defName>  
+		<context>MapOnly</context>  
+		<maxSimultaneous>1</maxSimultaneous>  
+		<subSounds>
+		  <li>
+			<grains>
+			  <li Class="AudioGrain_Clip">
+				<clipPath>MorrowRim_Staves/Stave_PickUp</clipPath>
+			  </li>
+			</grains>      
+			<volumeRange>50~50</volumeRange>
+		  </li>
+		</subSounds>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>MorrowRim_Fire_TelvanniStave</defName>  
+		<context>MapOnly</context>  
+		<maxSimultaneous>1</maxSimultaneous>  
+		<subSounds>
+		  <li>
+			<grains>
+			  <li Class="AudioGrain_Clip">
+				<clipPath>MorrowRim_Staves/Stave_Cast</clipPath>
+			  </li>
+			</grains>      
+			<volumeRange>25~25</volumeRange>
+		  </li>
+		</subSounds>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>MorrowRim_Fire_AetherialStave</defName>  
+		<context>MapOnly</context>  
+		<maxSimultaneous>1</maxSimultaneous>  
+		<subSounds>
+		  <li>
+			<grains>
+			  <li Class="AudioGrain_Clip">
+				<clipPath>MorrowRim_Staves/Stave_Cast</clipPath>
+			  </li>
+			</grains>      
+			<volumeRange>25~25</volumeRange>
+			<pitchRange>0.85~0.95</pitchRange>
+		  </li>
+		</subSounds>
+	</SoundDef>
+	
+	<!-- Spiders -->
+	
+	<SoundDef>
+		<defName>MorrowRim_Impact_TelvanniSpider</defName>  
+		<context>MapOnly</context>  
+		<maxSimultaneous>1</maxSimultaneous>  
+		<subSounds>
+		  <li>
+			<grains>
+			  <li Class="AudioGrain_Clip">
+				<clipPath>MorrowRim_Spiders/TelvanniSpider_Impact</clipPath>
+			  </li>
+			</grains>      
+			<volumeRange>25~25</volumeRange>
+		  </li>
+		</subSounds>
+	</SoundDef>
+
+</Defs>

@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Vol I -->
+
+	<RecipeDef>
+		<researchPrerequisite>MorrowRim_BasicAtronach</researchPrerequisite>
+		<defName>MorrowRim_Recipe_AtronachFire</defName>
+		<label>create fire atronach</label>
+		<description>Create a fire atronach from a heart stone and 25 fire salts.</description>
+		<jobString>Creating fire atronach.</jobString>
+		<workAmount>450</workAmount>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<workSkill>Crafting</workSkill>
+		<effectWorking>Cremate</effectWorking>
+		<soundWorking>Recipe_Cremate</soundWorking>
+		<interruptIfIngredientIsRotting>true</interruptIfIngredientIsRotting>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+					<li>MorrowRim_FireSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>25</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+					<li>MorrowRim_HeartStone</li>
+			  </thingDefs>
+			</filter>
+			<count>1</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+				<li>MorrowRim_FireSalts</li>
+				<li>MorrowRim_HeartStone</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		  <MorrowRim_InactiveAtronachFire>1</MorrowRim_InactiveAtronachFire>
+		</products>
+		<skillRequirements>
+		  <Intellectual>8</Intellectual>
+		</skillRequirements>
+	</RecipeDef>
+	
+	<!-- Vol II -->
+  
+	<RecipeDef>
+		<researchPrerequisite>MorrowRim_BasicAtronach</researchPrerequisite>
+		<defName>MorrowRim_Recipe_AtronachFrost</defName>
+		<label>create frost atronach</label>
+		<description>Create a frost atronach from a heart stone and 25 frost salts.</description>
+		<jobString>Creating frost atronach.</jobString>
+		<workAmount>450</workAmount>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<workSkill>Crafting</workSkill>
+		<effectWorking>Cremate</effectWorking>
+		<soundWorking>Recipe_Cremate</soundWorking>
+		<interruptIfIngredientIsRotting>true</interruptIfIngredientIsRotting>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+					<li>MorrowRim_FrostSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>25</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+					<li>MorrowRim_HeartStone</li>
+			  </thingDefs>
+			</filter>
+			<count>1</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+				<li>MorrowRim_FrostSalts</li>
+				<li>MorrowRim_HeartStone</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		  <MorrowRim_InactiveAtronachFrost>1</MorrowRim_InactiveAtronachFrost>
+		</products>
+		<skillRequirements>
+		  <Intellectual>8</Intellectual>
+		</skillRequirements>
+	</RecipeDef>
+
+	<!-- Vol III -->
+
+	<RecipeDef>
+		<researchPrerequisite>MorrowRim_IntermediateAtronach</researchPrerequisite>
+		<defName>MorrowRim_Recipe_AtronachStorm</defName>
+		<label>create storm atronach</label>
+		<description>Create a storm atronach from a heart stone and 25 void salts.</description>
+		<jobString>Creating storm atronach.</jobString>
+		<workAmount>800</workAmount>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<workSkill>Crafting</workSkill>
+		<effectWorking>Cremate</effectWorking>
+		<soundWorking>Recipe_Cremate</soundWorking>
+		<interruptIfIngredientIsRotting>true</interruptIfIngredientIsRotting>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+					<li>MorrowRim_VoidSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>25</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+					<li>MorrowRim_HeartStone</li>
+			  </thingDefs>
+			</filter>
+			<count>1</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+				<li>MorrowRim_VoidSalts</li>
+				<li>MorrowRim_HeartStone</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		  <MorrowRim_InactiveAtronachStorm>1</MorrowRim_InactiveAtronachStorm>
+		</products>
+		<skillRequirements>
+		  <Intellectual>10</Intellectual>
+		</skillRequirements>
+	</RecipeDef>
+
+	<!-- Vol ??? -->
+
+	<RecipeDef>
+		<researchPrerequisite>MorrowRim_IntermediateAtronach</researchPrerequisite>
+		<defName>MorrowRim_Recipe_AtronachAsh</defName>
+		<label>create ash atronach</label>
+		<description>Create a ash atronach from a heart stone and 25 ash salts.</description>
+		<jobString>Creating ash atronach.</jobString>
+		<workAmount>800</workAmount>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<workSkill>Crafting</workSkill>
+		<effectWorking>Cremate</effectWorking>
+		<soundWorking>Recipe_Cremate</soundWorking>
+		<interruptIfIngredientIsRotting>true</interruptIfIngredientIsRotting>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+					<li>Dagoth_AshSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>25</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+					<li>MorrowRim_HeartStone</li>
+			  </thingDefs>
+			</filter>
+			<count>1</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+				<li>Dagoth_AshSalts</li>
+				<li>MorrowRim_HeartStone</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		  <MorrowRim_InactiveAtronachAsh>1</MorrowRim_InactiveAtronachAsh>
+		</products>
+		<skillRequirements>
+		  <Intellectual>10</Intellectual>
+		</skillRequirements>
+	</RecipeDef>
+
+	
+	<!-- Monarch core -->
+	
+	<RecipeDef>
+		<defName>MorrowRim_Recipe_MonarchCore</defName>
+		<researchPrerequisite>MorrowRim_MonarchCore</researchPrerequisite>
+		<label>create monarch ascension core</label>
+		<description>Create a monarch ascension core from an heart stone and 50 aetherial salts.</description>
+		<jobString>Creating monarch ascension core.</jobString>
+		<workAmount>700</workAmount>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<workSkill>Crafting</workSkill>
+		<effectWorking>Cremate</effectWorking>
+		<soundWorking>Recipe_Cremate</soundWorking>
+		<interruptIfIngredientIsRotting>true</interruptIfIngredientIsRotting>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+					<li>MorrowRim_AetherialSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>50</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+					<li>MorrowRim_HeartStone</li>
+			  </thingDefs>
+			</filter>
+			<count>1</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+				<li>MorrowRim_AetherialSalts</li>
+				<li>MorrowRim_HeartStone</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		  <MorrowRim_MonarchCore>1</MorrowRim_MonarchCore>
+		</products>
+		<skillRequirements>
+		  <Intellectual>15</Intellectual>
+		</skillRequirements>
+	</RecipeDef>
+	
+</Defs>

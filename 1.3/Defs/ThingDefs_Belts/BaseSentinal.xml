@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Base -->
+	
+	<ThingDef Name="Telvanni_BaseSummonBuilding" Abstract="True">
+		<category>Building</category>
+		<thingClass>Building</thingClass>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<selectable>false</selectable>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<altitudeLayer>Building</altitudeLayer>
+		<stealable>false</stealable>
+		<rotatable>false</rotatable>
+		<destroyable>true</destroyable>
+		<useHitPoints>true</useHitPoints>
+		<building>
+		  <isEdifice>false</isEdifice>
+		  <deconstructible>false</deconstructible>
+		  <turretBurstWarmupTime>1.0</turretBurstWarmupTime>
+		  <turretBurstCooldownTime>1.0</turretBurstCooldownTime>
+		</building>
+	  </ThingDef>
+	
+	<ThingDef Name="Telvanni_BaseBeltSentinal" ParentName="ApparelNoQualityBase"  Abstract="True">
+		<graphicData>
+		  <graphicClass>Graphic_Single</graphicClass>
+		  <texPath>Things/Item/Equipment/MorrowRim_TelvanniFocus</texPath>
+		</graphicData>
+		<techLevel>Medieval</techLevel>
+		<tradeTags>
+		  <li>Telvanni_ApparelFocus</li>
+		</tradeTags>
+		<recipeMaker>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<effectWorking>Smith</effectWorking>
+			<soundWorking>Recipe_Smith</soundWorking>
+			<recipeUsers>
+				<li>MorrowRim_StaveTable</li>
+			</recipeUsers>
+			<unfinishedThingDef>MorrowRim_UnfinishedTelvanniRoots</unfinishedThingDef>
+			<skillRequirements>
+				<Crafting>6</Crafting>
+				<Intellectual>9</Intellectual>
+			</skillRequirements>
+			<researchPrerequisites>
+				<li>MorrowRim_SentinalCrystalCreation</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<statBases>
+		  <WorkToMake>10000</WorkToMake>
+		  <Mass>0.5</Mass>
+		  <EquipDelay>2</EquipDelay>
+		  <MaxHitPoints>80</MaxHitPoints>
+		  <RangedWeapon_Cooldown>1.25</RangedWeapon_Cooldown>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<thingCategories>
+		  <li>ApparelFocus</li>
+		</thingCategories>
+		<apparel>
+		  <tags>
+			<li>Telvanni_ApparelFocus</li>
+		  </tags>
+		  <scoreOffset>4</scoreOffset>
+		  <careIfWornByCorpse>false</careIfWornByCorpse>
+		  <careIfDamaged>false</careIfDamaged>
+		  <wearPerDay>0</wearPerDay>
+		  <bodyPartGroups>
+			<li>Waist</li>
+		  </bodyPartGroups>
+		  <layers>
+			<li>Belt</li>
+		  </layers>
+		  <defaultOutfitTags>
+			<li>Soldier</li>
+		  </defaultOutfitTags>
+		</apparel>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<tradeNeverStack>true</tradeNeverStack>
+		<smeltable>true</smeltable>
+		<burnableByRecipe>false</burnableByRecipe>
+		<drawGUIOverlay>false</drawGUIOverlay>
+		<verbs>
+		</verbs>
+		<comps>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef Name="Telvanni_BaseSentinal" ParentName="Telvanni_BaseSummonBuilding" Abstract="True">
+		<thingClass>Building_TurretGun</thingClass>
+		<graphicData>
+		  <texPath>Things/Item/Equipment/MorrowRim_TelvanniSentinal</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		  <drawSize>(2,2)</drawSize>
+		  <damageData>
+			<rect>(0.2,0.2,0.6,0.6)</rect>
+		  </damageData>
+		  <shadowData>
+			<volume>(0.27,0.25,0.27)</volume>
+			<offset>(0,0,0)</offset>
+		  </shadowData>
+		</graphicData>
+		<uiIconPath>Things/Item/Equipment/MorrowRim_TelvanniSentinal</uiIconPath>
+		<uiIconScale>0.90</uiIconScale>
+		<statBases>
+		  <MaxHitPoints>100</MaxHitPoints>
+		  <Flammability>0.0</Flammability>
+		  <Mass>0</Mass>
+		  <Beauty>0</Beauty>
+		  <ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<comps>
+		  <li Class="CompProperties_Refuelable">
+			<fuelLabel>Energy left</fuelLabel>
+			<fuelGizmoLabel>Energy left</fuelGizmoLabel>
+			<outOfFuelMessage>Cannot shoot: Out of energy</outOfFuelMessage>
+			<fuelFilter><thingDefs></thingDefs></fuelFilter>
+			<fuelCapacity>10</fuelCapacity>
+			<fuelMultiplier>0.25</fuelMultiplier>
+			<initialFuelPercent>1</initialFuelPercent>
+			<autoRefuelPercent>0.0</autoRefuelPercent>
+			<showFuelGizmo>true</showFuelGizmo>
+			<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+			<destroyOnNoFuel>true</destroyOnNoFuel>
+			<fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
+		  </li>
+		</comps>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<fillPercent>0.4</fillPercent>
+		<hasTooltip>true</hasTooltip>
+		<building>
+		  <combatPower>45</combatPower>
+		  <ai_combatDangerous>true</ai_combatDangerous>
+		  <turretBurstCooldownTime>0.0</turretBurstCooldownTime>
+		</building>
+	</ThingDef>
+	
+	<ThingDef Name="Telvanni_BaseSentinalGun" ParentName="BaseWeaponTurret" Abstract="True">
+		<label>sentinal focus</label>
+		<description>A crystal focus, controlled by a sentinal.</description>
+		<graphicData>
+		  <texPath>Things/Item/Equipment/MorrowRim_TelvanniSentinalFocus</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+		  <AccuracyTouch>0.70</AccuracyTouch>
+		  <AccuracyShort>0.64</AccuracyShort>
+		  <AccuracyMedium>0.41</AccuracyMedium>
+		  <AccuracyLong>0.22</AccuracyLong>
+		  <DeteriorationRate>0</DeteriorationRate>
+		  <Mass>0</Mass>
+		  <Flammability>0</Flammability>
+		</statBases>
+	</ThingDef>
+
+</Defs>

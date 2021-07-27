@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <JobDef>
+    <defName>DarkDescent_ActivateServant</defName>
+    <driverClass>JobDriver_UseItem</driverClass>
+    <reportString>activating servant.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+  
+  <JobDef>
+    <defName>MorrowRim_ApplyGolemCore_Upgrade</defName>
+    <driverClass>MorrowRim_Telvanni.JobDriver_ApplyGolemCore_Upgrade</driverClass>
+    <reportString>applying TargetB to TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+  
+  <JobDef>
+    <defName>MorrowRim_ApplyGolemCore</defName>
+    <driverClass>MorrowRim_Telvanni.JobDriver_ApplyGolemCore</driverClass>
+    <reportString>applying TargetB to TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+  
+  <JobDef>
+    <defName>MorrowRim_RepairGolem</defName>
+    <driverClass>MorrowRim_Telvanni.JobDriver_RepairGolem</driverClass>
+    <reportString>repairing TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+  
+  <JobDef>
+    <defName>MorrowRim_DestroyGolem</defName>
+    <driverClass>MorrowRim_Telvanni.JobDriver_DestroyGolem</driverClass>
+    <reportString>destroying TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+</Defs>

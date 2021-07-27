@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Base Frost -->
+	
+	<ThingDef Name="Telvanni_BaseStaveMelee_Frost" ParentName="Telvanni_BaseStaveMelee" Abstract="True">
+		<recipeMaker>
+			<researchPrerequisite>MorrowRim_StaffFrost</researchPrerequisite>
+		</recipeMaker>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_FrostSalts>25</MorrowRim_FrostSalts>
+		</costList>
+	</ThingDef>
+	
+	<!-- Cutting -->
+	
+	<ThingDef ParentName="Telvanni_BaseStaveMelee_Frost">
+		<defName>Telvanni_StaveFrostCutting</defName>
+		<label>cutting frost stave</label>
+		<description>A melee frost stave of Telvanni design, its focus inflicts hypothermia equivalent to 5% of damage dealt. This particular stave features a scythed focus, and is perfect for cleaving opponents.</description>
+		<graphicData>
+		  <texPath>Things/Item/Equipment/WeaponStave_Melee/Stave_Cutting</texPath>
+		  <color>(222,239,253)</color>
+		</graphicData>
+		<statBases>
+
+		</statBases>
+		<tools>
+		  <li>
+			<label>focus</label>
+			<capacities>
+			  <li>MorrowRim_CutFrost</li>
+			</capacities>
+			<power>20</power>
+			<cooldownTime>2</cooldownTime>
+			<extraMeleeDamages>
+			</extraMeleeDamages>
+		  </li>
+		  <li>
+			<label>handle</label>
+			<capacities>
+			  <li>Poke</li>
+			  <li>Blunt</li>
+			</capacities>
+			<power>4</power>
+			<cooldownTime>2</cooldownTime>
+		  </li>
+		</tools>
+	</ThingDef>
+	
+	<!-- Crushing -->
+	
+	<ThingDef ParentName="Telvanni_BaseStaveMelee_Frost">
+		<defName>Telvanni_StaveFrostImpact</defName>
+		<label>impact frost stave</label>
+		<description>A melee frost stave of Telvanni design, its focus inflicts hypothermia equivalent to 5% of damage dealt. This particular stave features a weighted focus, and is perfect for crushing opponents.</description>
+		<graphicData>
+		  <texPath>Things/Item/Equipment/WeaponStave_Melee/Stave_Melee</texPath>
+		  <color>(222,239,253)</color>
+		</graphicData>
+		<statBases>
+
+		</statBases>
+		<tools>
+		  <li>
+			<label>focus</label>
+			<capacities>
+			  <li>MorrowRim_BluntFrost</li>
+			</capacities>
+			<power>20</power>
+			<cooldownTime>2</cooldownTime>
+			<extraMeleeDamages>
+			</extraMeleeDamages>
+		  </li>
+		  <li>
+			<label>handle</label>
+			<capacities>
+			  <li>Poke</li>
+			  <li>Blunt</li>
+			</capacities>
+			<power>4</power>
+			<cooldownTime>2</cooldownTime>
+		  </li>
+		</tools>
+	</ThingDef>
+	
+	<!-- Piercing -->
+	
+	<ThingDef ParentName="Telvanni_BaseStaveMelee_Frost">
+		<defName>Telvanni_StaveFrostPiercing</defName>
+		<label>piercing frost stave</label>
+		<description>A melee frost stave of Telvanni design, its focus inflicts hypothermia equivalent to 5% of damage dealt. This particular stave features a pointed focus, and is perfect for piercing opponents.</description>
+		<graphicData>
+		  <texPath>Things/Item/Equipment/WeaponStave_Melee/Stave_Piercing</texPath>
+		  <color>(222,239,253)</color>
+		</graphicData>
+		<statBases>
+
+		</statBases>
+		<tools>
+		  <li>
+			<label>focus</label>
+			<capacities>
+			  <li>MorrowRim_StabFrost</li>
+			</capacities>
+			<power>20</power>
+			<cooldownTime>2</cooldownTime>
+		  </li>
+		  <li>
+			<label>handle</label>
+			<capacities>
+			  <li>Poke</li>
+			  <li>Blunt</li>
+			</capacities>
+			<power>4</power>
+			<cooldownTime>2</cooldownTime>
+		  </li>
+		</tools>
+	</ThingDef>
+
+</Defs>

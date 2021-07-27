@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Base Ash -->
+	
+	<ThingDef Name="Telvanni_BaseStaveMelee_Ash" ParentName="Telvanni_BaseStaveMelee" Abstract="True">
+		<recipeMaker>
+			<researchPrerequisite>MorrowRim_StaffAsh</researchPrerequisite>
+		</recipeMaker>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <Dagoth_AshSalts>25</Dagoth_AshSalts>
+		</costList>
+	</ThingDef>
+	
+	<!-- Cutting -->
+	
+	<ThingDef ParentName="Telvanni_BaseStaveMelee_Ash">
+		<defName>Telvanni_StaveAshCutting</defName>
+		<label>cutting ash stave</label>
+		<description>A melee ash stave of Telvanni design, its focus gives a 30% chance of stunning targets. This particular stave features a scythed focus, and is perfect for cleaving opponents.</description>
+		<graphicData>
+		  <texPath>Things/Item/Equipment/WeaponStave_Melee/Stave_Cutting</texPath>
+		  <color>(109,105,85)</color>
+		</graphicData>
+		<statBases>
+
+		</statBases>
+		<tools>
+		  <li>
+			<label>focus</label>
+			<capacities>
+			  <li>Cut</li>
+			</capacities>
+			<power>20</power>
+			<cooldownTime>2</cooldownTime>
+			<extraMeleeDamages>
+			  <li>
+				<def>Stun</def>
+				<amount>5</amount>
+				<chance>0.3</chance>
+			  </li>
+			</extraMeleeDamages>
+		  </li>
+		  <li>
+			<label>handle</label>
+			<capacities>
+			  <li>Poke</li>
+			  <li>Blunt</li>
+			</capacities>
+			<power>4</power>
+			<cooldownTime>2</cooldownTime>
+		  </li>
+		</tools>
+	</ThingDef>
+	
+	<!-- Crushing -->
+	
+	<ThingDef ParentName="Telvanni_BaseStaveMelee_Ash">
+		<defName>Telvanni_StaveAshImpact</defName>
+		<label>impact ash stave</label>
+		<description>A melee ash stave of Telvanni design, its focus gives a 30% chance of stunning targets. This particular stave features a weighted focus, and is perfect for crushing opponents.</description>
+		<graphicData>
+		  <texPath>Things/Item/Equipment/WeaponStave_Melee/Stave_Melee</texPath>
+		  <color>(109,105,85)</color>
+		</graphicData>
+		<statBases>
+
+		</statBases>
+		<tools>
+		  <li>
+			<label>focus</label>
+			<capacities>
+			  <li>Blunt</li>
+			</capacities>
+			<power>20</power>
+			<cooldownTime>2</cooldownTime>
+			<extraMeleeDamages>
+			  <li>
+				<def>Stun</def>
+				<amount>5</amount>
+				<chance>0.3</chance>
+			  </li>
+			</extraMeleeDamages>
+		  </li>
+		  <li>
+			<label>handle</label>
+			<capacities>
+			  <li>Poke</li>
+			  <li>Blunt</li>
+			</capacities>
+			<power>4</power>
+			<cooldownTime>2</cooldownTime>
+		  </li>
+		</tools>
+	</ThingDef>
+	
+	<!-- Piercing -->
+	
+	<ThingDef ParentName="Telvanni_BaseStaveMelee_Ash">
+		<defName>Telvanni_StaveAshPiercing</defName>
+		<label>piercing ash stave</label>
+		<description>A melee ash stave of Telvanni design, its focus gives a 30% chance of stunning targets. This particular stave features a pointed focus, and is perfect for piercing opponents.</description>
+		<graphicData>
+		  <texPath>Things/Item/Equipment/WeaponStave_Melee/Stave_Piercing</texPath>
+		  <color>(109,105,85)</color>
+		</graphicData>
+		<statBases>
+
+		</statBases>
+		<tools>
+		  <li>
+			<label>focus</label>
+			<capacities>
+			  <li>Stab</li>
+			</capacities>
+			<power>20</power>
+			<cooldownTime>2</cooldownTime>
+			<extraMeleeDamages>
+			  <li>
+				<def>Stun</def>
+				<amount>5</amount>
+				<chance>0.3</chance>
+			  </li>
+			</extraMeleeDamages>
+		  </li>
+		  <li>
+			<label>handle</label>
+			<capacities>
+			  <li>Poke</li>
+			  <li>Blunt</li>
+			</capacities>
+			<power>4</power>
+			<cooldownTime>2</cooldownTime>
+		  </li>
+		</tools>
+	</ThingDef>
+
+</Defs>

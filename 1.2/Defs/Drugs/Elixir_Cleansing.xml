@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="DrugBase">
+		<defName>MorrowRim_ElixirCleansing</defName>
+		<label>elixir of cleansing</label>
+		<description>An elixir prepared by a alchemist. Cleanses alchemical toxicity. The amount cleansed depends on the quality, with the elixir cleansing 10% per quality level, or 100% for legendary quality.</description>
+		<graphicData>
+		  <texPath>Things/Item/Drug/MorrowRim_PotionCleansing</texPath>
+		  <graphicClass>Graphic_StackCount</graphicClass>
+		  <drawSize>0.85</drawSize>
+		</graphicData>
+		<statBases>
+		  <MarketValue>15</MarketValue>
+		  <Mass>0.01</Mass>
+		  <Flammability>0.7</Flammability>
+		</statBases>
+		<ingestible>
+		  <foodType>Fluid, Processed</foodType>
+		  <baseIngestTicks>100</baseIngestTicks>
+		  <chairSearchRadius>0</chairSearchRadius>
+		  <ingestSound>Ingest_Beer</ingestSound>
+		  <nurseable>true</nurseable>
+		  <ingestHoldUsesTable>false</ingestHoldUsesTable>
+		  <ingestCommandString>Drink {0}</ingestCommandString>
+		  <ingestReportString>Drinking {0}.</ingestReportString>
+		  <drugCategory>Medical</drugCategory>
+		  <outcomeDoers>
+			<li Class="MorrowRim_Telvanni.IngestionOutcomeDoer_Cleansing">
+			</li>
+		  </outcomeDoers>
+		</ingestible>
+		<socialPropernessMatters>false</socialPropernessMatters>
+		<rotatable>false</rotatable>
+		<techLevel>Medieval</techLevel>
+		<stackLimit>25</stackLimit>
+		<tradeTags>
+		  <li>TelvanniElixir</li>
+		</tradeTags>
+		<thingCategories Inherit="False">
+		  <li>MorrowRim_Elixir</li>
+		</thingCategories>
+		<comps>
+			  <li>
+				<compClass>CompQuality</compClass>
+			  </li>
+			  <li Class="CompProperties_Drug">
+				<listOrder>999</listOrder>
+			  </li>
+		</comps>
+		<descriptionHyperlinks>
+			<HediffDef>MorrowRim_PotionSickness</HediffDef>
+		</descriptionHyperlinks>
+		<!-- Crafting -->
+		<recipeMaker>
+			<workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+			<workSkill>Intellectual</workSkill>
+			<effectWorking>Cook</effectWorking>
+			<soundWorking>Recipe_CookMeal</soundWorking>
+			<productCount>5</productCount>
+			<bulkRecipeCount>5</bulkRecipeCount>
+			<workAmount>500</workAmount>
+			<recipeUsers>
+				<li>MorrowRim_ElixirTable</li>
+			</recipeUsers>
+			<researchPrerequisite>MorrowRim_ElixirTable</researchPrerequisite>
+		</recipeMaker>
+		<costList>
+			<MorrowRim_PoisonBoltExtract>1</MorrowRim_PoisonBoltExtract>
+			<MorrowRim_FireSalts>2</MorrowRim_FireSalts>
+			<MorrowRim_FrostSalts>2</MorrowRim_FrostSalts>
+		</costList>
+	</ThingDef>
+  
+</Defs>

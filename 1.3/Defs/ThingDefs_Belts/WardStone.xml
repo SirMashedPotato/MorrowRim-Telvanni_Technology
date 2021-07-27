@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Base -->
+
+	<ThingDef Name="Telvanni_BaseBeltWardStone" ParentName="ApparelNoQualityBase"  Abstract="True">
+		<graphicData>
+		  <graphicClass>Graphic_Single</graphicClass>
+		  <texPath>Things/Item/Equipment/MorrowRim_TelvanniWardStone</texPath>
+		</graphicData>
+		<techLevel>Medieval</techLevel>
+		<tradeTags>
+		  <li>Telvanni_ApparelWardStone</li>
+		</tradeTags>
+		<recipeMaker>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<effectWorking>Smith</effectWorking>
+			<soundWorking>Recipe_Smith</soundWorking>
+			<recipeUsers>
+				<li>MorrowRim_TelvanniForge</li>
+			</recipeUsers>
+			<unfinishedThingDef>MorrowRim_UnfinishedTelvanniRoots</unfinishedThingDef>
+			<skillRequirements>
+				<Crafting>6</Crafting>
+				<Intellectual>9</Intellectual>
+			</skillRequirements>
+			<researchPrerequisites>
+				<li>MorrowRim_TelvanniWardStones</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<statBases>
+		  <WorkToMake>10000</WorkToMake>
+		  <Mass>0.5</Mass>
+		  <EquipDelay>2</EquipDelay>
+		  <MaxHitPoints>80</MaxHitPoints>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<thingCategories>
+		  <li>ApparelWardStone</li>
+		</thingCategories>
+		<apparel>
+		  <tags>
+			<li>Telvanni_ApparelWardStone</li>
+		  </tags>
+		  <scoreOffset>4</scoreOffset>
+		  <careIfWornByCorpse>false</careIfWornByCorpse>
+		  <careIfDamaged>false</careIfDamaged>
+		  <wearPerDay>0</wearPerDay>
+		  <bodyPartGroups>
+			<li>Waist</li>
+		  </bodyPartGroups>
+		  <layers>
+			<li>Belt</li>
+		  </layers>
+		</apparel>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<tradeNeverStack>true</tradeNeverStack>
+		<smeltable>true</smeltable>
+		<burnableByRecipe>false</burnableByRecipe>
+		<drawGUIOverlay>false</drawGUIOverlay>
+		<verbs>
+		</verbs>
+		<comps>
+		</comps>
+	</ThingDef>
+
+	<!-- Specifics -->
+	
+	<ThingDef ParentName="Telvanni_BaseBeltWardStone">
+		<defName>MorrowRim_WardStoneAetherial</defName>
+		<label>aetherial ward stone</label>
+		<description>A small crystal that attaches to the belt, and provides a passive bonus to the wearer. This ward stone fortifies the wearers resistance to damage, decreasing all incoming damage by 10%.</description>
+		<graphicData>
+			<color>(156,225,232)</color>
+		</graphicData>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_AetherialSalts>25</MorrowRim_AetherialSalts>
+		</costList>
+		<equippedStatOffsets>
+		  <IncomingDamageFactor>-0.1</IncomingDamageFactor>
+		</equippedStatOffsets>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_BaseBeltWardStone">
+		<defName>MorrowRim_WardStoneAir</defName>
+		<label>air ward stone</label>
+		<description>A small crystal that attaches to the belt, and provides a passive bonus to the wearer. This ward stone fortifies the wearers resistance to toxic damage by 10%.</description>
+		<graphicData>
+			<color>(236,234,221)</color>
+		</graphicData>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_AirSalts>25</MorrowRim_AirSalts>
+		</costList>
+		<equippedStatOffsets>
+		  <ToxicSensitivity>-0.1</ToxicSensitivity>
+		</equippedStatOffsets>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_BaseBeltWardStone">
+		<defName>MorrowRim_WardStoneAsh</defName>
+		<label>ash ward stone</label>
+		<description>A small crystal that attaches to the belt, and provides a passive bonus to the wearer. This ward stone fortifies the wearers resistance to sharp damage by 10%.</description>
+		<graphicData>
+			<color>(109,105,85)</color>
+		</graphicData>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <Dagoth_AshSalts>25</Dagoth_AshSalts>
+		</costList>
+		<equippedStatOffsets>
+		  <ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+		</equippedStatOffsets>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_BaseBeltWardStone">
+		<defName>MorrowRim_WardStoneFerrous</defName>
+		<label>ferrous ward stone</label>
+		<description>A small crystal that attaches to the belt, and provides a passive bonus to the wearer. This ward stone fortifies the wearers resistance to blunt damage by 10%.</description>
+		<graphicData>
+			<color>(181,166,154)</color>
+		</graphicData>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_FerrousSalts>25</MorrowRim_FerrousSalts>
+		</costList>
+		<equippedStatOffsets>
+		  <ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+		</equippedStatOffsets>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_BaseBeltWardStone">
+		<defName>MorrowRim_WardStoneFire</defName>
+		<label>fire ward stone</label>
+		<description>A small crystal that attaches to the belt, and provides a passive bonus to the wearer. This ward stone fortifies the wearers resistance to cold temperatures by 10 points.</description>
+		<graphicData>
+			<color>(238,139,96)</color>
+		</graphicData>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_FireSalts>25</MorrowRim_FireSalts>
+		</costList>
+		<equippedStatOffsets>
+		  <ComfyTemperatureMin>-10</ComfyTemperatureMin>
+		</equippedStatOffsets>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_BaseBeltWardStone">
+		<defName>MorrowRim_WardStoneFrost</defName>
+		<label>frost ward stone</label>
+		<description>A small crystal that attaches to the belt, and provides a passive bonus to the wearer. This ward stone fortifies the wearers resistance to hot temperatures by 10 points.</description>
+		<graphicData>
+			<color>(222,239,253)</color>
+		</graphicData>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_FrostSalts>25</MorrowRim_FrostSalts>
+		</costList>
+		<equippedStatOffsets>
+		  <ComfyTemperatureMax>10</ComfyTemperatureMax>
+		</equippedStatOffsets>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_BaseBeltWardStone">
+		<defName>MorrowRim_WardStoneStorm</defName>
+		<label>storm ward stone</label>
+		<description>A small crystal that attaches to the belt, and provides a passive bonus to the wearer. This ward stone fortifies the wearers resistance to psychic effects by 10%.</description>
+		<graphicData>
+			 <color>(146,151,164)</color>
+		</graphicData>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_VoidSalts>25</MorrowRim_VoidSalts>
+		</costList>
+		<equippedStatOffsets>
+		  <PsychicSensitivity>-0.1</PsychicSensitivity>
+		</equippedStatOffsets>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_BaseBeltWardStone">
+		<defName>MorrowRim_WardStoneWater</defName>
+		<label>water ward stone</label>
+		<description>A small crystal that attaches to the belt, and provides a passive bonus to the wearer. This ward stone fortifies the wearers resistance to heat damage by 10%.</description>
+		<graphicData>
+			<color>(173,216,252)</color>
+		</graphicData>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_WaterSalts>25</MorrowRim_WaterSalts>
+		</costList>
+		<equippedStatOffsets>
+		  <ArmorRating_Heat>0.1</ArmorRating_Heat>
+		</equippedStatOffsets>
+	</ThingDef>
+	
+	<!-- Special -->
+
+</Defs>

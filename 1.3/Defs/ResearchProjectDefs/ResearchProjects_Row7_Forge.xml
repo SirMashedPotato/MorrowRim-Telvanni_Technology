@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Misc">
+		<defName>MorrowRim_TelvanniForge</defName>
+		<label>Telvanni forge</label>
+		<description>Allows the construction of the Telvanni forge, as well as certain items produced there.\n\nWeather pulsers can be used to temporarily influence the weather. It is even possible to force weathers that would otherwise not occur in the region.</description>
+		<researchViewX>0.00</researchViewX>
+		<researchViewY>6.0</researchViewY>
+	</ResearchProjectDef>
+
+	<!-- Additional -->
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Misc">
+		<defName>MorrowRim_TelvanniWardStones</defName>
+		<label>ward stone creation</label>
+		<description>Allows the creation of ward stones at the Telvanni forge.\n\nWard stones are small crystals attached to the belt. Unlike sentinal crystals, ward stones simply provide a passive bonus to the wearer, which depends on the salt they are crafted from.</description>
+		<researchViewX>1.00</researchViewX>
+		<researchViewY>6.0</researchViewY>
+		
+		<prerequisites>
+			<li>MorrowRim_TelvanniForge</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<!--
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Misc">
+		<defName>MorrowRim_TelvanniApparel</defName>
+		<label>Telvanni apparel</label>
+		<description>Allows the construction of Telvanni styled apparel at the Telvanni forge.</description>
+		<researchViewX>2.00</researchViewX>
+		<researchViewY>6.0</researchViewY>
+		
+		<prerequisites>
+			<li>MorrowRim_TelvanniForge</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Advanced">
+		<defName>MorrowRim_TelvanniImplants</defName>
+		<label>Telvanni implants</label>
+		<description>Allows the construction of Telvanni implants at the Telvanni forge. Whilst these are only marginally better than organic body parts, they offer additional bonuses.</description>
+		<researchViewX>3.00</researchViewX>
+		<researchViewY>6.0</researchViewY>
+		
+		<prerequisites>
+			<li>MorrowRim_TelvanniForge</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	-->
+	
+	<!-- Medicine -->
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Misc">
+		<defName>MorrowRim_TelvanniMedicineCreation</defName>
+		<label>Telvanni medicine creation</label>
+		<description>Allows creating Telvanni medicine from mending-moss medicine, air and water salts, at the Telvanni forge.</description>
+		<researchViewX>4.00</researchViewX>
+		<researchViewY>6.0</researchViewY>
+		
+		<prerequisites>
+			<li>MorrowRim_TelvanniForge</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch_Advanced">
+		<defName>MorrowRim_AetherialMedicineCreation</defName>
+		<label>aetherial medicine creation</label>
+		<description>Allows creating aetherial medicine from Telvanni medicine and aetherial salts, at the Telvanni forge.</description>
+		<researchViewX>5.00</researchViewX>
+		<researchViewY>6.0</researchViewY>
+		
+		<prerequisites>
+			<li>MorrowRim_TelvanniMedicineCreation</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<!-- Misc -->
+	
+	<!--
+	
+	<ResearchProjectDef ParentName="BaseTelvanniResearch">
+		<defName>MorrowRim_TelvanniPoweredBuildings</defName>
+		<label>Telvanni buildings</label>
+		<description>Allows the construction of various buildings.</description>
+		<researchViewX>3.00</researchViewX>
+		<researchViewY>6.0</researchViewY>
+	</ResearchProjectDef>
+	
+	-->
+	
+</Defs>

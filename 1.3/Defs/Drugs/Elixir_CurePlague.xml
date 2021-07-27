@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="MorrowRim_ElixirBase_Cure">
+		<defName>MorrowRim_ElixirCurePlague</defName>
+		<label>elixir of cure plague</label>
+		<description>An elixir prepared by a alchemist, cures the plague when ingested.\n\nIngesting this elixir will also increase alchemical toxicity by 2.5%.</description>
+		<descriptionHyperlinks>
+			<HediffDef>Plague</HediffDef>
+		</descriptionHyperlinks>
+		<ingestible>
+		  <drugCategory>Medical</drugCategory>
+		  <outcomeDoers>
+			<li Class="MorrowRim_Telvanni.IngestionOutcomeDoer_RemoveHediff">
+				<Hediff>Plague</Hediff>
+			</li>
+		  </outcomeDoers>
+		</ingestible>
+		<comps>
+		</comps>
+		<costList>
+			<MorrowRim_MedicineTelvanni>1</MorrowRim_MedicineTelvanni>
+			<MorrowRim_PoisonBoltExtract>2</MorrowRim_PoisonBoltExtract>
+			<MorrowRim_GraveExtract>2</MorrowRim_GraveExtract>
+		</costList>
+	</ThingDef>
+
+</Defs>

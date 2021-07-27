@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DesignationDef>
+    <defName>MorrowRim_DestroyGolem</defName>
+    <texturePath>Designations/MorrowRim_DestroyGolem</texturePath>
+    <targetType>Thing</targetType>
+  </DesignationDef>
+  
+  <DesignationDef>
+    <defName>MorrowRim_RepairGolem</defName>
+    <texturePath>Designations/MorrowRim_RepairGolem</texturePath>
+    <targetType>Thing</targetType>
+  </DesignationDef>
+
+</Defs>

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Base -->
+
+	<ThingDef Name="Telvanni_BaseBeltAtronachPulser" ParentName="ApparelNoQualityBase"  Abstract="True">
+		<graphicData>
+		  <graphicClass>Graphic_Single</graphicClass>
+		  <texPath>Things/Item/Equipment/MorrowRim_TelvanniAtronachPulser</texPath>
+		</graphicData>
+		<techLevel>Medieval</techLevel>
+		<tradeTags>
+		  <li>Telvanni_ApparelFocus</li>
+		</tradeTags>
+		<recipeMaker>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<effectWorking>Smith</effectWorking>
+			<soundWorking>Recipe_Smith</soundWorking>
+			<recipeUsers>
+				<li>MorrowRim_AtronachForge</li>
+			</recipeUsers>
+			<unfinishedThingDef>MorrowRim_UnfinishedTelvanniRoots</unfinishedThingDef>
+			<skillRequirements>
+				<Crafting>6</Crafting>
+				<Intellectual>12</Intellectual>
+			</skillRequirements>
+			<researchPrerequisites>
+				<li>MorrowRim_AtronachPulser</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<statBases>
+		  <WorkToMake>10000</WorkToMake>
+		  <Mass>0.5</Mass>
+		  <EquipDelay>2</EquipDelay>
+		  <MaxHitPoints>80</MaxHitPoints>
+		  <RangedWeapon_Cooldown>1.25</RangedWeapon_Cooldown>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<thingCategories>
+		  <li>ApparelAtronachPulser</li>
+		</thingCategories>
+		<apparel>
+		  <tags>
+			<li>Telvanni_ApparelAtronachPulser</li>
+		  </tags>
+		  <scoreOffset>4</scoreOffset>
+		  <careIfWornByCorpse>false</careIfWornByCorpse>
+		  <careIfDamaged>false</careIfDamaged>
+		  <wearPerDay>0</wearPerDay>
+		  <bodyPartGroups>
+			<li>Waist</li>
+		  </bodyPartGroups>
+		  <layers>
+			<li>Belt</li>
+		  </layers>
+		  <defaultOutfitTags>
+			<li>Soldier</li>
+		  </defaultOutfitTags>
+		</apparel>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<tradeNeverStack>true</tradeNeverStack>
+		<smeltable>true</smeltable>
+		<burnableByRecipe>false</burnableByRecipe>
+		<drawGUIOverlay>false</drawGUIOverlay>
+		<verbs>
+		  <li>
+		    <verbClass>MorrowRim_Telvanni.Verb_AddHeddifAtronach</verbClass>
+			<label>enrage atronach</label>
+			<violent>false</violent>
+			<hasStandardCommand>true</hasStandardCommand>
+			<targetable>true</targetable>
+			<onlyManualCast>True</onlyManualCast>
+			<range>5.9</range>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+			  <canTargetPawns>true</canTargetPawns>
+			  <canTargetBuildings>false</canTargetBuildings>
+			  <canTargetHumans>false</canTargetHumans>
+			  <canTargetMechs>false</canTargetMechs>
+			  <neverTargetHostileFaction>true</neverTargetHostileFaction>
+			</targetParams>
+			<soundCast>PsychicInsanityLanceCast</soundCast>
+		  </li>
+		</verbs>
+		<comps>
+		</comps>
+	</ThingDef>
+	
+	<!-- Specifics -->
+
+	<ThingDef ParentName="Telvanni_BaseBeltAtronachPulser">
+		<defName>MorrowRim_AtronachPulserFire</defName>
+		<label>atronach pulser - enrage</label>
+		<description>A small crystal that attaches to the belt, and can be used to temporarily enrage the targeted atronach, greatly boosting offensive capabilities. Doing so will deplete the crystals energy, which can be recharged using fire salts.</description>
+		<techLevel>Medieval</techLevel>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_ArmorCorrosion</hediffToAdd>
+            </li>
+		</modExtensions>
+		<comps>
+		  <li Class="CompProperties_Reloadable">
+			<maxCharges>3</maxCharges>
+			<ammoDef>MorrowRim_FireSalts</ammoDef>
+			<ammoCountPerCharge>10</ammoCountPerCharge>
+			<baseReloadTicks>60</baseReloadTicks>
+			<soundReload>Standard_Reload</soundReload>
+			<hotKey>Misc4</hotKey>
+			<chargeNoun>charge</chargeNoun>
+			<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		  </li>
+		</comps>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_AetherialSalts>15</MorrowRim_AetherialSalts>
+		  <MorrowRim_FireSalts>15</MorrowRim_FireSalts>
+		</costList>
+		<graphicData>
+		  <color>(238,139,96)</color>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_BaseBeltAtronachPulser">
+		<defName>MorrowRim_AtronachPulserFrost</defName>
+		<label>atronach pulser - fortify</label>
+		<description>A small crystal that attaches to the belt, and can be used to temporarily fortifies the targeted atronach, greatly boosting defensive capabilities. Doing so will deplete the crystals energy, which can be recharged using frost salts.</description>
+		<techLevel>Medieval</techLevel>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_ArmorCorrosion</hediffToAdd>
+            </li>
+		</modExtensions>
+		<comps>
+		  <li Class="CompProperties_Reloadable">
+			<maxCharges>3</maxCharges>
+			<ammoDef>MorrowRim_FrostSalts</ammoDef>
+			<ammoCountPerCharge>10</ammoCountPerCharge>
+			<baseReloadTicks>60</baseReloadTicks>
+			<soundReload>Standard_Reload</soundReload>
+			<hotKey>Misc4</hotKey>
+			<chargeNoun>charge</chargeNoun>
+			<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		  </li>
+		</comps>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_AetherialSalts>15</MorrowRim_AetherialSalts>
+		  <MorrowRim_FrostSalts>15</MorrowRim_FrostSalts>
+		</costList>
+		<graphicData>
+		  <color>(222,239,253)</color>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_BaseBeltAtronachPulser">
+		<defName>MorrowRim_AtronachPulserStorm</defName>
+		<label>atronach pulser - discharge</label>
+		<description>A small crystal that attaches to the belt, and can be used to discharge energy from the targeted atronach, temporarily overloading all nearby circuits. Doing so will deplete the crystals energy, which can be recharged using void salts.</description>
+		<techLevel>Medieval</techLevel>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_ArmorCorrosion</hediffToAdd>
+            </li>
+		</modExtensions>
+		<comps>
+		  <li Class="CompProperties_Reloadable">
+			<maxCharges>3</maxCharges>
+			<ammoDef>MorrowRim_VoidSalts</ammoDef>
+			<ammoCountPerCharge>10</ammoCountPerCharge>
+			<baseReloadTicks>60</baseReloadTicks>
+			<soundReload>Standard_Reload</soundReload>
+			<hotKey>Misc4</hotKey>
+			<chargeNoun>charge</chargeNoun>
+			<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		  </li>
+		</comps>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_AetherialSalts>15</MorrowRim_AetherialSalts>
+		  <MorrowRim_VoidSalts>15</MorrowRim_VoidSalts>
+		</costList>
+		<graphicData>
+		  <color>(146,151,164)</color>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_BaseBeltAtronachPulser">
+		<defName>MorrowRim_AtronachPulserWater</defName>
+		<label>atronach pulser - rejuvenate</label>
+		<description>A small crystal that attaches to the belt, and can be used to rejuvenate the targeted atronach, causing all wounds to rapidly heal. Doing so will deplete the crystals energy, which can be recharged using water salts.</description>
+		<techLevel>Medieval</techLevel>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_ArmorCorrosion</hediffToAdd>
+            </li>
+		</modExtensions>
+		<comps>
+		  <li Class="CompProperties_Reloadable">
+			<maxCharges>3</maxCharges>
+			<ammoDef>MorrowRim_WaterSalts</ammoDef>
+			<ammoCountPerCharge>10</ammoCountPerCharge>
+			<baseReloadTicks>60</baseReloadTicks>
+			<soundReload>Standard_Reload</soundReload>
+			<hotKey>Misc4</hotKey>
+			<chargeNoun>charge</chargeNoun>
+			<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		  </li>
+		</comps>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_AetherialSalts>15</MorrowRim_AetherialSalts>
+		  <MorrowRim_WaterSalts>15</MorrowRim_WaterSalts>
+		</costList>
+		<graphicData>
+		  <color>(173,216,252)</color>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="Telvanni_BaseBeltAtronachPulser">
+		<defName>MorrowRim_AtronachPulserAir</defName>
+		<label>atronach pulser - swiftness </label>
+		<description>A small crystal that attaches to the belt, and temporarily provide the targeted atronach with swiftness, greatly boosting moving capabilities. Doing so will deplete the crystals energy, which can be recharged using air salts.</description>
+		<techLevel>Medieval</techLevel>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_ArmorCorrosion</hediffToAdd>
+            </li>
+		</modExtensions>
+		<comps>
+		  <li Class="CompProperties_Reloadable">
+			<maxCharges>3</maxCharges>
+			<ammoDef>MorrowRim_AirSalts</ammoDef>
+			<ammoCountPerCharge>10</ammoCountPerCharge>
+			<baseReloadTicks>60</baseReloadTicks>
+			<soundReload>Standard_Reload</soundReload>
+			<hotKey>Misc4</hotKey>
+			<chargeNoun>charge</chargeNoun>
+			<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		  </li>
+		</comps>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_AetherialSalts>15</MorrowRim_AetherialSalts>
+		  <MorrowRim_AirSalts>15</MorrowRim_AirSalts>
+		</costList>
+		<graphicData>
+		  <color>(236,234,221)</color>
+		</graphicData>
+	</ThingDef>
+
+</Defs>

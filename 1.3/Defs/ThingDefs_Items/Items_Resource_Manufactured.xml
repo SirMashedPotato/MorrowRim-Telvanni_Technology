@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Medicine -->
+
+	<ThingDef ParentName="MedicineBase">
+		<defName>MorrowRim_MedicineMending</defName>
+		<label>mending-moss medicine</label>
+		<description>Herbal medicine created using the moss of a mending-moss parasol. Quite a bit more potent than regular herbal medicine.</description>
+		<graphicData>
+		  <texPath>Things/Item/Resource/Medicine/MorrowRim_MedicineMending</texPath>
+		  <graphicClass>Graphic_StackCount</graphicClass>
+		  <drawSize>0.85</drawSize>
+		</graphicData>
+		<techLevel>Medieval</techLevel>
+		<statBases>
+		  <MarketValue>15</MarketValue>
+		  <Mass>0.35</Mass>
+		  <Flammability>1.5</Flammability>
+		  <MedicalPotency>0.80</MedicalPotency>
+		  <MedicalQualityMax>0.9</MedicalQualityMax>
+		  <DeteriorationRate>6</DeteriorationRate>
+		</statBases>
+		<tickerType>Rare</tickerType>
+		<comps>
+		  <li Class="CompProperties_Rottable">
+			<daysToRotStart>150</daysToRotStart>
+			<rotDestroys>true</rotDestroys>
+		  </li>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="MedicineBase">
+		<defName>MorrowRim_MedicineTelvanni</defName>
+		<label>Telvanni medicine</label>
+		<description>A bag of Telvanni roots, imbued with the medicinal qualities of mending moss, and enhanced with the use of salts.</description>
+		<graphicData>
+		  <texPath>Things/Item/Resource/Medicine/MorrowRim_MedicineTelvanni</texPath>
+		  <graphicClass>Graphic_StackCount</graphicClass>
+		  <drawSize>0.85</drawSize>
+		</graphicData>
+		<techLevel>Medieval</techLevel>
+		<statBases>
+		  <MarketValue>26</MarketValue>
+		  <Mass>0.50</Mass>
+		  <Flammability>1.0</Flammability>
+		  <MedicalPotency>1.3</MedicalPotency>
+		  <MedicalQualityMax>1.0</MedicalQualityMax>
+		  <DeteriorationRate>2</DeteriorationRate>
+		  <WorkToMake>700</WorkToMake>
+		</statBases>
+		<costList>
+		  <MorrowRim_MedicineMending>1</MorrowRim_MedicineMending>
+		  <MorrowRim_AirSalts>3</MorrowRim_AirSalts>
+		  <MorrowRim_WaterSalts>3</MorrowRim_WaterSalts>
+		</costList>
+		<recipeMaker>
+		  <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+		  <workSkill>Intellectual</workSkill>
+		  <recipeUsers>
+			<li>MorrowRim_TelvanniForge</li>
+		  </recipeUsers>
+		  <researchPrerequisite>MorrowRim_TelvanniMedicineCreation</researchPrerequisite>
+		  <skillRequirements>
+			<Crafting>4</Crafting>
+			<Intellectual>6</Intellectual>
+		  </skillRequirements>
+		  <bulkRecipeCount>4</bulkRecipeCount>
+		</recipeMaker>
+	</ThingDef>
+	
+	<ThingDef ParentName="MedicineBase">
+		<defName>MorrowRim_MedicineAetherial</defName>
+		<label>aetherial medicine</label>
+		<description>A bag of Telvanni roots, imbued with the medicinal qualities of mending moss, and greatly enhanced with the use of aetherial salts.</description>
+		<graphicData>
+		  <texPath>Things/Item/Resource/Medicine/MorrowRim_MedicineTelvanni</texPath>
+		  <color>(156,225,232)</color>
+		  <graphicClass>Graphic_StackCount</graphicClass>
+		  <drawSize>0.85</drawSize>
+		</graphicData>
+		<techLevel>Medieval</techLevel>
+		<statBases>
+		  <MarketValue>40</MarketValue>
+		  <Mass>0.50</Mass>
+		  <Flammability>1.0</Flammability>
+		  <MedicalPotency>1.5</MedicalPotency>
+		  <MedicalQualityMax>1.3</MedicalQualityMax>
+		  <DeteriorationRate>2</DeteriorationRate>
+		  <WorkToMake>700</WorkToMake>
+		</statBases>
+		<costList>
+		  <MorrowRim_MedicineTelvanni>1</MorrowRim_MedicineTelvanni>
+		  <MorrowRim_AetherialSalts>5</MorrowRim_AetherialSalts>
+		</costList>
+		<recipeMaker>
+		  <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+		  <workSkill>Intellectual</workSkill>
+		  <recipeUsers>
+			<li>MorrowRim_TelvanniForge</li>
+		  </recipeUsers>
+		  <researchPrerequisite>MorrowRim_AetherialMedicineCreation</researchPrerequisite>
+		  <skillRequirements>
+			<Crafting>5</Crafting>
+			<Intellectual>10</Intellectual>
+		  </skillRequirements>
+		  <bulkRecipeCount>4</bulkRecipeCount>
+		</recipeMaker>
+	</ThingDef>
+
+</Defs>

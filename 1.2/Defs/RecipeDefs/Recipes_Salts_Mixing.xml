@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Base -->
+	
+	<RecipeDef Name="MorrowRim_CreateSaltsBase" Abstract="True">
+		<jobString>Creating salts.</jobString>
+		<effectWorking>Cremate</effectWorking>
+		<soundWorking>Recipe_Cremate</soundWorking>
+		<workAmount>500</workAmount>
+		<workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+		<recipeUsers>
+			<li>MorrowRim_TelvanniForge</li>
+		</recipeUsers>
+		<workSkill>Crafting</workSkill>
+		<researchPrerequisite>MorrowRim_TelvanniSaltMixing</researchPrerequisite>
+		<skillRequirements>
+		  <Intellectual>4</Intellectual>
+		</skillRequirements>
+	</RecipeDef>
+	
+	<!-- Standard -->
+	
+	<RecipeDef ParentName = "MorrowRim_CreateSaltsBase">
+		<defName>MorrowRim_CreateAirSalts</defName>
+		<label>create air salts</label>
+		<description>Create 5 air salts from 5 water salts and 5 void salts.</description>
+		<jobString>Creating air salts.</jobString>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>MorrowRim_WaterSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>5</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>MorrowRim_VoidSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>5</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>MorrowRim_WaterSalts</li>
+			<li>MorrowRim_VoidSalts</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		  <MorrowRim_AirSalts>5</MorrowRim_AirSalts>
+		</products>
+	</RecipeDef>
+	
+	<RecipeDef ParentName = "MorrowRim_CreateSaltsBase">
+		<defName>MorrowRim_CreateFerrousSalts</defName>
+		<label>create ferrous salts</label>
+		<description>Create 5 ferrous salts from 5 fire salts and 5 void salts.</description>
+		<jobString>Creating ferrous salts.</jobString>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>MorrowRim_FireSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>5</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>MorrowRim_VoidSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>5</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>MorrowRim_FireSalts</li>
+			<li>MorrowRim_VoidSalts</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		  <MorrowRim_FerrousSalts>5</MorrowRim_FerrousSalts>
+		</products>
+	</RecipeDef>
+	
+	<RecipeDef ParentName = "MorrowRim_CreateSaltsBase">
+		<defName>MorrowRim_CreateFireSalts</defName>
+		<label>create fire salts</label>
+		<description>Create 5 fire salts from 5 ferrous salts and 5 frost salts.</description>
+		<jobString>Creating fire salts.</jobString>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>MorrowRim_FerrousSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>5</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>MorrowRim_FrostSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>5</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>MorrowRim_FerrousSalts</li>
+			<li>MorrowRim_FrostSalts</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		  <MorrowRim_FireSalts>5</MorrowRim_FireSalts>
+		</products>
+	</RecipeDef>
+	
+	<RecipeDef ParentName = "MorrowRim_CreateSaltsBase">
+		<defName>MorrowRim_CreateFrostSalts</defName>
+		<label>create frost salts</label>
+		<description>Create 5 frost salts from 5 air salts and 5 water salts.</description>
+		<jobString>Creating frost salts.</jobString>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>MorrowRim_AirSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>5</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>MorrowRim_WaterSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>5</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>MorrowRim_AirSalts</li>
+			<li>MorrowRim_WaterSalts</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		  <MorrowRim_FrostSalts>5</MorrowRim_FrostSalts>
+		</products>
+	</RecipeDef>
+	
+	<RecipeDef ParentName = "MorrowRim_CreateSaltsBase">
+		<defName>MorrowRim_CreateVoidSalts</defName>
+		<label>create void salts</label>
+		<description>Create 5 void salts from 5 air salts and 5 water salts.</description>
+		<jobString>Creating void salts.</jobString>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>MorrowRim_AirSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>5</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>MorrowRim_FerrousSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>5</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>MorrowRim_AirSalts</li>
+			<li>MorrowRim_FerrousSalts</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		  <MorrowRim_VoidSalts>5</MorrowRim_VoidSalts>
+		</products>
+	</RecipeDef>
+	
+	<RecipeDef ParentName = "MorrowRim_CreateSaltsBase">
+		<defName>MorrowRim_CreateWaterSalts</defName>
+		<label>create water salts</label>
+		<description>Create 5 water salts from 5 air salts and 5 water salts.</description>
+		<jobString>Creating water salts.</jobString>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>MorrowRim_FireSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>5</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>MorrowRim_FrostSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>5</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>MorrowRim_FireSalts</li>
+			<li>MorrowRim_FrostSalts</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		  <MorrowRim_WaterSalts>5</MorrowRim_WaterSalts>
+		</products>
+	</RecipeDef>
+	
+	<!-- ash -->
+	
+	<RecipeDef ParentName = "MorrowRim_CreateSaltsBase">
+		<defName>MorrowRim_CreateAshSalts</defName>
+		<label>create ash salts</label>
+		<description>Create 10 ash salts from 5 air salts, 5 ferrous salts, and 5 water salts.</description>
+		<jobString>Creating ash salts.</jobString>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>MorrowRim_AirSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>5</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>MorrowRim_FerrousSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>5</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>MorrowRim_WaterSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>5</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>MorrowRim_AirSalts</li>
+			<li>MorrowRim_FerrousSalts</li>
+			<li>MorrowRim_WaterSalts</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		  <Dagoth_AshSalts>10</Dagoth_AshSalts>
+		</products>
+	</RecipeDef>
+
+	<!-- aetherial -->
+	
+	<RecipeDef ParentName = "MorrowRim_CreateSaltsBase">
+		<defName>MorrowRim_CreateAetherialSalts</defName>
+		<label>create aetherial salts</label>
+		<description>Create 3 aetherial salts from 5 fire salts, 5 frost salts, and 5 void salts.</description>
+		<jobString>Creating aetherial salts.</jobString>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>MorrowRim_FireSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>5</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>MorrowRim_FrostSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>5</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>MorrowRim_VoidSalts</li>
+			  </thingDefs>
+			</filter>
+			<count>5</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>MorrowRim_FireSalts</li>
+			<li>MorrowRim_FrostSalts</li>
+			<li>MorrowRim_VoidSalts</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		  <MorrowRim_AetherialSalts>3</MorrowRim_AetherialSalts>
+		</products>
+	</RecipeDef>
+
+</Defs>

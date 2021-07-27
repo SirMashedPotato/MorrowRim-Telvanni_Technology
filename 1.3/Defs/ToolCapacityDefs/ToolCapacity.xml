@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+	<ToolCapacityDef>
+		<defName>MorrowRim_CutFrost</defName>
+		<label>freezing cut</label>
+	</ToolCapacityDef>
+	
+	<ToolCapacityDef>
+		<defName>MorrowRim_BluntFrost</defName>
+		<label>freezing impact</label>
+	</ToolCapacityDef>
+	
+	<ToolCapacityDef>
+		<defName>MorrowRim_StabFrost</defName>
+		<label>freezing stab</label>
+	</ToolCapacityDef>
+	
+	<ToolCapacityDef>
+		<defName>MorrowRim_CutToxin</defName>
+		<label>toxic cut</label>
+	</ToolCapacityDef>
+	
+	<ToolCapacityDef>
+		<defName>MorrowRim_BluntToxin</defName>
+		<label>toxic impact</label>
+	</ToolCapacityDef>
+	
+	<ToolCapacityDef>
+		<defName>MorrowRim_StabToxin</defName>
+		<label>toxic stab</label>
+	</ToolCapacityDef>
+	
+	<ToolCapacityDef>
+		<defName>MorrowRim_CutVampiric</defName>
+		<label>haemolysing cut</label>
+	</ToolCapacityDef>
+	
+	<ToolCapacityDef>
+		<defName>MorrowRim_BluntVampiric</defName>
+		<label>haemolysing impact</label>
+	</ToolCapacityDef>
+	
+	<ToolCapacityDef>
+		<defName>MorrowRim_StabVampiric</defName>
+		<label>haemolysing stab</label>
+	</ToolCapacityDef>
+	
+	<ToolCapacityDef>
+		<defName>MorrowRim_CutGrave</defName>
+		<label>corrosive cut</label>
+	</ToolCapacityDef>
+	
+	<ToolCapacityDef>
+		<defName>MorrowRim_BluntGrave</defName>
+		<label>corrosive impact</label>
+	</ToolCapacityDef>
+	
+	<ToolCapacityDef>
+		<defName>MorrowRim_StabGrave</defName>
+		<label>corrosive stab</label>
+	</ToolCapacityDef>
+	
+	<ToolCapacityDef>
+		<defName>MorrowRim_CutParalysis</defName>
+		<label>paralysing cut</label>
+	</ToolCapacityDef>
+	
+	<ToolCapacityDef>
+		<defName>MorrowRim_BluntParalysis</defName>
+		<label>paralysing impact</label>
+	</ToolCapacityDef>
+	
+	<ToolCapacityDef>
+		<defName>MorrowRim_StabParalysis</defName>
+		<label>paralysing stab</label>
+	</ToolCapacityDef>
+	
+	<ToolCapacityDef>
+		<defName>MorrowRim_StabMindControl</defName>
+		<label>mind controlling stab</label>
+	</ToolCapacityDef>
+
+</Defs>

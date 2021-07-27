@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Frost -->
+	
+	<ManeuverDef>
+		<defName>MorrowRim_CutFrost</defName>
+		<requiredCapacity>MorrowRim_CutFrost</requiredCapacity>
+		<verb>
+		  <verbClass>Verb_MeleeAttackDamage</verbClass>
+		  <meleeDamageDef>MorrowRim_CutFrost</meleeDamageDef>
+		</verb>
+		<logEntryDef>MeleeAttack</logEntryDef>
+		<combatLogRulesHit>Maneuver_Slash_MeleeHit</combatLogRulesHit>
+		<combatLogRulesDeflect>Maneuver_Slash_MeleeDeflect</combatLogRulesDeflect>
+		<combatLogRulesMiss>Maneuver_Slash_MeleeMiss</combatLogRulesMiss>
+		<combatLogRulesDodge>Maneuver_Slash_MeleeDodge</combatLogRulesDodge>
+	</ManeuverDef>
+
+	<ManeuverDef>
+		<defName>MorrowRim_StabFrost</defName>
+		<requiredCapacity>MorrowRim_StabFrost</requiredCapacity>
+		<verb>
+		  <verbClass>Verb_MeleeAttackDamage</verbClass>
+		  <meleeDamageDef>MorrowRim_StabFrost</meleeDamageDef>
+		</verb>
+		<logEntryDef>MeleeAttack</logEntryDef>
+		<combatLogRulesHit>Maneuver_Stab_MeleeHit</combatLogRulesHit>
+		<combatLogRulesDeflect>Maneuver_Stab_MeleeDeflect</combatLogRulesDeflect>
+		<combatLogRulesMiss>Maneuver_Stab_MeleeMiss</combatLogRulesMiss>
+		<combatLogRulesDodge>Maneuver_Stab_MeleeDodge</combatLogRulesDodge>
+	  </ManeuverDef>
+
+	<ManeuverDef>
+		<defName>MorrowRim_BluntFrost</defName>
+		<requiredCapacity>MorrowRim_BluntFrost</requiredCapacity>
+		<verb>
+		  <verbClass>Verb_MeleeAttackDamage</verbClass>
+		  <meleeDamageDef>MorrowRim_BluntFrost</meleeDamageDef>
+		</verb>
+		<logEntryDef>MeleeAttack</logEntryDef>
+		<combatLogRulesHit>Maneuver_Smash_MeleeHit</combatLogRulesHit>
+		<combatLogRulesDeflect>Maneuver_Smash_MeleeDeflect</combatLogRulesDeflect>
+		<combatLogRulesMiss>Maneuver_Smash_MeleeMiss</combatLogRulesMiss>
+		<combatLogRulesDodge>Maneuver_Smash_MeleeDodge</combatLogRulesDodge>
+	</ManeuverDef>
+	
+	<!-- Toxin -->
+	
+	<ManeuverDef>
+		<defName>MorrowRim_CutToxin</defName>
+		<requiredCapacity>MorrowRim_CutToxin</requiredCapacity>
+		<verb>
+		  <verbClass>Verb_MeleeAttackDamage</verbClass>
+		  <meleeDamageDef>MorrowRim_CutToxin</meleeDamageDef>
+		</verb>
+		<logEntryDef>MeleeAttack</logEntryDef>
+		<combatLogRulesHit>Maneuver_Slash_MeleeHit</combatLogRulesHit>
+		<combatLogRulesDeflect>Maneuver_Slash_MeleeDeflect</combatLogRulesDeflect>
+		<combatLogRulesMiss>Maneuver_Slash_MeleeMiss</combatLogRulesMiss>
+		<combatLogRulesDodge>Maneuver_Slash_MeleeDodge</combatLogRulesDodge>
+	</ManeuverDef>
+
+	<ManeuverDef>
+		<defName>MorrowRim_StabToxin</defName>
+		<requiredCapacity>MorrowRim_StabToxin</requiredCapacity>
+		<verb>
+		  <verbClass>Verb_MeleeAttackDamage</verbClass>
+		  <meleeDamageDef>MorrowRim_StabToxin</meleeDamageDef>
+		</verb>
+		<logEntryDef>MeleeAttack</logEntryDef>
+		<combatLogRulesHit>Maneuver_Stab_MeleeHit</combatLogRulesHit>
+		<combatLogRulesDeflect>Maneuver_Stab_MeleeDeflect</combatLogRulesDeflect>
+		<combatLogRulesMiss>Maneuver_Stab_MeleeMiss</combatLogRulesMiss>
+		<combatLogRulesDodge>Maneuver_Stab_MeleeDodge</combatLogRulesDodge>
+	  </ManeuverDef>
+
+	<ManeuverDef>
+		<defName>MorrowRim_BluntToxin</defName>
+		<requiredCapacity>MorrowRim_BluntToxin</requiredCapacity>
+		<verb>
+		  <verbClass>Verb_MeleeAttackDamage</verbClass>
+		  <meleeDamageDef>MorrowRim_BluntToxin</meleeDamageDef>
+		</verb>
+		<logEntryDef>MeleeAttack</logEntryDef>
+		<combatLogRulesHit>Maneuver_Smash_MeleeHit</combatLogRulesHit>
+		<combatLogRulesDeflect>Maneuver_Smash_MeleeDeflect</combatLogRulesDeflect>
+		<combatLogRulesMiss>Maneuver_Smash_MeleeMiss</combatLogRulesMiss>
+		<combatLogRulesDodge>Maneuver_Smash_MeleeDodge</combatLogRulesDodge>
+	</ManeuverDef>
+	
+	<!-- Vampiric -->
+	
+	<ManeuverDef>
+		<defName>MorrowRim_CutVampiric</defName>
+		<requiredCapacity>MorrowRim_CutVampiric</requiredCapacity>
+		<verb>
+		  <verbClass>Verb_MeleeAttackDamage</verbClass>
+		  <meleeDamageDef>MorrowRim_CutVampiric</meleeDamageDef>
+		</verb>
+		<logEntryDef>MeleeAttack</logEntryDef>
+		<combatLogRulesHit>Maneuver_Slash_MeleeHit</combatLogRulesHit>
+		<combatLogRulesDeflect>Maneuver_Slash_MeleeDeflect</combatLogRulesDeflect>
+		<combatLogRulesMiss>Maneuver_Slash_MeleeMiss</combatLogRulesMiss>
+		<combatLogRulesDodge>Maneuver_Slash_MeleeDodge</combatLogRulesDodge>
+	</ManeuverDef>
+
+	<ManeuverDef>
+		<defName>MorrowRim_StabVampiric</defName>
+		<requiredCapacity>MorrowRim_StabVampiric</requiredCapacity>
+		<verb>
+		  <verbClass>Verb_MeleeAttackDamage</verbClass>
+		  <meleeDamageDef>MorrowRim_StabVampiric</meleeDamageDef>
+		</verb>
+		<logEntryDef>MeleeAttack</logEntryDef>
+		<combatLogRulesHit>Maneuver_Stab_MeleeHit</combatLogRulesHit>
+		<combatLogRulesDeflect>Maneuver_Stab_MeleeDeflect</combatLogRulesDeflect>
+		<combatLogRulesMiss>Maneuver_Stab_MeleeMiss</combatLogRulesMiss>
+		<combatLogRulesDodge>Maneuver_Stab_MeleeDodge</combatLogRulesDodge>
+	  </ManeuverDef>
+
+	<ManeuverDef>
+		<defName>MorrowRim_BluntVampiric</defName>
+		<requiredCapacity>MorrowRim_BluntVampiric</requiredCapacity>
+		<verb>
+		  <verbClass>Verb_MeleeAttackDamage</verbClass>
+		  <meleeDamageDef>MorrowRim_BluntVampiric</meleeDamageDef>
+		</verb>
+		<logEntryDef>MeleeAttack</logEntryDef>
+		<combatLogRulesHit>Maneuver_Smash_MeleeHit</combatLogRulesHit>
+		<combatLogRulesDeflect>Maneuver_Smash_MeleeDeflect</combatLogRulesDeflect>
+		<combatLogRulesMiss>Maneuver_Smash_MeleeMiss</combatLogRulesMiss>
+		<combatLogRulesDodge>Maneuver_Smash_MeleeDodge</combatLogRulesDodge>
+	</ManeuverDef>
+	
+	<!-- Grave -->
+	
+	<ManeuverDef>
+		<defName>MorrowRim_CutGrave</defName>
+		<requiredCapacity>MorrowRim_CutGrave</requiredCapacity>
+		<verb>
+		  <verbClass>Verb_MeleeAttackDamage</verbClass>
+		  <meleeDamageDef>MorrowRim_CutGrave</meleeDamageDef>
+		</verb>
+		<logEntryDef>MeleeAttack</logEntryDef>
+		<combatLogRulesHit>Maneuver_Slash_MeleeHit</combatLogRulesHit>
+		<combatLogRulesDeflect>Maneuver_Slash_MeleeDeflect</combatLogRulesDeflect>
+		<combatLogRulesMiss>Maneuver_Slash_MeleeMiss</combatLogRulesMiss>
+		<combatLogRulesDodge>Maneuver_Slash_MeleeDodge</combatLogRulesDodge>
+	</ManeuverDef>
+
+	<ManeuverDef>
+		<defName>MorrowRim_StabGrave</defName>
+		<requiredCapacity>MorrowRim_StabGrave</requiredCapacity>
+		<verb>
+		  <verbClass>Verb_MeleeAttackDamage</verbClass>
+		  <meleeDamageDef>MorrowRim_StabGrave</meleeDamageDef>
+		</verb>
+		<logEntryDef>MeleeAttack</logEntryDef>
+		<combatLogRulesHit>Maneuver_Stab_MeleeHit</combatLogRulesHit>
+		<combatLogRulesDeflect>Maneuver_Stab_MeleeDeflect</combatLogRulesDeflect>
+		<combatLogRulesMiss>Maneuver_Stab_MeleeMiss</combatLogRulesMiss>
+		<combatLogRulesDodge>Maneuver_Stab_MeleeDodge</combatLogRulesDodge>
+	  </ManeuverDef>
+
+	<ManeuverDef>
+		<defName>MorrowRim_BluntGrave</defName>
+		<requiredCapacity>MorrowRim_BluntGrave</requiredCapacity>
+		<verb>
+		  <verbClass>Verb_MeleeAttackDamage</verbClass>
+		  <meleeDamageDef>MorrowRim_BluntGrave</meleeDamageDef>
+		</verb>
+		<logEntryDef>MeleeAttack</logEntryDef>
+		<combatLogRulesHit>Maneuver_Smash_MeleeHit</combatLogRulesHit>
+		<combatLogRulesDeflect>Maneuver_Smash_MeleeDeflect</combatLogRulesDeflect>
+		<combatLogRulesMiss>Maneuver_Smash_MeleeMiss</combatLogRulesMiss>
+		<combatLogRulesDodge>Maneuver_Smash_MeleeDodge</combatLogRulesDodge>
+	</ManeuverDef>
+	
+	<!-- Paralysis -->
+	
+	<ManeuverDef>
+		<defName>MorrowRim_CutParalysis</defName>
+		<requiredCapacity>MorrowRim_CutParalysis</requiredCapacity>
+		<verb>
+		  <verbClass>Verb_MeleeAttackDamage</verbClass>
+		  <meleeDamageDef>MorrowRim_CutParalysis</meleeDamageDef>
+		</verb>
+		<logEntryDef>MeleeAttack</logEntryDef>
+		<combatLogRulesHit>Maneuver_Slash_MeleeHit</combatLogRulesHit>
+		<combatLogRulesDeflect>Maneuver_Slash_MeleeDeflect</combatLogRulesDeflect>
+		<combatLogRulesMiss>Maneuver_Slash_MeleeMiss</combatLogRulesMiss>
+		<combatLogRulesDodge>Maneuver_Slash_MeleeDodge</combatLogRulesDodge>
+	</ManeuverDef>
+
+	<ManeuverDef>
+		<defName>MorrowRim_StabParalysis</defName>
+		<requiredCapacity>MorrowRim_StabParalysis</requiredCapacity>
+		<verb>
+		  <verbClass>Verb_MeleeAttackDamage</verbClass>
+		  <meleeDamageDef>MorrowRim_StabParalysis</meleeDamageDef>
+		</verb>
+		<logEntryDef>MeleeAttack</logEntryDef>
+		<combatLogRulesHit>Maneuver_Stab_MeleeHit</combatLogRulesHit>
+		<combatLogRulesDeflect>Maneuver_Stab_MeleeDeflect</combatLogRulesDeflect>
+		<combatLogRulesMiss>Maneuver_Stab_MeleeMiss</combatLogRulesMiss>
+		<combatLogRulesDodge>Maneuver_Stab_MeleeDodge</combatLogRulesDodge>
+	  </ManeuverDef>
+
+	<ManeuverDef>
+		<defName>MorrowRim_BluntParalysis</defName>
+		<requiredCapacity>MorrowRim_BluntParalysis</requiredCapacity>
+		<verb>
+		  <verbClass>Verb_MeleeAttackDamage</verbClass>
+		  <meleeDamageDef>MorrowRim_BluntParalysis</meleeDamageDef>
+		</verb>
+		<logEntryDef>MeleeAttack</logEntryDef>
+		<combatLogRulesHit>Maneuver_Smash_MeleeHit</combatLogRulesHit>
+		<combatLogRulesDeflect>Maneuver_Smash_MeleeDeflect</combatLogRulesDeflect>
+		<combatLogRulesMiss>Maneuver_Smash_MeleeMiss</combatLogRulesMiss>
+		<combatLogRulesDodge>Maneuver_Smash_MeleeDodge</combatLogRulesDodge>
+	</ManeuverDef>
+	
+	<!-- Mind Control -->
+
+	<ManeuverDef>
+		<defName>MorrowRim_StabMindControl</defName>
+		<requiredCapacity>MorrowRim_StabMindControl</requiredCapacity>
+		<verb>
+		  <verbClass>Verb_MeleeAttackDamage</verbClass>
+		  <meleeDamageDef>MorrowRim_StabMindControl</meleeDamageDef>
+		</verb>
+		<logEntryDef>MeleeAttack</logEntryDef>
+		<combatLogRulesHit>Maneuver_Stab_MeleeHit</combatLogRulesHit>
+		<combatLogRulesDeflect>Maneuver_Stab_MeleeDeflect</combatLogRulesDeflect>
+		<combatLogRulesMiss>Maneuver_Stab_MeleeMiss</combatLogRulesMiss>
+		<combatLogRulesDodge>Maneuver_Stab_MeleeDodge</combatLogRulesDodge>
+	</ManeuverDef>
+	  
+</Defs>

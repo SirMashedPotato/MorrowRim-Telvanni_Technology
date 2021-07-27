@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Acidic -->
+	
+	<ThingDef ParentName="MorrowRim_GolemCoreBase_Blade">
+		<defName>MorrowRim_GolemCore_BladeAcidic</defName>
+		<label>golem acidic blade</label>
+		<description>A golem blade, allows the golem to cleave foes with an acid imbued blade.\n\nOnly one blade can be installed per root golem, and replacing one will destroy the currently installed blade in the process.</description>
+		<modExtensions>
+			<li Class="MorrowRim_Telvanni.AddHediffProperties">
+                <hediffToAdd>MorrowRim_GolemCore_BladeAcidic</hediffToAdd>
+                <partToAddTo>MorrowRim_GolemBladeAttachment</partToAddTo>
+                <thingDef>MorrowRim_GolemRoot</thingDef>
+                <isExclusive>true</isExclusive>
+            </li>
+		</modExtensions>
+		<graphicData>
+		  <color>(57,192,119)</color>
+		</graphicData>
+		<!-- Crafting -->
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>MorrowRim_StaffAetherial</li>
+				<li>MorrowRim_GolemFocusCore</li>
+			</researchPrerequisites>
+		</recipeMaker>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_AcidicCrystal>15</MorrowRim_AcidicCrystal>
+		</costList>
+	</ThingDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>MorrowRim_GolemCore_BladeAcidic</defName>
+		<label>acidic blade</label>
+		<labelNoun>an acidic blade</labelNoun>
+		<description>An installed golem blade, allows the golem to cleave foes with an acid imbued blade. This blade inflicts acid buildup equivalent to 1% of damage dealt.</description>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemCore_BladeAcidic</ThingDef></descriptionHyperlinks>
+		<stages>
+		</stages>
+		<comps>
+		  <li Class="HediffCompProperties_VerbGiver">
+			<tools>
+			  <li>
+				<label>acidic blade</label>
+				<capacities>
+				  <li>MorrowRim_CutAcidic</li>
+				</capacities>
+				<power>20</power>
+				<cooldownTime>2</cooldownTime>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+				<extraMeleeDamages>
+				</extraMeleeDamages>
+			  </li>
+			</tools>
+		  </li>
+		</comps>
+		<addedPartProps>
+		  <solid>true</solid>
+		  <partEfficiency>1.0</partEfficiency>
+		  <betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<spawnThingOnRemoved>MorrowRim_GolemCore_BladeAcidic</spawnThingOnRemoved>
+	</HediffDef>
+
+</Defs>

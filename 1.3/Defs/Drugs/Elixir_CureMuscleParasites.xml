@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="MorrowRim_ElixirBase_Cure">
+		<defName>MorrowRim_ElixirCureMuscleParasites</defName>
+		<label>elixir of cure muscle parasites</label>
+		<description>An elixir prepared by a alchemist, cures muscle parasites when ingested.\n\nIngesting this elixir will also increase alchemical toxicity by 2.5%.</description>
+		<descriptionHyperlinks>
+			<HediffDef>MuscleParasites</HediffDef>
+		</descriptionHyperlinks>
+		<ingestible>
+		  <drugCategory>Medical</drugCategory>
+		  <outcomeDoers>
+			<li Class="MorrowRim_Telvanni.IngestionOutcomeDoer_RemoveHediff">
+				<Hediff>MuscleParasites</Hediff>
+			</li>
+		  </outcomeDoers>
+		</ingestible>
+		<comps>
+		</comps>
+		<costList>
+			<MorrowRim_MedicineTelvanni>1</MorrowRim_MedicineTelvanni>
+			<MorrowRim_NightCapExtract>2</MorrowRim_NightCapExtract>
+			<MorrowRim_GraveExtract>2</MorrowRim_GraveExtract>
+		</costList>
+	</ThingDef>
+
+</Defs>

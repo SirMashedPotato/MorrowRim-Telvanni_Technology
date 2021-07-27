@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- base -->
+	
+	<!-- Fix-->
+	
+	<ThingDef ParentName="ResourceBase" Name="MorrowRim_InactiveGolemBase" Abstract="True">
+		<thingClass>ThingWithComps</thingClass>
+		<techLevel>Neolithic</techLevel>
+		<description>An inactive golem.</description>
+		<thingCategories>
+		  <li>InactiveServant</li>
+		</thingCategories>
+		<statBases>
+		  <Mass>10</Mass>
+		  <WorkToMake>20000</WorkToMake>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<comps>
+		  <li Class="CompProperties_Usable">
+			<useJob>DarkDescent_ActivateServant</useJob>
+			<useLabel>Activate</useLabel>
+		  </li>
+		  <li Class="CompProperties_UseEffect">
+			<compClass>CompUseEffect_DestroySelf</compClass>
+		  </li>
+		  <li>
+			<compClass>CompQuality</compClass>
+		  </li>
+		</comps>
+		<!-- Crafting -->
+		<recipeMaker>
+		  <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		  <workSkill>Crafting</workSkill>
+		  <effectWorking>Smith</effectWorking>
+		  <soundWorking>Recipe_Smith</soundWorking>
+		  <recipeUsers>
+			<li>MorrowRim_GolemForge</li>
+		  </recipeUsers>
+		  <unfinishedThingDef>MorrowRim_UnfinishedTelvanniGolem</unfinishedThingDef>
+		  <skillRequirements>
+			<Crafting>8</Crafting>
+			<Intellectual>4</Intellectual>
+		  </skillRequirements>
+		</recipeMaker>
+	</ThingDef>
+	
+	<!-- Root -->
+
+	<ThingDef ParentName="MorrowRim_InactiveGolemBase">
+		<defName>MorrowRim_InactiveGolemRoot</defName>
+		<label>inactive root golem</label>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemRoot</ThingDef></descriptionHyperlinks>
+		<graphicData>
+		  <texPath>Things/Pawn/Golem/Telvanni_RootGolem/MorrowRim_RootGolemInactive</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<stackLimit>1</stackLimit>
+		<tradeNeverStack>true</tradeNeverStack>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+		  <MarketValue>400</MarketValue>
+		  <MaxHitPoints>80</MaxHitPoints>
+		</statBases>
+		<drawGUIOverlay>false</drawGUIOverlay>
+		<comps>
+		  <li Class="MorrowRim_Telvanni.CompProperties_UseEffect_ActivateServant">
+			<ServantKind>MorrowRim_GolemRoot</ServantKind>
+		  </li>
+		</comps>
+		<!-- Crafting -->
+		<recipeMaker>
+			<researchPrerequisite>MorrowRim_GolemForge</researchPrerequisite>
+		</recipeMaker>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_WaterSalts>15</MorrowRim_WaterSalts>
+		</costList>
+		<stuffCategories>
+		  <li>Woody</li>
+		</stuffCategories>
+		<costStuffCount>125</costStuffCount>
+	</ThingDef>
+	
+	<!-- Stone -->
+
+	<ThingDef ParentName="MorrowRim_InactiveGolemBase">
+		<defName>MorrowRim_InactiveGolemStone</defName>
+		<label>inactive stone golem</label>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemStone</ThingDef></descriptionHyperlinks>
+		<graphicData>
+		  <texPath>Things/Pawn/Golem/Telvanni_StoneGolem/MorrowRim_StoneGolemInactive</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<stackLimit>1</stackLimit>
+		<tradeNeverStack>true</tradeNeverStack>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+		  <MarketValue>400</MarketValue>
+		  <MaxHitPoints>80</MaxHitPoints>
+		</statBases>
+		<drawGUIOverlay>false</drawGUIOverlay>
+		<comps>
+		  <li Class="MorrowRim_Telvanni.CompProperties_UseEffect_ActivateServant">
+			<ServantKind>MorrowRim_GolemStone</ServantKind>
+		  </li>
+		</comps>
+		<!-- Crafting -->
+		<recipeMaker>
+			<researchPrerequisite>MorrowRim_GolemMetal</researchPrerequisite>
+		</recipeMaker>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_FerrousSalts>15</MorrowRim_FerrousSalts>
+		</costList>
+		<stuffCategories>
+		  <li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>125</costStuffCount>
+	</ThingDef>
+	
+	<!-- Metal -->
+
+	<ThingDef ParentName="MorrowRim_InactiveGolemBase">
+		<defName>MorrowRim_InactiveGolemMetal</defName>
+		<label>inactive metal golem</label>
+		<descriptionHyperlinks><ThingDef>MorrowRim_GolemMetal</ThingDef></descriptionHyperlinks>
+		<graphicData>
+		  <texPath>Things/Pawn/Golem/Telvanni_MetalGolem/MorrowRim_MetalGolemInactive</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<stackLimit>1</stackLimit>
+		<tradeNeverStack>true</tradeNeverStack>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+		  <MarketValue>400</MarketValue>
+		  <MaxHitPoints>80</MaxHitPoints>
+		</statBases>
+		<drawGUIOverlay>false</drawGUIOverlay>
+		<comps>
+		  <li Class="MorrowRim_Telvanni.CompProperties_UseEffect_ActivateServant">
+			<ServantKind>MorrowRim_GolemMetal</ServantKind>
+		  </li>
+		</comps>
+		<!-- Crafting -->
+		<recipeMaker>
+			<researchPrerequisite>MorrowRim_GolemMetal</researchPrerequisite>
+		</recipeMaker>
+		<costList>
+		  <MorrowRim_HeartStone>1</MorrowRim_HeartStone>
+		  <MorrowRim_FerrousSalts>15</MorrowRim_FerrousSalts>
+		</costList>
+		<stuffCategories>
+		  <li>Metallic</li>
+		</stuffCategories>
+		<costStuffCount>125</costStuffCount>
+	</ThingDef>
+
+</Defs>

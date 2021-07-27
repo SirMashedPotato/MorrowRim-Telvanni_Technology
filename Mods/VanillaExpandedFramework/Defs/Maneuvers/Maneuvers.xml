@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Acidic -->
+	
+	<ManeuverDef>
+		<defName>MorrowRim_CutAcidic</defName>
+		<requiredCapacity>MorrowRim_CutAcidic</requiredCapacity>
+		<verb>
+		  <verbClass>Verb_MeleeAttackDamage</verbClass>
+		  <meleeDamageDef>MorrowRim_CutAcidic</meleeDamageDef>
+		</verb>
+		<logEntryDef>MeleeAttack</logEntryDef>
+		<combatLogRulesHit>Maneuver_Slash_MeleeHit</combatLogRulesHit>
+		<combatLogRulesDeflect>Maneuver_Slash_MeleeDeflect</combatLogRulesDeflect>
+		<combatLogRulesMiss>Maneuver_Slash_MeleeMiss</combatLogRulesMiss>
+		<combatLogRulesDodge>Maneuver_Slash_MeleeDodge</combatLogRulesDodge>
+	</ManeuverDef>
+
+	<ManeuverDef>
+		<defName>MorrowRim_StabAcidic</defName>
+		<requiredCapacity>MorrowRim_StabAcidic</requiredCapacity>
+		<verb>
+		  <verbClass>Verb_MeleeAttackDamage</verbClass>
+		  <meleeDamageDef>MorrowRim_StabAcidic</meleeDamageDef>
+		</verb>
+		<logEntryDef>MeleeAttack</logEntryDef>
+		<combatLogRulesHit>Maneuver_Stab_MeleeHit</combatLogRulesHit>
+		<combatLogRulesDeflect>Maneuver_Stab_MeleeDeflect</combatLogRulesDeflect>
+		<combatLogRulesMiss>Maneuver_Stab_MeleeMiss</combatLogRulesMiss>
+		<combatLogRulesDodge>Maneuver_Stab_MeleeDodge</combatLogRulesDodge>
+	  </ManeuverDef>
+
+	<ManeuverDef>
+		<defName>MorrowRim_BluntAcidic</defName>
+		<requiredCapacity>MorrowRim_BluntAcidic</requiredCapacity>
+		<verb>
+		  <verbClass>Verb_MeleeAttackDamage</verbClass>
+		  <meleeDamageDef>MorrowRim_BluntAcidic</meleeDamageDef>
+		</verb>
+		<logEntryDef>MeleeAttack</logEntryDef>
+		<combatLogRulesHit>Maneuver_Smash_MeleeHit</combatLogRulesHit>
+		<combatLogRulesDeflect>Maneuver_Smash_MeleeDeflect</combatLogRulesDeflect>
+		<combatLogRulesMiss>Maneuver_Smash_MeleeMiss</combatLogRulesMiss>
+		<combatLogRulesDodge>Maneuver_Smash_MeleeDodge</combatLogRulesDodge>
+	</ManeuverDef>
+
+</Defs>
