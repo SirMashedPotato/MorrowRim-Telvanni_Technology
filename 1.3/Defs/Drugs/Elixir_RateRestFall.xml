@@ -35,7 +35,7 @@
 		<stages>
 			<li>
 
-					<restFallFactor>-0.15</restFallFactor>
+					<restFallFactor>0.85</restFallFactor>
 
 			</li>
 		</stages>
