@@ -43,7 +43,6 @@
 		  <li>TelvanniStave</li>
 		</weaponTags>
 		<comps>
-		  <li Class="CompProperties_BiocodableWeapon"/>
 		  <li>
 			<compClass>CompQuality</compClass>
 		  </li>
@@ -111,7 +110,6 @@
 		  <li>TelvanniStave_Melee</li>
 		</weaponTags>
 		<comps>
-		  <li Class="CompProperties_BiocodableWeapon"/>
 		  <li>
 			<compClass>CompQuality</compClass>
 		  </li>
