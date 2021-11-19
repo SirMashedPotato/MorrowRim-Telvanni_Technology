@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/InventoryStockGroupDef[defName = "Medicine"]/thingDefs</xpath>
+		<value>
+			<li>MorrowRim_MedicineMending</li>
+			<li>MorrowRim_MedicineTelvanni</li>
+			<li>MorrowRim_MedicineAetherial</li>
+		</value>
+	</Operation>
+
+</Patch>
